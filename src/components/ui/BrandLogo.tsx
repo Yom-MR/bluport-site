@@ -4,20 +4,24 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 
 type BrandLogoProps = {
-  variant?: "navbar" | "footer";
+  variant?: "light" | "dark";
+  placement?: "navbar" | "footer";
 };
 
-export default function BrandLogo({ variant = "navbar" }: BrandLogoProps) {
+export default function BrandLogo({ variant = "light", placement = "navbar" }: BrandLogoProps) {
   const [sourceIndex, setSourceIndex] = useState(0);
   const sources = useMemo(
-    () => ["/images/brand/bpl-logo-white.svg", "/images/brand/bpl-logo-white.png"],
-    [],
+    () =>
+      variant === "light"
+        ? ["/images/brand/bpl-logo-transparent-white.png", "/images/brand/bpl-logo-white.png", "/images/brand/bpl-logo-white.svg"]
+        : ["/images/brand/bpl-logo-transparent-black.png", "/images/brand/bpl-logo-black.png"],
+    [variant],
   );
 
   const sizes =
-    variant === "navbar"
-      ? { width: 248, height: 60, className: "h-10 w-auto object-contain md:h-11" }
-      : { width: 220, height: 56, className: "h-9 w-auto object-contain md:h-10" };
+    placement === "navbar"
+      ? { width: 300, height: 74, className: "h-[34px] w-auto object-contain md:h-[42px]" }
+      : { width: 260, height: 68, className: "h-[36px] w-auto object-contain md:h-[40px]" };
 
   if (sourceIndex >= sources.length) {
     return (
@@ -38,7 +42,7 @@ export default function BrandLogo({ variant = "navbar" }: BrandLogoProps) {
         width={sizes.width}
         height={sizes.height}
         className={sizes.className}
-        priority={variant === "navbar"}
+        priority={placement === "navbar"}
         onError={() => setSourceIndex((current) => current + 1)}
       />
     </span>

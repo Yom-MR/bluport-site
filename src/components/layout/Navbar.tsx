@@ -6,14 +6,14 @@ import { NAV_LINKS } from "@/lib/constants";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-[var(--border)] bg-[rgba(2,8,23,0.74)] backdrop-blur-xl">
-      <Container className="flex flex-wrap items-center justify-between gap-3 py-2.5">
+    <nav className="sticky top-0 z-50 border-b border-[rgba(148,163,184,0.18)] bg-[rgba(4,17,33,0.86)] backdrop-blur-xl">
+      <Container className="flex flex-wrap items-center justify-between gap-3 py-3">
         <Link
           href="/"
           aria-label="BPL Bluport home"
-          className="flex min-w-[230px] items-center rounded-xl border border-[rgba(148,163,184,0.16)] bg-[rgba(6,26,51,0.46)] px-4 py-2.5 shadow-[0_8px_20px_rgba(2,8,23,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+          className="flex min-w-[210px] items-center px-1 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
         >
-          <BrandLogo variant="navbar" />
+          <BrandLogo variant="light" placement="navbar" />
         </Link>
 
         <div className="flex flex-1 items-center justify-end gap-x-5 gap-y-2">
