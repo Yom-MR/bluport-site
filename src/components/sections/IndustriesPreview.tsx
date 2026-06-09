@@ -2,11 +2,12 @@ import Image from "next/image";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Container from "@/components/ui/Container";
 import { industries } from "@/data/industries";
+import { siteImages } from "@/data/siteImages";
 
 const industryImages: Record<string, string> = {
-  "Construction & Equipment Rental": "/images/jobsites/construction-equipment-yard.jpg",
-  "Utilities & Infrastructure": "/images/backgrounds/infrastructure-night.jpg",
-  "Industrial & Manufacturing": "/images/jobsites/industrial-jobsite.jpg",
+  "Construction & Equipment Rental": siteImages.constructionRental,
+  "Utilities & Infrastructure": siteImages.utilitiesInfrastructure,
+  "Industrial & Manufacturing": siteImages.industrialManufacturing,
 };
 
 export default function IndustriesPreview() {

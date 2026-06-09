@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import { siteImages } from "@/data/siteImages";
 
 const missionRows = [
   { label: "Tilt Trailer Load", status: "Scheduled", dot: "bg-[var(--blue)]" },
@@ -17,7 +18,7 @@ export default function Hero() {
     <section id="mission" className="section-shell hero-glow overflow-hidden">
       <div aria-hidden className="absolute inset-0 z-0">
         <Image
-          src="/images/backgrounds/hero-equipment-transport.jpg"
+          src={siteImages.hero}
           alt=""
           fill
           priority

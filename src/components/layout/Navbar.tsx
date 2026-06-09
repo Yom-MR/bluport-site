@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Button from "@/components/ui/Button";
+import BrandLogo from "@/components/ui/BrandLogo";
 import Container from "@/components/ui/Container";
 import { NAV_LINKS } from "@/lib/constants";
 
@@ -10,18 +11,9 @@ export default function Navbar() {
         <Link
           href="/"
           aria-label="BPL Bluport home"
-          className="flex min-w-[170px] items-center gap-3 rounded-xl border border-[rgba(148,163,184,0.12)] bg-[rgba(6,26,51,0.34)] px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+          className="flex min-w-[170px] items-center rounded-xl border border-[rgba(148,163,184,0.12)] bg-[rgba(6,26,51,0.34)] px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
         >
-          <span className="flex items-center gap-1.5" aria-hidden="true">
-            <span className="h-5 w-1 rounded-full bg-white" />
-            <span className="h-7 w-1 rounded-full bg-[var(--cyan)]" />
-            <span className="h-4 w-1 rounded-full bg-[var(--green)]" />
-            <span className="h-6 w-1 rounded-full bg-[var(--violet)]" />
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="text-[10px] font-bold tracking-[0.18em] text-[var(--cyan)]">BPL</span>
-            <span className="mt-1 text-sm font-semibold tracking-[0.04em] text-[var(--foreground)]">Bluport</span>
-          </span>
+          <BrandLogo variant="navbar" />
         </Link>
 
         <div className="flex flex-1 items-center justify-end gap-x-5 gap-y-2">

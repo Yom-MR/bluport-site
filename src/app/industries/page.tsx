@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { industries } from "@/data/industries";
+import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
   title: "Industries",
@@ -50,7 +51,7 @@ export default function IndustriesPage() {
         <Container>
           <article className="glass-card relative min-h-[320px] overflow-hidden rounded-2xl p-6 md:min-h-[360px] md:p-8">
             <Image
-              src="/images/backgrounds/infrastructure-night.jpg"
+              src={siteImages.utilitiesInfrastructure}
               alt="Representative infrastructure operations environment"
               fill
               className="object-cover"

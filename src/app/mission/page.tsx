@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
   title: "Mission",
@@ -52,7 +53,7 @@ export default function MissionPage() {
         <Container>
           <article className="glass-card relative min-h-[320px] overflow-hidden rounded-2xl p-6 md:min-h-[380px] md:p-8">
             <Image
-              src="/images/fleet/heavy-equipment-transport.jpg"
+              src={siteImages.fieldOperations}
               alt="Representative mission-critical equipment transport scene"
               fill
               className="object-cover"

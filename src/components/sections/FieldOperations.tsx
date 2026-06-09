@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { siteImages } from "@/data/siteImages";
 import { Truck, Clock, FileCheck } from "lucide-react";
 
 const blocks = [
@@ -71,7 +72,7 @@ export default function FieldOperations() {
 
           <aside className="glass-card relative min-h-[420px] overflow-hidden rounded-2xl">
             <Image
-              src="/images/fleet/heavy-equipment-transport.jpg"
+              src={siteImages.fieldOperations}
               alt="Representative field transport scene"
               fill
               className="object-cover"

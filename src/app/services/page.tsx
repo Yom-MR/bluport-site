@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { services } from "@/data/services";
+import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -44,7 +45,7 @@ export default function ServicesPage() {
         <Container>
           <article className="glass-card relative min-h-[320px] overflow-hidden rounded-2xl p-6 md:min-h-[360px] md:p-8">
             <Image
-              src="/images/loads/equipment-securement.jpg"
+              src={siteImages.equipmentTransport}
               alt="Representative securement workflow for equipment movement"
               fill
               className="object-cover"

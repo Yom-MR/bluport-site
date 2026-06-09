@@ -2,6 +2,7 @@ import Image from "next/image";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Container from "@/components/ui/Container";
 import { services } from "@/data/services";
+import { siteImages } from "@/data/siteImages";
 import { Radar, Shield, Truck, Route, Warehouse, BriefcaseBusiness } from "lucide-react";
 
 const serviceIcons = [Truck, Radar, Shield, Route, Warehouse, BriefcaseBusiness];
@@ -20,7 +21,7 @@ export default function ServicesPreview() {
         />
         <article className="glass-card relative overflow-hidden rounded-2xl p-6 md:p-7">
           <Image
-            src="/images/loads/equipment-securement.jpg"
+            src={siteImages.equipmentTransport}
             alt="Representative securement detail for equipment transport"
             fill
             className="object-cover"

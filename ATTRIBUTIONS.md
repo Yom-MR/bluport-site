@@ -1,36 +1,42 @@
 # Stock Image Attributions
 
-The following stock visuals are used as atmospheric industry imagery in the Bluport website.
-These images are not presented as Bluport-owned equipment or customer operations.
+The following stock visuals are used in the current Bluport website build.
+These are temporary assets and should be replaced with Bluport-owned photography.
 
-## Files
+## Active files
 
 1. public/images/backgrounds/hero-equipment-transport.jpg
-- Source URL: https://images.unsplash.com/photo-1504307651254-35680f356dfd
-- Creator: Unknown (Unsplash source ID reference)
-- License/source notes: Downloaded from Unsplash image CDN; verify final attribution and license terms during media replacement cycle.
+- Source URL: https://www.pexels.com/photo/cargo-truck-transporting-a-heavy-machinery-5961982/
+- Direct file URL: https://images.pexels.com/photos/5961982/pexels-photo-5961982.jpeg
+- Creator: Construccion Total (Pexels)
 
 2. public/images/fleet/heavy-equipment-transport.jpg
-- Source URL: https://images.unsplash.com/photo-1531834685032-c34bf0d84c77
-- Creator: Unknown (Unsplash source ID reference)
-- License/source notes: Downloaded from Unsplash image CDN; verify final attribution and license terms during media replacement cycle.
+- Source URL: https://www.pexels.com/photo/front-load-loader-beside-white-dump-truck-188679/
+- Direct file URL: https://images.pexels.com/photos/188679/pexels-photo-188679.jpeg
+- Creator: ywanphoto (Pexels)
 
-3. public/images/loads/equipment-securement.jpg
-- Source URL: https://images.unsplash.com/photo-1581094794329-c8112a89af12
-- Creator: Unknown (Unsplash source ID reference)
-- License/source notes: Downloaded from Unsplash image CDN; verify final attribution and license terms during media replacement cycle.
+3. public/images/loads/equipment-on-trailer.jpg
+- Source URL: https://www.pexels.com/photo/front-load-loader-beside-white-dump-truck-188679/
+- Direct file URL: https://images.pexels.com/photos/188679/pexels-photo-188679.jpeg
+- Creator: ywanphoto (Pexels)
 
-4. public/images/jobsites/construction-equipment-yard.jpg
-- Source URL: https://images.unsplash.com/photo-1469474968028-56623f02e42e
-- Creator: Unknown (Unsplash source ID reference)
-- License/source notes: Downloaded from Unsplash image CDN; verify final attribution and license terms during media replacement cycle.
+4. public/images/jobsites/equipment-yard.jpg
+- Source URL: https://www.pexels.com/photo/industrial-construction-vehicles-in-outdoor-yard-34100276/
+- Direct file URL: https://images.pexels.com/photos/34100276/pexels-photo-34100276.jpeg
+- Creator: Valentin Ivantsov (Pexels)
 
-5. public/images/jobsites/industrial-jobsite.jpg
-- Source URL: https://images.unsplash.com/photo-1513828583688-c52646db42da
-- Creator: Unknown (Unsplash source ID reference)
-- License/source notes: Downloaded from Unsplash image CDN; verify final attribution and license terms during media replacement cycle.
+5. public/images/jobsites/utility-infrastructure.jpg
+- Source URL: https://www.pexels.com/photo/electricity-energy-high-voltage-power-lines-7000/
+- Direct file URL: https://images.pexels.com/photos/7000/fre-sonneveld-powerlines.jpg
+- Creator: Snapwire (Pexels)
 
-6. public/images/backgrounds/infrastructure-night.jpg
-- Source URL: https://images.unsplash.com/photo-1519003722824-194d4455a60c
-- Creator: Unknown (Unsplash source ID reference)
-- License/source notes: Downloaded from Unsplash image CDN; verify final attribution and license terms during media replacement cycle.
+6. public/images/jobsites/industrial-facility.jpg
+- Source URL: https://www.pexels.com/photo/industrial-warehouse-with-stacked-metal-beams-36003983/
+- Direct file URL: https://images.pexels.com/photos/36003983/pexels-photo-36003983.jpeg
+- Creator: Michael Orshan (Pexels)
+
+## Derived copies in use
+
+- public/images/jobsites/construction-equipment-yard.jpg (copied from equipment-yard.jpg)
+- public/images/jobsites/industrial-jobsite.jpg (copied from industrial-facility.jpg)
+- public/images/backgrounds/infrastructure-night.jpg (copied from utility-infrastructure.jpg)

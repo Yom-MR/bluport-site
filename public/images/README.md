@@ -4,13 +4,16 @@ This directory holds all real photography and visual assets for the Bluport webs
 The current production build includes temporary atmospheric stock visuals for layout polish.
 Replace these with original Bluport-owned photos as soon as the final media library is ready.
 
+Place the primary white Bluport logo at public/images/brand/bpl-logo-white.svg.
+Optional fallback logo path: public/images/brand/bpl-logo-white.png.
+
 Current temporary stock files in use:
 - backgrounds/hero-equipment-transport.jpg
 - fleet/heavy-equipment-transport.jpg
-- loads/equipment-securement.jpg
-- jobsites/construction-equipment-yard.jpg
-- jobsites/industrial-jobsite.jpg
-- backgrounds/infrastructure-night.jpg
+- loads/equipment-on-trailer.jpg
+- jobsites/equipment-yard.jpg
+- jobsites/utility-infrastructure.jpg
+- jobsites/industrial-facility.jpg
 
 ---
 
