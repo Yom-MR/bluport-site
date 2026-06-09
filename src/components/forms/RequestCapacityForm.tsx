@@ -101,8 +101,7 @@ export default function RequestCapacityForm() {
           Mission request received. Bluport operations will review the details and follow up.
         </h3>
         <p className="mt-4 text-sm leading-relaxed text-[var(--muted)]">
-          This form is currently configured as a front-end intake prototype. Connect to HubSpot,
-          Zoho, Resend, or a custom API before production launch.
+          A confirmation has been routed to our operations inbox.
         </p>
         <button
           type="button"
@@ -385,8 +384,7 @@ export default function RequestCapacityForm() {
             {isSending ? "Sending..." : "Submit Request"}
           </button>
           <p className="mt-3 text-xs leading-relaxed text-[rgba(148,163,184,0.72)]">
-            This form is currently configured as a front-end intake prototype. Connect to HubSpot,
-            Zoho, Resend, or a custom API before production launch.
+            Submissions are sent securely to Bluport operations for review.
           </p>
         </div>
       </div>

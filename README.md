@@ -48,11 +48,12 @@ Real Bluport photos and videos should be added to:
 The current MediaReadiness section is a temporary production checklist and should be removed from the homepage after real assets are collected.
 
 ## Request Capacity Form
-The current Request Capacity form is front-end only. Before production, connect it to HubSpot, Zoho, Resend, Supabase, or a custom API route.
+The Request Capacity form is connected to a secure server-side email notification flow for Bluport operations.
 
 ## Request Capacity Email Notifications
 - The form posts to `/api/request-capacity`.
 - Resend sends the notification email to operations.
+- Production submissions are currently routed to the operations inbox.
 - Required environment variables:
 	- `RESEND_API_KEY`
 	- `OPERATIONS_EMAIL`

@@ -64,7 +64,7 @@ export default function ContactPage() {
             <RequestCapacityForm />
           </div>
           <p className="text-xs leading-relaxed text-[rgba(148,163,184,0.72)]">
-            For production launch, connect this form to HubSpot, Zoho, Resend, or a custom API endpoint.
+            Request details are routed directly to Bluport operations.
           </p>
         </Container>
       </section>
