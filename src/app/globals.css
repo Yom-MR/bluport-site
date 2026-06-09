@@ -1,26 +1,321 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #020817;
+  --foreground: #f8fafc;
+  --navy: #061a33;
+  --navy-soft: #0b2545;
+  --blue: #0ea5e9;
+  --cyan: #22d3ee;
+  --green: #22c55e;
+  --violet: #312e81;
+  --muted: #94a3b8;
+  --border: rgba(148, 163, 184, 0.18);
+  --card: rgba(15, 23, 42, 0.72);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-navy: var(--navy);
+  --color-navy-soft: var(--navy-soft);
+  --color-blue: var(--blue);
+  --color-cyan: var(--cyan);
+  --color-green: var(--green);
+  --color-violet: var(--violet);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  min-height: 100%;
+}
+
+* {
+  border-color: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background-image:
+    radial-gradient(circle at 8% -8%, rgba(14, 165, 233, 0.18), transparent 34%),
+    radial-gradient(circle at 82% 2%, rgba(34, 211, 238, 0.11), transparent 28%),
+    radial-gradient(circle at 55% 28%, rgba(14, 165, 233, 0.05), transparent 32%),
+    radial-gradient(circle at 52% 100%, rgba(11, 37, 69, 0.42), transparent 56%),
+    linear-gradient(180deg, #010511 0%, #020817 48%, #020617 100%);
+  line-height: 1.5;
+}
+
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.45;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.065) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.065) 1px, transparent 1px),
+    radial-gradient(circle at 25% 25%, rgba(248, 250, 252, 0.035), transparent 60%);
+  background-size: 48px 48px, 48px 48px, 100% 100%;
+}
+
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.12;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 11px,
+    rgba(34, 211, 238, 0.08) 12px,
+    transparent 13px
+  );
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  border: 1px solid rgba(34, 211, 238, 0.5);
+  background: rgba(2, 8, 23, 0.92);
+  color: var(--foreground);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0.85rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(34, 211, 238, 0.75),
+    0 0 0 4px rgba(2, 8, 23, 0.92);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.text-gradient {
+  background: linear-gradient(125deg, #f8fafc 18%, #7dd3fc 58%, #22d3ee 98%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass-card {
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(145deg, rgba(15, 23, 42, 0.78) 0%, rgba(6, 26, 51, 0.62) 100%),
+    var(--card);
+  box-shadow:
+    inset 0 1px 0 rgba(248, 250, 252, 0.04),
+    0 20px 45px rgba(2, 8, 23, 0.45);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.section-shell {
+  position: relative;
+  border-top: 1px solid rgba(148, 163, 184, 0.08);
+  border-bottom: 1px solid var(--border);
+  padding-top: 4.75rem;
+  padding-bottom: 4.75rem;
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.2), transparent);
+}
+
+.section-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.06), transparent 35%);
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.technical-label {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.signal-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.signal-line::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% 0 -20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.65), transparent);
+  animation: signal-sweep 4.8s linear infinite;
+}
+
+.orbital-glow {
+  position: relative;
+}
+
+.orbital-glow::after {
+  content: "";
+  position: absolute;
+  inset: -14% -8% auto auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.15), transparent 68%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.panel-border {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(248, 250, 252, 0.02);
+}
+
+.soft-divider {
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.hero-glow {
+  position: relative;
+}
+
+/* CSS-only placeholder simulating an industrial field / equipment silhouette.
+   Replace with a real <Image> or <video> element when hero assets are ready.
+   See: Hero.tsx comments for replacement instructions. */
+.hero-image-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  /* Layered gradients create depth: atmospheric glow right, horizon line, subtle mass */
+  background:
+    /* Horizon line suggestion at ~65% height */
+    linear-gradient(
+      180deg,
+      transparent 60%,
+      rgba(14, 165, 233, 0.03) 64%,
+      rgba(34, 211, 238, 0.055) 65.5%,
+      rgba(14, 165, 233, 0.025) 67%,
+      transparent 72%
+    ),
+    /* Right-side atmospheric bloom — simulates equipment/vehicle mass presence */
+    radial-gradient(ellipse at 88% 74%, rgba(14, 165, 233, 0.07), transparent 44%),
+    radial-gradient(ellipse at 74% 82%, rgba(34, 211, 238, 0.045), transparent 36%),
+    /* Dark mass silhouette area — bottom right, simulates truck profile zone */
+    linear-gradient(
+      108deg,
+      transparent 44%,
+      rgba(6, 26, 51, 0.14) 56%,
+      rgba(6, 26, 51, 0.24) 66%,
+      rgba(2, 8, 23, 0.32) 82%
+    ),
+    /* Subtle vignette pulling focus to left/text side */
+    linear-gradient(90deg, rgba(2, 8, 23, 0.22) 0%, transparent 55%);
+}
+
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  right: -12%;
+  top: -18%;
+  width: 320px;
+  height: 320px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.22), transparent 72%);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+@keyframes signal-sweep {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(90%);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-shell {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+
+  .hero-glow::before {
+    right: -25%;
+    top: -10%;
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-image-layer {
+    /* Tone down the right-side effects on narrow screens */
+    opacity: 0.65;
+  }
+
+  .orbital-glow::after {
+    width: 140px;
+    height: 140px;
+  }
+
+  /* Prevent Mission Control route node labels from clipping */
+  .glass-card .technical-label {
+    font-size: 0.6rem;
+  }
 }

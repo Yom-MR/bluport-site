@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bluport Logistics Website
 
-## Getting Started
+A premium Next.js marketing website for Bluport Logistics, a veteran-owned mission-critical logistics company focused on specialized equipment transport, rapid response capacity, field operations, and future multimodal logistics.
 
-First, run the development server:
+## Tech Stack
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+- Vercel-ready deployment
 
+## Project Structure
+- `src/app`: App Router pages, route-level metadata, and global layout.
+- `src/components`: Shared UI building blocks and layout components.
+- `src/components/sections`: Homepage and route-page content sections.
+- `src/components/forms`: Request Capacity intake form components.
+- `src/data`: Structured content sources for services, industries, and media guidance.
+- `src/lib`: Utilities, constants, and future integration notes.
+- `public/images`: Brand and photography asset folders.
+- `public/video`: Video assets for hero and section motion content.
+
+## Local Development
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Quality Checks
+```bash
+npm run lint
+npm run build
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
+This project is designed to deploy on Vercel. Connect the GitHub repository to Vercel and use default Next.js settings.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Media Assets
+Real Bluport photos and videos should be added to:
+- `public/images/brand`
+- `public/images/fleet`
+- `public/images/loads`
+- `public/images/jobsites`
+- `public/images/team`
+- `public/images/backgrounds`
+- `public/video`
 
-## Learn More
+The current MediaReadiness section is a temporary production checklist and should be removed from the homepage after real assets are collected.
 
-To learn more about Next.js, take a look at the following resources:
+## Request Capacity Form
+The current Request Capacity form is front-end only. Before production, connect it to HubSpot, Zoho, Resend, Supabase, or a custom API route.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Future Integrations
+- CRM integration
+- Email notifications
+- File uploads
+- Analytics
+- SEO refinement
+- Real photography and video
+- Customer portal later, but not now
