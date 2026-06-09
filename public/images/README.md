@@ -8,12 +8,14 @@ Place the primary white Bluport logo at public/images/brand/bpl-logo-white.svg.
 Optional fallback logo path: public/images/brand/bpl-logo-white.png.
 
 Current temporary stock files in use:
-- backgrounds/hero-equipment-transport.jpg
-- fleet/heavy-equipment-transport.jpg
-- loads/equipment-on-trailer.jpg
-- jobsites/equipment-yard.jpg
 - jobsites/utility-infrastructure.jpg
 - jobsites/industrial-facility.jpg
+
+Current real Bluport media in active homepage use:
+- loads/IMG_0201.jpg
+- loads/IMG_0914.JPEG
+- loads/IMG_0364.JPEG
+- loads/IMG_0426.JPEG
 
 ---
 

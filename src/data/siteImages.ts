@@ -1,10 +1,11 @@
 export const siteImages = {
-  hero: "/images/backgrounds/hero-equipment-transport.jpg",
-  fieldOperations: "/images/fleet/heavy-equipment-transport.jpg",
-  equipmentTransport: "/images/loads/equipment-on-trailer.jpg",
-  constructionRental: "/images/jobsites/equipment-yard.jpg",
+  heroMain: "/images/loads/IMG_0201.jpg",
+  heroSupportA: "/images/loads/IMG_0914.JPEG",
+  heroSupportB: "/images/loads/IMG_0364.JPEG",
+  fieldOperations: "/images/loads/IMG_0426.JPEG",
+  equipmentTransport: "/images/loads/IMG_0364.JPEG",
+  fleetProof: "/images/loads/IMG_0201.jpg",
+  constructionRental: "/images/loads/IMG_0914.JPEG",
   utilitiesInfrastructure: "/images/jobsites/utility-infrastructure.jpg",
   industrialManufacturing: "/images/jobsites/industrial-facility.jpg",
-  dispatchOperations: "/images/team/dispatch-operations.jpg",
-  infrastructureBackdrop: "/images/backgrounds/infrastructure-night.jpg",
 } as const;

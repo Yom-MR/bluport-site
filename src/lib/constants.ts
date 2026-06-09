@@ -1,5 +1,5 @@
 export const SITE_NAME = "Bluport Logistics";
-export const SITE_TAGLINE = "Veteran-Owned. Mission-Critical. Built for the Future.";
+export const SITE_TAGLINE = "Veteran-owned hotshot and equipment logistics.";
 
 export const NAV_LINKS = [
   { label: "Mission", href: "/mission" },

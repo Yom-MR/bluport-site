@@ -16,19 +16,14 @@ export const industries: Industry[] = [
     signal: "Response readiness",
   },
   {
-    title: "Data Center Construction",
-    description: "Movement of support equipment and critical assets for uptime-driven construction schedules.",
-    signal: "Schedule protection",
-  },
-  {
-    title: "Aerospace & Defense",
-    description: "Disciplined execution for sensitive cargo, specialized assets, and mission-focused operations.",
-    signal: "High-value movement",
-  },
-  {
     title: "Industrial & Manufacturing",
     description: "Inbound and outbound movement support where production schedules depend on timely delivery.",
     signal: "Downtime reduction",
+  },
+  {
+    title: "Aerospace & Defense",
+    description: "Disciplined execution support for sensitive cargo and mission-focused ground operations.",
+    signal: "Controlled handling",
   },
   {
     title: "Government & Emergency Response",

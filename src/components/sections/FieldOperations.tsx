@@ -27,12 +27,12 @@ const blocks = [
 
 export default function FieldOperations() {
   return (
-    <section id="field-operations" className="section-shell bg-[rgba(6,26,51,0.18)]">
+    <section id="field-operations" className="section-shell section-dark section-split">
       <Container className="space-y-10">
         <SectionHeader
           eyebrow="FIELD OPERATIONS"
-          title="Built for the work that happens before the job can start."
-          description="A delayed machine, trailer, attachment, or support asset can hold up an entire crew. Bluport focuses on the operational details that keep field teams moving."
+          title="Field-ready logistics for equipment-driven work."
+          description="A delayed attachment, machine, trailer, or support asset can hold up the entire crew. Bluport focuses on the details that keep jobsites moving."
         />
         <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-5">
@@ -40,7 +40,7 @@ export default function FieldOperations() {
               {blocks.map(({ Icon, title, description }) => (
                 <article
                   key={title}
-                  className="rounded-2xl border border-[var(--border)] bg-[linear-gradient(145deg,rgba(6,26,51,0.55),rgba(15,23,42,0.4))] p-6 transition-colors hover:border-[rgba(14,165,233,0.35)]"
+                  className="rounded-2xl border border-[var(--border)] bg-[rgba(15,23,42,0.55)] p-6 transition-colors hover:border-[rgba(14,165,233,0.35)]"
                 >
                   <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border)] bg-[rgba(14,165,233,0.07)]">
                     <Icon size={18} className="text-[var(--cyan)]" strokeWidth={1.7} />
@@ -73,9 +73,9 @@ export default function FieldOperations() {
           <aside className="glass-card relative min-h-[420px] overflow-hidden rounded-2xl">
             <Image
               src={siteImages.fieldOperations}
-              alt="Representative field transport scene"
+              alt="Bluport field operations load and trailer"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 42vw"
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,23,0.15)_0%,rgba(2,8,23,0.45)_55%,rgba(2,8,23,0.88)_100%)]" />

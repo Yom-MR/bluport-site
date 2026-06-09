@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import BrandLogo from "@/components/ui/BrandLogo";
-import { SITE_NAME, SITE_TAGLINE } from "@/lib/constants";
+import { SITE_TAGLINE } from "@/lib/constants";
 
 const footerLinks = [
   { label: "Mission", href: "/mission" },
@@ -19,7 +19,6 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-2">
             <BrandLogo variant="footer" />
-            <h3 className="text-sm font-semibold tracking-wide text-[var(--foreground)]">{SITE_NAME}</h3>
             <p className="text-sm text-[var(--muted)]">{SITE_TAGLINE}</p>
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-2">
