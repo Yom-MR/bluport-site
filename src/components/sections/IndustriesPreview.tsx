@@ -1,6 +1,13 @@
+import Image from "next/image";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Container from "@/components/ui/Container";
 import { industries } from "@/data/industries";
+
+const industryImages: Record<string, string> = {
+  "Construction & Equipment Rental": "/images/jobsites/construction-equipment-yard.jpg",
+  "Utilities & Infrastructure": "/images/backgrounds/infrastructure-night.jpg",
+  "Industrial & Manufacturing": "/images/jobsites/industrial-jobsite.jpg",
+};
 
 export default function IndustriesPreview() {
   return (
@@ -29,8 +36,21 @@ export default function IndustriesPreview() {
             return (
               <article
                 key={industry.title}
-                className={`glass-card rounded-2xl p-6 transition-colors hover:border-[rgba(34,211,238,0.4)] ${spanClass} ${index === 0 ? "orbital-glow" : ""}`}
+                className={`glass-card relative overflow-hidden rounded-2xl p-6 transition-colors hover:border-[rgba(34,211,238,0.4)] ${spanClass} ${index === 0 ? "orbital-glow" : ""}`}
               >
+                {industryImages[industry.title] ? (
+                  <>
+                    <Image
+                      src={industryImages[industry.title]}
+                      alt={`Representative ${industry.title.toLowerCase()} environment`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 45vw"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,23,0.18)_0%,rgba(2,8,23,0.72)_55%,rgba(2,8,23,0.9)_100%)]" />
+                  </>
+                ) : null}
+                <div className="relative z-10">
                 <p className="technical-label text-[var(--cyan)]">Signal: {industry.signal}</p>
                 <h3 className="mt-3 text-xl font-semibold text-[var(--foreground)] md:text-2xl">{industry.title}</h3>
                 <p className="mt-3 max-w-prose text-sm leading-relaxed text-[var(--muted)] md:text-base">{industry.description}</p>
@@ -40,6 +60,7 @@ export default function IndustriesPreview() {
                     <p className="mt-2 text-sm text-[var(--foreground)]">Coordinated equipment flow for active field operations and time-sensitive handoffs.</p>
                   </div>
                 ) : null}
+                </div>
               </article>
             );
           })}

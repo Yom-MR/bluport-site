@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -42,6 +43,27 @@ export default function IndustriesPage() {
             title="Built for teams where downtime is not an option."
             description="Bluport supports field teams, operators, project managers, and infrastructure crews that depend on timely movement of critical assets."
           />
+        </Container>
+      </section>
+
+      <section className="section-shell pt-0">
+        <Container>
+          <article className="glass-card relative min-h-[320px] overflow-hidden rounded-2xl p-6 md:min-h-[360px] md:p-8">
+            <Image
+              src="/images/backgrounds/infrastructure-night.jpg"
+              alt="Representative infrastructure operations environment"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(2,8,23,0.88)_10%,rgba(2,8,23,0.46)_58%,rgba(2,8,23,0.78)_100%)]" />
+            <div className="relative z-10 max-w-2xl">
+              <p className="technical-label text-[var(--cyan)]">FIELD ENVIRONMENT VISUAL</p>
+              <h3 className="mt-3 text-2xl font-semibold text-[var(--foreground)] md:text-3xl">
+                Built for operations where schedule integrity is mission critical.
+              </h3>
+            </div>
+          </article>
         </Container>
       </section>
 

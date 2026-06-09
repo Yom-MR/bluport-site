@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 
@@ -14,25 +15,19 @@ const operationsStack = ["Dispatch", "Securement", "Tracking", "POD"];
 export default function Hero() {
   return (
     <section id="mission" className="section-shell hero-glow overflow-hidden">
-      {/*
-       * === HERO VISUAL LAYER ===
-       * This is a CSS-only placeholder that adds industrial depth and atmosphere
-       * behind the hero content. Replace this entire div with a real asset when ready:
-       *
-       * Option A — Static image:
-       *   import Image from "next/image";
-       *   import heroBg from "@/../../public/images/backgrounds/hero-truck-trailer.jpg";
-       *   <Image src={heroBg} alt="" fill className="object-cover object-right opacity-20" priority />
-       *
-       * Option B — Video loop:
-       *   <video autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover opacity-15">
-       *     <source src="/video/hero-loop.mp4" type="video/mp4" />
-       *   </video>
-       *
-       * See: public/images/README.md and src/data/mediaGuide.ts
-       * === END HERO VISUAL LAYER ===
-       */}
-      <div aria-hidden className="hero-image-layer" />
+      <div aria-hidden className="absolute inset-0 z-0">
+        <Image
+          src="/images/backgrounds/hero-equipment-transport.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,8,23,0.9)_0%,rgba(2,8,23,0.62)_48%,rgba(2,8,23,0.55)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,23,0.18)_0%,rgba(2,8,23,0)_48%,rgba(2,8,23,0.92)_100%)]" />
+        <div className="absolute right-[-8%] top-[-10%] h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.22),transparent_68%)] blur-xl" />
+      </div>
       <Container>
         <div className="grid items-start gap-8 lg:grid-cols-[1.15fr_0.95fr] lg:gap-10">
           <div className="relative z-10 max-w-3xl space-y-7 pt-2">

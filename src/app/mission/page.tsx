@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -44,6 +45,31 @@ export default function MissionPage() {
             title="Veteran-led logistics for critical assets."
             description="Bluport exists to move the equipment, materials, and field-support assets that keep projects, crews, and infrastructure moving."
           />
+        </Container>
+      </section>
+
+      <section className="section-shell pt-0">
+        <Container>
+          <article className="glass-card relative min-h-[320px] overflow-hidden rounded-2xl p-6 md:min-h-[380px] md:p-8">
+            <Image
+              src="/images/fleet/heavy-equipment-transport.jpg"
+              alt="Representative mission-critical equipment transport scene"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(2,8,23,0.88)_12%,rgba(2,8,23,0.45)_58%,rgba(2,8,23,0.75)_100%)]" />
+            <div className="relative z-10 max-w-2xl">
+              <p className="technical-label text-[var(--cyan)]">VETERAN-LED EXECUTION</p>
+              <h3 className="mt-3 text-2xl font-semibold text-[var(--foreground)] md:text-3xl">
+                Operational discipline from objective to closeout.
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-[rgba(226,232,240,0.9)] md:text-base">
+                Representative field transport visual: a reminder that mission outcomes depend on
+                planning quality, communication rhythm, and execution reliability.
+              </p>
+            </div>
+          </article>
         </Container>
       </section>
 

@@ -3,7 +3,6 @@ import FieldOperations from "@/components/sections/FieldOperations";
 import FutureVision from "@/components/sections/FutureVision";
 import Hero from "@/components/sections/Hero";
 import IndustriesPreview from "@/components/sections/IndustriesPreview";
-import MediaReadiness from "@/components/sections/MediaReadiness";
 import OperatingPrinciples from "@/components/sections/OperatingPrinciples";
 import RequestCapacity from "@/components/sections/RequestCapacity";
 import ServicesPreview from "@/components/sections/ServicesPreview";
@@ -21,7 +20,6 @@ export default function Home() {
       <WhyBluport />
       <OperatingPrinciples />
       <FutureVision />
-      <MediaReadiness />
       <RequestCapacity />
       <CTA />
     </>
