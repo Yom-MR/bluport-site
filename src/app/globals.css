@@ -144,8 +144,9 @@ textarea:focus-visible {
   position: relative;
   border-top: 1px solid rgba(148, 163, 184, 0.09);
   border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-  padding-top: 4.75rem;
-  padding-bottom: 4.75rem;
+  padding-top: 5.25rem;
+  padding-bottom: 5.25rem;
+  box-shadow: inset 0 22px 34px rgba(2, 8, 23, 0.06);
 }
 
 .section-shell::before {
@@ -163,7 +164,9 @@ textarea:focus-visible {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.05), transparent 35%);
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.08), transparent 30%),
+    linear-gradient(160deg, transparent 72%, rgba(14, 165, 233, 0.06) 100%);
 }
 
 .section-dark {
@@ -191,10 +194,6 @@ textarea:focus-visible {
 .image-card {
   min-height: 220px;
   box-shadow: 0 18px 34px rgba(2, 8, 23, 0.25);
-}
-
-.credibility-strip li {
-  flex: 1 1 160px;
 }
 
 .eyebrow {
@@ -322,8 +321,8 @@ textarea:focus-visible {
 
 @media (max-width: 768px) {
   .section-shell {
-    padding-top: 3.25rem;
-    padding-bottom: 3.25rem;
+    padding-top: 3.65rem;
+    padding-bottom: 3.65rem;
   }
 
   .hero-glow::before {

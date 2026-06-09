@@ -11,7 +11,7 @@ export default function Navbar() {
         <Link
           href="/"
           aria-label="BPL Bluport home"
-          className="flex min-w-[170px] items-center rounded-xl border border-[rgba(148,163,184,0.12)] bg-[rgba(6,26,51,0.34)] px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+          className="flex min-w-[230px] items-center rounded-xl border border-[rgba(148,163,184,0.16)] bg-[rgba(6,26,51,0.46)] px-4 py-2.5 shadow-[0_8px_20px_rgba(2,8,23,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
         >
           <BrandLogo variant="navbar" />
         </Link>

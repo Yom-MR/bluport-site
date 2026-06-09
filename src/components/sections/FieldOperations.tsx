@@ -33,10 +33,11 @@ export default function FieldOperations() {
           src={siteImages.fieldOperations}
           alt=""
           fill
-          className="object-cover object-center opacity-25"
+          className="object-cover object-[72%_52%] opacity-16"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(2,8,23,0.92)_14%,rgba(2,8,23,0.82)_58%,rgba(2,8,23,0.92)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(2,8,23,0.95)_14%,rgba(2,8,23,0.88)_56%,rgba(2,8,23,0.9)_100%)]" />
+        <div className="absolute inset-y-0 right-0 w-[38%] bg-[linear-gradient(90deg,transparent,rgba(14,165,233,0.16)_70%,rgba(14,165,233,0.08)_100%)]" />
       </div>
       <Container className="space-y-10">
         <SectionHeader
@@ -49,7 +50,7 @@ export default function FieldOperations() {
               {blocks.map(({ Icon, title, description }) => (
                 <article
                   key={title}
-                  className="rounded-2xl border border-[var(--border)] bg-[rgba(15,23,42,0.62)] p-6 transition-colors hover:border-[rgba(14,165,233,0.35)]"
+                  className="rounded-xl border border-[var(--border)] bg-[rgba(15,23,42,0.52)] p-5 transition-colors hover:border-[rgba(14,165,233,0.35)]"
                 >
                   <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border)] bg-[rgba(14,165,233,0.07)]">
                     <Icon size={18} className="text-[var(--cyan)]" strokeWidth={1.7} />

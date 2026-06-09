@@ -72,7 +72,7 @@ export default function ServicesPreview() {
           {serviceCards.map((service) => (
             <article
               key={service.title}
-              className="rounded-2xl border border-[var(--border)] bg-white p-6 shadow-[0_10px_24px_rgba(15,23,42,0.07)]"
+              className="rounded-xl border border-[rgba(148,163,184,0.26)] bg-[rgba(255,255,255,0.94)] p-5 shadow-[0_6px_16px_rgba(15,23,42,0.06)]"
             >
               <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.08em] text-[var(--cyan)] uppercase">
                 <ArrowRight size={14} />

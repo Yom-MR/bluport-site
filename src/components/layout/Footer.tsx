@@ -14,14 +14,14 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="border-t border-[var(--border)] bg-[var(--navy)]/40 py-10">
-      <Container className="space-y-5">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="space-y-2">
+    <footer id="contact" className="border-t border-[var(--border)] bg-[linear-gradient(180deg,#061a33,#071a2f)] py-12">
+      <Container className="space-y-6">
+        <div className="flex flex-wrap items-center justify-between gap-6">
+          <div className="space-y-3">
             <BrandLogo variant="footer" />
             <p className="text-sm text-[var(--muted)]">{SITE_TAGLINE}</p>
           </div>
-          <nav className="flex flex-wrap gap-x-5 gap-y-2">
+          <nav className="flex flex-wrap gap-x-6 gap-y-2">
             {footerLinks.map((link) => (
               <Link
                 key={link.label}

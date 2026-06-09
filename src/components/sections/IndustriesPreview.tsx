@@ -29,14 +29,20 @@ export default function IndustriesPreview() {
           title="Industry coverage for equipment-heavy operations."
           description="Bluport supports construction, utilities, data center, and industrial work with practical field logistics built around schedule integrity."
         />
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-6">
           {industries.map((industry) => {
             const hasImage = Boolean(industryImages[industry.title]);
+            const layoutClass =
+              industry.title === "Construction & Equipment Rental"
+                ? "xl:col-span-3 xl:row-span-2 min-h-[420px]"
+                : industry.title === "Utilities & Infrastructure" || industry.title === "Industrial & Manufacturing"
+                  ? "xl:col-span-3 min-h-[200px]"
+                  : "xl:col-span-2 min-h-[220px]";
 
             return (
               <article
                 key={industry.title}
-                className="relative min-h-[290px] overflow-hidden rounded-2xl border border-[var(--border)] bg-[rgba(15,23,42,0.6)] p-6 transition-colors hover:border-[rgba(34,211,238,0.4)]"
+                className={`relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[rgba(15,23,42,0.6)] p-6 transition-colors hover:border-[rgba(34,211,238,0.4)] ${layoutClass}`}
               >
                 {hasImage ? (
                   <>
@@ -47,7 +53,7 @@ export default function IndustriesPreview() {
                       className="object-cover object-center"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,23,0.38)_0%,rgba(2,8,23,0.86)_78%)]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,23,0.32)_0%,rgba(2,8,23,0.9)_82%)]" />
                   </>
                 ) : (
                   <div className="absolute inset-0 bg-[linear-gradient(145deg,#0b1223,#1b2a43)]" />

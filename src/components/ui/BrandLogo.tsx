@@ -16,8 +16,8 @@ export default function BrandLogo({ variant = "navbar" }: BrandLogoProps) {
 
   const sizes =
     variant === "navbar"
-      ? { width: 152, height: 36, className: "h-9 w-auto" }
-      : { width: 124, height: 30, className: "h-7 w-auto" };
+      ? { width: 248, height: 60, className: "h-10 w-auto object-contain md:h-11" }
+      : { width: 220, height: 56, className: "h-9 w-auto object-contain md:h-10" };
 
   if (sourceIndex >= sources.length) {
     return (
@@ -31,14 +31,16 @@ export default function BrandLogo({ variant = "navbar" }: BrandLogoProps) {
   }
 
   return (
-    <Image
-      src={sources[sourceIndex]}
-      alt="BPL Bluport"
-      width={sizes.width}
-      height={sizes.height}
-      className={sizes.className}
-      priority={variant === "navbar"}
-      onError={() => setSourceIndex((current) => current + 1)}
-    />
+    <span className="inline-flex items-center">
+      <Image
+        src={sources[sourceIndex]}
+        alt="BPL Bluport"
+        width={sizes.width}
+        height={sizes.height}
+        className={sizes.className}
+        priority={variant === "navbar"}
+        onError={() => setSourceIndex((current) => current + 1)}
+      />
+    </span>
   );
 }

@@ -12,15 +12,15 @@ export default function Hero() {
           alt=""
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[58%_62%]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(102deg,rgba(2,8,23,0.93)_6%,rgba(2,8,23,0.82)_42%,rgba(2,8,23,0.58)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_14%,rgba(14,165,233,0.22),transparent_36%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,23,0.2)_0%,rgba(2,8,23,0.55)_72%,rgba(2,8,23,0.84)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(104deg,rgba(2,8,23,0.94)_8%,rgba(2,8,23,0.82)_44%,rgba(2,8,23,0.58)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_8%,rgba(14,165,233,0.24),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,23,0.24)_0%,rgba(2,8,23,0.52)_62%,rgba(2,8,23,0.88)_100%)]" />
       </div>
       <Container>
-        <div className="relative z-10 max-w-3xl space-y-7 py-6">
+        <div className="relative z-10 max-w-3xl space-y-7 py-8 md:py-10">
             <p className="eyebrow">VETERAN-OWNED HOTSHOT &amp; EQUIPMENT LOGISTICS</p>
             <h1 className="text-balance text-[2.85rem] leading-[0.96] font-semibold tracking-[-0.04em] md:text-[4.75rem]">
               Move the equipment. <span className="text-gradient">Keep the job moving.</span>

@@ -1,13 +1,37 @@
 import Container from "@/components/ui/Container";
+import { Award, ClipboardCheck, FileCheck, MapPin, ShieldCheck, Truck } from "lucide-react";
 
 const trustItems = [
-  "Veteran-owned",
-  "Houston-based",
-  "Ford F-350 fleet",
-  "40' power tilt trailers",
-  "TWIC-certified personnel",
-  "$1M auto / $250K cargo coverage",
-  "$2M general liability aggregate",
+  {
+    title: "Veteran-owned",
+    description: "Veteran-led operating discipline.",
+    Icon: Award,
+  },
+  {
+    title: "Houston-based",
+    description: "Serving equipment-heavy operations across Texas and beyond.",
+    Icon: MapPin,
+  },
+  {
+    title: "Ford F-350 fleet",
+    description: "Hotshot capability built around dependable truck platforms.",
+    Icon: Truck,
+  },
+  {
+    title: "40' power tilt trailers",
+    description: "Built for equipment, attachments, and field-support assets.",
+    Icon: ShieldCheck,
+  },
+  {
+    title: "TWIC-certified personnel",
+    description: "Ready for port and secure-facility requirements.",
+    Icon: ClipboardCheck,
+  },
+  {
+    title: "Insured commercial operations",
+    description: "$1M auto, $250K cargo, and $2M general liability aggregate.",
+    Icon: FileCheck,
+  },
 ];
 
 export default function TrustBar() {
@@ -20,13 +44,19 @@ export default function TrustBar() {
             Operating credentials
           </h2>
         </header>
-        <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {trustItems.map((item) => (
             <li
-              key={item}
-              className="rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-sm font-semibold text-[var(--foreground)] shadow-[0_8px_20px_rgba(15,23,42,0.07)]"
+              key={item.title}
+              className="flex items-start gap-3 rounded-xl border border-[rgba(148,163,184,0.26)] bg-[linear-gradient(145deg,#ffffff,#f6f9fc)] px-4 py-4 shadow-[0_12px_24px_rgba(15,23,42,0.08)]"
             >
-              {item}
+              <span className="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-[rgba(14,165,233,0.24)] bg-[rgba(14,165,233,0.1)] text-[var(--blue)]">
+                <item.Icon size={18} strokeWidth={1.9} />
+              </span>
+              <span>
+                <p className="text-sm font-semibold text-[var(--foreground)]">{item.title}</p>
+                <p className="mt-1 text-xs leading-relaxed text-[var(--muted)]">{item.description}</p>
+              </span>
             </li>
           ))}
         </ul>

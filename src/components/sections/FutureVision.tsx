@@ -38,20 +38,20 @@ export default function FutureVision() {
           title="Ground-first today. Multimodal tomorrow."
           description="Bluport is focused first on specialized ground logistics and equipment movement, with a long-term vision to support broader mission-critical freight across additional modes."
         />
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {modes.map((mode) => (
             <article
               key={mode.title}
               className={`rounded-2xl border p-6 ${
                 mode.status === "Active"
-                  ? "border-[rgba(34,211,238,0.35)] bg-[linear-gradient(150deg,rgba(14,165,233,0.14),rgba(255,255,255,0.96))] shadow-[0_12px_30px_rgba(14,165,233,0.1)]"
+                  ? "border-[rgba(34,211,238,0.35)] bg-[linear-gradient(150deg,rgba(14,165,233,0.14),rgba(255,255,255,0.96))]"
                   : mode.status === "Near-term"
                     ? "border-[rgba(59,130,246,0.35)] bg-[rgba(239,246,255,0.96)]"
                     : "border-[var(--border)] bg-white"
               }`}
             >
               <div className="flex items-center justify-between gap-2">
-                <h3 className="text-xl font-semibold text-[var(--foreground)]">{mode.title}</h3>
+                <h3 className="text-lg font-semibold text-[var(--foreground)]">{mode.title}</h3>
                 <span
                   className={`rounded-full px-2.5 py-1 text-[10px] font-semibold tracking-[0.14em] uppercase ${
                     mode.status === "Active"
@@ -64,7 +64,7 @@ export default function FutureVision() {
                   {mode.status}
                 </span>
               </div>
-              <p className="mt-4 text-sm text-[var(--muted)]">{mode.description}</p>
+              <p className="mt-3 text-sm text-[var(--muted)]">{mode.description}</p>
             </article>
           ))}
         </div>
