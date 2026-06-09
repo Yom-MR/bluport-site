@@ -13,8 +13,8 @@ export default function BrandLogo({ variant = "light", placement = "navbar" }: B
   const sources = useMemo(
     () =>
       variant === "light"
-        ? ["/images/brand/bpl-logo-transparent-white.png", "/images/brand/bpl-logo-white.png", "/images/brand/bpl-logo-white.svg"]
-        : ["/images/brand/bpl-logo-transparent-black.png", "/images/brand/bpl-logo-black.png"],
+        ? ["/images/brand/BPL White png.png", "/images/brand/bpl-logo-transparent-white.png", "/images/brand/bpl-logo-white.png"]
+        : ["/images/brand/BPL Black png.png", "/images/brand/bpl-logo-transparent-black.png", "/images/brand/bpl-logo-black.png"],
     [variant],
   );
 
@@ -25,11 +25,8 @@ export default function BrandLogo({ variant = "light", placement = "navbar" }: B
 
   if (sourceIndex >= sources.length) {
     return (
-      <span className="flex flex-col leading-none">
-        <span className="text-[10px] font-bold tracking-[0.18em] text-[var(--cyan)]">BPL</span>
-        <span className="mt-1 text-sm font-semibold tracking-[0.04em] text-[var(--foreground)]">
-          Bluport
-        </span>
+      <span className="text-sm font-semibold tracking-[0.08em] text-[var(--foreground)] uppercase">
+        Bluport Logistics
       </span>
     );
   }

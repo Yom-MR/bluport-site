@@ -1,20 +1,20 @@
-import HomeFleetFeature from "@/components/sections/HomeFleetFeature";
-import HomeHero from "@/components/sections/HomeHero";
-import HomeIndustries from "@/components/sections/HomeIndustries";
-import HomeOperatingModel from "@/components/sections/HomeOperatingModel";
-import HomeProof from "@/components/sections/HomeProof";
-import HomeServicesStory from "@/components/sections/HomeServicesStory";
+import CapabilityStatement from "@/components/sections/CapabilityStatement";
+import FleetFeature from "@/components/sections/FleetFeature";
+import Hero from "@/components/sections/Hero";
+import IndustriesEditorial from "@/components/sections/IndustriesEditorial";
+import OperatingStandard from "@/components/sections/OperatingStandard";
 import RequestCapacity from "@/components/sections/RequestCapacity";
+import ServicesEditorial from "@/components/sections/ServicesEditorial";
 
 export default function Home() {
   return (
     <>
-      <HomeHero />
-      <HomeProof />
-      <HomeServicesStory />
-      <HomeFleetFeature />
-      <HomeIndustries />
-      <HomeOperatingModel />
+      <Hero />
+      <CapabilityStatement />
+      <FleetFeature />
+      <ServicesEditorial />
+      <IndustriesEditorial />
+      <OperatingStandard />
       <RequestCapacity />
     </>
   );

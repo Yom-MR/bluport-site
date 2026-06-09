@@ -6,12 +6,12 @@ import { NAV_LINKS } from "@/lib/constants";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-[rgba(148,163,184,0.18)] bg-[rgba(4,17,33,0.86)] backdrop-blur-xl">
-      <Container className="flex flex-wrap items-center justify-between gap-3 py-3">
+    <nav className="sticky top-0 z-50 border-b border-[rgba(148,163,184,0.14)] bg-[rgba(4,17,33,0.76)] backdrop-blur-xl">
+      <Container className="flex flex-wrap items-center justify-between gap-3 py-2.5">
         <Link
           href="/"
           aria-label="BPL Bluport home"
-          className="flex min-w-[210px] items-center px-1 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+          className="flex min-w-[214px] items-center py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
         >
           <BrandLogo variant="light" placement="navbar" />
         </Link>
@@ -23,14 +23,14 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="group relative pb-1 text-[11px] font-medium tracking-[0.12em] text-[var(--muted)] uppercase transition-colors hover:text-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+                className="group relative pb-1 text-[10px] font-medium tracking-[0.12em] text-[var(--muted)] uppercase transition-colors hover:text-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
               >
                 {link.label}
                 <span className="absolute right-0 bottom-0 h-px w-0 bg-[var(--cyan)] shadow-[0_0_10px_rgba(34,211,238,0.45)] transition-all duration-200 group-hover:left-0 group-hover:w-full" />
               </Link>
             ))}
           </div>
-          <Button href="/#request-capacity" className="px-4 py-2 text-xs uppercase">
+          <Button href="/#request-capacity" className="px-4 py-2 text-[11px] uppercase">
             Request Capacity
           </Button>
         </div>

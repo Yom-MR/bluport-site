@@ -46,7 +46,7 @@ const initialFormData: RequestCapacityFormData = {
 
 const labelClass = "technical-label mb-2 block text-[0.64rem] text-[var(--foreground)]";
 const inputClass =
-  "w-full rounded-xl border border-[var(--border)] bg-[rgba(2,8,23,0.62)] px-3 py-2.5 text-sm text-[var(--foreground)] outline-none transition-colors placeholder:text-[rgba(148,163,184,0.55)] focus:border-[rgba(34,211,238,0.65)] focus:ring-2 focus:ring-[rgba(14,165,233,0.2)]";
+  "w-full rounded-xl border border-[rgba(148,163,184,0.35)] bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-[rgba(14,165,233,0.7)] focus:ring-2 focus:ring-[rgba(14,165,233,0.15)]";
 
 export default function RequestCapacityForm() {
   const [formData, setFormData] = useState<RequestCapacityFormData>(initialFormData);
@@ -95,12 +95,12 @@ export default function RequestCapacityForm() {
 
   if (isSubmitted) {
     return (
-      <div className="glass-card rounded-2xl p-6 md:p-7" role="status" aria-live="polite">
-        <p className="technical-label text-[var(--cyan)]">INTAKE STATUS</p>
-        <h3 className="mt-3 text-xl font-semibold text-[var(--foreground)]">
+      <div className="rounded-2xl border border-[rgba(148,163,184,0.3)] bg-white p-6 md:p-7" role="status" aria-live="polite">
+        <p className="technical-label text-[var(--blue)]">INTAKE STATUS</p>
+        <h3 className="mt-3 text-xl font-semibold text-slate-900">
           Mission request received. Bluport operations will review the details and follow up.
         </h3>
-        <p className="mt-4 text-sm leading-relaxed text-[var(--muted)]">
+        <p className="mt-4 text-sm leading-relaxed text-slate-600">
           A confirmation has been routed to our operations inbox.
         </p>
         <button
@@ -109,7 +109,7 @@ export default function RequestCapacityForm() {
             setIsSubmitted(false);
             setSubmitError("");
           }}
-          className="mt-6 inline-flex rounded-xl border border-[var(--border)] bg-[rgba(6,26,51,0.5)] px-4 py-2.5 text-xs font-semibold tracking-[0.12em] text-[var(--foreground)] uppercase transition-colors hover:border-[rgba(34,211,238,0.45)]"
+          className="mt-6 inline-flex rounded-xl border border-[rgba(148,163,184,0.35)] bg-white px-4 py-2.5 text-xs font-semibold tracking-[0.12em] text-slate-900 uppercase transition-colors hover:border-[rgba(14,165,233,0.45)]"
         >
           Submit Another Request
         </button>
@@ -118,11 +118,11 @@ export default function RequestCapacityForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-5 md:p-7" noValidate>
+    <form onSubmit={handleSubmit} className="rounded-2xl border border-[rgba(148,163,184,0.25)] bg-white p-5 md:p-7" noValidate>
       <div className="grid gap-6">
-        <p className="text-xs text-[rgba(148,163,184,0.78)]">Required fields are marked with *.</p>
+        <p className="text-xs text-slate-500">Required fields are marked with *.</p>
         <div>
-          <p className="technical-label text-[var(--cyan)]">CONTACT INFORMATION</p>
+          <p className="technical-label text-[var(--blue)]">CONTACT INFORMATION</p>
           <div className="mt-3 grid gap-4 md:grid-cols-2">
             <div>
               <label className={labelClass} htmlFor="fullName">
@@ -188,7 +188,7 @@ export default function RequestCapacityForm() {
         </div>
 
         <div className="soft-divider pt-5">
-          <p className="technical-label text-[var(--cyan)]">MOVE DETAILS</p>
+          <p className="technical-label text-[var(--blue)]">MOVE DETAILS</p>
           <div className="mt-3 grid gap-4 md:grid-cols-2">
             <div>
               <label className={labelClass} htmlFor="pickupLocation">
@@ -331,7 +331,7 @@ export default function RequestCapacityForm() {
         </div>
 
         <div className="soft-divider pt-5">
-          <p className="technical-label text-[var(--cyan)]">ADDITIONAL DETAILS</p>
+          <p className="technical-label text-[var(--blue)]">ADDITIONAL DETAILS</p>
           <div className="mt-3 grid gap-4 md:grid-cols-2">
             <div className="md:col-span-2">
               <label className={labelClass} htmlFor="notes">
@@ -379,11 +379,11 @@ export default function RequestCapacityForm() {
           <button
             type="submit"
             disabled={isSending}
-            className="inline-flex rounded-xl bg-[var(--blue)] px-5 py-3 text-xs font-semibold tracking-[0.12em] text-[var(--foreground)] uppercase shadow-[0_12px_24px_rgba(14,165,233,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[var(--cyan)]"
+            className="inline-flex rounded-xl bg-[var(--blue)] px-5 py-3 text-xs font-semibold tracking-[0.12em] text-white uppercase shadow-[0_12px_24px_rgba(14,165,233,0.26)] transition-all hover:-translate-y-0.5 hover:bg-[var(--cyan)]"
           >
             {isSending ? "Sending..." : "Submit Request"}
           </button>
-          <p className="mt-3 text-xs leading-relaxed text-[rgba(148,163,184,0.72)]">
+          <p className="mt-3 text-xs leading-relaxed text-slate-500">
             Submissions are sent securely to Bluport operations for review.
           </p>
         </div>

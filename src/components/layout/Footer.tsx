@@ -14,10 +14,10 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="border-t border-[rgba(148,163,184,0.2)] bg-[linear-gradient(180deg,#071629,#061426)] py-12">
-      <Container className="space-y-6">
+    <footer id="contact" className="border-t border-[rgba(148,163,184,0.14)] bg-[linear-gradient(180deg,#071629,#061426)] py-10">
+      <Container className="space-y-5">
         <div className="flex flex-wrap items-center justify-between gap-6">
-          <div className="space-y-3">
+          <div className="space-y-2">
             <BrandLogo variant="light" placement="footer" />
             <p className="text-sm text-[var(--muted)]">{SITE_TAGLINE}</p>
           </div>

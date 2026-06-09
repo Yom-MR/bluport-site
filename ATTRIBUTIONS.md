@@ -8,7 +8,10 @@
 2. public/images/loads/IMG_0364.JPEG
 - Source: Bluport Logistics owned media
 
-3. public/images/loads/IMG_1406.JPEG
+3. public/images/loads/IMG_0426.JPEG
+- Source: Bluport Logistics owned media
+
+4. public/images/loads/IMG_5849.PNG
 - Source: Bluport Logistics owned media
 
 ## Stock images still in use
