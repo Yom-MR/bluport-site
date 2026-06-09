@@ -116,7 +116,7 @@ Notes / Constraints: ${displayValue(payload.notes)}
 
   try {
     await resend.emails.send({
-      from: "Bluport Intake <onboarding@resend.dev>",
+      from: "Bluport Operations <intake@bluport.us>",
       to: operationsEmail,
       replyTo: payload.email,
       subject: "New Request Capacity Submission — Bluport Logistics",
