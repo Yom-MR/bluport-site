@@ -17,7 +17,7 @@ export default function CTA() {
           <div className="soft-divider mt-6 grid gap-3 pt-5 text-sm md:grid-cols-2">
             <p className="text-[var(--muted)]">
               <span className="technical-label mr-2">Operations</span>
-              <span className="text-[var(--foreground)]">support@bluport.us</span>
+              <span className="text-[var(--foreground)]">booking@bluport.us</span>
             </p>
             <p className="text-[var(--muted)]">
               <span className="technical-label mr-2">Response</span>

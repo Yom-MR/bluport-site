@@ -9,7 +9,7 @@ const blocks = [
     Icon: Truck,
     title: "Equipment-ready transport",
     description:
-      "Hotshot and specialized transport for equipment, attachments, tools, and project-critical assets.",
+      "Hotshot movement for machines, attachments, tools, trailers, and field-support assets.",
   },
   {
     Icon: Clock,
@@ -27,75 +27,55 @@ const blocks = [
 
 export default function FieldOperations() {
   return (
-    <section id="field-operations" className="section-shell section-dark section-split">
+    <section id="field-operations" className="section-shell section-dark section-split overflow-hidden">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <Image
+          src={siteImages.fieldOperations}
+          alt=""
+          fill
+          className="object-cover object-center opacity-25"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(2,8,23,0.92)_14%,rgba(2,8,23,0.82)_58%,rgba(2,8,23,0.92)_100%)]" />
+      </div>
       <Container className="space-y-10">
         <SectionHeader
           eyebrow="FIELD OPERATIONS"
           title="Field-ready logistics for equipment-driven work."
           description="A delayed attachment, machine, trailer, or support asset can hold up the entire crew. Bluport focuses on the details that keep jobsites moving."
         />
-        <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-5">
-            <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+        <div className="space-y-5">
+          <div className="grid gap-4 md:grid-cols-3">
               {blocks.map(({ Icon, title, description }) => (
                 <article
                   key={title}
-                  className="rounded-2xl border border-[var(--border)] bg-[rgba(15,23,42,0.55)] p-6 transition-colors hover:border-[rgba(14,165,233,0.35)]"
+                  className="rounded-2xl border border-[var(--border)] bg-[rgba(15,23,42,0.62)] p-6 transition-colors hover:border-[rgba(14,165,233,0.35)]"
                 >
                   <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border)] bg-[rgba(14,165,233,0.07)]">
                     <Icon size={18} className="text-[var(--cyan)]" strokeWidth={1.7} />
                   </div>
                   <h3 className="text-lg font-semibold text-[var(--foreground)]">{title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{description}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-[rgba(226,232,240,0.86)]">{description}</p>
                 </article>
               ))}
             </div>
 
-            {/* Operational Proof — field spec card */}
-            <div className="glass-card rounded-2xl p-5 md:p-6">
-              <p className="technical-label mb-4 text-[var(--foreground)]">OPERATIONAL SPECIFICATIONS</p>
-              <dl className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
-                {[
-                  { label: "Asset Class", value: "Equipment / Attachments / Field Support" },
-                  { label: "Trailer Type", value: "40\u2019 Power Tilt" },
-                  { label: "Operating Base", value: "Houston, Texas" },
-                  { label: "Dispatch Model", value: "Rapid Response / Scheduled Capacity" },
-                ].map(({ label, value }) => (
-                  <div key={label} className="flex flex-col gap-1 border-l border-[rgba(34,211,238,0.14)] pl-3">
-                    <dt className="technical-label text-[0.62rem]">{label}</dt>
-                    <dd className="text-sm font-medium text-[var(--foreground)]">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
+          <div className="glass-card rounded-2xl p-5 md:p-6">
+            <p className="technical-label mb-4 text-[var(--foreground)]">OPERATIONAL SPECIFICATIONS</p>
+            <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              {[
+                { label: "Asset class", value: "Equipment / Attachments / Field Support" },
+                { label: "Trailer type", value: "40' Power Tilt" },
+                { label: "Operating base", value: "Houston, Texas" },
+                { label: "Dispatch model", value: "Rapid Response / Scheduled Capacity" },
+              ].map(({ label, value }) => (
+                <div key={label} className="rounded-lg border border-[rgba(148,163,184,0.2)] bg-[rgba(2,8,23,0.32)] p-3">
+                  <dt className="technical-label text-[0.62rem]">{label}</dt>
+                  <dd className="mt-1 text-sm font-medium text-[var(--foreground)]">{value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
-
-          <aside className="glass-card relative min-h-[420px] overflow-hidden rounded-2xl">
-            <Image
-              src={siteImages.fieldOperations}
-              alt="Bluport field operations load and trailer"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 42vw"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,23,0.15)_0%,rgba(2,8,23,0.45)_55%,rgba(2,8,23,0.88)_100%)]" />
-            <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "FIELD READY",
-                  "SECUREMENT",
-                  "DISPATCH COORDINATED",
-                ].map((label) => (
-                  <span
-                    key={label}
-                    className="technical-label rounded-full border border-[rgba(34,211,238,0.28)] bg-[rgba(2,8,23,0.65)] px-3 py-1.5 text-[var(--foreground)]"
-                  >
-                    {label}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </aside>
         </div>
       </Container>
     </section>

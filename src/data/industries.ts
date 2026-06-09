@@ -16,6 +16,11 @@ export const industries: Industry[] = [
     signal: "Response readiness",
   },
   {
+    title: "Data Center Construction",
+    description: "Support for equipment and site logistics tied to schedule-sensitive infrastructure buildouts.",
+    signal: "Schedule protection",
+  },
+  {
     title: "Industrial & Manufacturing",
     description: "Inbound and outbound movement support where production schedules depend on timely delivery.",
     signal: "Downtime reduction",
