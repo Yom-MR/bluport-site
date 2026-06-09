@@ -12,8 +12,12 @@
 - [ ] GitHub repo connected
 - [ ] framework detected as Next.js
 - [ ] environment variables added if used
+- [ ] Resend API key added to Vercel
+- [ ] Operations email confirmed
 - [ ] production domain configured
 - [ ] form integration connected before launch
+- [ ] Test request submitted on production
+- [ ] Email received by operations inbox
 - [ ] analytics configured
 - [ ] SEO metadata reviewed
 

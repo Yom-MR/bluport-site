@@ -51,6 +51,8 @@ const inputClass =
 export default function RequestCapacityForm() {
   const [formData, setFormData] = useState<RequestCapacityFormData>(initialFormData);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
@@ -62,10 +64,33 @@ export default function RequestCapacityForm() {
     }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setIsSubmitted(true);
-    setFormData(initialFormData);
+    setSubmitError("");
+    setIsSending(true);
+
+    try {
+      const response = await fetch("/api/request-capacity", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request submission failed");
+      }
+
+      setIsSubmitted(true);
+      setFormData(initialFormData);
+    } catch {
+      setSubmitError(
+        "We couldn't send the request. Please try again or contact support@bluport.us.",
+      );
+    } finally {
+      setIsSending(false);
+    }
   };
 
   if (isSubmitted) {
@@ -81,7 +106,10 @@ export default function RequestCapacityForm() {
         </p>
         <button
           type="button"
-          onClick={() => setIsSubmitted(false)}
+          onClick={() => {
+            setIsSubmitted(false);
+            setSubmitError("");
+          }}
           className="mt-6 inline-flex rounded-xl border border-[var(--border)] bg-[rgba(6,26,51,0.5)] px-4 py-2.5 text-xs font-semibold tracking-[0.12em] text-[var(--foreground)] uppercase transition-colors hover:border-[rgba(34,211,238,0.45)]"
         >
           Submit Another Request
@@ -341,11 +369,20 @@ export default function RequestCapacityForm() {
         </div>
 
         <div className="soft-divider pt-5">
+          {submitError ? (
+            <div
+              className="mb-4 rounded-xl border border-[rgba(239,68,68,0.45)] bg-[rgba(127,29,29,0.2)] px-4 py-3 text-sm text-[var(--foreground)]"
+              role="alert"
+            >
+              {submitError}
+            </div>
+          ) : null}
           <button
             type="submit"
+            disabled={isSending}
             className="inline-flex rounded-xl bg-[var(--blue)] px-5 py-3 text-xs font-semibold tracking-[0.12em] text-[var(--foreground)] uppercase shadow-[0_12px_24px_rgba(14,165,233,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[var(--cyan)]"
           >
-            Submit Request
+            {isSending ? "Sending..." : "Submit Request"}
           </button>
           <p className="mt-3 text-xs leading-relaxed text-[rgba(148,163,184,0.72)]">
             This form is currently configured as a front-end intake prototype. Connect to HubSpot,

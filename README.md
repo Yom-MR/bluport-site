@@ -50,6 +50,14 @@ The current MediaReadiness section is a temporary production checklist and shoul
 ## Request Capacity Form
 The current Request Capacity form is front-end only. Before production, connect it to HubSpot, Zoho, Resend, Supabase, or a custom API route.
 
+## Request Capacity Email Notifications
+- The form posts to `/api/request-capacity`.
+- Resend sends the notification email to operations.
+- Required environment variables:
+	- `RESEND_API_KEY`
+	- `OPERATIONS_EMAIL`
+- These must be added in Vercel before production submissions will work.
+
 ## Future Integrations
 - CRM integration
 - Email notifications
