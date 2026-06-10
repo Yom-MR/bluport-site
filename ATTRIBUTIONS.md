@@ -1,5 +1,12 @@
 # Media Attributions
 
+## New hero image (active homepage usage)
+
+1. public/images/backgrounds/hero-premium-industrial.jpg
+- Source URL: https://unsplash.com/photos/yellow-and-black-excavator-on-brown-sand-during-daytime-bGMyTnSlYvE
+- Creator: EESOFUFFZICH (Unsplash profile: https://unsplash.com/@eesofuffzich)
+- License/source note: Downloaded from Unsplash and used under the Unsplash License (https://unsplash.com/license)
+
 ## Bluport-owned media (active homepage usage)
 
 1. public/images/loads/IMG_0914.JPEG
