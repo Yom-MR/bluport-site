@@ -16,14 +16,6 @@ const fleetRows = [
     value: "Houston, Texas",
   },
   {
-    label: "Personnel readiness",
-    value: "TWIC-certified personnel",
-  },
-  {
-    label: "Coverage",
-    value: "$1M auto / $250K cargo / $2M GL aggregate",
-  },
-  {
     label: "Workflow",
     value: "intake, dispatch coordination, POD closeout",
   },
@@ -34,14 +26,14 @@ export default function FleetShowcase() {
     <section className="section-pad bg-[#031426] text-white">
       <Container className="space-y-11">
         <div className="max-w-[74ch] space-y-4">
-          <p className="eyebrow">FLEET + TRAILER</p>
+          <p className="eyebrow">PLATFORM OVERVIEW</p>
           <h2 className="section-title max-w-[16ch] text-white">
             Built around Ford F-350 hotshot capability.
           </h2>
           <p className="text-base leading-[1.65] text-[#c8d2dd]">
             Bluport&apos;s current fleet is built around Ford F-350 trucks and 40&apos; power tilt
-            trailers - a practical platform for equipment, attachments, trailers, and field-support
-            movement.
+            trailers for equipment, attachments, trailers, and field-support movement that needs a
+            disciplined operating rhythm.
           </p>
         </div>
 

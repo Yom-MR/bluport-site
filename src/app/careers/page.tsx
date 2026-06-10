@@ -121,10 +121,11 @@ export default function CareersPage() {
       >
         <div className="space-y-6">
           <p className="max-w-[66ch] text-base leading-8 text-slate-700 md:text-lg">
-            Bluport is building an operating culture that values professionalism in the field,
-            clear customer communication, and follow-through after the move is done.
+            Bluport welcomes qualified candidates from every background while intentionally
+            prioritizing military-connected talent for roles where discipline, resilience,
+            communication, and field accountability matter.
           </p>
-          <Button href="/contact">Contact Operations</Button>
+          <Button href="mailto:hr@bluport.us">Contact HR</Button>
         </div>
       </EditorialSection>
     </>
