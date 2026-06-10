@@ -39,8 +39,8 @@ export default function MissionPage() {
     <>
       <PageHero
         eyebrow="MISSION"
-        title="Veteran-led logistics for critical assets."
-        description="Bluport is built for equipment-heavy work where timing, communication, and closeout discipline matter as much as the truck."
+        title="Veteran-led logistics for critical field work."
+        description="Bluport exists to protect the mission behind the move: crews waiting on equipment, rental fleets serving customers, utilities restoring service, and projects working against time."
         image={siteImages.missionHero}
         imagePosition="object-[center_58%]"
         variant="dark"
@@ -48,15 +48,14 @@ export default function MissionPage() {
 
       <EditorialSection
         eyebrow="OPERATING BELIEF"
-        title="Schedule protection is part of the move."
-        description="Transportation is not just asset movement. It is schedule protection, field coordination, and accountability from request to closeout."
+        title="Transportation is schedule protection."
+        description="The truck is only one part of the outcome. Reliable movement depends on asset details, route planning, site access, securement, communication, and closeout discipline."
         variant="light"
         layout="stack"
       >
         <p className="max-w-[68ch] text-base leading-8 text-slate-700 md:text-lg">
-          Bluport plans around site access, asset fit, securement, timing windows, communication,
-          and closeout so the move supports the field operation instead of becoming another source
-          of friction.
+          Bluport is built around disciplined planning and operational follow-through so asset
+          movement supports the work around it instead of disrupting it.
         </p>
       </EditorialSection>
 
@@ -82,7 +81,7 @@ export default function MissionPage() {
       <EditorialSection
         eyebrow="NON-NEGOTIABLES"
         title="What Bluport refuses to ignore."
-        description="Reliable movement depends on details that are often skipped in rushed dispatch environments."
+        description="When these details are missed, delays and uncertainty follow."
         variant="light"
         layout="stack"
       >
@@ -91,7 +90,14 @@ export default function MissionPage() {
             <article key={item} className="rounded-2xl border border-[rgba(148,163,184,0.24)] bg-white/85 p-5">
               <p className="flex items-start gap-3 text-base leading-7 text-slate-700 md:text-lg">
                 <ShieldCheck size={18} aria-hidden className="mt-1 shrink-0 text-sky-700" />
-                <span>{item}</span>
+                <span>
+                  {item === "Site access details" && "Site access details - gate entry, yard instructions, and unloading conditions."}
+                  {item === "Equipment dimensions and weight" && "Equipment dimensions and weight - trailer fit, clearance, and handling assumptions."}
+                  {item === "Securement requirements" && "Securement requirements - tie-down method, handling sensitivity, and transit risk."}
+                  {item === "Delivery window constraints" && "Delivery window constraints - timing expectations aligned before dispatch."}
+                  {item === "Contact and handoff details" && "Contact and handoff details - who receives, who signs, and who confirms completion."}
+                  {item === "Documentation after delivery" && "Documentation after delivery - POD, follow-up, and closeout records."}
+                </span>
               </p>
             </article>
           ))}

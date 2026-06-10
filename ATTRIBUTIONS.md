@@ -25,10 +25,11 @@ Homepage usage map:
 - Industrial & Critical Facilities tile: public/images/jobsites/industrial-facility.jpg
 
 Route hero usage map:
-- Mission hero: public/images/backgrounds/hero-premium-industrial.jpg
-- Services hero: public/images/jobsites/equipment-yard.jpg
-- Industries hero: public/images/backgrounds/infrastructure-night.jpg
-- Careers hero: public/images/jobsites/industrial-jobsite.jpg
+- Mission hero: public/images/page-heroes/mission-process.jpg
+- Services hero: public/images/page-heroes/services-readiness.jpg
+- Industries hero: public/images/page-heroes/industries-infrastructure.jpg
+- Careers hero: public/images/page-heroes/careers-workforce.jpg
+- Contact hero: public/images/page-heroes/contact-operations.jpg
 
 1. public/images/jobsites/industry-construction-equipment.jpg
 - Source: Existing repository stock media (legacy import)
@@ -42,18 +43,22 @@ Route hero usage map:
 - Source: Existing repository stock media (legacy import)
 - Creator/URL: Not recorded in legacy metadata
 
-4. public/images/backgrounds/hero-premium-industrial.jpg
+4. public/images/page-heroes/mission-process.jpg
 - Source: Existing repository stock media (legacy import)
 - Creator/URL: Not recorded in legacy metadata
 
-5. public/images/jobsites/equipment-yard.jpg
+5. public/images/page-heroes/services-readiness.jpg
 - Source: Existing repository stock media (legacy import)
 - Creator/URL: Not recorded in legacy metadata
 
-6. public/images/backgrounds/infrastructure-night.jpg
+6. public/images/page-heroes/industries-infrastructure.jpg
 - Source: Existing repository stock media (legacy import)
 - Creator/URL: Not recorded in legacy metadata
 
-7. public/images/jobsites/industrial-jobsite.jpg
+7. public/images/page-heroes/careers-workforce.jpg
+- Source: Existing repository stock media (legacy import)
+- Creator/URL: Not recorded in legacy metadata
+
+8. public/images/page-heroes/contact-operations.jpg
 - Source: Existing repository stock media (legacy import)
 - Creator/URL: Not recorded in legacy metadata

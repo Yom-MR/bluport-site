@@ -85,8 +85,8 @@ export default function IndustriesPage() {
     <>
       <PageHero
         eyebrow="INDUSTRIES"
-        title="Built for teams where downtime is not an option."
-        description="Bluport supports field teams, infrastructure crews, project managers, and rental fleets that depend on timely movement of critical assets."
+        title="Built for sectors where downtime is expensive."
+        description="Bluport supports customers operating around crews, equipment availability, restoration timelines, production schedules, and critical-path project work."
         image={siteImages.industriesHero}
         imagePosition="object-[center_50%]"
         variant="dark"

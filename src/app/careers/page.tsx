@@ -69,7 +69,7 @@ export default function CareersPage() {
       <PageHero
         eyebrow="CAREERS"
         title="Build a logistics career with mission behind it."
-        description="Bluport is building a veteran-focused logistics company for drivers, dispatchers, operators, and leaders who want their work to matter."
+        description="Bluport is a veteran-owned logistics company building opportunities for disciplined, field-aware people who care about communication, accountability, and customer outcomes."
         image={siteImages.careersHero}
         imagePosition="object-[center_48%]"
         variant="dark"
@@ -112,9 +112,9 @@ export default function CareersPage() {
       </EditorialSection>
 
       <EditorialSection
-        eyebrow="VETERAN PATHWAY"
-        title="Veterans bring what logistics needs."
-        description="Veterans bring discipline, leadership, resilience, and accountability - traits that transfer directly into field logistics and customer communication."
+        eyebrow="MILITARY-CONNECTED TALENT"
+        title="Military-connected talent is part of the mission."
+        description="Bluport hires qualified people from all backgrounds, and we place a special focus on veterans, active duty service members, reservists, guardsmen, military spouses, and military families. The same standards apply to every role: safety, communication, accountability, and operational discipline."
         variant="light"
         layout="stack"
         className="border-b-0"

@@ -107,8 +107,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="SERVICES"
-        title="Specialized logistics for high-stakes movement."
-        description="From equipment transport to rapid response and project logistics, Bluport supports customers who cannot afford missed windows or poor communication."
+        title="Specialized logistics for equipment-driven operations."
+        description="Bluport supports the movement that keeps field teams productive: equipment transport, urgent repositioning, dedicated capacity, project logistics, staging, and operational planning."
         image={siteImages.servicesHero}
         imagePosition="object-[center_62%]"
         variant="dark"
@@ -183,7 +183,7 @@ export default function ServicesPage() {
       <EditorialSection
         eyebrow="REQUEST CAPACITY"
         title="Need a move planned?"
-        description="Bring Bluport in when timing, access, securement, and closeout all need to be handled with the same level of care."
+        description="Better request details create better moves. Bluport operations can scope faster when asset, route, timing, and constraints are clear upfront."
         variant="light"
         layout="stack"
         className="border-b-0"

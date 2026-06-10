@@ -1,47 +1,36 @@
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 
 const services = [
   {
     number: "01",
     title: "Equipment Transportation",
-    body: "Hotshot movement for machines, attachments, trailers, and jobsite assets where timing, securement, and site access matter.",
-    bestFor: "Equipment repositioning, rental fleet turns, and project-critical lane moves.",
-    benefit: "Reduces downtime risk by matching trailer fit and securement to asset requirements.",
+    body: "Machines, attachments, trailers, and jobsite assets.",
   },
   {
     number: "02",
     title: "Rapid Response Logistics",
-    body: "Support for urgent moves, replacement equipment, outage-related movement, and schedule recovery when delays create operational cost.",
-    bestFor: "Outage support, urgent replacement equipment, and timeline recovery.",
-    benefit: "Improves schedule recovery by moving critical assets fast with clear communication.",
+    body: "Urgent moves, replacement equipment, outage support, and schedule recovery.",
   },
   {
     number: "03",
     title: "Dedicated Capacity",
-    body: "Reserved truck and trailer support for recurring routes, rental fleet coverage, and customers who need more predictability than spot-market availability.",
-    bestFor: "Recurring route commitments and sustained fleet support needs.",
-    benefit: "Creates steadier movement planning and fewer last-minute sourcing disruptions.",
+    body: "Recurring routes, rental fleet support, and project coverage.",
   },
   {
     number: "04",
     title: "Project Logistics",
-    body: "Coordinated movement for phased schedules, hard delivery windows, multi-stop work, and equipment sequencing across active jobs.",
-    bestFor: "Infrastructure, industrial, and data center project sequencing.",
-    benefit: "Improves execution control when multiple deliveries and dependencies must align.",
+    body: "Phased work, hard windows, and multi-stop timelines.",
   },
   {
     number: "05",
     title: "Storage & Staging",
-    body: "Support for timed releases, yard transitions, and site-readiness coordination when equipment cannot arrive too early or too late.",
-    bestFor: "Yard transitions and release timing around constrained jobsites.",
-    benefit: "Protects site flow by matching arrival timing to real project readiness.",
+    body: "Timed releases, yard transitions, and site-readiness support.",
   },
   {
     number: "06",
     title: "Logistics Consulting",
-    body: "Practical planning for movement workflows, communication cadence, lane setup, and dispatch standards as operations grow.",
-    bestFor: "Teams tightening operating standards and dispatch consistency.",
-    benefit: "Strengthens decisions before execution pressure creates avoidable cost.",
+    body: "Movement workflows, communication cadence, and dispatch standards.",
   },
 ] as const;
 
@@ -55,49 +44,29 @@ export default function ServicesEditorial() {
             Services built for field execution.
           </h2>
           <p className="text-base leading-[1.65] text-[#34465a]">
-            Bluport supports the work that happens before a job can start, after a schedule
-            changes, and when equipment needs to be repositioned fast.
+            Bluport supports equipment-heavy teams that need clear communication and disciplined
+            movement execution.
           </p>
-          <div className="max-w-[340px] border-t border-[rgba(111,127,145,0.35)] pt-4">
-            <p className="text-xs font-bold tracking-[0.14em] text-[#1fb6e8] uppercase">Service Fit</p>
-            <ul className="mt-3 divide-y divide-[rgba(111,127,145,0.28)]">
-              <li className="py-2 text-sm leading-relaxed text-[#44586d]">Rental fleet support</li>
-              <li className="py-2 text-sm leading-relaxed text-[#44586d]">Jobsite equipment movement</li>
-              <li className="py-2 text-sm leading-relaxed text-[#44586d]">Utility and infrastructure response</li>
-            </ul>
-          </div>
+          <Link
+            href="/services"
+            className="inline-flex rounded-lg border border-[rgba(111,127,145,0.34)] px-5 py-2.5 text-xs font-semibold tracking-[0.12em] text-[#17324a] uppercase transition-colors hover:border-[#1fb6e8] hover:text-[#0f4b6b]"
+          >
+            View Detailed Services
+          </Link>
         </div>
 
         <ol className="divide-y divide-[rgba(111,127,145,0.3)] border-y border-[rgba(111,127,145,0.3)]">
           {services.map((service) => (
             <li
               key={service.title}
-              className="grid gap-4 py-6 transition-colors duration-200 hover:bg-[rgba(238,243,248,0.75)] focus-within:bg-[rgba(238,243,248,0.75)] md:grid-cols-[70px_1fr] md:items-start md:py-7"
+              className="grid gap-4 py-6 transition-colors duration-200 hover:bg-[rgba(238,243,248,0.75)] md:grid-cols-[70px_1fr] md:items-start md:py-7"
             >
               <span className="text-sm font-bold tracking-[0.12em] text-[#1fb6e8]">{service.number}</span>
               <div>
-                <details className="group">
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                    <span>
-                      <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#031426]">
-                        {service.title}
-                      </h3>
-                      <p className="mt-2 text-base leading-relaxed text-[#34465a]">{service.body}</p>
-                    </span>
-                    <span className="mt-2 shrink-0 text-xs font-bold tracking-[0.14em] text-[#1fb6e8] transition-transform group-open:translate-x-1">
-                      OPEN
-                    </span>
-                  </summary>
-                  <div className="mt-4 rounded-xl border border-[rgba(111,127,145,0.25)] bg-white/70 p-4 text-sm leading-relaxed text-[#334b61]">
-                    <p>
-                      <span className="font-semibold text-[#16354e]">Best for:</span> {service.bestFor}
-                    </p>
-                    <p className="mt-2">
-                      <span className="font-semibold text-[#16354e]">Operational benefit:</span>{" "}
-                      {service.benefit}
-                    </p>
-                  </div>
-                </details>
+                <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#031426]">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-base leading-relaxed text-[#34465a]">{service.body}</p>
               </div>
             </li>
           ))}

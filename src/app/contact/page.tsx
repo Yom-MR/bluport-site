@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { CheckCircle2, Mail, MapPin, Phone, Timer, UserRoundCheck } from "lucide-react";
-import RequestCapacityForm from "@/components/forms/RequestCapacityForm";
+import { Mail, MapPin, Phone, UserRoundCheck } from "lucide-react";
+import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
+import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -17,10 +18,36 @@ export const metadata: Metadata = {
 };
 
 const contactItems = [
-  { label: "Operations", value: "booking@bluport.us", icon: Mail },
-  { label: "Phone", value: "832-627-7059", icon: Phone },
-  { label: "Base", value: "Houston, Texas", icon: MapPin },
-  { label: "Response", value: "24/7 mission intake", icon: Timer },
+  {
+    label: "booking@bluport.us",
+    detail: "Freight booking, capacity requests, and move intake",
+    icon: Mail,
+  },
+  {
+    label: "support@bluport.us",
+    detail: "Customer support and general follow-up",
+    icon: Mail,
+  },
+  {
+    label: "billing@bluport.us",
+    detail: "Invoices, payments, and billing questions",
+    icon: Mail,
+  },
+  {
+    label: "vendors@bluport.us",
+    detail: "Vendor, carrier, supplier, and partner inquiries",
+    icon: Mail,
+  },
+  {
+    label: "compliance@bluport.us",
+    detail: "Insurance, onboarding, and safety/compliance documents",
+    icon: Mail,
+  },
+  {
+    label: "hr@bluport.us",
+    detail: "Recruiting, careers, and driver/operator inquiries",
+    icon: Mail,
+  },
 ];
 
 const prepDetails = [
@@ -39,7 +66,9 @@ export default function ContactPage() {
       <PageHero
         eyebrow="CONTACT"
         title="Talk to Bluport operations."
-        description="For urgent equipment movement, dedicated capacity, project support, or partnership inquiries, contact Bluport and we will follow up."
+        description="Use the right channel for the request so Bluport can route it quickly."
+        image={siteImages.contactHero}
+        imagePosition="object-[center_52%]"
         variant="light"
       />
 
@@ -54,9 +83,14 @@ export default function ContactPage() {
           <article className="rounded-[1.8rem] border border-[rgba(148,163,184,0.28)] bg-white/90 p-6">
             <p className="technical-label text-sky-700">OPERATIONAL CONTACT</p>
             <div className="mt-4 space-y-3">
-              <p className="text-lg font-semibold text-slate-900">booking@bluport.us</p>
-              <p className="text-lg font-semibold text-slate-900">832-627-7059</p>
-              <p className="text-base text-slate-700">Houston, Texas</p>
+              <p className="flex items-center gap-2.5 text-lg font-semibold text-slate-900">
+                <Phone size={17} aria-hidden className="text-sky-700" />
+                832-627-7059
+              </p>
+              <p className="flex items-center gap-2.5 text-base text-slate-700">
+                <MapPin size={17} aria-hidden className="text-sky-700" />
+                Houston, Texas
+              </p>
               <p className="text-sm leading-7 text-slate-600">Mission intake and move planning</p>
             </div>
           </article>
@@ -64,11 +98,11 @@ export default function ContactPage() {
           <div className="grid gap-x-8 gap-y-5 md:grid-cols-2">
             {contactItems.map((item) => (
               <article key={item.label} className="border-t border-[rgba(148,163,184,0.28)] pt-4">
-                <p className="technical-label text-sky-700">{item.label}</p>
-                <p className="mt-3 flex items-center gap-2.5 text-lg font-medium text-slate-900">
+                <p className="mt-1 flex items-center gap-2.5 text-base font-semibold text-slate-900">
                   <item.icon size={17} aria-hidden className="text-sky-700" />
-                  <span>{item.value}</span>
+                  <span>{item.label}</span>
                 </p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.detail}</p>
               </article>
             ))}
           </div>
@@ -94,23 +128,13 @@ export default function ContactPage() {
 
       <EditorialSection
         eyebrow="REQUEST CAPACITY"
-        title="Submit move details."
-        description="Provide pickup, delivery, asset details, and constraints for operations review."
-        variant="dark"
+        title="Need to submit move details?"
+        description="Open the capacity request form and include asset, route, timing, and site constraints for faster intake."
+        variant="light"
         layout="stack"
         className="border-b-0"
       >
-        <div className="space-y-6">
-          <div className="rounded-[2rem] border border-[rgba(148,163,184,0.16)] bg-[rgba(255,255,255,0.04)] p-2 md:p-3">
-            <RequestCapacityForm />
-          </div>
-          <p className="flex items-start gap-2.5 text-sm leading-7 text-[rgba(203,213,225,0.76)]">
-            <CheckCircle2 size={16} aria-hidden className="mt-1 shrink-0 text-[#67d4f4]" />
-            <span>
-              Request details are routed securely to Bluport operations.
-            </span>
-          </p>
-        </div>
+        <Button href="/#request-capacity">Request Capacity</Button>
       </EditorialSection>
     </>
   );

@@ -11,16 +11,16 @@ const capabilityItems = [
 
 const constraintRows = [
   {
-    title: "Site access",
-    body: "Delivery details, yard instructions, gate requirements, and contact points matter before dispatch.",
+    title: "Access",
+    body: "Gate instructions, site contacts, yard details, and loading constraints are confirmed before dispatch.",
   },
   {
-    title: "Timing windows",
-    body: "Pickup and delivery expectations are aligned before the move starts.",
+    title: "Asset fit",
+    body: "Asset type, dimensions, weight, and trailer requirements shape the movement plan.",
   },
   {
-    title: "Securement needs",
-    body: "Equipment type, dimensions, weight, and handling requirements shape the trailer plan.",
+    title: "Timing",
+    body: "Pickup windows, delivery windows, and schedule pressure are aligned before the truck rolls.",
   },
   {
     title: "Closeout",
@@ -67,7 +67,7 @@ export default function CapabilitySplit() {
             </div>
             <div className="relative space-y-8">
               <h3 className="max-w-[18ch] text-[2rem] font-bold leading-[1.03] tracking-[-0.04em] text-[#031426]">
-                Built around the constraints that slow jobs down.
+                Built around the details that delay jobs.
               </h3>
               <div className="space-y-4">
                 {constraintRows.map((item) => {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import RequestCapacityModal from "@/components/sections/RequestCapacityModal";
 import StructuredData from "@/components/seo/StructuredData";
 import "./globals.css";
 
@@ -76,6 +77,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <RequestCapacityModal />
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BadgeCheck, DollarSign, ShieldCheck, Truck } from "lucide-react";
+import { BadgeCheck, ShieldCheck, Truck } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { siteImages } from "@/data/siteImages";
 
@@ -16,10 +16,6 @@ const heroKpis = [
   {
     label: "TWIC-certified personnel",
     icon: ShieldCheck,
-  },
-  {
-    label: "$1M auto / $250K cargo",
-    icon: DollarSign,
   },
 ] as const;
 
@@ -45,15 +41,16 @@ export default function PremiumHero() {
             <br />
             Keep the <span className="text-[#4cc9f0]">job moving.</span>
           </h1>
-          <p className="max-w-[560px] text-[1.08rem] leading-[1.66] text-[#dce6ee]">
-            Bluport supports equipment-heavy operations with hotshot transport for machines,
-            attachments, trailers, and field-support assets - planned around timing, site access,
-            securement, and communication.
+          <p className="max-w-[600px] text-[1.08rem] leading-[1.66] text-[#dce6ee]">
+            Bluport moves the equipment behind active field work - machines, attachments,
+            trailers, and support assets that keep rental fleets, jobsites, utilities, and
+            industrial teams moving.
           </p>
           <p className="text-base font-medium tracking-[0.01em] text-[#d0dce6]">
-            Houston-based. Veteran-owned. Ford F-350 platform. 40&apos; power tilt trailers.
+            Houston-based hotshot logistics built around Ford F-350 capability, 40&apos; power tilt
+            trailers, and veteran-led execution.
           </p>
-          <ul className="grid gap-3 text-sm text-[#dbe6ef] md:grid-cols-2">
+          <ul className="grid gap-3 text-sm text-[#dbe6ef] md:grid-cols-3">
             {heroKpis.map((item) => {
               const Icon = item.icon;
               return (
