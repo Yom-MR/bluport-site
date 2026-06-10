@@ -20,8 +20,8 @@ export default function BrandLogo({ variant = "light", placement = "navbar" }: B
 
   const sizes =
     placement === "navbar"
-      ? { width: 300, height: 74, className: "h-[34px] w-auto object-contain md:h-[42px]" }
-      : { width: 260, height: 68, className: "h-[36px] w-auto object-contain md:h-[40px]" };
+      ? { width: 292, height: 70, className: "h-[34px] w-auto object-contain" }
+      : { width: 236, height: 58, className: "h-[30px] w-auto object-contain" };
 
   if (sourceIndex >= sources.length) {
     return (
