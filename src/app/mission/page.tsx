@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { ClipboardCheck, MessageSquareText, Route, ShieldCheck, Timer, CheckCircle2 } from "lucide-react";
 import Button from "@/components/ui/Button";
+import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
 import FeatureRows from "@/components/ui/FeatureRows";
@@ -62,6 +64,22 @@ const operatingSteps = [
   },
 ];
 
+const operatingStandard = [
+  { title: "Plan the move", icon: Route },
+  { title: "Protect the schedule", icon: Timer },
+  { title: "Communicate clearly", icon: MessageSquareText },
+  { title: "Close the loop", icon: ClipboardCheck },
+] as const;
+
+const nonNegotiables = [
+  "Site access details",
+  "Equipment dimensions and weight",
+  "Securement requirements",
+  "Delivery window constraints",
+  "Contact and handoff details",
+  "Documentation after delivery",
+] as const;
+
 export default function MissionPage() {
   return (
     <>
@@ -72,6 +90,24 @@ export default function MissionPage() {
         image={siteImages.fieldOperations}
         variant="dark"
       />
+
+      <section className="border-b border-[rgba(148,163,184,0.18)] bg-[#f8fbff] py-8 md:py-10">
+        <Container>
+          <div className="rounded-[1.8rem] border border-[rgba(148,163,184,0.26)] bg-white/90 p-5 md:p-7">
+            <p className="technical-label text-sky-700">BLUPORT OPERATING STANDARD</p>
+            <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {operatingStandard.map((item) => (
+                <div key={item.title} className="flex items-center gap-3 border-t border-[rgba(148,163,184,0.25)] pt-3 md:border-t-0 md:pt-0">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(31,182,232,0.16)] text-[#0e5878]">
+                    <item.icon size={17} aria-hidden />
+                  </span>
+                  <p className="text-base font-semibold tracking-[-0.02em] text-slate-900">{item.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
 
       <EditorialSection
         eyebrow="OPERATING MODEL"
@@ -107,6 +143,25 @@ export default function MissionPage() {
       </EditorialSection>
 
       <EditorialSection
+        eyebrow="NON-NEGOTIABLES"
+        title="What Bluport refuses to ignore."
+        description="Reliable movement depends on details that are often skipped in rushed dispatch environments."
+        variant="light"
+        layout="stack"
+      >
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {nonNegotiables.map((item) => (
+            <article key={item} className="rounded-2xl border border-[rgba(148,163,184,0.24)] bg-white/85 p-5">
+              <p className="flex items-start gap-3 text-base leading-7 text-slate-700 md:text-lg">
+                <ShieldCheck size={18} aria-hidden className="mt-1 shrink-0 text-sky-700" />
+                <span>{item}</span>
+              </p>
+            </article>
+          ))}
+        </div>
+      </EditorialSection>
+
+      <EditorialSection
         eyebrow="REQUEST CAPACITY"
         title="When the move matters, the process matters."
         description="Bluport is designed for projects and field operations that need disciplined execution, not generic freight handling."
@@ -115,7 +170,12 @@ export default function MissionPage() {
         className="border-b-0"
       >
         <div className="flex items-start lg:justify-end">
-          <Button href="/#request-capacity">Request Capacity</Button>
+          <Button href="/#request-capacity">
+            <span className="inline-flex items-center gap-2">
+              <CheckCircle2 size={16} aria-hidden />
+              Request Capacity
+            </span>
+          </Button>
         </div>
       </EditorialSection>
     </>

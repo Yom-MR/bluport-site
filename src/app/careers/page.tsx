@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CheckCircle2, Compass, Handshake, ShieldCheck, Users2 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
@@ -19,20 +20,20 @@ export const metadata: Metadata = {
 
 const whyWork = [
   {
-    title: "Purpose-driven work",
-    description: "Support moves that directly affect crews, projects, and critical field timelines.",
+    title: "Communication",
+    description: "People who treat clear updates as part of the work, not optional admin.",
   },
   {
-    title: "Veteran-friendly culture",
-    description: "A team built around accountability, clarity, and mission-focused execution.",
+    title: "Discipline",
+    description: "People who care about planning details, execution quality, and reliable closeout.",
   },
   {
-    title: "Operational discipline",
-    description: "Structured workflows, communication standards, and process ownership at every level.",
+    title: "Field awareness",
+    description: "People who understand jobsite realities and adjust execution around real constraints.",
   },
   {
-    title: "Growth mindset",
-    description: "Build capability through training, field exposure, and leadership development.",
+    title: "Customer outcomes",
+    description: "People who connect every move to project continuity and customer confidence.",
   },
 ];
 
@@ -75,9 +76,9 @@ export default function CareersPage() {
       />
 
       <EditorialSection
-        eyebrow="WHY BLUPORT"
-        title="A team built for mission outcomes."
-        description="Bluport is building a culture around clarity, accountability, and outcomes that matter in the field."
+        eyebrow="WHO FITS BLUPORT"
+        title="Who fits Bluport."
+        description="People who value communication, discipline, field awareness, accountability, and customer outcomes."
         variant="light"
         layout="stack"
       >
@@ -94,9 +95,9 @@ export default function CareersPage() {
       </EditorialSection>
 
       <EditorialSection
-        eyebrow="OPENING PROFILE"
-        title="Core positions in the Bluport operating model."
-        description="The roles below shape driver support, field execution, and customer confidence across every move."
+        eyebrow="ROLES WE EXPECT TO GROW"
+        title="Roles that shape the Bluport operating model."
+        description="Drivers, owner operators, dispatch, and operations leadership roles are central to how Bluport is building long-term capability."
         variant="dark"
         layout="split"
       >
@@ -113,13 +114,36 @@ export default function CareersPage() {
       <EditorialSection
         eyebrow="VETERAN PATHWAY"
         title="Veterans bring what logistics needs."
-        description="Bluport values discipline, leadership, accountability, and resilience - traits that transfer directly into field logistics, customer communication, and operational execution."
+        description="Bluport values the discipline, leadership, and resilience veterans bring to operations. Those traits transfer directly into field logistics, customer communication, and execution accountability."
         variant="light"
         layout="split"
         className="border-b-0"
       >
-        <div className="flex items-start lg:justify-end">
-          <Button href="/contact">Contact Operations</Button>
+        <div className="space-y-6 lg:justify-self-end">
+          <ul className="space-y-3 text-sm leading-7 text-slate-700 md:text-base">
+            <li className="flex items-start gap-2.5">
+              <ShieldCheck size={16} aria-hidden className="mt-1 shrink-0 text-sky-700" />
+              Operational discipline under pressure
+            </li>
+            <li className="flex items-start gap-2.5">
+              <Handshake size={16} aria-hidden className="mt-1 shrink-0 text-sky-700" />
+              Ownership in customer communication
+            </li>
+            <li className="flex items-start gap-2.5">
+              <Compass size={16} aria-hidden className="mt-1 shrink-0 text-sky-700" />
+              Field-aware decision making
+            </li>
+            <li className="flex items-start gap-2.5">
+              <Users2 size={16} aria-hidden className="mt-1 shrink-0 text-sky-700" />
+              Team-first accountability
+            </li>
+          </ul>
+          <Button href="/contact">
+            <span className="inline-flex items-center gap-2">
+              <CheckCircle2 size={16} aria-hidden />
+              Contact Operations
+            </span>
+          </Button>
         </div>
       </EditorialSection>
     </>

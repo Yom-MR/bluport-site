@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
+import { AlertTriangle, CheckCircle2 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
-import FeatureRows from "@/components/ui/FeatureRows";
-import ImagePanel from "@/components/ui/ImagePanel";
-import { industries } from "@/data/industries";
 import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
@@ -22,10 +20,10 @@ export const metadata: Metadata = {
 const painPoints = [
   "Missed delivery windows",
   "Idle crews",
-  "Poor visibility",
-  "Equipment unavailable when needed",
-  "Site access constraints",
-  "Documentation gaps",
+  "Replacement equipment delays",
+  "Site access issues",
+  "Poor communication",
+  "Missing documentation",
 ];
 
 const fitNotes = [
@@ -35,11 +33,44 @@ const fitNotes = [
   "Dispatch control with field-aware execution decisions",
 ];
 
-const industryRows = industries.map((industry) => ({
-  label: industry.signal,
-  title: industry.title,
-  description: `${industry.description} Support focus: ${industry.signal.toLowerCase()}.`,
-}));
+const industryRows = [
+  {
+    name: "Construction & Equipment Rental",
+    support: "Keep rental fleets, attachments, and machines aligned with jobsite timing and customer demand.",
+    friction: "Late repositioning, missed returns, and crews waiting for equipment handoff.",
+    focus: "Schedule continuity for active field and rental operations.",
+  },
+  {
+    name: "Utilities & Infrastructure",
+    support: "Support outage-sensitive work where equipment delays can stall crews, restoration timelines, and infrastructure schedules.",
+    friction: "Compressed restoration windows and access constraints at active sites.",
+    focus: "Readiness and dispatch clarity under response pressure.",
+  },
+  {
+    name: "Industrial & Critical Facilities",
+    support: "Move support assets around shutdowns, production windows, vendor coordination, and controlled-access sites.",
+    friction: "Vendor timing conflicts and production windows that leave little margin.",
+    focus: "Execution discipline around access, timing, and documentation.",
+  },
+  {
+    name: "Data Center Construction",
+    support: "Support scheduled equipment movement for uptime-driven infrastructure builds, generators, site equipment, and critical-path work.",
+    friction: "Critical-path dependencies where late movement affects multiple trades.",
+    focus: "Planned sequencing tied to site and delivery windows.",
+  },
+  {
+    name: "Aerospace & Defense",
+    support: "Support mission-oriented ground movement that requires clear communication and controlled execution standards.",
+    friction: "High accountability environments with little tolerance for handoff errors.",
+    focus: "Securement discipline and clear operating communication.",
+  },
+  {
+    name: "Government & Emergency Response",
+    support: "Provide move support for urgent public missions and project operations where schedule integrity matters.",
+    friction: "Escalating urgency, constrained access, and fragmented communication channels.",
+    focus: "Structured intake, dispatch clarity, and clean closeout.",
+  },
+] as const;
 
 export default function IndustriesPage() {
   return (
@@ -57,22 +88,35 @@ export default function IndustriesPage() {
         title="Operational environments we support."
         description="Bluport supports environments where delays create crew downtime, schedule drift, and operational risk that spreads fast."
         variant="light"
-        layout="split"
+        layout="stack"
       >
-        <div className="grid gap-8 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)]">
-          <ImagePanel
-            src={siteImages.industriesConstruction}
-            alt="Construction and equipment rental environment"
-            caption="Bluport supports crews and project teams that need assets to arrive ready, visible, and on schedule."
-            tone="light"
-          />
-          <FeatureRows items={industryRows} variant="light" />
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {industryRows.map((item) => (
+            <article key={item.name} className="rounded-[1.7rem] border border-[rgba(148,163,184,0.22)] bg-white/90 p-6">
+              <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">{item.name}</h3>
+              <div className="mt-4 space-y-3 text-sm leading-7 text-slate-700 md:text-base">
+                <p>
+                  <span className="font-semibold text-slate-900">What Bluport supports:</span> {item.support}
+                </p>
+                <p>
+                  <span className="font-semibold text-slate-900">Common friction points:</span> {item.friction}
+                </p>
+                <p>
+                  <span className="font-semibold text-slate-900">Support focus:</span> {item.focus}
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
+        <p className="mt-8 border-t border-[rgba(148,163,184,0.3)] pt-5 text-sm leading-7 text-slate-600 md:text-base">
+          Additional support includes aerospace, defense, government response, emergency movement,
+          and project logistics where disciplined execution and documentation matter.
+        </p>
       </EditorialSection>
 
       <EditorialSection
         eyebrow="FIELD FRICTION"
-        title="What breaks field operations."
+        title="Operational friction that impacts field outcomes."
         description="These are the failures that compound quickly once a project, crew, or response team is already moving."
         variant="dark"
         layout="stack"
@@ -80,7 +124,10 @@ export default function IndustriesPage() {
         <div className="grid gap-x-10 gap-y-4 md:grid-cols-2 xl:grid-cols-3">
           {painPoints.map((point) => (
             <div key={point} className="border-t border-[rgba(148,163,184,0.2)] pt-5">
-              <p className="text-lg font-medium tracking-[-0.02em] text-white">{point}</p>
+              <p className="flex items-start gap-3 text-lg font-medium tracking-[-0.02em] text-white">
+                <AlertTriangle size={18} aria-hidden className="mt-1 shrink-0 text-[#67d4f4]" />
+                <span>{point}</span>
+              </p>
             </div>
           ))}
         </div>
@@ -101,7 +148,10 @@ export default function IndustriesPage() {
                 key={note}
                 className="rounded-[1.75rem] border border-[rgba(148,163,184,0.2)] bg-white/80 p-6"
               >
-                <p className="text-base leading-7 text-slate-700 md:text-lg">{note}</p>
+                <p className="flex items-start gap-3 text-base leading-7 text-slate-700 md:text-lg">
+                  <CheckCircle2 size={18} aria-hidden className="mt-1 shrink-0 text-sky-700" />
+                  <span>{note}</span>
+                </p>
               </article>
             ))}
           </div>

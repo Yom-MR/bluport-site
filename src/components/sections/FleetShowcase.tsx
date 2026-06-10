@@ -1,14 +1,39 @@
 import Image from "next/image";
+import { BadgeCheck, Building2, ClipboardCheck, Fuel, Shield, Truck } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { siteImages } from "@/data/siteImages";
 
 const fleetRows = [
-  "Ford F-350 platform",
-  "40' power tilt trailer capability",
-  "Equipment and attachment transport",
-  "Houston-based dispatch",
-  "Scheduled and rapid-response support",
-  "POD and closeout follow-up",
+  {
+    label: "Truck platform",
+    value: "Ford F-350",
+    icon: Truck,
+  },
+  {
+    label: "Trailer capability",
+    value: "40' power tilt",
+    icon: BadgeCheck,
+  },
+  {
+    label: "Operating base",
+    value: "Houston, Texas",
+    icon: Building2,
+  },
+  {
+    label: "Personnel readiness",
+    value: "TWIC-certified personnel",
+    icon: Shield,
+  },
+  {
+    label: "Coverage",
+    value: "$1M auto / $250K cargo / $2M GL aggregate",
+    icon: Fuel,
+  },
+  {
+    label: "Workflow",
+    value: "intake, dispatch coordination, POD closeout",
+    icon: ClipboardCheck,
+  },
 ] as const;
 
 export default function FleetShowcase() {
@@ -41,8 +66,14 @@ export default function FleetShowcase() {
           <div className="rounded-[18px] border border-[rgba(200,210,221,0.2)] bg-[rgba(2,10,20,0.6)] p-6 md:p-7">
             <ul className="divide-y divide-[rgba(200,210,221,0.2)]">
               {fleetRows.map((row) => (
-                <li key={row} className="py-3.5 text-sm font-medium tracking-[0.02em] text-[#eef3f8]">
-                  {row}
+                <li key={row.label} className="flex items-start gap-3 py-3.5 text-sm tracking-[0.02em] text-[#eef3f8]">
+                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[rgba(76,201,240,0.16)] text-[#7bd9f5]">
+                    <row.icon size={16} aria-hidden />
+                  </span>
+                  <div>
+                    <p className="text-xs font-bold tracking-[0.12em] text-[#8ecde2] uppercase">{row.label}</p>
+                    <p className="mt-1 font-medium text-[#eef3f8]">{row.value}</p>
+                  </div>
                 </li>
               ))}
             </ul>

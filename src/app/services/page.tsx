@@ -1,4 +1,14 @@
 import type { Metadata } from "next";
+import {
+  CheckCircle2,
+  ClipboardList,
+  Clock3,
+  Compass,
+  Gauge,
+  ShieldCheck,
+  Sparkles,
+  Truck,
+} from "lucide-react";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
@@ -19,46 +29,58 @@ export const metadata: Metadata = {
 
 const serviceRows = [
   {
+    icon: Truck,
     title: "Equipment Transportation",
     description:
-      "Planned movement of machines, attachments, trailers, and rental equipment with securement and timing matched to the field requirement.",
-    bestFor: "Best for equipment repositioning, customer delivery, and schedule-sensitive site moves.",
-    benefit: "Benefit: reliable movement with communication and securement discipline built in.",
+      "Hotshot movement for machines, attachments, trailers, and jobsite assets where timing, securement, and site access matter.",
+    solves: "Prevents equipment misalignment that stalls crews and creates schedule drift.",
+    bestFit: "Equipment repositioning, customer delivery windows, and rental fleet transitions.",
+    benefit: "Execution discipline on trailer fit, securement, and communication before and during movement.",
   },
   {
+    icon: Clock3,
     title: "Rapid Response Logistics",
     description:
-      "Fast mobilization support for outages, urgent field events, and operations where missed timing multiplies cost quickly.",
-    bestFor: "Best for urgent jobsite delivery, restoration work, and time-critical support requests.",
-    benefit: "Benefit: shorter reaction time with a readiness posture customers can depend on.",
+      "Support for urgent moves, replacement equipment, outage-related movement, and schedule recovery when delays create operational cost.",
+    solves: "Closes urgent movement gaps when delays threaten restoration, uptime, or crew productivity.",
+    bestFit: "Outage support, emergency replacement assets, and timeline recovery moves.",
+    benefit: "Faster move planning with field-aware communication under compressed timelines.",
   },
   {
+    icon: ShieldCheck,
     title: "Dedicated Capacity",
     description:
-      "Committed truck and trailer coverage for customers who need consistent execution instead of spot-market variability.",
-    bestFor: "Best for recurring routes, rental fleet support, and sustained project demand.",
-    benefit: "Benefit: dependable capacity aligned to operating rhythm, not last-minute scrambling.",
+      "Reserved truck and trailer support for recurring routes, rental fleet coverage, and customers who need more predictability than spot-market availability.",
+    solves: "Reduces sourcing uncertainty for teams that cannot run operations around spot-market swings.",
+    bestFit: "Recurring lanes, scheduled project work, and repeat rental fleet commitments.",
+    benefit: "Higher planning confidence with steadier dispatch control and clearer expectations.",
   },
   {
+    icon: Compass,
     title: "Project Logistics",
     description:
-      "Coordinated movement for phased schedules, hard windows, multi-stop work, and field sequencing that requires control.",
-    bestFor: "Best for infrastructure, industrial, and data center project movement.",
-    benefit: "Benefit: fewer misses between planning assumptions and field execution.",
+      "Coordinated movement for phased schedules, hard delivery windows, multi-stop work, and equipment sequencing across active jobs.",
+    solves: "Prevents sequencing misses that disrupt project handoffs and downstream trades.",
+    bestFit: "Infrastructure, industrial, and data center programs with hard dependencies.",
+    benefit: "Improved schedule protection through move planning tied to project context.",
   },
   {
+    icon: Sparkles,
     title: "Storage & Staging",
     description:
-      "Controlled staging support to keep equipment ready without overwhelming the jobsite or forcing early delivery friction.",
-    bestFor: "Best for timed releases, overflow support, and site-readiness coordination.",
-    benefit: "Benefit: cleaner handoffs and better alignment between asset readiness and field demand.",
+      "Support for timed releases, yard transitions, and site-readiness coordination when equipment cannot arrive too early or too late.",
+    solves: "Avoids congestion and idle assets caused by poorly timed deliveries.",
+    bestFit: "Staging transitions, site-readiness dependencies, and controlled delivery windows.",
+    benefit: "Cleaner handoffs between storage, dispatch, and field teams.",
   },
   {
+    icon: ClipboardList,
     title: "Logistics Consulting",
     description:
-      "Operational guidance for customers refining movement strategy, communication cadence, and logistics execution standards.",
-    bestFor: "Best for teams tightening dispatch workflows or improving movement planning at scale.",
-    benefit: "Benefit: more disciplined logistics decisions before the move ever begins.",
+      "Practical planning for movement workflows, communication cadence, lane setup, and dispatch standards as operations grow.",
+    solves: "Closes process gaps that cause repeat friction in planning and execution.",
+    bestFit: "Teams standardizing movement workflows or scaling logistics operations.",
+    benefit: "Better operating discipline before complexity turns into avoidable cost.",
   },
 ];
 
@@ -94,6 +116,15 @@ const useCases = [
   "Equipment repositioning",
 ];
 
+const readinessChecklist = [
+  "Pickup location and access",
+  "Delivery location and access",
+  "Asset type, dimensions, and weight",
+  "Requested pickup/delivery dates",
+  "Securement or loading constraints",
+  "On-site contact information",
+] as const;
+
 export default function ServicesPage() {
   return (
     <>
@@ -114,16 +145,33 @@ export default function ServicesPage() {
       >
         <div className="divide-y divide-[rgba(148,163,184,0.22)] rounded-[2rem] border border-[rgba(148,163,184,0.16)] bg-white/75">
           {serviceRows.map((service) => (
-            <article key={service.title} className="grid gap-4 px-6 py-7 md:px-8 md:py-8 lg:grid-cols-[minmax(0,240px)_minmax(0,1fr)] lg:gap-10">
-              <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
-                {service.title}
-              </h3>
-              <div className="space-y-3 text-sm leading-7 text-slate-600 md:text-base">
-                <p>{service.description}</p>
-                <p>{service.bestFor}</p>
-                <p>{service.benefit}</p>
+            <details key={service.title} className="group px-6 py-7 md:px-8 md:py-8" open={service.title === "Equipment Transportation"}>
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 lg:gap-10">
+                <div className="grid w-full gap-4 lg:grid-cols-[minmax(0,240px)_minmax(0,1fr)]">
+                  <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                    <span className="inline-flex items-center gap-2.5">
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(31,182,232,0.14)] text-[#0e5878]">
+                        <service.icon size={16} aria-hidden />
+                      </span>
+                      {service.title}
+                    </span>
+                  </h3>
+                  <p className="text-sm leading-7 text-slate-600 md:text-base">{service.description}</p>
+                </div>
+                <CheckCircle2 size={18} aria-hidden className="mt-2 shrink-0 text-sky-700 transition-transform group-open:rotate-90" />
+              </summary>
+              <div className="mt-4 grid gap-3 rounded-xl border border-[rgba(148,163,184,0.24)] bg-[rgba(248,252,255,0.9)] p-4 text-sm leading-7 text-slate-700 md:grid-cols-3 md:text-base">
+                <p>
+                  <span className="font-semibold text-slate-900">What it solves:</span> {service.solves}
+                </p>
+                <p>
+                  <span className="font-semibold text-slate-900">Best fit:</span> {service.bestFit}
+                </p>
+                <p>
+                  <span className="font-semibold text-slate-900">Operational benefit:</span> {service.benefit}
+                </p>
               </div>
-            </article>
+            </details>
           ))}
         </div>
       </EditorialSection>
@@ -153,6 +201,17 @@ export default function ServicesPage() {
                 <p className="text-base font-medium text-slate-800 md:text-lg">{item}</p>
               </div>
             ))}
+          </div>
+          <div className="rounded-[1.7rem] border border-[rgba(148,163,184,0.24)] bg-white/80 p-5 md:p-6">
+            <p className="technical-label text-sky-700">SERVICE READINESS CHECKLIST</p>
+            <ul className="mt-4 grid gap-3 md:grid-cols-2">
+              {readinessChecklist.map((item) => (
+                <li key={item} className="flex items-start gap-2.5 border-t border-[rgba(148,163,184,0.24)] pt-3 text-sm text-slate-700 md:text-base">
+                  <Gauge size={16} aria-hidden className="mt-1 shrink-0 text-sky-700" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
           <Button href="/#request-capacity">Request Capacity</Button>
         </div>
