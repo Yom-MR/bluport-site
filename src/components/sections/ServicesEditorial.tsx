@@ -1,4 +1,3 @@
-import { CheckCircle2, CircleGauge, Compass, ShieldCheck, Timer, Wrench } from "lucide-react";
 import Container from "@/components/ui/Container";
 
 const services = [
@@ -8,7 +7,6 @@ const services = [
     body: "Hotshot movement for machines, attachments, trailers, and jobsite assets where timing, securement, and site access matter.",
     bestFor: "Equipment repositioning, rental fleet turns, and project-critical lane moves.",
     benefit: "Reduces downtime risk by matching trailer fit and securement to asset requirements.",
-    icon: CircleGauge,
   },
   {
     number: "02",
@@ -16,7 +14,6 @@ const services = [
     body: "Support for urgent moves, replacement equipment, outage-related movement, and schedule recovery when delays create operational cost.",
     bestFor: "Outage support, urgent replacement equipment, and timeline recovery.",
     benefit: "Improves schedule recovery by moving critical assets fast with clear communication.",
-    icon: Timer,
   },
   {
     number: "03",
@@ -24,7 +21,6 @@ const services = [
     body: "Reserved truck and trailer support for recurring routes, rental fleet coverage, and customers who need more predictability than spot-market availability.",
     bestFor: "Recurring route commitments and sustained fleet support needs.",
     benefit: "Creates steadier movement planning and fewer last-minute sourcing disruptions.",
-    icon: CheckCircle2,
   },
   {
     number: "04",
@@ -32,7 +28,6 @@ const services = [
     body: "Coordinated movement for phased schedules, hard delivery windows, multi-stop work, and equipment sequencing across active jobs.",
     bestFor: "Infrastructure, industrial, and data center project sequencing.",
     benefit: "Improves execution control when multiple deliveries and dependencies must align.",
-    icon: Compass,
   },
   {
     number: "05",
@@ -40,7 +35,6 @@ const services = [
     body: "Support for timed releases, yard transitions, and site-readiness coordination when equipment cannot arrive too early or too late.",
     bestFor: "Yard transitions and release timing around constrained jobsites.",
     benefit: "Protects site flow by matching arrival timing to real project readiness.",
-    icon: ShieldCheck,
   },
   {
     number: "06",
@@ -48,7 +42,6 @@ const services = [
     body: "Practical planning for movement workflows, communication cadence, lane setup, and dispatch standards as operations grow.",
     bestFor: "Teams tightening operating standards and dispatch consistency.",
     benefit: "Strengthens decisions before execution pressure creates avoidable cost.",
-    icon: Wrench,
   },
 ] as const;
 
@@ -86,19 +79,14 @@ export default function ServicesEditorial() {
                 <details className="group">
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
                     <span>
-                      <span className="inline-flex items-center gap-2">
-                        <service.icon size={18} aria-hidden className="text-[#1fb6e8]" />
-                        <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#031426]">
-                          {service.title}
-                        </h3>
-                      </span>
+                      <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#031426]">
+                        {service.title}
+                      </h3>
                       <p className="mt-2 text-base leading-relaxed text-[#34465a]">{service.body}</p>
                     </span>
-                    <CheckCircle2
-                      size={18}
-                      aria-hidden
-                      className="mt-2 shrink-0 text-[#1fb6e8] transition-transform group-open:rotate-90"
-                    />
+                    <span className="mt-2 shrink-0 text-xs font-bold tracking-[0.14em] text-[#1fb6e8] transition-transform group-open:translate-x-1">
+                      OPEN
+                    </span>
                   </summary>
                   <div className="mt-4 rounded-xl border border-[rgba(111,127,145,0.25)] bg-white/70 p-4 text-sm leading-relaxed text-[#334b61]">
                     <p>

@@ -1,5 +1,9 @@
 export const siteImages = {
   heroMain: "/images/backgrounds/hero-equipment-logistics.jpg",
+  missionHero: "/images/backgrounds/hero-premium-industrial.jpg",
+  servicesHero: "/images/jobsites/equipment-yard.jpg",
+  industriesHero: "/images/backgrounds/infrastructure-night.jpg",
+  careersHero: "/images/jobsites/industrial-jobsite.jpg",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/IMG_0364.JPEG",
   constructionRental: "/images/jobsites/industry-construction-equipment.jpg",

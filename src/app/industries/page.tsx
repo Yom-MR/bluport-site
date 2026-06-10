@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AlertTriangle, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
@@ -31,7 +31,7 @@ const fitNotes = [
   "Readiness posture for urgent and scheduled missions",
   "Securement discipline aligned to equipment risk",
   "Dispatch control with field-aware execution decisions",
-];
+ ] as const;
 
 const industryRows = [
   {
@@ -39,24 +39,32 @@ const industryRows = [
     support: "Keep rental fleets, attachments, and machines aligned with jobsite timing and customer demand.",
     friction: "Late repositioning, missed returns, and crews waiting for equipment handoff.",
     focus: "Schedule continuity for active field and rental operations.",
+    image: siteImages.industriesConstruction,
+    alt: "Construction and equipment yard",
   },
   {
     name: "Utilities & Infrastructure",
     support: "Support outage-sensitive work where equipment delays can stall crews, restoration timelines, and infrastructure schedules.",
     friction: "Compressed restoration windows and access constraints at active sites.",
     focus: "Readiness and dispatch clarity under response pressure.",
+    image: siteImages.industriesUtilities,
+    alt: "Utility infrastructure network",
   },
   {
     name: "Industrial & Critical Facilities",
     support: "Move support assets around shutdowns, production windows, vendor coordination, and controlled-access sites.",
     friction: "Vendor timing conflicts and production windows that leave little margin.",
     focus: "Execution discipline around access, timing, and documentation.",
+    image: siteImages.industriesIndustrial,
+    alt: "Industrial facility environment",
   },
   {
     name: "Data Center Construction",
     support: "Support scheduled equipment movement for uptime-driven infrastructure builds, generators, site equipment, and critical-path work.",
     friction: "Critical-path dependencies where late movement affects multiple trades.",
     focus: "Planned sequencing tied to site and delivery windows.",
+    image: siteImages.industriesDataCenter,
+    alt: "Data center interior",
   },
   {
     name: "Aerospace & Defense",
@@ -79,7 +87,8 @@ export default function IndustriesPage() {
         eyebrow="INDUSTRIES"
         title="Built for teams where downtime is not an option."
         description="Bluport supports field teams, infrastructure crews, project managers, and rental fleets that depend on timely movement of critical assets."
-        image={siteImages.utilitiesInfrastructure}
+        image={siteImages.industriesHero}
+        imagePosition="object-[center_50%]"
         variant="dark"
       />
 
@@ -93,6 +102,17 @@ export default function IndustriesPage() {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {industryRows.map((item) => (
             <article key={item.name} className="rounded-[1.7rem] border border-[rgba(148,163,184,0.22)] bg-white/90 p-6">
+              {"image" in item && item.image ? (
+                <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-[1.2rem]">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(min-width: 1280px) 28vw, (min-width: 768px) 44vw, 100vw"
+                  />
+                </div>
+              ) : null}
               <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">{item.name}</h3>
               <div className="mt-4 space-y-3 text-sm leading-7 text-slate-700 md:text-base">
                 <p>
@@ -124,10 +144,7 @@ export default function IndustriesPage() {
         <div className="grid gap-x-10 gap-y-4 md:grid-cols-2 xl:grid-cols-3">
           {painPoints.map((point) => (
             <div key={point} className="border-t border-[rgba(148,163,184,0.2)] pt-5">
-              <p className="flex items-start gap-3 text-lg font-medium tracking-[-0.02em] text-white">
-                <AlertTriangle size={18} aria-hidden className="mt-1 shrink-0 text-[#67d4f4]" />
-                <span>{point}</span>
-              </p>
+              <p className="text-lg font-medium tracking-[-0.02em] text-white">{point}</p>
             </div>
           ))}
         </div>
@@ -148,10 +165,7 @@ export default function IndustriesPage() {
                 key={note}
                 className="rounded-[1.75rem] border border-[rgba(148,163,184,0.2)] bg-white/80 p-6"
               >
-                <p className="flex items-start gap-3 text-base leading-7 text-slate-700 md:text-lg">
-                  <CheckCircle2 size={18} aria-hidden className="mt-1 shrink-0 text-sky-700" />
-                  <span>{note}</span>
-                </p>
+                <p className="text-base leading-7 text-slate-700 md:text-lg">{note}</p>
               </article>
             ))}
           </div>

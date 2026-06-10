@@ -80,7 +80,7 @@ export default function ContactPage() {
         title="Before you contact us, helpful details include:"
         description="Providing these details upfront helps operations scope the move accurately and respond faster."
         variant="light"
-        layout="split"
+        layout="stack"
       >
         <ul className="grid gap-3 rounded-[1.7rem] border border-[rgba(148,163,184,0.24)] bg-white/85 p-5 md:grid-cols-2 md:p-6">
           {prepDetails.map((item) => (

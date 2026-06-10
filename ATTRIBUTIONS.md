@@ -22,7 +22,13 @@
 Homepage usage map:
 - Construction & Equipment Rental tile: public/images/jobsites/industry-construction-equipment.jpg
 - Utilities & Infrastructure tile: public/images/jobsites/utility-infrastructure.jpg
-- Industrial & Critical Facilities tile: public/images/jobsites/data-center-infrastructure.jpg
+- Industrial & Critical Facilities tile: public/images/jobsites/industrial-facility.jpg
+
+Route hero usage map:
+- Mission hero: public/images/backgrounds/hero-premium-industrial.jpg
+- Services hero: public/images/jobsites/equipment-yard.jpg
+- Industries hero: public/images/backgrounds/infrastructure-night.jpg
+- Careers hero: public/images/jobsites/industrial-jobsite.jpg
 
 1. public/images/jobsites/industry-construction-equipment.jpg
 - Source: Existing repository stock media (legacy import)
@@ -32,6 +38,22 @@ Homepage usage map:
 - Source: Existing repository stock media (legacy import)
 - Creator/URL: Not recorded in legacy metadata
 
-3. public/images/jobsites/data-center-infrastructure.jpg
+3. public/images/jobsites/industrial-facility.jpg
+- Source: Existing repository stock media (legacy import)
+- Creator/URL: Not recorded in legacy metadata
+
+4. public/images/backgrounds/hero-premium-industrial.jpg
+- Source: Existing repository stock media (legacy import)
+- Creator/URL: Not recorded in legacy metadata
+
+5. public/images/jobsites/equipment-yard.jpg
+- Source: Existing repository stock media (legacy import)
+- Creator/URL: Not recorded in legacy metadata
+
+6. public/images/backgrounds/infrastructure-night.jpg
+- Source: Existing repository stock media (legacy import)
+- Creator/URL: Not recorded in legacy metadata
+
+7. public/images/jobsites/industrial-jobsite.jpg
 - Source: Existing repository stock media (legacy import)
 - Creator/URL: Not recorded in legacy metadata

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { ClipboardCheck, MessageSquareText, Route, ShieldCheck, Timer, CheckCircle2 } from "lucide-react";
+import { ClipboardCheck, MessageSquareText, Route, ShieldCheck, Timer } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
-import FeatureRows from "@/components/ui/FeatureRows";
 import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
@@ -18,51 +17,6 @@ export const metadata: Metadata = {
     "field operations logistics",
   ],
 };
-
-const missionColumns = [
-  {
-    title: "Mission first",
-    description:
-      "Bluport is built around the belief that transportation is more than showing up with a truck. Every move supports uptime, schedule protection, and the people depending on that asset to arrive ready.",
-  },
-  {
-    title: "Field-aware planning",
-    description:
-      "Route conditions, site access, securement, customer communication, and timing constraints are considered together so the plan reflects real operating conditions instead of assumptions.",
-  },
-  {
-    title: "Closeout discipline",
-    description:
-      "The move is not complete until delivery is confirmed, documentation is closed, and the customer has the follow-up needed to keep the next step moving without friction.",
-  },
-];
-
-const operatingSteps = [
-  {
-    label: "01",
-    title: "Intake",
-    description:
-      "Understand the asset, timing, route, site access, and constraints before a truck is assigned.",
-  },
-  {
-    label: "02",
-    title: "Plan",
-    description:
-      "Align truck, trailer, securement, communication, and contingency options around the actual move.",
-  },
-  {
-    label: "03",
-    title: "Move",
-    description:
-      "Execute with dispatch visibility, field-aware decisions, and communication that does not need chasing.",
-  },
-  {
-    label: "04",
-    title: "Closeout",
-    description:
-      "Confirm delivery, documentation, POD, and follow-up so the customer has a clean operational finish.",
-  },
-];
 
 const operatingStandard = [
   { title: "Plan the move", icon: Route },
@@ -86,61 +40,44 @@ export default function MissionPage() {
       <PageHero
         eyebrow="MISSION"
         title="Veteran-led logistics for critical assets."
-        description="Bluport exists to move the equipment, materials, and field-support assets that keep projects, crews, and infrastructure moving."
-        image={siteImages.fieldOperations}
+        description="Bluport is built for equipment-heavy work where timing, communication, and closeout discipline matter as much as the truck."
+        image={siteImages.missionHero}
+        imagePosition="object-[center_58%]"
         variant="dark"
       />
 
-      <section className="border-b border-[rgba(148,163,184,0.18)] bg-[#f8fbff] py-8 md:py-10">
-        <Container>
-          <div className="rounded-[1.8rem] border border-[rgba(148,163,184,0.26)] bg-white/90 p-5 md:p-7">
-            <p className="technical-label text-sky-700">BLUPORT OPERATING STANDARD</p>
-            <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-              {operatingStandard.map((item) => (
-                <div key={item.title} className="flex items-center gap-3 border-t border-[rgba(148,163,184,0.25)] pt-3 md:border-t-0 md:pt-0">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(31,182,232,0.16)] text-[#0e5878]">
-                    <item.icon size={17} aria-hidden />
-                  </span>
-                  <p className="text-base font-semibold tracking-[-0.02em] text-slate-900">{item.title}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
       <EditorialSection
-        eyebrow="OPERATING MODEL"
-        title="Operational discipline from request to closeout."
-        description="Bluport is built around the belief that transportation is more than showing up with a truck. Every move depends on clear planning, field-aware communication, securement discipline, and reliable closeout."
+        eyebrow="OPERATING BELIEF"
+        title="Schedule protection is part of the move."
+        description="Transportation is not just asset movement. It is schedule protection, field coordination, and accountability from request to closeout."
         variant="light"
         layout="stack"
       >
-        <div className="grid gap-8 md:grid-cols-3">
-          {missionColumns.map((column) => (
-            <article
-              key={column.title}
-              className="border-t border-[rgba(148,163,184,0.3)] pt-6"
-            >
-              <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
-                {column.title}
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base">
-                {column.description}
-              </p>
-            </article>
-          ))}
-        </div>
+        <p className="max-w-[68ch] text-base leading-8 text-slate-700 md:text-lg">
+          Bluport plans around site access, asset fit, securement, timing windows, communication,
+          and closeout so the move supports the field operation instead of becoming another source
+          of friction.
+        </p>
       </EditorialSection>
 
-      <EditorialSection
-        eyebrow="MOVE RHYTHM"
-        title="How Bluport runs every move."
-        variant="dark"
-        layout="split"
-      >
-        <FeatureRows items={operatingSteps} variant="dark" />
-      </EditorialSection>
+      <section className="border-b border-[rgba(148,163,184,0.18)] bg-[#071829] py-16 text-white md:py-20">
+        <Container>
+          <p className="technical-label text-[var(--cyan)]">OPERATING STANDARD</p>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {operatingStandard.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-[rgba(148,163,184,0.18)] bg-[rgba(255,255,255,0.04)] p-5"
+              >
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(76,201,240,0.14)] text-[var(--cyan)]">
+                  <item.icon size={18} aria-hidden />
+                </span>
+                <p className="mt-4 text-lg font-semibold tracking-[-0.03em] text-white">{item.title}</p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       <EditorialSection
         eyebrow="NON-NEGOTIABLES"
@@ -164,19 +101,12 @@ export default function MissionPage() {
       <EditorialSection
         eyebrow="REQUEST CAPACITY"
         title="When the move matters, the process matters."
-        description="Bluport is designed for projects and field operations that need disciplined execution, not generic freight handling."
+        description="Bring Bluport in when the move needs to support the work around it, not just reach the destination."
         variant="light"
-        layout="split"
+        layout="stack"
         className="border-b-0"
       >
-        <div className="flex items-start lg:justify-end">
-          <Button href="/#request-capacity">
-            <span className="inline-flex items-center gap-2">
-              <CheckCircle2 size={16} aria-hidden />
-              Request Capacity
-            </span>
-          </Button>
-        </div>
+        <Button href="/#request-capacity">Request Capacity</Button>
       </EditorialSection>
     </>
   );

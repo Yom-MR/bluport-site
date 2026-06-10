@@ -1,4 +1,3 @@
-import { CheckCircle2, Clock3, ClipboardCheck, KeyRound, Route } from "lucide-react";
 import Container from "@/components/ui/Container";
 
 const capabilityItems = [
@@ -14,22 +13,18 @@ const constraintRows = [
   {
     title: "Site access",
     body: "Delivery details, yard instructions, gate requirements, and contact points matter before dispatch.",
-    icon: KeyRound,
   },
   {
     title: "Timing windows",
     body: "Pickup and delivery expectations are aligned before the move starts.",
-    icon: Clock3,
   },
   {
     title: "Securement needs",
     body: "Equipment type, dimensions, weight, and handling requirements shape the trailer plan.",
-    icon: Route,
   },
   {
     title: "Closeout",
     body: "Delivery confirmation, POD handling, and follow-up keep the operation accountable.",
-    icon: ClipboardCheck,
   },
 ] as const;
 
@@ -76,28 +71,20 @@ export default function CapabilitySplit() {
               </h3>
               <div className="space-y-4">
                 {constraintRows.map((item) => {
-                  const Icon = item.icon;
                   return (
                     <details
                       key={item.title}
                       className="group rounded-2xl border border-[rgba(6,29,51,0.14)] bg-white/90 p-4 transition-colors open:border-[rgba(31,182,232,0.45)]"
                     >
                       <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-                        <span className="flex items-center gap-3">
-                          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(31,182,232,0.16)] text-[#0c5978]">
-                            <Icon size={17} aria-hidden />
-                          </span>
-                          <span className="text-[1.08rem] font-semibold tracking-[-0.015em] text-[#031426]">
-                            {item.title}
-                          </span>
+                        <span className="text-[1.08rem] font-semibold tracking-[-0.015em] text-[#031426]">
+                          {item.title}
                         </span>
-                        <CheckCircle2
-                          size={18}
-                          aria-hidden
-                          className="text-[#1fb6e8] transition-transform group-open:rotate-90"
-                        />
+                        <span className="text-xs font-bold tracking-[0.14em] text-[#1fb6e8] transition-transform group-open:translate-x-1">
+                          OPEN
+                        </span>
                       </summary>
-                      <p className="mt-3 pl-12 text-sm leading-relaxed text-[#355066] md:text-base">
+                      <p className="mt-3 text-sm leading-relaxed text-[#355066] md:text-base">
                         {item.body}
                       </p>
                     </details>

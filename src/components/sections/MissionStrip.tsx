@@ -1,27 +1,21 @@
-import { Building2, MapPin, ShieldCheck, Swords } from "lucide-react";
 import Container from "@/components/ui/Container";
 
 const credentials = [
   {
     title: "Veteran-owned",
-    description: "Discipline, accountability, and mission focus guide the operating model.",
-    icon: Swords,
+    description: "Discipline and mission focus shape the operating model.",
   },
   {
     title: "Houston-based",
-    description:
-      "Positioned for Gulf Coast field operations, equipment yards, and regional project movement.",
-    icon: MapPin,
+    description: "Built around Gulf Coast field operations and regional equipment movement.",
   },
   {
     title: "TWIC-certified personnel",
-    description: "Prepared for port, industrial, and controlled-access operating sites.",
-    icon: ShieldCheck,
+    description: "Prepared for controlled-access, port, and industrial operating sites.",
   },
   {
     title: "Insured commercial operations",
     description: "$1M auto, $250K cargo, and $2M general liability aggregate.",
-    icon: Building2,
   },
 ] as const;
 
@@ -40,14 +34,6 @@ export default function MissionStrip() {
         <ul className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
           {credentials.map((item) => (
             <li key={item.title} className="border-b border-[rgba(52,70,90,0.18)] pb-5">
-              {(() => {
-                const Icon = item.icon;
-                return (
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(31,182,232,0.14)] text-[#0a4f6b]">
-                    <Icon size={18} aria-hidden />
-              </span>
-                );
-              })()}
               <p className="mt-3 text-base font-semibold tracking-[-0.015em] text-[#031426]">{item.title}</p>
               <p className="mt-1.5 text-sm leading-relaxed text-[#4d5f74]">{item.description}</p>
             </li>

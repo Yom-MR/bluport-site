@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { BriefcaseBusiness, Building2, Factory, PlugZap } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { siteImages } from "@/data/siteImages";
 
@@ -10,7 +9,6 @@ const industryTiles = [
       "Keep rental fleets, attachments, and machines aligned with jobsite timing and customer demand.",
     image: siteImages.industriesConstruction,
     alt: "Construction and equipment rental fleet",
-    icon: Building2,
     className: "lg:col-span-7",
   },
   {
@@ -19,7 +17,6 @@ const industryTiles = [
       "Support outage-sensitive work where equipment delays can stall crews, restoration timelines, and infrastructure schedules.",
     image: siteImages.industriesUtilities,
     alt: "Utilities and infrastructure power lines",
-    icon: PlugZap,
     className: "lg:col-span-5",
   },
   {
@@ -28,7 +25,6 @@ const industryTiles = [
       "Move support assets around shutdowns, production windows, vendor coordination, and controlled-access sites.",
     image: siteImages.industriesIndustrial,
     alt: "Industrial and critical facilities",
-    icon: Factory,
     className: "lg:col-span-5",
   },
   {
@@ -37,7 +33,6 @@ const industryTiles = [
       "Support scheduled equipment movement for uptime-driven infrastructure builds, generators, site equipment, and critical-path work.",
     image: siteImages.industriesDataCenter,
     alt: "Data center construction",
-    icon: BriefcaseBusiness,
     className: "lg:col-span-7",
   },
 ] as const;
@@ -72,9 +67,6 @@ export default function IndustriesMosaic() {
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,10,20,0.16)_0%,rgba(2,10,20,0.44)_56%,rgba(2,10,20,0.78)_100%)]" />
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(76,201,240,0.2)] text-[#8be1f8]">
-                  <tile.icon size={18} aria-hidden />
-                </span>
                 <h3 className="text-[1.56rem] font-bold leading-tight tracking-[-0.03em] text-white">{tile.title}</h3>
                 <p className="mt-2 max-w-[42ch] text-sm leading-relaxed text-[#d1dde9] md:text-base">
                   {tile.description}

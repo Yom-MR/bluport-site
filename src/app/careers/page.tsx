@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { CheckCircle2, Compass, Handshake, ShieldCheck, Users2 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
@@ -71,14 +70,15 @@ export default function CareersPage() {
         eyebrow="CAREERS"
         title="Build a logistics career with mission behind it."
         description="Bluport is building a veteran-focused logistics company for drivers, dispatchers, operators, and leaders who want their work to matter."
-        image={siteImages.industrialManufacturing}
+        image={siteImages.careersHero}
+        imagePosition="object-[center_48%]"
         variant="dark"
       />
 
       <EditorialSection
         eyebrow="WHO FITS BLUPORT"
         title="Who fits Bluport."
-        description="People who value communication, discipline, field awareness, accountability, and customer outcomes."
+        description="Bluport is looking for people who value communication, discipline, field awareness, accountability, and customer outcomes."
         variant="light"
         layout="stack"
       >
@@ -114,36 +114,17 @@ export default function CareersPage() {
       <EditorialSection
         eyebrow="VETERAN PATHWAY"
         title="Veterans bring what logistics needs."
-        description="Bluport values the discipline, leadership, and resilience veterans bring to operations. Those traits transfer directly into field logistics, customer communication, and execution accountability."
+        description="Veterans bring discipline, leadership, resilience, and accountability - traits that transfer directly into field logistics and customer communication."
         variant="light"
-        layout="split"
+        layout="stack"
         className="border-b-0"
       >
-        <div className="space-y-6 lg:justify-self-end">
-          <ul className="space-y-3 text-sm leading-7 text-slate-700 md:text-base">
-            <li className="flex items-start gap-2.5">
-              <ShieldCheck size={16} aria-hidden className="mt-1 shrink-0 text-sky-700" />
-              Operational discipline under pressure
-            </li>
-            <li className="flex items-start gap-2.5">
-              <Handshake size={16} aria-hidden className="mt-1 shrink-0 text-sky-700" />
-              Ownership in customer communication
-            </li>
-            <li className="flex items-start gap-2.5">
-              <Compass size={16} aria-hidden className="mt-1 shrink-0 text-sky-700" />
-              Field-aware decision making
-            </li>
-            <li className="flex items-start gap-2.5">
-              <Users2 size={16} aria-hidden className="mt-1 shrink-0 text-sky-700" />
-              Team-first accountability
-            </li>
-          </ul>
-          <Button href="/contact">
-            <span className="inline-flex items-center gap-2">
-              <CheckCircle2 size={16} aria-hidden />
-              Contact Operations
-            </span>
-          </Button>
+        <div className="space-y-6">
+          <p className="max-w-[66ch] text-base leading-8 text-slate-700 md:text-lg">
+            Bluport is building an operating culture that values professionalism in the field,
+            clear customer communication, and follow-through after the move is done.
+          </p>
+          <Button href="/contact">Contact Operations</Button>
         </div>
       </EditorialSection>
     </>

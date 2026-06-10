@@ -1,26 +1,21 @@
-import { ClipboardCheck, MessagesSquare, Route, ShieldCheck } from "lucide-react";
 import Container from "@/components/ui/Container";
 
 const principles = [
   {
     title: "Plan before dispatch",
     body: "Asset details, site constraints, trailer fit, timing, and contact points are clarified upfront.",
-    icon: ShieldCheck,
   },
   {
     title: "Communicate before customers ask",
     body: "Updates should reduce uncertainty, not create another follow-up task.",
-    icon: MessagesSquare,
   },
   {
     title: "Move with field context",
     body: "Jobsite realities, yard access, and delivery windows shape the plan.",
-    icon: Route,
   },
   {
     title: "Close out with documentation",
     body: "Delivery confirmation, POD handling, and follow-up complete the move.",
-    icon: ClipboardCheck,
   },
 ] as const;
 
@@ -42,17 +37,10 @@ export default function OperatingPromise() {
         <ul className="divide-y divide-[rgba(111,127,145,0.3)] border-y border-[rgba(111,127,145,0.3)]">
           {principles.map((principle) => (
             <li key={principle.title} className="py-5">
-              <div className="flex items-start gap-3">
-                <span className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(31,182,232,0.16)] text-[#0c5978]">
-                  <principle.icon size={18} aria-hidden />
-                </span>
-                <div>
-                  <p className="text-lg leading-snug font-semibold tracking-[-0.02em] text-[#031426] md:text-xl">
-                    {principle.title}
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-[#4d5f74] md:text-base">{principle.body}</p>
-                </div>
-              </div>
+              <p className="text-lg leading-snug font-semibold tracking-[-0.02em] text-[#031426] md:text-xl">
+                {principle.title}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-[#4d5f74] md:text-base">{principle.body}</p>
             </li>
           ))}
         </ul>

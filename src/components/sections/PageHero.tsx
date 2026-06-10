@@ -8,6 +8,7 @@ type PageHeroProps = {
   title: string;
   description: string;
   image?: string;
+  imagePosition?: string;
   variant: "dark" | "light";
   children?: ReactNode;
 };
@@ -17,6 +18,7 @@ export default function PageHero({
   title,
   description,
   image,
+  imagePosition,
   variant,
   children,
 }: PageHeroProps) {
@@ -38,7 +40,7 @@ export default function PageHero({
             alt=""
             fill
             priority
-            className="object-cover object-center"
+            className={cn("object-cover", imagePosition ?? "object-center")}
             sizes="100vw"
           />
           <div
