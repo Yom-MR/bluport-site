@@ -6,42 +6,45 @@ import { NAV_LINKS } from "@/lib/constants";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-[rgba(107,124,143,0.18)] bg-[rgba(2,7,17,0.7)] backdrop-blur-xl">
-      <Container className="flex flex-wrap items-center justify-between gap-3 py-2">
+    <nav className="sticky top-0 z-50 border-b border-[rgba(200,210,221,0.16)] bg-[rgba(2,10,20,0.82)] backdrop-blur-xl">
+      <Container className="flex min-h-[72px] flex-wrap items-center justify-between gap-3 py-3">
         <Link
           href="/"
           aria-label="BPL Bluport home"
-          className="flex min-w-[204px] items-center py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+          className="flex min-w-[220px] items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
         >
           <BrandLogo variant="light" placement="navbar" />
         </Link>
 
-        <div className="flex flex-1 items-center justify-end gap-x-5 gap-y-2">
+        <div className="flex flex-1 items-center justify-end gap-x-6 gap-y-2">
           {/* Nav links hidden on small screens to prevent overflow */}
-          <div className="hidden md:flex md:items-center md:gap-x-5">
+          <div className="hidden md:flex md:items-center md:gap-x-6">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="group relative pb-1 text-[10px] font-medium tracking-[0.12em] text-[rgba(148,163,184,0.85)] uppercase transition-colors hover:text-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+                className="group relative pb-1 text-[11px] font-semibold tracking-[0.12em] text-[rgba(200,210,221,0.88)] uppercase transition-colors hover:text-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
               >
                 {link.label}
-                <span className="absolute right-0 bottom-0 h-px w-0 bg-[var(--cyan)] shadow-[0_0_10px_rgba(34,211,238,0.45)] transition-all duration-200 group-hover:left-0 group-hover:w-full" />
+                <span className="absolute right-0 bottom-0 h-px w-0 bg-[var(--cyan)] transition-all duration-200 group-hover:left-0 group-hover:w-full" />
               </Link>
             ))}
           </div>
-          <Button href="/#request-capacity" className="px-4 py-2 text-[11px] uppercase">
+          <Button
+            href="/#request-capacity"
+            className="rounded-lg px-5 py-2.5 text-[11px] font-semibold tracking-[0.12em] uppercase"
+          >
             Request Capacity
           </Button>
         </div>
 
-        <div className="w-full border-t border-[rgba(148,163,184,0.12)] pt-2 md:hidden">
+        <div className="w-full border-t border-[rgba(200,210,221,0.14)] pt-2 md:hidden">
           <nav aria-label="Mobile primary navigation" className="flex flex-wrap gap-x-4 gap-y-2">
             {NAV_LINKS.map((link) => (
               <Link
                 key={`mobile-${link.label}`}
                 href={link.href}
-                className="text-[11px] font-medium tracking-[0.12em] text-[var(--muted)] uppercase transition-colors hover:text-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+                className="text-[11px] font-medium tracking-[0.12em] text-[var(--slate-300)] uppercase transition-colors hover:text-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
               >
                 {link.label}
               </Link>

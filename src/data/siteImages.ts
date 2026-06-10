@@ -6,4 +6,10 @@ export const siteImages = {
   utilitiesInfrastructure: "/images/jobsites/industry-utilities-infrastructure.jpg",
   dataCenterConstruction: "/images/jobsites/industry-data-center.jpg",
   industrialManufacturing: "/images/jobsites/industry-industrial-manufacturing.jpg",
+  premiumHero: "/images/loads/IMG_0914.JPEG",
+  capabilityTexture: "/images/loads/equipment-on-trailer.jpg",
+  fleetShowcase: "/images/loads/IMG_5849.PNG",
+  industriesConstruction: "/images/jobsites/industry-construction-equipment.jpg",
+  industriesUtilities: "/images/jobsites/utility-infrastructure.jpg",
+  industriesIndustrial: "/images/jobsites/data-center-infrastructure.jpg",
 } as const;

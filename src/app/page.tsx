@@ -1,19 +1,21 @@
-import CinematicHero from "@/components/sections/CinematicHero";
-import FleetCapability from "@/components/sections/FleetCapability";
-import IndustryMosaic from "@/components/sections/IndustryMosaic";
-import IntroStatement from "@/components/sections/IntroStatement";
+import CapabilitySplit from "@/components/sections/CapabilitySplit";
+import FleetShowcase from "@/components/sections/FleetShowcase";
+import IndustriesMosaic from "@/components/sections/IndustriesMosaic";
+import MissionStrip from "@/components/sections/MissionStrip";
 import OperatingPromise from "@/components/sections/OperatingPromise";
+import PremiumHero from "@/components/sections/PremiumHero";
 import RequestCapacity from "@/components/sections/RequestCapacity";
-import ServicesPanel from "@/components/sections/ServicesPanel";
+import ServicesEditorial from "@/components/sections/ServicesEditorial";
 
 export default function Home() {
   return (
     <>
-      <CinematicHero />
-      <IntroStatement />
-      <FleetCapability />
-      <ServicesPanel />
-      <IndustryMosaic />
+      <PremiumHero />
+      <MissionStrip />
+      <CapabilitySplit />
+      <FleetShowcase />
+      <ServicesEditorial />
+      <IndustriesMosaic />
       <OperatingPromise />
       <RequestCapacity />
     </>

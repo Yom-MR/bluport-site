@@ -13,15 +13,23 @@ export default function BrandLogo({ variant = "light", placement = "navbar" }: B
   const sources = useMemo(
     () =>
       variant === "light"
-        ? ["/images/brand/BPL White png.png", "/images/brand/bpl-logo-transparent-white.png", "/images/brand/bpl-logo-white.png"]
-        : ["/images/brand/BPL Black png.png", "/images/brand/bpl-logo-transparent-black.png", "/images/brand/bpl-logo-black.png"],
+        ? [
+            "/images/brand/bpl-logo-transparent-white.png",
+            "/images/brand/BPL White png.png",
+            "/images/brand/bpl-logo-white.svg",
+          ]
+        : [
+            "/images/brand/bpl-logo-transparent-black.png",
+            "/images/brand/BPL Black png.png",
+            "/images/brand/bpl-logo-black.png",
+          ],
     [variant],
   );
 
   const sizes =
     placement === "navbar"
-      ? { width: 292, height: 70, className: "h-[34px] w-auto object-contain" }
-      : { width: 236, height: 58, className: "h-[30px] w-auto object-contain" };
+      ? { width: 320, height: 80, className: "h-[38px] w-auto object-contain" }
+      : { width: 280, height: 68, className: "h-[34px] w-auto object-contain" };
 
   if (sourceIndex >= sources.length) {
     return (

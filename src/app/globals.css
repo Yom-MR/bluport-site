@@ -1,31 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020711;
-  --foreground: #f4f7fb;
-  --navy: #031424;
-  --navy-soft: #08223b;
-  --blue: #5ba9d6;
-  --cyan: #20c7e8;
-  --green: #22c55e;
-  --violet: #312e81;
-  --muted: #6b7c8f;
-  --border: rgba(107, 124, 143, 0.24);
-  --card: rgba(15, 23, 42, 0.72);
+  --background: #020a14;
+  --foreground: #ffffff;
+  --navy-950: #020a14;
+  --navy-900: #031426;
+  --navy-850: #061d33;
+  --blue-500: #1fb6e8;
+  --blue-400: #4cc9f0;
+  --green-500: #27c381;
+  --slate-700: #34465a;
+  --slate-500: #6f7f91;
+  --slate-300: #c8d2dd;
+  --slate-100: #eef3f8;
+  --white: #ffffff;
+  --blue: var(--blue-500);
+  --cyan: var(--blue-400);
+  --muted: var(--slate-500);
+  --border: rgba(200, 210, 221, 0.24);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-navy: var(--navy);
-  --color-navy-soft: var(--navy-soft);
-  --color-blue: var(--blue);
-  --color-cyan: var(--cyan);
-  --color-green: var(--green);
-  --color-violet: var(--violet);
+  --color-navy: var(--navy-900);
+  --color-navy-soft: var(--navy-850);
+  --color-blue: var(--blue-500);
+  --color-cyan: var(--blue-400);
+  --color-green: var(--green-500);
   --color-muted: var(--muted);
   --color-border: var(--border);
-  --color-card: var(--card);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -43,33 +47,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
-  background-image:
-    radial-gradient(circle at 8% -8%, rgba(32, 199, 232, 0.08), transparent 38%),
-    radial-gradient(circle at 90% 0%, rgba(91, 169, 214, 0.06), transparent 34%),
-    linear-gradient(180deg, #020711 0%, #031424 42%, #071b30 100%);
-  line-height: 1.5;
-}
-
-body::before {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.09;
-  background-image:
-    radial-gradient(circle at 25% 25%, rgba(248, 250, 252, 0.03), transparent 62%);
-  background-size: 100% 100%;
-}
-
-body::after {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.04;
-  background: linear-gradient(120deg, transparent 0%, rgba(148, 163, 184, 0.06) 50%, transparent 100%);
+  line-height: 1.65;
 }
 
 a {
@@ -82,7 +60,7 @@ a {
   left: 1rem;
   top: -3rem;
   z-index: 100;
-  border: 1px solid rgba(34, 211, 238, 0.5);
+  border: 1px solid rgba(76, 201, 240, 0.55);
   background: rgba(2, 8, 23, 0.92);
   color: var(--foreground);
   border-radius: 0.5rem;
@@ -102,112 +80,58 @@ select:focus-visible,
 textarea:focus-visible {
   outline: none;
   box-shadow:
-    0 0 0 2px rgba(34, 211, 238, 0.75),
+    0 0 0 2px rgba(76, 201, 240, 0.75),
     0 0 0 4px rgba(2, 8, 23, 0.92);
 }
 
-.text-gradient {
-  background: linear-gradient(125deg, #f8fafc 18%, #7dd3fc 58%, #22d3ee 98%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.bg-grid {
-  background-image:
-    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
-  background-size: 44px 44px;
-}
-
-.glass-card {
-  border: 1px solid rgba(148, 163, 184, 0.24);
-  background: linear-gradient(145deg, rgba(15, 23, 42, 0.68) 0%, rgba(6, 26, 51, 0.58) 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(248, 250, 252, 0.03),
-    0 16px 38px rgba(2, 8, 23, 0.34);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-
-.section-shell {
-  position: relative;
-  border-top: 1px solid rgba(148, 163, 184, 0.05);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
-  padding-top: 6.5rem;
-  padding-bottom: 6.5rem;
-}
-
-.section-shell::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.1), transparent);
-}
-
-.section-shell::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.03), transparent 42%),
-    linear-gradient(160deg, transparent 72%, rgba(14, 165, 233, 0.025) 100%);
-}
-
-.section-dark {
-  background:
-    radial-gradient(circle at 92% -28%, rgba(32, 199, 232, 0.12), transparent 34%),
-    linear-gradient(180deg, #031424 0%, #071b30 100%);
-}
-
-.section-light {
-  --foreground: #031424;
-  --muted: #6b7c8f;
-  --border: rgba(107, 124, 143, 0.24);
-  --card: rgba(255, 255, 255, 0.95);
-  background: linear-gradient(180deg, #f8fafd 0%, #f4f7fb 100%);
-}
-
-.section-split .glass-card {
-  background: linear-gradient(145deg, rgba(15, 23, 42, 0.8) 0%, rgba(6, 26, 51, 0.62) 100%);
-}
-
 .eyebrow {
-  color: var(--cyan);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  color: var(--blue-400);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .technical-label {
-  color: var(--muted);
+  color: var(--blue-400);
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-.panel-border {
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  box-shadow: inset 0 0 0 1px rgba(248, 250, 252, 0.02);
+.section-pad {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
-.hero-glow {
-  position: relative;
+.headline-display {
+  font-size: clamp(3.25rem, 7.2vw, 4.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.section-title {
+  font-size: clamp(2.1rem, 4.8vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  text-wrap: balance;
 }
 
 .soft-divider {
-  border-top: 1px solid rgba(148, 163, 184, 0.15);
+  border-top: 1px solid rgba(111, 127, 145, 0.35);
 }
 
-@media (max-width: 768px) {
-  .section-shell {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+@media (max-width: 767px) {
+  .section-pad {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .headline-display {
+    font-size: clamp(2.8rem, 12vw, 3.25rem);
   }
 }

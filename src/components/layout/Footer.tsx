@@ -14,26 +14,28 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="border-t border-[rgba(107,124,143,0.18)] bg-[linear-gradient(180deg,#031424,#020711)] py-9">
-      <Container className="space-y-4">
-        <div className="flex flex-wrap items-center justify-between gap-6">
-          <div className="space-y-1.5">
+    <footer id="contact" className="border-t border-[rgba(200,210,221,0.15)] bg-[#020a14] py-12">
+      <Container className="space-y-6">
+        <div className="flex flex-wrap items-start justify-between gap-8">
+          <div className="space-y-2.5">
             <BrandLogo variant="light" placement="footer" />
-            <p className="text-sm text-[var(--muted)]">{SITE_TAGLINE}</p>
+            <p className="text-sm text-[#c8d2dd]">{SITE_TAGLINE}</p>
           </div>
-          <nav className="flex flex-wrap gap-x-6 gap-y-2">
+          <nav className="flex flex-wrap justify-end gap-x-6 gap-y-3">
             {footerLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-xs font-medium tracking-[0.1em] text-[var(--muted)] uppercase transition-colors hover:text-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+                className="text-xs font-semibold tracking-[0.1em] text-[#c8d2dd] uppercase transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
         </div>
-        <p className="text-xs text-[var(--muted)]">© {new Date().getFullYear()} Bluport Logistics. All rights reserved.</p>
+        <p className="border-t border-[rgba(200,210,221,0.15)] pt-5 text-xs text-[#6f7f91]">
+          © {new Date().getFullYear()} Bluport Logistics. All rights reserved.
+        </p>
       </Container>
     </footer>
   );
