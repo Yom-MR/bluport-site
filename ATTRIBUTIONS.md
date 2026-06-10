@@ -2,7 +2,7 @@
 
 ## Bluport-owned media (active homepage usage)
 
-1. public/images/loads/IMG_0390.jpg
+1. public/images/loads/Factory BG.png
 - Source: Bluport Logistics owned media
 
 2. public/images/loads/IMG_0914.JPEG
