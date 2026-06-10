@@ -1,24 +1,20 @@
 # Media Attributions
 
-## New hero image (active homepage usage)
-
-1. public/images/backgrounds/hero-premium-industrial.jpg
-- Source URL: https://unsplash.com/photos/yellow-and-black-excavator-on-brown-sand-during-daytime-bGMyTnSlYvE
-- Creator: EESOFUFFZICH (Unsplash profile: https://unsplash.com/@eesofuffzich)
-- License/source note: Downloaded from Unsplash and used under the Unsplash License (https://unsplash.com/license)
-
 ## Bluport-owned media (active homepage usage)
 
-1. public/images/loads/IMG_0914.JPEG
+1. public/images/loads/IMG_0390.jpg
 - Source: Bluport Logistics owned media
 
-2. public/images/loads/equipment-on-trailer.jpg
+2. public/images/loads/IMG_0914.JPEG
 - Source: Bluport Logistics owned media
 
-3. public/images/loads/IMG_0426.JPEG
+3. public/images/loads/equipment-on-trailer.jpg
 - Source: Bluport Logistics owned media
 
-4. public/images/loads/IMG_5849.PNG
+4. public/images/loads/IMG_0426.JPEG
+- Source: Bluport Logistics owned media
+
+5. public/images/loads/IMG_5849.PNG
 - Source: Bluport Logistics owned media
 
 ## Stock images still in use
