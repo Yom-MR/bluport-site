@@ -32,7 +32,7 @@ const industryTiles = [
 export default function IndustriesMosaic() {
   return (
     <section className="section-pad bg-[#020a14] text-white">
-      <Container className="space-y-12">
+      <Container className="space-y-14">
         <div className="max-w-[74ch] space-y-5">
           <p className="eyebrow">INDUSTRIES</p>
           <h2 className="section-title max-w-[15ch] text-white">
@@ -44,11 +44,11 @@ export default function IndustriesMosaic() {
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-12">
+        <div className="grid gap-7 lg:grid-cols-12">
           {industryTiles.map((tile) => (
             <article
               key={tile.title}
-              className={`relative h-[280px] overflow-hidden rounded-[26px] border border-white/8 lg:h-[330px] ${tile.className}`}
+              className={`relative h-[300px] overflow-hidden rounded-[28px] border border-white/10 lg:h-[360px] ${tile.className}`}
             >
               <Image
                 src={tile.image}
@@ -57,15 +57,15 @@ export default function IndustriesMosaic() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 48vw"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,10,20,0.12)_0%,rgba(2,10,20,0.62)_82%,rgba(2,10,20,0.8)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,10,20,0.16)_0%,rgba(2,10,20,0.44)_56%,rgba(2,10,20,0.78)_100%)]" />
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-                <h3 className="text-[1.45rem] font-bold leading-tight tracking-[-0.03em] text-white">{tile.title}</h3>
+                <h3 className="text-[1.56rem] font-bold leading-tight tracking-[-0.03em] text-white">{tile.title}</h3>
               </div>
             </article>
           ))}
         </div>
 
-        <p className="border-t border-[rgba(200,210,221,0.2)] pt-6 text-sm leading-relaxed text-[#b8c5d3]">
+        <p className="border-t border-[rgba(200,210,221,0.24)] pt-7 text-base leading-relaxed text-[#c7d3df]">
           Additional support includes aerospace, defense, government response, emergency movement,
           and project logistics.
         </p>

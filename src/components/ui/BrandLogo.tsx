@@ -14,11 +14,13 @@ export default function BrandLogo({ variant = "light", placement = "navbar" }: B
     () =>
       variant === "light"
         ? [
+            "/images/brand/bpl-logo-white-cropped.png",
             "/images/brand/BPL White png.png",
             "/images/brand/bpl-logo-transparent-white.png",
             "/images/brand/bpl-logo-white.png",
           ]
         : [
+            "/images/brand/bpl-logo-black-cropped.png",
             "/images/brand/BPL Black png.png",
             "/images/brand/bpl-logo-transparent-black.png",
             "/images/brand/bpl-logo-black.png",
@@ -29,12 +31,12 @@ export default function BrandLogo({ variant = "light", placement = "navbar" }: B
   const logoBox =
     placement === "navbar"
       ? {
-          className: "relative h-[40px] w-[144px] md:h-[42px] md:w-[156px]",
-          sizes: "(max-width: 768px) 144px, 156px",
+          className: "relative h-[52px] w-[136px] md:h-[56px] md:w-[148px]",
+          sizes: "(max-width: 768px) 136px, 148px",
         }
       : {
-          className: "relative h-[34px] w-[110px] md:h-[36px] md:w-[116px]",
-          sizes: "(max-width: 768px) 110px, 116px",
+          className: "relative h-[44px] w-[116px] md:h-[48px] md:w-[126px]",
+          sizes: "(max-width: 768px) 116px, 126px",
         };
 
   if (sourceIndex >= sources.length) {

@@ -37,7 +37,7 @@ export default function ServicesEditorial() {
   return (
     <section id="services" className="section-pad bg-[#ffffff] text-[#031426]">
       <Container className="grid gap-10 lg:grid-cols-[40%_60%]">
-        <div className="max-w-[46ch] space-y-5 lg:sticky lg:top-24 lg:self-start">
+        <div className="max-w-[46ch] space-y-7 lg:sticky lg:top-24 lg:self-start">
           <p className="eyebrow">SERVICES</p>
           <h2 className="section-title max-w-[14ch] text-[#031426]">
             Services built for field execution.
@@ -46,6 +46,12 @@ export default function ServicesEditorial() {
             Bluport supports the work that happens before a job can start, after a schedule
             changes, and when equipment needs to be repositioned fast.
           </p>
+          <div className="border-l-2 border-[#1fb6e8] pl-5">
+            <p className="text-xs font-bold tracking-[0.14em] text-[#1fb6e8] uppercase">Field Execution</p>
+            <p className="mt-2 text-sm leading-relaxed text-[#44586d]">
+              Best fit: rental fleets, jobsites, utilities, infrastructure, industrial operations.
+            </p>
+          </div>
         </div>
 
         <ol className="divide-y divide-[rgba(111,127,145,0.3)] border-y border-[rgba(111,127,145,0.3)]">

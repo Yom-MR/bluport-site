@@ -47,7 +47,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
-  line-height: 1.65;
+  line-height: 1.72;
+  text-rendering: geometricPrecision;
 }
 
 a {
@@ -103,6 +104,22 @@ textarea:focus-visible {
 .section-pad {
   padding-top: 136px;
   padding-bottom: 136px;
+}
+
+section {
+  position: relative;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(200, 210, 221, 0), rgba(200, 210, 221, 0.13), rgba(200, 210, 221, 0));
+  pointer-events: none;
+  opacity: 0.45;
 }
 
 .headline-display {

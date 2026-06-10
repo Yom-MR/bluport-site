@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Container from "@/components/ui/Container";
-import { siteImages } from "@/data/siteImages";
 
 const capabilityItems = [
   "Equipment",
@@ -11,7 +9,7 @@ const capabilityItems = [
   "Project-critical freight",
 ] as const;
 
-const executionItems = ["urgent moves", "scheduled capacity", "site-aware delivery"] as const;
+const executionItems = ["Urgent moves", "Scheduled capacity", "Site-aware delivery"] as const;
 
 export default function CapabilitySplit() {
   return (
@@ -43,25 +41,22 @@ export default function CapabilitySplit() {
             </ul>
           </div>
 
-          <div className="relative overflow-hidden rounded-[34px] border border-[rgba(6,29,51,0.1)] bg-white p-8 md:p-11">
-            <Image
-              src={siteImages.capabilityTexture}
-              alt="Equipment and securement texture"
-              fill
-              className="object-cover opacity-35"
-              sizes="(max-width: 1024px) 100vw, 640px"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.93)_0%,rgba(255,255,255,0.75)_58%,rgba(255,255,255,0.46)_100%)]" />
-            <div className="relative space-y-7">
-              <p className="max-w-[52ch] text-[1.08rem] leading-[1.75] text-[#0f253a]">
-                Built for jobsites, rental yards, utility crews, and industrial teams that cannot
-                afford idle time.
+          <div className="relative overflow-hidden rounded-[34px] border border-[rgba(6,29,51,0.1)] bg-[linear-gradient(140deg,#ffffff_0%,#f3f7fc_55%,#eaf2fb_100%)] p-8 md:p-11">
+            <div className="absolute inset-0 opacity-60">
+              <div className="absolute left-0 right-0 top-8 h-px bg-[rgba(6,29,51,0.08)]" />
+              <div className="absolute left-0 right-0 top-[34%] h-px bg-[rgba(6,29,51,0.08)]" />
+              <div className="absolute left-0 right-0 top-[58%] h-px bg-[rgba(6,29,51,0.08)]" />
+              <div className="absolute left-0 right-0 top-[82%] h-px bg-[rgba(6,29,51,0.08)]" />
+            </div>
+            <div className="relative space-y-8">
+              <p className="max-w-[48ch] text-[1.14rem] font-medium leading-[1.62] tracking-[-0.01em] text-[#0f253a]">
+                Built for jobsites, rental yards, utility crews, and industrial teams.
               </p>
-              <ul className="space-y-3">
-                {executionItems.map((item) => (
-                  <li key={item} className="inline-flex items-center gap-3 text-sm font-semibold tracking-[0.08em] text-[#031426] uppercase">
-                    <span className="inline-block h-px w-7 bg-[#1fb6e8]" />
-                    <span>{item}</span>
+              <ul className="space-y-5">
+                {executionItems.map((item, index) => (
+                  <li key={item} className="flex items-center justify-between border-b border-[rgba(6,29,51,0.12)] pb-4">
+                    <span className="text-[1.12rem] font-semibold tracking-[-0.015em] text-[#031426]">{item}</span>
+                    <span className="text-xs font-bold tracking-[0.12em] text-[#1fb6e8]">0{index + 1}</span>
                   </li>
                 ))}
               </ul>
