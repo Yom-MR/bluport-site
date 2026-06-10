@@ -6,7 +6,7 @@ export const siteImages = {
   utilitiesInfrastructure: "/images/jobsites/industry-utilities-infrastructure.jpg",
   dataCenterConstruction: "/images/jobsites/industry-data-center.jpg",
   industrialManufacturing: "/images/jobsites/industry-industrial-manufacturing.jpg",
-  premiumHero: "/images/loads/Factory%20BG.png",
+  premiumHero: "/images/loads/Factory%20BG%20Rev.png",
   capabilityTexture: "/images/jobsites/equipment-yard.jpg",
   fleetShowcase: "/images/loads/IMG_5849.PNG",
   industriesConstruction: "/images/jobsites/industry-construction-equipment.jpg",
