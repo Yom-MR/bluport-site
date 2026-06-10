@@ -86,7 +86,7 @@ export default function RequestCapacityForm() {
       setFormData(initialFormData);
     } catch {
       setSubmitError(
-        "We couldn't send the request. Please try again or contact support@bluport.us.",
+        "We couldn't send the request. Please try again or contact booking@bluport.us.",
       );
     } finally {
       setIsSending(false);

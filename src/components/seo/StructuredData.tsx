@@ -4,7 +4,7 @@ export default function StructuredData() {
     "@type": "Organization",
     name: "Bluport Logistics",
     url: "https://bluport.us",
-    email: "support@bluport.us",
+    email: "booking@bluport.us",
     telephone: "+1-832-627-7059",
     address: {
       "@type": "PostalAddress",

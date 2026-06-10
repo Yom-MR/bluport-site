@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Button from "@/components/ui/Button";
-import Container from "@/components/ui/Container";
-import SectionHeader from "@/components/ui/SectionHeader";
+import PageHero from "@/components/sections/PageHero";
+import EditorialSection from "@/components/ui/EditorialSection";
+import FeatureRows from "@/components/ui/FeatureRows";
 import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
@@ -17,115 +17,107 @@ export const metadata: Metadata = {
   ],
 };
 
-const values = [
+const missionColumns = [
   {
-    title: "Accountability",
-    description: "We own the move from intake through closeout, with clear responsibility at every step.",
+    title: "Mission first",
+    description:
+      "Bluport is built around the belief that transportation is more than showing up with a truck. Every move supports uptime, schedule protection, and the people depending on that asset to arrive ready.",
   },
   {
-    title: "Precision",
-    description: "Routing, securement, timing, and site constraints are planned with operational rigor.",
+    title: "Field-aware planning",
+    description:
+      "Route conditions, site access, securement, customer communication, and timing constraints are considered together so the plan reflects real operating conditions instead of assumptions.",
   },
   {
-    title: "Communication",
-    description: "Customers receive direct updates, realistic timelines, and immediate escalation when conditions change.",
+    title: "Closeout discipline",
+    description:
+      "The move is not complete until delivery is confirmed, documentation is closed, and the customer has the follow-up needed to keep the next step moving without friction.",
+  },
+];
+
+const operatingSteps = [
+  {
+    label: "01",
+    title: "Intake",
+    description:
+      "Understand the asset, timing, route, site access, and constraints before a truck is assigned.",
   },
   {
-    title: "Readiness",
-    description: "Rapid-response posture and disciplined planning support both urgent missions and scheduled capacity.",
+    label: "02",
+    title: "Plan",
+    description:
+      "Align truck, trailer, securement, communication, and contingency options around the actual move.",
+  },
+  {
+    label: "03",
+    title: "Move",
+    description:
+      "Execute with dispatch visibility, field-aware decisions, and communication that does not need chasing.",
+  },
+  {
+    label: "04",
+    title: "Closeout",
+    description:
+      "Confirm delivery, documentation, POD, and follow-up so the customer has a clean operational finish.",
   },
 ];
 
 export default function MissionPage() {
   return (
     <>
-      <section className="section-shell hero-glow overflow-hidden">
-        <Container className="space-y-6">
-          <SectionHeader
-            eyebrow="MISSION"
-            title="Veteran-led logistics for critical assets."
-            description="Bluport exists to move the equipment, materials, and field-support assets that keep projects, crews, and infrastructure moving."
-          />
-        </Container>
-      </section>
+      <PageHero
+        eyebrow="MISSION"
+        title="Veteran-led logistics for critical assets."
+        description="Bluport exists to move the equipment, materials, and field-support assets that keep projects, crews, and infrastructure moving."
+        image={siteImages.fieldOperations}
+        variant="dark"
+      />
 
-      <section className="section-shell pt-0">
-        <Container>
-          <article className="glass-card relative min-h-[320px] overflow-hidden rounded-2xl p-6 md:min-h-[380px] md:p-8">
-            <Image
-              src={siteImages.fieldOperations}
-              alt="Representative mission-critical equipment transport scene"
-              fill
-              className="object-cover"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(2,8,23,0.88)_12%,rgba(2,8,23,0.45)_58%,rgba(2,8,23,0.75)_100%)]" />
-            <div className="relative z-10 max-w-2xl">
-              <p className="technical-label text-[var(--cyan)]">VETERAN-LED EXECUTION</p>
-              <h3 className="mt-3 text-2xl font-semibold text-[var(--foreground)] md:text-3xl">
-                Operational discipline from objective to closeout.
+      <EditorialSection
+        eyebrow="OPERATING MODEL"
+        title="Operational discipline from request to closeout."
+        description="Bluport is built around the belief that transportation is more than showing up with a truck. Every move depends on clear planning, field-aware communication, securement discipline, and reliable closeout."
+        variant="light"
+        layout="stack"
+      >
+        <div className="grid gap-8 md:grid-cols-3">
+          {missionColumns.map((column) => (
+            <article
+              key={column.title}
+              className="border-t border-[rgba(148,163,184,0.3)] pt-6"
+            >
+              <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                {column.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-[rgba(226,232,240,0.9)] md:text-base">
-                Representative field transport visual: a reminder that mission outcomes depend on
-                planning quality, communication rhythm, and execution reliability.
+              <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base">
+                {column.description}
               </p>
-            </div>
-          </article>
-        </Container>
-      </section>
+            </article>
+          ))}
+        </div>
+      </EditorialSection>
 
-      <section className="section-shell">
-        <Container className="grid gap-6 lg:grid-cols-2">
-          <article className="glass-card rounded-2xl p-6 md:p-7">
-            <p className="technical-label text-[var(--cyan)]">MORE THAN TRANSPORTATION</p>
-            <p className="mt-4 text-base leading-relaxed text-[var(--muted)] md:text-lg">
-              Bluport is built around the mission behind the move. A machine is not just freight -
-              it may be the asset that keeps a jobsite productive, restores a utility line,
-              supports a field crew, or protects a critical timeline.
-            </p>
-          </article>
-          <article className="glass-card rounded-2xl p-6 md:p-7">
-            <p className="technical-label text-[var(--cyan)]">VETERAN-LED EXECUTION</p>
-            <p className="mt-4 text-base leading-relaxed text-[var(--muted)] md:text-lg">
-              Military experience shapes how Bluport approaches logistics: confirm the objective,
-              plan the movement, communicate clearly, execute with discipline, and close the loop.
-            </p>
-          </article>
-        </Container>
-      </section>
+      <EditorialSection
+        eyebrow="MOVE RHYTHM"
+        title="How Bluport runs every move."
+        variant="dark"
+        layout="split"
+      >
+        <FeatureRows items={operatingSteps} variant="dark" />
+      </EditorialSection>
 
-      <section className="section-shell bg-[rgba(6,26,51,0.16)]">
-        <Container className="space-y-10">
-          <SectionHeader
-            eyebrow="OPERATING VALUES"
-            title="How Bluport runs every move."
-            description="Operational principles that govern planning, dispatch, and customer communication."
-          />
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {values.map((value) => (
-              <article key={value.title} className="glass-card rounded-2xl p-6">
-                <p className="technical-label text-[var(--cyan)]">VALUE</p>
-                <h3 className="mt-3 text-xl font-semibold text-[var(--foreground)]">{value.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{value.description}</p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="section-shell border-b-0">
-        <Container>
-          <div className="glass-card bg-grid rounded-2xl p-8 md:p-10">
-            <p className="technical-label text-[var(--cyan)]">MISSION CTA</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--foreground)] md:text-4xl">
-              When the move matters, the process matters.
-            </h2>
-            <div className="mt-6">
-              <Button href="/#request-capacity">Request Capacity</Button>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <EditorialSection
+        eyebrow="REQUEST CAPACITY"
+        title="When the move matters, the process matters."
+        description="Bluport is designed for projects and field operations that need disciplined execution, not generic freight handling."
+        variant="light"
+        layout="split"
+        className="border-b-0"
+      >
+        <div className="flex items-start lg:justify-end">
+          <Button href="/#request-capacity">Request Capacity</Button>
+        </div>
+      </EditorialSection>
     </>
   );
 }

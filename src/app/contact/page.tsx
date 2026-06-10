@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import RequestCapacityForm from "@/components/forms/RequestCapacityForm";
-import Container from "@/components/ui/Container";
-import SectionHeader from "@/components/ui/SectionHeader";
+import PageHero from "@/components/sections/PageHero";
+import EditorialSection from "@/components/ui/EditorialSection";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const contactItems = [
-  { label: "Operations", value: "support@bluport.us" },
+  { label: "Operations", value: "booking@bluport.us" },
   { label: "Phone", value: "832-627-7059" },
   { label: "Base", value: "Houston, Texas" },
   { label: "Response", value: "24/7 mission intake" },
@@ -25,49 +25,47 @@ const contactItems = [
 export default function ContactPage() {
   return (
     <>
-      <section className="section-shell hero-glow">
-        <Container>
-          <SectionHeader
-            eyebrow="CONTACT"
-            title="Talk to Bluport operations."
-            description="For urgent equipment movement, dedicated capacity, project support, or partnership inquiries, contact Bluport and we will follow up."
-          />
-        </Container>
-      </section>
+      <PageHero
+        eyebrow="CONTACT"
+        title="Talk to Bluport operations."
+        description="For urgent equipment movement, dedicated capacity, project support, or partnership inquiries, contact Bluport and we will follow up."
+        variant="light"
+      />
 
-      <section className="section-shell">
-        <Container className="space-y-10">
-          <SectionHeader
-            eyebrow="OPERATIONS CONTACT"
-            title="Command channel details"
-            description="Use these points of contact for mission intake and operating coordination."
-          />
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {contactItems.map((item) => (
-              <article key={item.label} className="glass-card rounded-2xl p-6">
-                <p className="technical-label text-[var(--cyan)]">{item.label}</p>
-                <p className="mt-3 text-base font-medium text-[var(--foreground)]">{item.value}</p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <EditorialSection
+        eyebrow="OPERATIONS CONTACT"
+        title="Command channel details."
+        description="Use these points of contact for urgent intake, scheduling discussions, and operating coordination."
+        variant="light"
+        layout="split"
+      >
+        <div className="grid gap-x-8 gap-y-5 md:grid-cols-2">
+          {contactItems.map((item) => (
+            <article key={item.label} className="border-t border-[rgba(148,163,184,0.28)] pt-4">
+              <p className="technical-label text-sky-700">{item.label}</p>
+              <p className="mt-3 text-lg font-medium text-slate-900">{item.value}</p>
+            </article>
+          ))}
+        </div>
+      </EditorialSection>
 
-      <section className="section-shell border-b-0">
-        <Container className="space-y-6">
-          <SectionHeader
-            eyebrow="REQUEST CAPACITY"
-            title="Submit move details"
-            description="Provide pickup, delivery, asset details, and constraints for operations review."
-          />
-          <div className="panel-border rounded-2xl bg-[rgba(2,8,23,0.35)] p-2 md:p-3">
+      <EditorialSection
+        eyebrow="REQUEST CAPACITY"
+        title="Submit move details."
+        description="Provide pickup, delivery, asset details, and constraints for operations review."
+        variant="dark"
+        layout="stack"
+        className="border-b-0"
+      >
+        <div className="space-y-6">
+          <div className="rounded-[2rem] border border-[rgba(148,163,184,0.16)] bg-[rgba(255,255,255,0.04)] p-2 md:p-3">
             <RequestCapacityForm />
           </div>
-          <p className="text-xs leading-relaxed text-[rgba(148,163,184,0.72)]">
-            Request details are routed directly to Bluport operations.
+          <p className="text-sm leading-7 text-[rgba(203,213,225,0.76)]">
+            Request details are routed securely to Bluport operations.
           </p>
-        </Container>
-      </section>
+        </div>
+      </EditorialSection>
     </>
   );
 }

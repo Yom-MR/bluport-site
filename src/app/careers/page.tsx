@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
-import Container from "@/components/ui/Container";
-import SectionHeader from "@/components/ui/SectionHeader";
+import PageHero from "@/components/sections/PageHero";
+import EditorialSection from "@/components/ui/EditorialSection";
+import FeatureRows from "@/components/ui/FeatureRows";
+import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -35,89 +37,91 @@ const whyWork = [
 ];
 
 const roles = [
-  "CDL / Non-CDL Drivers",
-  "Owner Operators",
-  "Dispatchers",
-  "Operations Coordinators",
-  "Logistics Brokers",
-  "Fleet / Driver Managers",
+  {
+    title: "CDL / Non-CDL Drivers",
+    description: "Drivers who value disciplined communication, securement standards, and reliable field execution.",
+  },
+  {
+    title: "Owner Operators",
+    description: "Independent operators who want consistent coordination, strong customer expectations, and operational professionalism.",
+  },
+  {
+    title: "Dispatchers",
+    description: "People who can translate move requirements into clean communication and decisive execution support.",
+  },
+  {
+    title: "Operations Coordinators",
+    description: "Team members who keep intake, planning, documentation, and closeout aligned under real deadlines.",
+  },
+  {
+    title: "Logistics Brokers",
+    description: "Operators who understand customer pressure, lane risk, and the importance of execution quality over noise.",
+  },
+  {
+    title: "Fleet / Driver Managers",
+    description: "Leaders who can reinforce readiness, accountability, and driver support across the operating model.",
+  },
 ];
 
 export default function CareersPage() {
   return (
     <>
-      <section className="section-shell hero-glow">
-        <Container>
-          <SectionHeader
-            eyebrow="CAREERS"
-            title="Build a logistics career with mission behind it."
-            description="Bluport is building a veteran-focused logistics company for drivers, dispatchers, operators, and leaders who want their work to matter."
-          />
-        </Container>
-      </section>
+      <PageHero
+        eyebrow="CAREERS"
+        title="Build a logistics career with mission behind it."
+        description="Bluport is building a veteran-focused logistics company for drivers, dispatchers, operators, and leaders who want their work to matter."
+        image={siteImages.industrialManufacturing}
+        variant="dark"
+      />
 
-      <section className="section-shell">
-        <Container className="space-y-10">
-          <SectionHeader
-            eyebrow="WHY WORK AT BLUPORT"
-            title="A team built for mission outcomes."
-            description="Culture and operating expectations designed for people who value precision and ownership."
-          />
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {whyWork.map((item) => (
-              <article key={item.title} className="glass-card rounded-2xl p-6">
-                <h3 className="text-lg font-semibold text-[var(--foreground)]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <EditorialSection
+        eyebrow="WHY BLUPORT"
+        title="A team built for mission outcomes."
+        description="Bluport is building a culture around clarity, accountability, and outcomes that matter in the field."
+        variant="light"
+        layout="stack"
+      >
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+          {whyWork.map((item) => (
+            <article key={item.title} className="border-t border-[rgba(148,163,184,0.28)] pt-5">
+              <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                {item.title}
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base">{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </EditorialSection>
 
-      <section className="section-shell bg-[rgba(6,26,51,0.14)]">
-        <Container className="space-y-10">
-          <SectionHeader
-            eyebrow="ROLES WE EXPECT TO HIRE FOR"
-            title="Core positions in the Bluport operating model."
-            description="Roles that shape field performance, customer communication, and execution quality."
-          />
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {roles.map((role) => (
-              <article key={role} className="glass-card rounded-2xl p-6">
-                <p className="text-base font-medium text-[var(--foreground)]">{role}</p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <EditorialSection
+        eyebrow="OPENING PROFILE"
+        title="Core positions in the Bluport operating model."
+        description="The roles below shape driver support, field execution, and customer confidence across every move."
+        variant="dark"
+        layout="split"
+      >
+        <FeatureRows
+          items={roles.map((role, index) => ({
+            label: String(index + 1).padStart(2, "0"),
+            title: role.title,
+            description: role.description,
+          }))}
+          variant="dark"
+        />
+      </EditorialSection>
 
-      <section className="section-shell">
-        <Container>
-          <div className="glass-card rounded-2xl p-6 md:p-8">
-            <p className="technical-label text-[var(--cyan)]">VETERAN HIRING</p>
-            <p className="mt-4 text-base leading-relaxed text-[var(--muted)] md:text-lg">
-              Bluport values the discipline, leadership, accountability, and resilience that
-              veterans bring to logistics operations.
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      <section className="section-shell border-b-0">
-        <Container>
-          <div className="glass-card bg-grid rounded-2xl p-8 md:p-10">
-            <p className="eyebrow">CAREERS CTA</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--foreground)] md:text-4xl">
-              Interested in joining Bluport?
-            </h2>
-            <div className="mt-6">
-              <Button href="/contact" variant="secondary">
-                Contact Operations
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <EditorialSection
+        eyebrow="VETERAN PATHWAY"
+        title="Veterans bring what logistics needs."
+        description="Bluport values discipline, leadership, accountability, and resilience - traits that transfer directly into field logistics, customer communication, and operational execution."
+        variant="light"
+        layout="split"
+        className="border-b-0"
+      >
+        <div className="flex items-start lg:justify-end">
+          <Button href="/contact">Contact Operations</Button>
+        </div>
+      </EditorialSection>
     </>
   );
 }
