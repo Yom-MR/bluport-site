@@ -17,7 +17,7 @@
   --blue: var(--blue-500);
   --cyan: var(--blue-400);
   --muted: var(--slate-500);
-  --border: rgba(200, 210, 221, 0.24);
+  --border: rgba(200, 210, 221, 0.17);
 }
 
 @theme inline {
@@ -86,9 +86,9 @@ textarea:focus-visible {
 
 .eyebrow {
   color: var(--blue-400);
-  font-size: 11px;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
 }
 
@@ -101,21 +101,21 @@ textarea:focus-visible {
 }
 
 .section-pad {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 136px;
+  padding-bottom: 136px;
 }
 
 .headline-display {
-  font-size: clamp(3.25rem, 7.2vw, 4.5rem);
-  line-height: 0.92;
+  font-size: clamp(3.4rem, 7.6vw, 5rem);
+  line-height: 0.9;
   letter-spacing: -0.055em;
   font-weight: 800;
   text-wrap: balance;
 }
 
 .section-title {
-  font-size: clamp(2.1rem, 4.8vw, 3rem);
-  line-height: 1;
+  font-size: clamp(2.25rem, 5vw, 3.3rem);
+  line-height: 0.97;
   letter-spacing: -0.045em;
   font-weight: 800;
   text-wrap: balance;
@@ -127,8 +127,8 @@ textarea:focus-visible {
 
 @media (max-width: 767px) {
   .section-pad {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding-top: 88px;
+    padding-bottom: 88px;
   }
 
   .headline-display {

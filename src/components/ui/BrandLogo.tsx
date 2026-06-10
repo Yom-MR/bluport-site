@@ -14,22 +14,28 @@ export default function BrandLogo({ variant = "light", placement = "navbar" }: B
     () =>
       variant === "light"
         ? [
-            "/images/brand/bpl-logo-transparent-white.png",
             "/images/brand/BPL White png.png",
-            "/images/brand/bpl-logo-white.svg",
+            "/images/brand/bpl-logo-transparent-white.png",
+            "/images/brand/bpl-logo-white.png",
           ]
         : [
-            "/images/brand/bpl-logo-transparent-black.png",
             "/images/brand/BPL Black png.png",
+            "/images/brand/bpl-logo-transparent-black.png",
             "/images/brand/bpl-logo-black.png",
           ],
     [variant],
   );
 
-  const sizes =
+  const logoBox =
     placement === "navbar"
-      ? { width: 320, height: 80, className: "h-[38px] w-auto object-contain" }
-      : { width: 280, height: 68, className: "h-[34px] w-auto object-contain" };
+      ? {
+          className: "relative h-[40px] w-[144px] md:h-[42px] md:w-[156px]",
+          sizes: "(max-width: 768px) 144px, 156px",
+        }
+      : {
+          className: "relative h-[34px] w-[110px] md:h-[36px] md:w-[116px]",
+          sizes: "(max-width: 768px) 110px, 116px",
+        };
 
   if (sourceIndex >= sources.length) {
     return (
@@ -40,13 +46,13 @@ export default function BrandLogo({ variant = "light", placement = "navbar" }: B
   }
 
   return (
-    <span className="inline-flex items-center">
+    <span className={`inline-flex shrink-0 ${logoBox.className}`}>
       <Image
         src={sources[sourceIndex]}
         alt="BPL Bluport"
-        width={sizes.width}
-        height={sizes.height}
-        className={sizes.className}
+        fill
+        sizes={logoBox.sizes}
+        className="object-contain object-left"
         priority={placement === "navbar"}
         onError={() => setSourceIndex((current) => current + 1)}
       />
