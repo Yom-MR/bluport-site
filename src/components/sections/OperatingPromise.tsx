@@ -9,7 +9,7 @@ const principles = [
 
 export default function OperatingPromise() {
   return (
-    <section className="section-pad bg-[#eef3f8] text-[#031426]">
+    <section className="section-pad bg-[#f1f6fb] pt-[152px] text-[#031426] md:pt-[168px]">
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start">
         <div className="max-w-[74ch] space-y-5">
           <h2 className="section-title max-w-[15ch] text-[#031426]">

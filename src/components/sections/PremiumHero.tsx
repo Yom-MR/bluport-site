@@ -11,16 +11,16 @@ export default function PremiumHero() {
         alt="Industrial equipment yard and heavy machinery"
         fill
         priority
-        className="object-cover object-[70%_54%]"
+        className="object-cover object-[70%_54%] saturate-[1.08] contrast-[1.08]"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(96deg,rgba(2,10,20,0.9)_0%,rgba(2,10,20,0.82)_28%,rgba(2,10,20,0.52)_52%,rgba(2,10,20,0.2)_74%,rgba(2,10,20,0.08)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,10,20,0.6)_0%,rgba(2,10,20,0.12)_44%,rgba(2,10,20,0.7)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(96deg,rgba(2,10,20,0.9)_0%,rgba(2,10,20,0.8)_28%,rgba(2,10,20,0.48)_52%,rgba(2,10,20,0.15)_74%,rgba(2,10,20,0.03)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,10,20,0.56)_0%,rgba(2,10,20,0.1)_44%,rgba(2,10,20,0.66)_100%)]" />
 
       <Container className="relative flex min-h-[820px] items-end py-32 md:py-36">
-        <div className="max-w-[720px] space-y-8 md:space-y-9">
+        <div className="max-w-[720px] space-y-10 md:space-y-11">
           <p className="eyebrow">VETERAN-OWNED HOTSHOT &amp; EQUIPMENT LOGISTICS</p>
-          <h1 className="max-w-[10.5ch] text-[clamp(3.7rem,7vw,6.8rem)] font-extrabold leading-[0.9] tracking-[-0.06em]">
+          <h1 className="max-w-[10.5ch] text-[clamp(3.75rem,7vw,6.75rem)] font-extrabold leading-[0.9] tracking-[-0.06em]">
             Move the equipment.
             <br />
             Keep the <span className="text-[#4cc9f0]">job moving.</span>

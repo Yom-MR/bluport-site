@@ -31,12 +31,12 @@ export default function BrandLogo({ variant = "light", placement = "navbar" }: B
   const logoBox =
     placement === "navbar"
       ? {
-          className: "relative h-[52px] w-[136px] md:h-[56px] md:w-[148px]",
-          sizes: "(max-width: 768px) 136px, 148px",
+          className: "relative h-[56px] w-[146px] md:h-[60px] md:w-[164px]",
+          sizes: "(max-width: 768px) 146px, 164px",
         }
       : {
-          className: "relative h-[44px] w-[116px] md:h-[48px] md:w-[126px]",
-          sizes: "(max-width: 768px) 116px, 126px",
+          className: "relative h-[46px] w-[122px] md:h-[50px] md:w-[138px]",
+          sizes: "(max-width: 768px) 122px, 138px",
         };
 
   if (sourceIndex >= sources.length) {

@@ -7,8 +7,8 @@ import { NAV_LINKS } from "@/lib/constants";
 export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 border-b border-[rgba(200,210,221,0.16)] bg-[rgba(2,10,20,0.82)] backdrop-blur-xl">
-      <Container className="py-2.5">
-        <div className="flex min-h-[56px] w-full items-center gap-4">
+      <Container className="py-3">
+        <div className="flex min-h-[58px] w-full items-center gap-4">
           <Link
             href="/"
             aria-label="BPL Bluport home"
