@@ -43,8 +43,9 @@ export default function PremiumHero() {
           </h1>
           <p className="max-w-[600px] text-[1.08rem] leading-[1.66] text-[#dce6ee]">
             Bluport moves the equipment behind active field work - machines, attachments,
-            trailers, and support assets that keep rental fleets, jobsites, utilities, and
-            industrial teams moving.
+            trailers, and support assets that keep rental fleets, jobsites, utilities,
+            infrastructure, and industrial operations moving, planned around timing, site access,
+            securement, and communication.
           </p>
           <p className="text-base font-medium tracking-[0.01em] text-[#d0dce6]">
             Houston-based hotshot logistics built around Ford F-350 capability, 40&apos; power tilt

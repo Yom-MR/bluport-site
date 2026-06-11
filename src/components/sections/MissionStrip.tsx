@@ -23,9 +23,9 @@ export default function MissionStrip() {
           <p className="eyebrow">WHY BLUPORT EXISTS</p>
           <h2 className="section-title max-w-[14ch]">Field logistics for equipment-driven work.</h2>
           <p className="max-w-[65ch] text-[1.06rem] leading-[1.72] text-[#34465a]">
-            A delayed machine, attachment, trailer, or field-support asset can hold up an entire
-            crew. Bluport prevents those delays with pre-planning, clean communication, and
-            execution tied to field conditions.
+            When the right asset is late, crews wait, schedules slip, and costs rise. Bluport
+            plans around timing, site access, securement, communication, and closeout to keep the
+            mission moving.
           </p>
         </div>
 

@@ -42,6 +42,7 @@ export default function MissionPage() {
         title="Veteran-led logistics for critical field work."
         description="Bluport exists to protect the mission behind the move: crews waiting on equipment, rental fleets serving customers, utilities restoring service, and projects working against time."
         image={siteImages.missionHero}
+        imageAlt="Field planning and coordination for equipment logistics"
         imagePosition="object-[center_58%]"
         variant="dark"
       />

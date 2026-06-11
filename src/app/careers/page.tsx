@@ -72,6 +72,7 @@ export default function CareersPage() {
         title="Build a logistics career with mission behind it."
         description="Bluport is a veteran-owned logistics company building opportunities for disciplined, field-aware people who care about communication, accountability, and customer outcomes."
         image={siteImages.careersHero}
+        imageAlt="Professional field operations environment for logistics careers"
         imagePosition="object-[center_48%]"
         variant="dark"
       />

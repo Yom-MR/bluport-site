@@ -8,6 +8,7 @@ type PageHeroProps = {
   title: string;
   description: string;
   image?: string;
+  imageAlt?: string;
   imagePosition?: string;
   variant: "dark" | "light";
   children?: ReactNode;
@@ -18,6 +19,7 @@ export default function PageHero({
   title,
   description,
   image,
+  imageAlt,
   imagePosition,
   variant,
   children,
@@ -37,7 +39,7 @@ export default function PageHero({
         <>
           <Image
             src={image}
-            alt=""
+            alt={imageAlt ?? ""}
             fill
             priority
             className={cn("object-cover", imagePosition ?? "object-center")}

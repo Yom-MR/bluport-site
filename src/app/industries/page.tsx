@@ -88,6 +88,7 @@ export default function IndustriesPage() {
         title="Built for sectors where downtime is expensive."
         description="Bluport supports customers operating around crews, equipment availability, restoration timelines, production schedules, and critical-path project work."
         image={siteImages.industriesHero}
+        imageAlt="Critical infrastructure and industrial operations environment"
         imagePosition="object-[center_50%]"
         variant="dark"
       />
