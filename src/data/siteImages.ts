@@ -7,15 +7,15 @@ export const siteImages = {
   careersHero: "/images/page-heroes/careers-workforce.jpg",
   contactHero: "/images/page-heroes/contact-operations.jpg",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
-  equipmentTransport: "/images/loads/ford-equipment-staging.png",
+  equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections
-  equipmentOnTrailer: "/images/loads/ford-hotshot-hero.png",
+  equipmentOnTrailer: "/images/loads/bluport-factory-hero.png",
   equipmentSecurement: "/images/loads/equipment-securement-real.png",
   constructionRental: "/images/jobsites/industry-construction-equipment.jpg",
   utilitiesInfrastructure: "/images/jobsites/industry-utilities-infrastructure.jpg",
   dataCenterConstruction: "/images/jobsites/industry-data-center.jpg",
   industrialManufacturing: "/images/jobsites/industry-industrial-manufacturing.jpg",
-  premiumHero: "/images/loads/ford-hotshot-hero.png",
+  premiumHero: "/images/loads/bluport-factory-hero.png",
   capabilityTexture: "/images/jobsites/equipment-yard.jpg",
   fleetShowcase: "/images/fleet/heavy-equipment-transport.png",
   // Industry grid — dedicated industry-specific photos
