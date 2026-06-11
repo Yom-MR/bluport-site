@@ -24,7 +24,7 @@ export default function PremiumHero() {
     <section className="relative isolate overflow-hidden bg-[#020a14] text-white">
       <Image
         src={siteImages.premiumHero}
-        alt="Industrial equipment yard and heavy machinery"
+        alt="Bluport truck hauling equipment on a loaded power-tilt trailer"
         fill
         priority
         className="object-cover object-[70%_56%] saturate-[1.08] contrast-[1.08]"
@@ -37,19 +37,18 @@ export default function PremiumHero() {
         <div className="max-w-[720px] space-y-10 md:space-y-11">
           <p className="eyebrow">VETERAN-OWNED HOTSHOT &amp; EQUIPMENT LOGISTICS</p>
           <h1 className="max-w-[10.5ch] text-[clamp(3.75rem,7vw,6.75rem)] font-extrabold leading-[0.9] tracking-[-0.06em]">
-            Move the equipment.
+            Mission-Critical Logistics
             <br />
-            Keep the <span className="text-[#4cc9f0]">job moving.</span>
+            <span className="text-[#4cc9f0]">for Equipment-Dependent Operations.</span>
           </h1>
           <p className="max-w-[600px] text-[1.08rem] leading-[1.66] text-[#dce6ee]">
-            Bluport moves the equipment behind active field work - machines, attachments,
-            trailers, and support assets that keep rental fleets, jobsites, utilities,
-            infrastructure, and industrial operations moving, planned around timing, site access,
-            securement, and communication.
+            We keep operations moving across Texas and the Gulf Coast by transporting the equipment
+            that powers your projects, with planning and communication discipline built into every
+            move.
           </p>
           <p className="text-base font-medium tracking-[0.01em] text-[#d0dce6]">
-            Houston-based hotshot logistics built around Ford F-350 capability, 40&apos; power tilt
-            trailers, and veteran-led execution.
+            Houston-based hotshot logistics built around veteran-led execution, securement discipline,
+            and schedule protection.
           </p>
           <ul className="grid gap-3 text-sm text-[#dbe6ef] md:grid-cols-3">
             {heroKpis.map((item) => {
@@ -78,7 +77,7 @@ export default function PremiumHero() {
               href="/services"
               className="inline-flex min-h-[52px] items-center justify-center rounded-xl border border-[rgba(200,210,221,0.5)] bg-[rgba(2,10,20,0.24)] px-8 text-sm font-semibold tracking-[0.075em] text-white uppercase transition-all duration-200 hover:border-[#4cc9f0] hover:text-[#4cc9f0]"
             >
-              View Services
+              Explore Services
             </Link>
           </div>
         </div>

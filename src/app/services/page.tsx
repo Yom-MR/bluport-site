@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
 import FeatureRows from "@/components/ui/FeatureRows";
+import QuoteCalculator from "@/components/sections/QuoteCalculator";
 import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
 
 const serviceRows = [
   {
+    anchor: "equipment-transportation",
     title: "Equipment Transportation",
     summary:
       "Hotshot movement for machines, attachments, trailers, and jobsite assets where timing, securement, and site access matter.",
@@ -28,6 +30,7 @@ const serviceRows = [
     benefit: "Trailer fit, securement planning, and communication are aligned before the move starts.",
   },
   {
+    anchor: "rapid-response-logistics",
     title: "Rapid Response Logistics",
     summary:
       "Support for urgent moves, replacement equipment, outage-related movement, and schedule recovery when delays create operational cost.",
@@ -36,6 +39,7 @@ const serviceRows = [
     benefit: "Faster move planning with field-aware communication under compressed timelines.",
   },
   {
+    anchor: "dedicated-capacity",
     title: "Dedicated Capacity",
     summary:
       "Reserved truck and trailer support for recurring routes, rental fleet coverage, and customers who need more predictability than spot-market availability.",
@@ -44,6 +48,7 @@ const serviceRows = [
     benefit: "Higher planning confidence with steadier dispatch control and clearer expectations.",
   },
   {
+    anchor: "project-logistics",
     title: "Project Logistics",
     summary:
       "Coordinated movement for phased schedules, hard delivery windows, multi-stop work, and equipment sequencing across active jobs.",
@@ -52,6 +57,7 @@ const serviceRows = [
     benefit: "Improved schedule protection through move planning tied to project context.",
   },
   {
+    anchor: "storage-staging",
     title: "Storage & Staging",
     summary:
       "Support for timed releases, yard transitions, and site-readiness coordination when equipment cannot arrive too early or too late.",
@@ -60,6 +66,7 @@ const serviceRows = [
     benefit: "Cleaner handoffs between storage, dispatch, and field teams.",
   },
   {
+    anchor: "logistics-consulting",
     title: "Logistics Consulting",
     summary:
       "Practical planning for movement workflows, communication cadence, lane setup, and dispatch standards as operations grow.",
@@ -113,7 +120,19 @@ export default function ServicesPage() {
         imageAlt="Trailer loading and securement readiness in an industrial yard"
         imagePosition="object-[center_62%]"
         variant="dark"
-      />
+      >
+        <div className="flex flex-wrap gap-2">
+          {serviceRows.map((service) => (
+            <a
+              key={service.anchor}
+              href={`#${service.anchor}`}
+              className="rounded-full border border-[rgba(200,210,221,0.2)] bg-[rgba(255,255,255,0.05)] px-3 py-2 text-[11px] font-semibold tracking-[0.12em] text-[#e5eef6] uppercase transition-colors hover:border-[var(--cyan)] hover:text-[var(--cyan)]"
+            >
+              {service.title}
+            </a>
+          ))}
+        </div>
+      </PageHero>
 
       <EditorialSection
         eyebrow="SERVICE LINES"
@@ -124,7 +143,7 @@ export default function ServicesPage() {
       >
         <div className="divide-y divide-[rgba(148,163,184,0.22)] rounded-[2rem] border border-[rgba(148,163,184,0.16)] bg-white/75">
           {serviceRows.map((service) => (
-            <details key={service.title} className="group px-6 py-7 md:px-8 md:py-8">
+            <details key={service.title} id={service.anchor} className="group px-6 py-7 md:px-8 md:py-8">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-4 lg:gap-10">
                 <div className="grid w-full gap-4 lg:grid-cols-[minmax(0,240px)_minmax(0,1fr)]">
                   <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
@@ -149,10 +168,17 @@ export default function ServicesPage() {
                   <span className="font-semibold text-slate-900">Operational benefit:</span> {service.benefit}
                 </p>
               </div>
+              <div className="mt-4">
+                <Button href="/#request-capacity" className="text-[11px] tracking-[0.12em] uppercase">
+                  Request Quote
+                </Button>
+              </div>
             </details>
           ))}
         </div>
       </EditorialSection>
+
+      <QuoteCalculator />
 
       <EditorialSection
         eyebrow="EXECUTION RHYTHM"

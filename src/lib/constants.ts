@@ -4,7 +4,6 @@ export const SITE_TAGLINE = "Veteran-owned hotshot and equipment logistics.";
 export const NAV_LINKS = [
   { label: "Mission", href: "/mission" },
   { label: "Services", href: "/services" },
-  { label: "Industries", href: "/industries" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];

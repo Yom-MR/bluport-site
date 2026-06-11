@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { siteImages } from "@/data/siteImages";
 
@@ -58,6 +59,11 @@ export default function FleetShowcase() {
                 </li>
               ))}
             </ul>
+            <div className="mt-6">
+              <Button href="/downloads/bluport-equipment-spec-sheet.txt" variant="secondary">
+                Download equipment spec sheet
+              </Button>
+            </div>
           </div>
         </div>
       </Container>

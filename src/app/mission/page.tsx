@@ -34,6 +34,21 @@ const nonNegotiables = [
   "Documentation after delivery",
 ] as const;
 
+const downtimeImpacts = [
+  {
+    title: "Rental fleets",
+    body: "Late repositioning creates idle assets and delayed revenue for customers waiting on equipment.",
+  },
+  {
+    title: "Utilities",
+    body: "When a response move slips, restoration crews lose time that should have gone to the field.",
+  },
+  {
+    title: "Manufacturing",
+    body: "Shutdown windows are expensive; a missed handoff can push work into the next slot.",
+  },
+] as const;
+
 export default function MissionPage() {
   return (
     <>
@@ -48,16 +63,20 @@ export default function MissionPage() {
       />
 
       <EditorialSection
-        eyebrow="OPERATING BELIEF"
-        title="Transportation is schedule protection."
-        description="The truck is only one part of the outcome. Reliable movement depends on asset details, route planning, site access, securement, communication, and closeout discipline."
+        eyebrow="THE COST OF DOWNTIME"
+        title="Schedule protection and operational discipline."
+        description="Bluport exists because the cost of a late asset is rarely just transportation. It is lost time, missed work, and a crew waiting for the next step."
         variant="light"
         layout="stack"
       >
-        <p className="max-w-[68ch] text-base leading-8 text-slate-700 md:text-lg">
-          Bluport is built around disciplined planning and operational follow-through so asset
-          movement supports the work around it instead of disrupting it.
-        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {downtimeImpacts.map((impact) => (
+            <article key={impact.title} className="rounded-[1.5rem] border border-[rgba(148,163,184,0.22)] bg-white p-5">
+              <p className="text-lg font-semibold tracking-[-0.03em] text-slate-950">{impact.title}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">{impact.body}</p>
+            </article>
+          ))}
+        </div>
       </EditorialSection>
 
       <section className="border-b border-[rgba(148,163,184,0.18)] bg-[#071829] py-16 text-white md:py-20">

@@ -15,7 +15,7 @@ export const siteImages = {
   utilitiesInfrastructure: "/images/jobsites/industry-utilities-infrastructure.jpg",
   dataCenterConstruction: "/images/jobsites/industry-data-center.jpg",
   industrialManufacturing: "/images/jobsites/industry-industrial-manufacturing.jpg",
-  premiumHero: "/images/loads/Factory%20BG%20Rev.png",
+  premiumHero: "/images/loads/equipment-on-trailer.jpg",
   capabilityTexture: "/images/jobsites/equipment-yard.jpg",
   fleetShowcase: "/images/loads/IMG_5849.PNG",
   // Industry grid — dedicated industry-specific photos

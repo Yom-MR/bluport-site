@@ -1,0 +1,19 @@
+Bluport Logistics Equipment Spec Sheet
+
+Truck platform:
+- Ford F-350 hotshot configuration
+
+Trailer capability:
+- 40' power tilt trailer support
+
+Typical moves:
+- Equipment transportation
+- Rapid response logistics
+- Dedicated capacity
+- Project logistics
+
+Operating disciplines:
+- Site access confirmation
+- Securement planning
+- Dispatch communication
+- Delivery closeout and POD handling
