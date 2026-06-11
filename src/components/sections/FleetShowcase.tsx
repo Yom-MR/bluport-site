@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import Reveal from "@/components/ui/Reveal";
 import { siteImages } from "@/data/siteImages";
 
 const operationalProof = [
@@ -26,7 +27,7 @@ export default function FleetShowcase() {
   return (
     <section className="section-pad bg-[var(--navy-900)] text-white">
       <Container className="space-y-11">
-        <div className="max-w-[74ch] space-y-4">
+        <Reveal className="max-w-[74ch] space-y-4">
           <p className="eyebrow">PLATFORM OVERVIEW</p>
           <h2 className="section-title max-w-[16ch] text-white">
             Built around Ford F-350 hotshot capability.
@@ -36,10 +37,10 @@ export default function FleetShowcase() {
             trailers for equipment, attachments, trailers, and field-support movement that needs a
             disciplined operating rhythm.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-7 lg:grid-cols-[60%_40%]">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-[28px] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+          <Reveal className="relative aspect-[16/10] overflow-hidden rounded-[28px] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
             <Image
               src={siteImages.fleetShowcase}
               alt="Bluport Ford F-350 with power tilt trailer"
@@ -47,9 +48,9 @@ export default function FleetShowcase() {
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 700px"
             />
-          </div>
+          </Reveal>
 
-          <div className="rounded-[18px] border border-[rgba(200,210,221,0.2)] bg-[rgba(2,10,20,0.6)] p-6 md:p-7">
+          <Reveal delay={120} className="rounded-[18px] border border-[rgba(200,210,221,0.2)] bg-[rgba(2,10,20,0.6)] p-6 md:p-7">
             <p className="technical-label">HOW IT WORKS IN THE FIELD</p>
             <ul className="mt-5 divide-y divide-[rgba(200,210,221,0.2)]">
               {operationalProof.map((row) => (
@@ -64,7 +65,7 @@ export default function FleetShowcase() {
                 Download equipment spec sheet
               </Button>
             </div>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

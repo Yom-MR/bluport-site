@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
+import Reveal from "@/components/ui/Reveal";
 
 const services = [
   {
@@ -44,7 +45,7 @@ export default function ServicesEditorial() {
   return (
     <section id="services" className="section-pad bg-[#ffffff] pt-[152px] text-[#031426] md:pt-[168px]">
       <Container className="grid gap-10 lg:grid-cols-[40%_60%]">
-        <div className="max-w-[46ch] space-y-7 lg:sticky lg:top-24 lg:self-start">
+        <Reveal className="max-w-[46ch] space-y-7 lg:sticky lg:top-24 lg:self-start">
           <p className="eyebrow">SERVICES</p>
           <h2 className="section-title max-w-[14ch] text-[#031426]">
             Services built for field execution.
@@ -59,7 +60,7 @@ export default function ServicesEditorial() {
           >
             View Detailed Services
           </Link>
-        </div>
+        </Reveal>
 
         <ol className="divide-y divide-[rgba(111,127,145,0.3)] border-y border-[rgba(111,127,145,0.3)]">
           {services.map((service) => (

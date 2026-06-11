@@ -7,15 +7,17 @@ import MissionStrip from "@/components/sections/MissionStrip";
 import PremiumHero from "@/components/sections/PremiumHero";
 import RequestCapacity from "@/components/sections/RequestCapacity";
 import ServicesEditorial from "@/components/sections/ServicesEditorial";
+import StatsBand from "@/components/sections/StatsBand";
 
 export default function Home() {
   return (
     <>
       <PremiumHero />
+      <StatsBand />
       <MissionStrip />
       <CapabilitySplit />
-      <FleetShowcase />
       <ExecutionTimeline />
+      <FleetShowcase />
       <ServicesEditorial />
       <IndustriesMosaic />
       <CustomerConfidence />
