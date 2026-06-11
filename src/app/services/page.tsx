@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ChevronDown } from "lucide-react";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
@@ -132,9 +132,11 @@ export default function ServicesPage() {
                   </h3>
                   <p className="text-sm leading-7 text-slate-600 md:text-base">{service.summary}</p>
                 </div>
-                <span className="mt-2 shrink-0 text-xs font-bold tracking-[0.14em] text-sky-700 transition-transform group-open:translate-x-1">
-                  OPEN
-                </span>
+                <ChevronDown
+                  size={20}
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-sky-700 transition-transform duration-200 group-open:rotate-180"
+                />
               </summary>
               <div className="mt-4 grid gap-3 rounded-xl border border-[rgba(148,163,184,0.24)] bg-[rgba(248,252,255,0.9)] p-4 text-sm leading-7 text-slate-700 md:grid-cols-3 md:text-base">
                 <p>

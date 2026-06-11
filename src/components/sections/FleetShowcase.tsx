@@ -2,22 +2,22 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { siteImages } from "@/data/siteImages";
 
-const fleetRows = [
+const operationalProof = [
   {
-    label: "Truck platform",
-    value: "Ford F-350",
+    label: "Power tilt deck",
+    value: "Ground-level loading — no ramp required for most equipment moves.",
   },
   {
-    label: "Trailer capability",
-    value: "40' power tilt",
+    label: "Securement plan",
+    value: "Chain and binder setup documented per load before the truck rolls.",
   },
   {
-    label: "Operating base",
-    value: "Houston, Texas",
+    label: "Site confirmation",
+    value: "Gate details, contacts, and access conditions verified before dispatch.",
   },
   {
-    label: "Workflow",
-    value: "intake, dispatch coordination, POD closeout",
+    label: "Closeout protocol",
+    value: "POD signed at delivery; follow-up complete before the job closes.",
   },
 ] as const;
 
@@ -49,19 +49,15 @@ export default function FleetShowcase() {
           </div>
 
           <div className="rounded-[18px] border border-[rgba(200,210,221,0.2)] bg-[rgba(2,10,20,0.6)] p-6 md:p-7">
-            <ul className="divide-y divide-[rgba(200,210,221,0.2)]">
-              {fleetRows.map((row) => (
-                <li key={row.label} className="flex items-start gap-3 py-3.5 text-sm tracking-[0.02em] text-[#eef3f8]">
-                  <div>
-                    <p className="text-xs font-bold tracking-[0.12em] text-[#8ecde2] uppercase">{row.label}</p>
-                    <p className="mt-1 font-medium text-[#eef3f8]">{row.value}</p>
-                  </div>
+            <p className="technical-label text-[var(--cyan)]">HOW IT WORKS IN THE FIELD</p>
+            <ul className="mt-5 divide-y divide-[rgba(200,210,221,0.2)]">
+              {operationalProof.map((row) => (
+                <li key={row.label} className="py-4">
+                  <p className="text-xs font-bold tracking-[0.12em] text-[#8ecde2] uppercase">{row.label}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#c8d2dd]">{row.value}</p>
                 </li>
               ))}
             </ul>
-            <p className="mt-5 border-t border-[rgba(200,210,221,0.2)] pt-5 text-sm text-[#c8d2dd]">
-              Current platform: ground hotshot and equipment movement.
-            </p>
           </div>
         </div>
       </Container>

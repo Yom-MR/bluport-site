@@ -79,7 +79,12 @@ export default function ContactPage() {
               <article key={item.label} className="border-t border-[rgba(148,163,184,0.28)] pt-4">
                 <p className="mt-1 flex items-center gap-2.5 text-base font-semibold text-slate-900">
                   <item.icon size={17} aria-hidden className="text-sky-700" />
-                  <span>{item.label}</span>
+                  <a
+                    href={"mailto:" + item.label}
+                    className="underline-offset-2 transition-colors hover:text-sky-700 hover:underline"
+                  >
+                    {item.label}
+                  </a>
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.detail}</p>
               </article>
