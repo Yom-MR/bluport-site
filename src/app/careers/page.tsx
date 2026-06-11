@@ -9,12 +9,10 @@ import {
   Gauge,
   HeartHandshake,
   MapPin,
-  Quote,
   Radio,
   ShieldCheck,
   Star,
   Target,
-  Truck,
   Users,
   Wrench,
 } from "lucide-react";
@@ -139,39 +137,6 @@ const skillsThatTransfer = [
     icon: Award,
     military: "Leadership & accountability",
     civilian: "Crew coordination, fleet support, and operations leadership.",
-  },
-];
-
-const openPaths = [
-  {
-    title: "CDL / Non-CDL Drivers",
-    description:
-      "Drivers who value securement standards, disciplined communication, and reliable field execution.",
-  },
-  {
-    title: "Owner Operators",
-    description:
-      "Independent operators who want consistent coordination and professional customer expectations.",
-  },
-  {
-    title: "Dispatchers",
-    description:
-      "People who translate move requirements into clean communication and decisive execution support.",
-  },
-  {
-    title: "Operations Coordinators",
-    description:
-      "Team members who keep intake, planning, documentation, and closeout aligned under real deadlines.",
-  },
-  {
-    title: "Logistics Brokers",
-    description:
-      "Operators who understand customer pressure, lane risk, and execution quality over noise.",
-  },
-  {
-    title: "Fleet / Driver Managers",
-    description:
-      "Leaders who reinforce readiness, accountability, and driver support across the operating model.",
   },
 ];
 
@@ -460,63 +425,43 @@ export default function CareersPage() {
         </Container>
       </section>
 
-      {/* Open paths */}
-      <section className="section-pad bg-[var(--navy-950)] text-white">
-        <Container>
-          <Reveal className="max-w-[760px] space-y-5">
-            <p className="technical-label">OPEN PATHS</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-              Roles that shape the Bluport operating model.
+      {/* Flag banner — military initiative */}
+      <section className="relative isolate overflow-hidden py-24 text-white md:py-32">
+        <Image
+          src={siteImages.careersFlag}
+          alt="American flag waving against a moody sky"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(96deg,rgba(5,11,22,0.94)_0%,rgba(5,11,22,0.82)_42%,rgba(5,11,22,0.5)_100%)]" />
+        <Container className="relative">
+          <Reveal className="max-w-[760px] space-y-6">
+            <p className="technical-label text-[var(--accent-light)]">A TEAM THAT SERVED</p>
+            <h2 className="text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
+              Built by people who held the line. Now we hold the standard.
             </h2>
-            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              Driver, owner operator, dispatch, and operations leadership roles are central to how
-              Bluport is building long-term capability across Texas and the Gulf Coast.
+            <p className="max-w-[58ch] text-base leading-8 text-[#dce6ee] md:text-lg">
+              Bluport is staffed by a team that is over 82% military — veterans, active duty,
+              spouses, and family. We hire from the community we come from because that discipline is
+              exactly what this work demands.
             </p>
-          </Reveal>
-
-          <div className="mt-12 overflow-hidden rounded-[1.75rem] border border-[rgba(180,194,209,0.16)]">
-            {openPaths.map((role, index) => (
-              <Reveal
-                key={role.title}
-                delay={index * 50}
-                className="grid gap-3 border-b border-[rgba(180,194,209,0.12)] bg-[rgba(255,255,255,0.02)] px-6 py-6 last:border-b-0 md:grid-cols-[64px_minmax(0,260px)_minmax(0,1fr)] md:items-center md:gap-8 md:px-8"
-              >
-                <span className="font-mono text-sm text-[var(--accent-light)]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div className="flex items-center gap-3">
-                  <Truck size={18} aria-hidden className="shrink-0 text-[var(--steel-400)]" />
-                  <h3 className="text-lg font-semibold tracking-[-0.03em]">{role.title}</h3>
+            <div className="flex flex-wrap gap-3 pt-2">
+              {[
+                { value: "82%", label: "Military-staffed team" },
+                { value: "Veteran-owned", label: "Leadership that served" },
+                { value: "Spouse & family", label: "Hiring built for the community" },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-2xl border border-white/15 bg-[rgba(5,11,22,0.45)] px-5 py-4 backdrop-blur-sm"
+                >
+                  <p className="text-xl font-bold tracking-[-0.03em] text-white">{stat.value}</p>
+                  <p className="mt-1 text-[0.78rem] font-medium uppercase tracking-[0.1em] text-[var(--steel-300)]">
+                    {stat.label}
+                  </p>
                 </div>
-                <p className="text-sm leading-7 text-[var(--steel-300)] md:text-base">
-                  {role.description}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Success story placeholder */}
-      <section className="section-pad bg-[var(--navy-900)] text-white">
-        <Container>
-          <Reveal className="relative overflow-hidden rounded-[2rem] border border-[rgba(180,194,209,0.16)] bg-[linear-gradient(135deg,rgba(47,116,189,0.1),transparent_55%)] p-8 md:p-14">
-            <div className="absolute inset-0 blueprint-grid opacity-40" aria-hidden />
-            <div className="relative max-w-[720px]">
-              <Quote size={40} aria-hidden className="text-[var(--accent)]" />
-              <p className="mt-6 text-[clamp(1.4rem,2.6vw,2.1rem)] font-semibold leading-[1.25] tracking-[-0.03em] text-balance">
-                &ldquo;Veteran success story coming soon. We are building a team of people who served
-                and are proud to share their path from the military to the field.&rdquo;
-              </p>
-              <div className="mt-8 flex items-center gap-4">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[rgba(255,255,255,0.06)] text-[var(--steel-300)]">
-                  <Award size={20} aria-hidden />
-                </span>
-                <div>
-                  <p className="font-semibold">Your story here</p>
-                  <p className="text-sm text-[var(--steel-400)]">Veteran · Bluport operations</p>
-                </div>
-              </div>
+              ))}
             </div>
           </Reveal>
         </Container>

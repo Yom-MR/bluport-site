@@ -13,6 +13,7 @@ import {
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
+import CoverageMap from "@/components/sections/CoverageMap";
 import Reveal from "@/components/ui/Reveal";
 import { getIndustryBySlug, INDUSTRY_ENTRIES } from "@/data/industries";
 
@@ -106,21 +107,34 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
       {/* Friction + headline stat */}
       <section className="relative overflow-hidden bg-[var(--navy-900)] py-20 text-white md:py-28">
         <div className="absolute inset-0 blueprint-grid opacity-[0.16]" aria-hidden />
+        <div
+          className="absolute -right-32 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(229,127,67,0.12),transparent_70%)]"
+          aria-hidden
+        />
         <Container className="relative">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
-            <Reveal className="space-y-6">
-              <p className="eyebrow">THE FRICTION</p>
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-16">
+            <Reveal className="space-y-6 lg:sticky lg:top-28 lg:self-start">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(229,127,67,0.3)] bg-[rgba(229,127,67,0.08)] px-3.5 py-1.5">
+                <AlertTriangle size={14} aria-hidden className="text-[#e8a87c]" />
+                <span className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#e8a87c]">
+                  The friction
+                </span>
+              </div>
               <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
                 What slows this sector down.
               </h2>
-              <div className="rounded-[1.75rem] border border-white/12 bg-[linear-gradient(150deg,rgba(47,116,189,0.14),rgba(255,255,255,0.02))] p-7">
+              <p className="max-w-[42ch] text-base leading-8 text-[var(--steel-300)]">
+                These are the recurring breakdowns that turn a routine move into a delayed job — and
+                exactly what Bluport is built to absorb.
+              </p>
+              <div className="rounded-[1.75rem] border border-white/12 bg-[linear-gradient(150deg,rgba(229,127,67,0.12),rgba(255,255,255,0.02))] p-7">
                 <div className="flex items-center gap-2.5">
-                  <Gauge size={18} aria-hidden className="text-[var(--accent-light)]" />
+                  <Gauge size={18} aria-hidden className="text-[#e8a87c]" />
                   <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--steel-400)]">
                     {industry.statLabel}
                   </p>
                 </div>
-                <p className="mt-3 text-3xl font-bold tracking-[-0.03em] text-white md:text-4xl">
+                <p className="mt-3 text-[clamp(2.2rem,4vw,3rem)] font-bold leading-none tracking-[-0.04em] text-white">
                   {industry.statValue}
                 </p>
                 <p className="mt-3 text-sm leading-7 text-[var(--steel-300)]">
@@ -129,29 +143,33 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               </div>
             </Reveal>
 
-            <Reveal delay={120} className="grid gap-4 sm:grid-cols-1">
+            <div className="grid gap-4">
               {industry.painPoints.map((point, index) => (
-                <div
+                <Reveal
                   key={point.title}
-                  className="flex items-start gap-4 rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-6"
+                  delay={index * 90}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-6 pl-7 transition-colors hover:border-[rgba(229,127,67,0.4)] md:p-7 md:pl-8"
                 >
-                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(229,127,67,0.12)] text-[#e8a87c]">
-                    <AlertTriangle size={20} aria-hidden />
-                  </span>
-                  <div>
-                    <p className="font-mono text-xs text-[var(--steel-400)]">
+                  <span
+                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,#e8a87c,rgba(229,127,67,0.2))]"
+                    aria-hidden
+                  />
+                  <div className="flex items-start gap-5">
+                    <span className="font-mono text-2xl font-bold leading-none text-[rgba(232,168,124,0.4)] transition-colors group-hover:text-[#e8a87c]">
                       {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <p className="mt-1 text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
-                      {point.title}
-                    </p>
-                    <p className="mt-2 text-sm leading-7 text-[var(--steel-300)]">
-                      {point.description}
-                    </p>
+                    </span>
+                    <div>
+                      <p className="text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
+                        {point.title}
+                      </p>
+                      <p className="mt-2 text-sm leading-7 text-[var(--steel-300)]">
+                        {point.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
-            </Reveal>
+            </div>
           </div>
         </Container>
       </section>
@@ -172,21 +190,25 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
           <div className="grid gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-10">
             <Reveal className="space-y-3">
-              {industry.solutions.map((item) => (
+              {industry.solutions.map((item, index) => (
                 <div
                   key={item.title}
-                  className="flex items-start gap-3.5 rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-5"
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-5 pl-6 transition-colors hover:border-[rgba(47,116,189,0.5)]"
                 >
-                  <CheckCircle2
-                    size={20}
+                  <span
+                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,var(--accent-light),rgba(47,116,189,0.2))]"
                     aria-hidden
-                    className="mt-0.5 shrink-0 text-[var(--accent-light)]"
                   />
-                  <div>
-                    <p className="text-[1.02rem] font-semibold leading-6 tracking-[-0.01em] text-white">
-                      {item.title}
-                    </p>
-                    <p className="mt-1.5 text-sm leading-7 text-[#c8d2dd]">{item.description}</p>
+                  <div className="flex items-start gap-4">
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[rgba(47,116,189,0.28)]">
+                      <CheckCircle2 size={18} aria-hidden />
+                    </span>
+                    <div>
+                      <p className="text-[1.02rem] font-semibold leading-6 tracking-[-0.01em] text-white">
+                        {item.title}
+                      </p>
+                      <p className="mt-1.5 text-sm leading-7 text-[#c8d2dd]">{item.description}</p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -260,6 +282,26 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               </Reveal>
             ))}
           </div>
+        </Container>
+      </section>
+
+      {/* Coverage map */}
+      <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
+        <div className="absolute inset-0 blueprint-grid opacity-[0.12]" aria-hidden />
+        <Container className="relative space-y-12">
+          <Reveal className="max-w-[720px] space-y-4">
+            <p className="eyebrow">COVERAGE</p>
+            <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+              Houston-based. Built to run the lanes this sector needs.
+            </h2>
+            <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
+              Our base is Houston, Texas. Primary lanes run across Texas, extended coverage spans the
+              Gulf Coast, and project freight reaches nationwide when the move calls for it.
+            </p>
+          </Reveal>
+          <Reveal delay={120}>
+            <CoverageMap />
+          </Reveal>
         </Container>
       </section>
 

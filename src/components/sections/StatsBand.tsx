@@ -11,7 +11,7 @@ const metrics = [
   {
     icon: Truck,
     value: "40' Power Tilt",
-    label: "Ground-level equipment loading",
+    label: "Ground-level loading",
   },
   {
     icon: Activity,
@@ -27,28 +27,30 @@ const metrics = [
 
 export default function StatsBand() {
   return (
-    <section className="relative border-y border-[rgba(200,210,221,0.12)] bg-[var(--navy-950)] text-white">
-      <div className="absolute inset-0 blueprint-grid opacity-40" aria-hidden />
-      <Container className="relative">
-        <ul className="grid grid-cols-1 divide-y divide-[rgba(200,210,221,0.12)] sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4">
+    <section className="relative border-b border-[rgba(200,210,221,0.12)] bg-[var(--navy-950)] text-white">
+      <div className="absolute inset-0 blueprint-grid opacity-30" aria-hidden />
+      <Container className="relative py-4">
+        <ul className="grid grid-cols-2 gap-3 py-6 sm:gap-4 lg:grid-cols-4">
           {metrics.map((metric, index) => {
             const Icon = metric.icon;
             return (
               <Reveal
                 as="li"
                 key={metric.value}
-                delay={index * 90}
-                className="flex items-start gap-4 py-8 sm:px-7 lg:border-l lg:border-[rgba(200,210,221,0.12)] lg:first:border-l-0"
+                delay={index * 80}
+                className="group flex flex-col gap-3 rounded-2xl border border-[rgba(200,210,221,0.12)] bg-[rgba(255,255,255,0.02)] p-5 transition-colors hover:border-[rgba(47,116,189,0.45)] md:p-6"
               >
-                <span className="mt-0.5 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
-                  <Icon size={20} aria-hidden />
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)] transition-transform group-hover:-translate-y-0.5">
+                  <Icon size={19} aria-hidden />
                 </span>
-                <span>
-                  <span className="block text-xl font-bold tracking-[-0.03em] text-white md:text-2xl">
+                <div>
+                  <span className="block text-lg font-bold leading-tight tracking-[-0.03em] text-white md:text-xl">
                     {metric.value}
                   </span>
-                  <span className="mt-1 block text-sm leading-snug text-[#9fb1c4]">{metric.label}</span>
-                </span>
+                  <span className="mt-1.5 block text-[0.8rem] font-medium uppercase tracking-[0.1em] text-[var(--steel-400)]">
+                    {metric.label}
+                  </span>
+                </div>
               </Reveal>
             );
           })}

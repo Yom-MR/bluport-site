@@ -134,7 +134,7 @@ export default function RequestCapacityModal() {
         type="button"
         aria-label="Close request capacity modal"
         onClick={closeModal}
-        className="absolute inset-0 bg-[rgba(2,10,20,0.74)] backdrop-blur-sm"
+        className="absolute inset-0 bg-[rgba(2,10,20,0.78)] backdrop-blur-md"
       />
 
       <div
@@ -142,29 +142,32 @@ export default function RequestCapacityModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="request-capacity-modal-title"
-        className="relative z-10 w-full max-w-[980px] overflow-hidden rounded-[1.6rem] border border-[rgba(180,194,209,0.2)] bg-[var(--navy-850)] text-white shadow-[0_40px_80px_rgba(0,0,0,0.55)]"
+        className="relative z-10 flex max-h-[92vh] w-full max-w-[920px] flex-col overflow-hidden rounded-[1.6rem] border border-[rgba(180,194,209,0.2)] bg-[var(--navy-850)] text-white shadow-[0_40px_90px_rgba(0,0,0,0.6)]"
       >
-        <div className="max-h-[90vh] overflow-y-auto p-4 md:p-6">
-          <div className="mb-5 flex items-start justify-between gap-6 border-b border-[rgba(180,194,209,0.18)] pb-5">
-            <div>
-              <p className="technical-label">REQUEST CAPACITY</p>
-              <h2 id="request-capacity-modal-title" className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
-                Request capacity
-              </h2>
-              <p className="mt-2 max-w-[56ch] text-sm leading-7 text-[var(--steel-300)] md:text-base">
-                Send the asset, route, timing, and constraints. Bluport operations will review the request and follow up.
-              </p>
-            </div>
-            <button
-              ref={closeButtonRef}
-              type="button"
-              onClick={closeModal}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(180,194,209,0.25)] bg-[rgba(255,255,255,0.04)] text-white transition-colors hover:border-[var(--accent)]"
+        <div className="flex items-start justify-between gap-6 border-b border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.02)] px-6 py-5 md:px-8 md:py-6">
+          <div>
+            <p className="technical-label">REQUEST CAPACITY</p>
+            <h2
+              id="request-capacity-modal-title"
+              className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl"
             >
-              <span aria-hidden>×</span>
-            </button>
+              Request capacity
+            </h2>
+            <p className="mt-2 max-w-[56ch] text-sm leading-7 text-[var(--steel-300)]">
+              Send the asset, route, timing, and constraints. Bluport operations will review and follow up.
+            </p>
           </div>
+          <button
+            ref={closeButtonRef}
+            type="button"
+            onClick={closeModal}
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(180,194,209,0.25)] bg-[rgba(255,255,255,0.04)] text-lg text-white transition-colors hover:border-[var(--accent)] hover:bg-[rgba(47,116,189,0.16)]"
+          >
+            <span aria-hidden>×</span>
+          </button>
+        </div>
 
+        <div className="no-scrollbar overflow-y-auto px-6 py-6 md:px-8 md:py-7">
           <RequestCapacityForm />
         </div>
       </div>

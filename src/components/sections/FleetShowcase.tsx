@@ -49,40 +49,25 @@ export default function FleetShowcase() {
         aria-hidden
       />
       <Container className="relative space-y-12">
-        <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-[640px] space-y-4">
-            <p className="eyebrow">PLATFORM OVERVIEW</p>
-            <h2 className="text-[clamp(2.1rem,4.6vw,3.5rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-white">
-              A focused fleet, run with one operating standard.
-            </h2>
-            <p className="text-base leading-[1.65] text-[#c8d2dd]">
-              Equipment, attachments, trailers, and field-support loads move on a tight, repeatable
-              rhythm — ground-level loading, documented securement, and confirmed handoffs on every
-              job. The hardware specs are on the right; the discipline is what customers actually feel.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {platformSpecs.map((spec) => (
-              <div
-                key={spec.label}
-                className="rounded-2xl border border-white/12 bg-[rgba(255,255,255,0.03)] px-5 py-4"
-              >
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--steel-400)]">
-                  {spec.label}
-                </p>
-                <p className="mt-1.5 text-lg font-bold tracking-[-0.02em] text-white">{spec.value}</p>
-              </div>
-            ))}
-          </div>
+        <Reveal className="max-w-[720px] space-y-4">
+          <p className="eyebrow">PLATFORM OVERVIEW</p>
+          <h2 className="text-[clamp(2.1rem,4.6vw,3.5rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-white">
+            A focused fleet, run with one operating standard.
+          </h2>
+          <p className="text-base leading-[1.65] text-[#c8d2dd]">
+            Equipment, attachments, trailers, and field-support loads move on a tight, repeatable
+            rhythm — ground-level loading, documented securement, and confirmed handoffs on every
+            job. A focused platform, run with discipline customers actually feel.
+          </p>
         </Reveal>
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-7">
-          <Reveal className="group relative aspect-[16/11] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)] lg:aspect-auto">
+          <Reveal className="group relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
             <Image
               src={siteImages.fleetShowcase}
               alt="Bluport Ford F-350 hitched to a gooseneck flatbed trailer hauling a shipping container at a Texas yard"
               fill
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
+              className="object-cover object-[center_60%] transition-transform duration-700 group-hover:scale-[1.03]"
               sizes="(max-width: 1024px) 100vw, 60vw"
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.1)_0%,rgba(5,11,22,0.2)_60%,rgba(5,11,22,0.85)_100%)]" />
@@ -100,7 +85,19 @@ export default function FleetShowcase() {
           </Reveal>
 
           <Reveal delay={120} className="flex flex-col rounded-[2rem] border border-white/12 bg-[rgba(2,10,20,0.6)] p-7 md:p-8">
-            <div className="flex items-center gap-2.5">
+            <div className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/8">
+              {platformSpecs.map((spec) => (
+                <div key={spec.label} className="bg-[rgba(5,11,22,0.6)] p-4 text-center">
+                  <p className="text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-[var(--steel-400)]">
+                    {spec.label}
+                  </p>
+                  <p className="mt-1.5 text-[0.95rem] font-bold leading-tight tracking-[-0.02em] text-white">
+                    {spec.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-7 flex items-center gap-2.5">
               <ClipboardCheck size={18} aria-hidden className="text-[var(--accent-light)]" />
               <p className="technical-label">HOW IT WORKS IN THE FIELD</p>
             </div>

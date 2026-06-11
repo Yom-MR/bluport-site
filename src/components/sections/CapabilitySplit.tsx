@@ -134,26 +134,25 @@ export default function CapabilitySplit() {
 
         {/* Constraint workflow */}
         <Reveal delay={80} className="rounded-[2rem] border border-white/10 bg-[linear-gradient(140deg,rgba(47,116,189,0.08),rgba(255,255,255,0.02)_55%)] p-7 md:p-10">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-12">
-            <h3 className="max-w-[18ch] text-[clamp(1.6rem,2.6vw,2.2rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-balance">
+          <div className="flex flex-col gap-3 border-b border-white/10 pb-7 md:flex-row md:items-end md:justify-between">
+            <h3 className="max-w-[20ch] text-[clamp(1.6rem,2.6vw,2.2rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-balance">
               Built around the details that delay jobs.
             </h3>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {constraintRows.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-2xl border border-white/10 bg-[rgba(5,11,22,0.4)] p-5"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-sm text-[var(--accent-light)]">{item.step}</span>
-                    <span className="text-lg font-semibold tracking-[-0.02em] text-white">
-                      {item.title}
-                    </span>
-                  </div>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--steel-300)]">{item.body}</p>
-                </div>
-              ))}
-            </div>
+            <p className="technical-label shrink-0">FOUR CHECKS BEFORE DISPATCH</p>
+          </div>
+          <div className="mt-7 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/8 sm:grid-cols-2 lg:grid-cols-4">
+            {constraintRows.map((item) => (
+              <div
+                key={item.title}
+                className="bg-[rgba(5,11,22,0.55)] p-6 transition-colors hover:bg-[rgba(47,116,189,0.1)]"
+              >
+                <span className="font-mono text-sm text-[var(--accent-light)]">{item.step}</span>
+                <p className="mt-3 text-lg font-semibold tracking-[-0.02em] text-white">
+                  {item.title}
+                </p>
+                <p className="mt-2.5 text-sm leading-relaxed text-[var(--steel-300)]">{item.body}</p>
+              </div>
+            ))}
           </div>
         </Reveal>
       </Container>

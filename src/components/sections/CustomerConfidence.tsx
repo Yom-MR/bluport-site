@@ -3,6 +3,29 @@ import { ArrowUpRight, BadgeCheck, MessageSquare, ShieldCheck, Star } from "luci
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 
+const kpis = [
+  {
+    value: "82%",
+    label: "of our team is military",
+    detail: "Veterans, active duty, spouses, and family",
+  },
+  {
+    value: "100%",
+    label: "POD on every delivery",
+    detail: "Documented proof at handoff",
+  },
+  {
+    value: "Same-day",
+    label: "dispatch capability",
+    detail: "When the schedule can't wait",
+  },
+  {
+    value: "1:1",
+    label: "load-level planning",
+    detail: "Every move planned before dispatch",
+  },
+] as const;
+
 const differentiators = [
   {
     icon: Star,
@@ -29,43 +52,65 @@ const differentiators = [
 export default function CustomerConfidence() {
   return (
     <section className="section-pad bg-[var(--navy-950)] text-white">
-      <Container className="grid gap-12 lg:grid-cols-[40%_60%] lg:items-start lg:gap-16">
-        <Reveal className="space-y-6 lg:sticky lg:top-28">
-          <p className="eyebrow">WHY CUSTOMERS TRUST BLUPORT</p>
-          <h2 className="section-title max-w-[15ch] text-white">
-            Confidence before the truck rolls.
-          </h2>
-          <p className="text-base leading-[1.7] text-[#c8d2dd] md:text-lg">
-            Equipment-dependent teams need to know who is handling the move and how it will be
-            communicated. Bluport puts the operating signals up front so the decision is easy.
-          </p>
-          <Link
-            href="/#request-capacity"
-            className="group inline-flex items-center gap-2 text-sm font-semibold tracking-[0.04em] text-[var(--accent-light)] transition-colors hover:text-white"
-          >
-            Request capacity for your next move
-            <ArrowUpRight size={17} aria-hidden className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
-        </Reveal>
+      <Container className="space-y-14">
+        <div className="grid gap-12 lg:grid-cols-[40%_60%] lg:items-start lg:gap-16">
+          <Reveal className="space-y-6">
+            <p className="eyebrow">WHY CUSTOMERS TRUST BLUPORT</p>
+            <h2 className="section-title max-w-[15ch] text-white">
+              Confidence before the truck rolls.
+            </h2>
+            <p className="text-base leading-[1.7] text-[#c8d2dd] md:text-lg">
+              Equipment-dependent teams need to know who is handling the move and how it will be
+              communicated. Our crews are built from the military community — and the data backs it
+              up: veterans are statistically safer, more efficient operators across the roles this
+              work demands.
+            </p>
+            <Link
+              href="/#request-capacity"
+              className="group inline-flex items-center gap-2 text-sm font-semibold tracking-[0.04em] text-[var(--accent-light)] transition-colors hover:text-white"
+            >
+              Request capacity for your next move
+              <ArrowUpRight size={17} aria-hidden className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </Reveal>
 
-        <div className="grid gap-px overflow-hidden rounded-[1.75rem] border border-[rgba(200,210,221,0.16)] bg-[rgba(200,210,221,0.12)] sm:grid-cols-2">
-          {differentiators.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <Reveal
-                key={item.title}
-                delay={index * 90}
-                className="group bg-[var(--navy-900)] p-7 transition-colors hover:bg-[var(--navy-850)] md:p-8"
-              >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)] transition-transform group-hover:-translate-y-0.5">
-                  <Icon size={22} aria-hidden />
-                </span>
-                <h3 className="mt-5 text-lg font-semibold tracking-[-0.02em] text-white">{item.title}</h3>
-                <p className="mt-2.5 text-sm leading-7 text-[#9fb1c4]">{item.body}</p>
-              </Reveal>
-            );
-          })}
+          <div className="grid gap-px overflow-hidden rounded-[1.75rem] border border-[rgba(200,210,221,0.16)] bg-[rgba(200,210,221,0.12)] sm:grid-cols-2">
+            {differentiators.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <Reveal
+                  key={item.title}
+                  delay={index * 90}
+                  className="group bg-[var(--navy-900)] p-7 transition-colors hover:bg-[var(--navy-850)] md:p-8"
+                >
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)] transition-transform group-hover:-translate-y-0.5">
+                    <Icon size={22} aria-hidden />
+                  </span>
+                  <h3 className="mt-5 text-lg font-semibold tracking-[-0.02em] text-white">{item.title}</h3>
+                  <p className="mt-2.5 text-sm leading-7 text-[#9fb1c4]">{item.body}</p>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
+
+        {/* KPI band */}
+        <Reveal className="grid gap-px overflow-hidden rounded-[1.75rem] border border-[rgba(47,116,189,0.28)] bg-[rgba(200,210,221,0.12)] sm:grid-cols-2 lg:grid-cols-4">
+          {kpis.map((kpi) => (
+            <div
+              key={kpi.label}
+              className="bg-[linear-gradient(160deg,rgba(47,116,189,0.12),rgba(8,17,31,0.9))] p-7 md:p-8"
+            >
+              <p className="text-[clamp(2.2rem,4vw,3rem)] font-bold leading-none tracking-[-0.04em] text-white">
+                {kpi.value}
+              </p>
+              <p className="mt-3 text-sm font-semibold tracking-[-0.01em] text-[var(--accent-light)]">
+                {kpi.label}
+              </p>
+              <p className="mt-1.5 text-[0.82rem] leading-snug text-[var(--steel-400)]">{kpi.detail}</p>
+            </div>
+          ))}
+        </Reveal>
       </Container>
     </section>
   );
