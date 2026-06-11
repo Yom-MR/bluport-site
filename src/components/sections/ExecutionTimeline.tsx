@@ -41,10 +41,10 @@ export default function ExecutionTimeline() {
           <ol className="grid min-w-[900px] grid-cols-5 gap-4">
             {phases.map((phase, index) => (
               <li key={phase.stage} className="relative rounded-[1.6rem] border border-[rgba(148,163,184,0.25)] bg-white p-5 shadow-[0_18px_32px_rgba(3,20,38,0.06)]">
-                <p className="text-xs font-bold tracking-[0.16em] text-sky-700 uppercase">0{index + 1}</p>
+                <p className="text-xs font-bold tracking-[0.16em] text-[var(--accent-strong)] uppercase">0{index + 1}</p>
                 <h3 className="mt-4 text-xl font-semibold tracking-[-0.03em] text-slate-950">{phase.stage}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">{phase.detail}</p>
-                <Link href="/mission" className="mt-5 inline-flex text-xs font-semibold tracking-[0.12em] text-sky-700 uppercase hover:text-sky-900">
+                <Link href="/mission" className="mt-5 inline-flex text-xs font-semibold tracking-[0.12em] text-[var(--accent-strong)] uppercase hover:text-[var(--accent)]">
                   View mission detail
                 </Link>
               </li>

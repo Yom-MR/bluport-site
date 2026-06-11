@@ -39,7 +39,7 @@ export default function PremiumHero() {
           <h1 className="max-w-[10.5ch] text-[clamp(3.75rem,7vw,6.75rem)] font-extrabold leading-[0.9] tracking-[-0.06em]">
             Mission-Critical Logistics
             <br />
-            <span className="text-[#4cc9f0]">for Equipment-Dependent Operations.</span>
+            <span className="text-[var(--accent)]">for Equipment-Dependent Operations.</span>
           </h1>
           <p className="max-w-[600px] text-[1.08rem] leading-[1.66] text-[#dce6ee]">
             We keep operations moving across Texas and the Gulf Coast by transporting the equipment
@@ -58,7 +58,7 @@ export default function PremiumHero() {
                   key={item.label}
                   className="flex items-center gap-3 rounded-xl border border-[rgba(200,210,221,0.22)] bg-[rgba(2,10,20,0.28)] px-3.5 py-3"
                 >
-                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(76,201,240,0.14)] text-[#7fdaf5]">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(242,105,28,0.16)] text-[var(--accent-light)]">
                     <Icon size={16} aria-hidden />
                   </span>
                   <span className="leading-snug">{item.label}</span>
@@ -69,13 +69,13 @@ export default function PremiumHero() {
           <div className="flex flex-wrap gap-4 pt-2">
             <Link
               href="/#request-capacity"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-xl border border-transparent bg-[#1fb6e8] px-8 text-sm font-semibold tracking-[0.075em] text-[#031426] uppercase transition-all duration-200 hover:bg-[#4cc9f0]"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-xl border border-transparent bg-[var(--accent)] px-8 text-sm font-semibold tracking-[0.075em] text-white uppercase shadow-[0_16px_30px_rgba(242,105,28,0.32)] transition-all duration-200 hover:bg-[var(--accent-strong)]"
             >
               Request Capacity
             </Link>
             <Link
               href="/services"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-xl border border-[rgba(200,210,221,0.5)] bg-[rgba(2,10,20,0.24)] px-8 text-sm font-semibold tracking-[0.075em] text-white uppercase transition-all duration-200 hover:border-[#4cc9f0] hover:text-[#4cc9f0]"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-xl border border-[rgba(200,210,221,0.5)] bg-[rgba(2,10,20,0.24)] px-8 text-sm font-semibold tracking-[0.075em] text-white uppercase transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--accent-light)]"
             >
               Explore Services
             </Link>

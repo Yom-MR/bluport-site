@@ -62,7 +62,7 @@ export default function CapabilitySplit() {
                     className="flex items-center justify-between border-b border-white/16 pb-3.5"
                   >
                     <span className="text-[1.08rem] font-medium tracking-[-0.01em] text-[#f0f6fb]">{item}</span>
-                    <span className="text-[#4cc9f0]" aria-hidden>
+                    <span className="text-[var(--accent)]" aria-hidden>
                       -&gt;
                     </span>
                   </li>
@@ -87,7 +87,7 @@ export default function CapabilitySplit() {
                   return (
                     <details
                       key={item.title}
-                      className="group rounded-2xl border border-[rgba(6,29,51,0.14)] bg-white/90 p-4 transition-colors open:border-[rgba(31,182,232,0.45)]"
+                      className="group rounded-2xl border border-[rgba(6,29,51,0.14)] bg-white/90 p-4 transition-colors open:border-[rgba(242,105,28,0.45)]"
                     >
                       <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
                         <span className="text-[1.08rem] font-semibold tracking-[-0.015em] text-[#031426]">
@@ -96,7 +96,7 @@ export default function CapabilitySplit() {
                         <ChevronDown
                           size={16}
                           aria-hidden
-                          className="shrink-0 text-[#1fb6e8] transition-transform duration-200 group-open:rotate-180"
+                          className="shrink-0 text-[var(--accent)] transition-transform duration-200 group-open:rotate-180"
                         />
                       </summary>
                       <p className="mt-3 text-sm leading-relaxed text-[#355066] md:text-base">

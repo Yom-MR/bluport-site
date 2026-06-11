@@ -24,7 +24,7 @@ const operationalProof = [
 
 export default function FleetShowcase() {
   return (
-    <section className="section-pad bg-[#031426] text-white">
+    <section className="section-pad bg-[var(--navy-900)] text-white">
       <Container className="space-y-11">
         <div className="max-w-[74ch] space-y-4">
           <p className="eyebrow">PLATFORM OVERVIEW</p>
@@ -50,11 +50,11 @@ export default function FleetShowcase() {
           </div>
 
           <div className="rounded-[18px] border border-[rgba(200,210,221,0.2)] bg-[rgba(2,10,20,0.6)] p-6 md:p-7">
-            <p className="technical-label text-[var(--cyan)]">HOW IT WORKS IN THE FIELD</p>
+            <p className="technical-label">HOW IT WORKS IN THE FIELD</p>
             <ul className="mt-5 divide-y divide-[rgba(200,210,221,0.2)]">
               {operationalProof.map((row) => (
                 <li key={row.label} className="py-4">
-                  <p className="text-xs font-bold tracking-[0.12em] text-[#8ecde2] uppercase">{row.label}</p>
+                  <p className="text-xs font-bold tracking-[0.12em] text-[var(--accent-light)] uppercase">{row.label}</p>
                   <p className="mt-1 text-sm leading-relaxed text-[#c8d2dd]">{row.value}</p>
                 </li>
               ))}

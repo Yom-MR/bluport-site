@@ -10,7 +10,7 @@ const confidenceStatements = [
 
 export default function CustomerConfidence() {
   return (
-    <section className="section-pad bg-[#020a14] text-white">
+    <section className="section-pad bg-[var(--navy-950)] text-white">
       <Container className="space-y-12">
         <div className="max-w-[72ch] space-y-4">
           <p className="eyebrow">CUSTOMER CONFIDENCE</p>

@@ -39,7 +39,7 @@ const industryTiles = [
 
 export default function IndustriesMosaic() {
   return (
-    <section className="section-pad bg-[#020a14] text-white">
+    <section className="section-pad bg-[var(--navy-950)] text-white">
       <Container className="space-y-14">
         <div className="max-w-[74ch] space-y-5">
           <p className="eyebrow">INDUSTRIES</p>

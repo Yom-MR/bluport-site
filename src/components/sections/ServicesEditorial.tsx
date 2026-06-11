@@ -55,7 +55,7 @@ export default function ServicesEditorial() {
           </p>
           <Link
             href="/services"
-            className="inline-flex rounded-lg border border-[rgba(111,127,145,0.34)] px-5 py-2.5 text-xs font-semibold tracking-[0.12em] text-[#17324a] uppercase transition-colors hover:border-[#1fb6e8] hover:text-[#0f4b6b]"
+            className="inline-flex rounded-lg border border-[rgba(111,127,145,0.34)] px-5 py-2.5 text-xs font-semibold tracking-[0.12em] text-[#17324a] uppercase transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-strong)]"
           >
             View Detailed Services
           </Link>
@@ -67,7 +67,7 @@ export default function ServicesEditorial() {
               key={service.title}
               className="group grid gap-4 py-6 transition-colors duration-200 hover:bg-[rgba(238,243,248,0.75)] md:grid-cols-[70px_1fr] md:items-start md:py-7"
             >
-              <span className="text-sm font-bold tracking-[0.12em] text-[#1fb6e8]">{service.number}</span>
+              <span className="text-sm font-bold tracking-[0.12em] text-[var(--accent)]">{service.number}</span>
               <div>
                 <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#031426]">
                   {service.title}
