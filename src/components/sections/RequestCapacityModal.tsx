@@ -142,16 +142,16 @@ export default function RequestCapacityModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="request-capacity-modal-title"
-        className="relative z-10 w-full max-w-[980px] overflow-hidden rounded-[1.6rem] border border-[rgba(148,163,184,0.26)] bg-[#031426] text-white shadow-[0_40px_80px_rgba(2,10,20,0.5)]"
+        className="relative z-10 w-full max-w-[980px] overflow-hidden rounded-[1.6rem] border border-[rgba(180,194,209,0.2)] bg-[var(--navy-850)] text-white shadow-[0_40px_80px_rgba(0,0,0,0.55)]"
       >
         <div className="max-h-[90vh] overflow-y-auto p-4 md:p-6">
-          <div className="mb-5 flex items-start justify-between gap-6 border-b border-[rgba(148,163,184,0.22)] pb-5">
+          <div className="mb-5 flex items-start justify-between gap-6 border-b border-[rgba(180,194,209,0.18)] pb-5">
             <div>
-              <p className="technical-label text-[var(--cyan)]">REQUEST CAPACITY</p>
+              <p className="technical-label">REQUEST CAPACITY</p>
               <h2 id="request-capacity-modal-title" className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
                 Request capacity
               </h2>
-              <p className="mt-2 max-w-[56ch] text-sm leading-7 text-[rgba(203,213,225,0.86)] md:text-base">
+              <p className="mt-2 max-w-[56ch] text-sm leading-7 text-[var(--steel-300)] md:text-base">
                 Send the asset, route, timing, and constraints. Bluport operations will review the request and follow up.
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function RequestCapacityModal() {
               ref={closeButtonRef}
               type="button"
               onClick={closeModal}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(148,163,184,0.3)] bg-[rgba(255,255,255,0.04)] text-white transition-colors hover:border-[var(--cyan)]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(180,194,209,0.25)] bg-[rgba(255,255,255,0.04)] text-white transition-colors hover:border-[var(--accent)]"
             >
               <span aria-hidden>×</span>
             </button>

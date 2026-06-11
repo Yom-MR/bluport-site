@@ -97,7 +97,7 @@ export default function RequestCapacityForm() {
   if (isSubmitted) {
     return (
       <div className="rounded-2xl border border-[rgba(148,163,184,0.3)] bg-white p-6 md:p-7" role="status" aria-live="polite">
-        <p className="technical-label text-[var(--blue)]">INTAKE STATUS</p>
+        <p className="technical-label">INTAKE STATUS</p>
         <h3 className="mt-3 text-xl font-semibold text-slate-900">
           Mission request received. Bluport operations will review the details and follow up.
         </h3>
@@ -123,7 +123,7 @@ export default function RequestCapacityForm() {
       <div className="grid gap-6">
         <p className="text-xs text-slate-500">Required fields are marked with *.</p>
         <div>
-          <p className="technical-label text-[var(--blue)]">CONTACT INFORMATION</p>
+          <p className="technical-label">CONTACT INFORMATION</p>
           <div className="mt-3 grid gap-4 md:grid-cols-2">
             <div>
               <label className={labelClass} htmlFor="fullName">
@@ -189,7 +189,7 @@ export default function RequestCapacityForm() {
         </div>
 
         <div className="soft-divider pt-5">
-          <p className="technical-label text-[var(--blue)]">MOVE DETAILS</p>
+          <p className="technical-label">MOVE DETAILS</p>
           <div className="mt-3 grid gap-4 md:grid-cols-2">
             <div>
               <label className={labelClass} htmlFor="pickupLocation">
@@ -332,7 +332,7 @@ export default function RequestCapacityForm() {
         </div>
 
         <div className="soft-divider pt-5">
-          <p className="technical-label text-[var(--blue)]">ADDITIONAL DETAILS</p>
+          <p className="technical-label">ADDITIONAL DETAILS</p>
           <div className="mt-3 grid gap-4 md:grid-cols-2">
             <div className="md:col-span-2">
               <label className={labelClass} htmlFor="notes">
@@ -380,7 +380,7 @@ export default function RequestCapacityForm() {
           <button
             type="submit"
             disabled={isSending}
-            className="inline-flex rounded-xl bg-[var(--blue)] px-5 py-3 text-xs font-semibold tracking-[0.12em] text-white uppercase shadow-[0_12px_24px_rgba(14,165,233,0.26)] transition-all hover:-translate-y-0.5 hover:bg-[var(--cyan)]"
+            className="inline-flex rounded-xl bg-[var(--accent)] px-5 py-3 text-xs font-semibold tracking-[0.12em] text-white uppercase shadow-[0_12px_24px_rgba(242,105,28,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[var(--accent-strong)]"
           >
             {isSending ? "Sending..." : "Submit Request"}
           </button>
