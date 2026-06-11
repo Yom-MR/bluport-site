@@ -17,7 +17,7 @@ export const siteImages = {
   industrialManufacturing: "/images/jobsites/industry-industrial-manufacturing.jpg",
   premiumHero: "/images/loads/equipment-on-trailer.jpg",
   capabilityTexture: "/images/jobsites/equipment-yard.jpg",
-  fleetShowcase: "/images/fleet/heavy-equipment-transport.jpg",
+  fleetShowcase: "/images/fleet/heavy-equipment-transport.png",
   // Industry grid — dedicated industry-specific photos
   industriesConstruction: "/images/industries/industry-construction-equipment-rental.jpg",
   industriesUtilities: "/images/industries/industry-utilities-infrastructure.jpg",

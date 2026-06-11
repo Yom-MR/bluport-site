@@ -32,6 +32,8 @@
   /* Aliases */
   --accent: var(--orange-500);
   --accent-strong: var(--orange-600);
+  --accent-light: var(--orange-400);
+  --blue-300: var(--blue-400);
   --muted: var(--steel-400);
   --border: rgba(180, 194, 209, 0.14);
 
