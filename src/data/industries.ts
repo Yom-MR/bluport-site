@@ -100,8 +100,8 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     title: "Aerospace & Defense",
     summary:
       "Support mission-oriented ground movement that requires clear communication and controlled execution standards.",
-    image: siteImages.equipmentSecurement,
-    alt: "Securement detail on heavy equipment",
+    image: siteImages.industryDetailAerospace,
+    alt: "Tarped, chain-secured sensitive cargo staged outside a controlled-access aerospace facility",
     statLabel: "Primary friction",
     statValue: "Controlled handling",
     painPoints: ["Sensitive cargo handling", "Strict access requirements", "Low tolerance for handoff errors"],
@@ -120,8 +120,8 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     title: "Government & Emergency Response",
     summary:
       "Provide move support for urgent public missions and project operations where schedule integrity matters.",
-    image: siteImages.fieldOperations,
-    alt: "Field operations team supporting a response mission",
+    image: siteImages.industryDetailGovernment,
+    alt: "Flatbed staged with a mobile generator and response equipment amid emergency response vehicles at dusk",
     statLabel: "Primary friction",
     statValue: "Urgent deployment",
     painPoints: ["Escalating urgency", "Fragmented communication", "Changing deployment priorities"],
