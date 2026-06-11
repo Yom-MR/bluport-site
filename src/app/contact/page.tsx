@@ -4,6 +4,11 @@ import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
 import { siteImages } from "@/data/siteImages";
+import {
+  BLUPORT_BASE_DISPLAY,
+  BLUPORT_PHONE_DISPLAY,
+  CONTACT_CHANNEL_LIST,
+} from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -17,38 +22,11 @@ export const metadata: Metadata = {
   ],
 };
 
-const contactItems = [
-  {
-    label: "booking@bluport.us",
-    detail: "Freight booking, capacity requests, and move intake",
-    icon: Mail,
-  },
-  {
-    label: "support@bluport.us",
-    detail: "Customer support and general follow-up",
-    icon: Mail,
-  },
-  {
-    label: "billing@bluport.us",
-    detail: "Invoices, payments, and billing questions",
-    icon: Mail,
-  },
-  {
-    label: "vendors@bluport.us",
-    detail: "Vendor, carrier, supplier, and partner inquiries",
-    icon: Mail,
-  },
-  {
-    label: "compliance@bluport.us",
-    detail: "Insurance, onboarding, and safety/compliance documents",
-    icon: Mail,
-  },
-  {
-    label: "hr@bluport.us",
-    detail: "Recruiting, careers, and driver/operator inquiries",
-    icon: Mail,
-  },
-];
+const contactItems = CONTACT_CHANNEL_LIST.map((channel) => ({
+  label: channel.email,
+  detail: channel.purpose,
+  icon: Mail,
+}));
 
 const prepDetails = [
   "Pickup and delivery locations",
@@ -85,11 +63,11 @@ export default function ContactPage() {
             <div className="mt-4 space-y-3">
               <p className="flex items-center gap-2.5 text-lg font-semibold text-slate-900">
                 <Phone size={17} aria-hidden className="text-sky-700" />
-                832-627-7059
+                {BLUPORT_PHONE_DISPLAY}
               </p>
               <p className="flex items-center gap-2.5 text-base text-slate-700">
                 <MapPin size={17} aria-hidden className="text-sky-700" />
-                Houston, Texas
+                {BLUPORT_BASE_DISPLAY}
               </p>
               <p className="text-sm leading-7 text-slate-600">Mission intake and move planning</p>
             </div>

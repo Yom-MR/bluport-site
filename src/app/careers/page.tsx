@@ -4,6 +4,7 @@ import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
 import FeatureRows from "@/components/ui/FeatureRows";
 import { siteImages } from "@/data/siteImages";
+import { CONTACT_CHANNELS } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -125,7 +126,7 @@ export default function CareersPage() {
             prioritizing military-connected talent for roles where discipline, resilience,
             communication, and field accountability matter.
           </p>
-          <Button href="mailto:hr@bluport.us">Contact HR</Button>
+          <Button href={`mailto:${CONTACT_CHANNELS.hr.email}`}>Contact HR</Button>
         </div>
       </EditorialSection>
     </>

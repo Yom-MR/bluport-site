@@ -1,14 +1,20 @@
+import {
+  BLUPORT_BASE_DISPLAY,
+  BLUPORT_PHONE_E164,
+  CONTACT_CHANNELS,
+} from "@/lib/contact";
+
 export default function StructuredData() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Bluport Logistics",
     url: "https://bluport.us",
-    email: "booking@bluport.us",
-    telephone: "+1-832-627-7059",
+    email: CONTACT_CHANNELS.booking.email,
+    telephone: BLUPORT_PHONE_E164,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Houston",
+      addressLocality: BLUPORT_BASE_DISPLAY,
       addressRegion: "Texas",
       addressCountry: "United States",
     },

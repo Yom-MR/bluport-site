@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CONTACT_CHANNELS } from "@/lib/contact";
 
 type RequestCapacityFormData = {
   fullName: string;
@@ -86,7 +87,7 @@ export default function RequestCapacityForm() {
       setFormData(initialFormData);
     } catch {
       setSubmitError(
-        "We couldn't send the request. Please try again or contact booking@bluport.us.",
+        `We couldn't send the request. Please try again or contact ${CONTACT_CHANNELS.booking.email}.`,
       );
     } finally {
       setIsSending(false);
