@@ -27,11 +27,9 @@ export const siteImages = {
   industriesUtilities: "/images/jobsites/industry-utilities-infrastructure.jpg",
   industriesIndustrial: "/images/jobsites/industry-industrial-manufacturing.jpg",
   industriesDataCenter: "/images/jobsites/industry-data-center.jpg",
-  // Industry detail pages — dedicated, cinematic industry-specific heroes
-  industryDetailConstruction: "/images/industries/hero-construction-equipment.png",
-  industryDetailUtilities: "/images/industries/hero-utilities-infrastructure.png",
-  industryDetailIndustrial: "/images/industries/hero-industrial-manufacturing.png",
-  industryDetailDataCenter: "/images/industries/hero-data-center.png",
-  industryDetailAerospace: "/images/industries/hero-aerospace-defense.png",
-  industryDetailGovernment: "/images/industries/hero-government-emergency.png",
+  // Industry detail pages — dedicated industry-specific photos
+  industryDetailConstruction: "/images/industries/industry-construction-equipment-rental.jpg",
+  industryDetailUtilities: "/images/industries/industry-utilities-infrastructure.jpg",
+  industryDetailIndustrial: "/images/industries/industry-industrial-manufacturing.jpg",
+  industryDetailDataCenter: "/images/industries/industry-data-center-construction.jpg",
 } as const;
