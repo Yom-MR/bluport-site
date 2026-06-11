@@ -6,15 +6,16 @@ import EditorialSection from "@/components/ui/EditorialSection";
 import { getIndustryBySlug, INDUSTRY_ENTRIES } from "@/data/industries";
 
 type IndustryPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
   return INDUSTRY_ENTRIES.map((industry) => ({ slug: industry.slug }));
 }
 
-export function generateMetadata({ params }: IndustryPageProps): Metadata {
-  const industry = getIndustryBySlug(params.slug);
+export async function generateMetadata({ params }: IndustryPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const industry = getIndustryBySlug(slug);
   if (!industry) {
     return { title: "Industry" };
   }
@@ -25,8 +26,9 @@ export function generateMetadata({ params }: IndustryPageProps): Metadata {
   };
 }
 
-export default function IndustryPage({ params }: IndustryPageProps) {
-  const industry = getIndustryBySlug(params.slug);
+export default async function IndustryPage({ params }: IndustryPageProps) {
+  const { slug } = await params;
+  const industry = getIndustryBySlug(slug);
 
   if (!industry) {
     notFound();

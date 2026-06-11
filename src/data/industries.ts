@@ -20,7 +20,7 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     title: "Construction & Equipment Rental",
     summary:
       "Keep rental fleets, attachments, and machines aligned with jobsite timing and customer demand.",
-    image: siteImages.industriesConstruction,
+    image: siteImages.industryDetailConstruction,
     alt: "Construction site with equipment rental assets",
     statLabel: "Primary friction",
     statValue: "Fleet continuity",
@@ -40,7 +40,7 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     title: "Utilities & Infrastructure",
     summary:
       "Support outage-sensitive work where equipment delays can stall crews, restoration timelines, and infrastructure schedules.",
-    image: siteImages.industriesUtilities,
+    image: siteImages.industryDetailUtilities,
     alt: "Utility substation and infrastructure work",
     statLabel: "Primary friction",
     statValue: "Restoration windows",
@@ -60,7 +60,7 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     title: "Industrial & Manufacturing",
     summary:
       "Move support assets around shutdowns, production windows, vendor coordination, and controlled-access sites.",
-    image: siteImages.industriesIndustrial,
+    image: siteImages.industryDetailIndustrial,
     alt: "Industrial manufacturing facility",
     statLabel: "Primary friction",
     statValue: "Production windows",
@@ -80,7 +80,7 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     title: "Data Center Construction",
     summary:
       "Support scheduled equipment movement for uptime-driven infrastructure builds, generators, site equipment, and critical-path work.",
-    image: siteImages.industriesDataCenter,
+    image: siteImages.industryDetailDataCenter,
     alt: "Data center construction site",
     statLabel: "Primary friction",
     statValue: "Critical path",

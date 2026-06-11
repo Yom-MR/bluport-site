@@ -9,8 +9,8 @@ export const siteImages = {
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections
-  equipmentOnTrailer: "/images/loads/bluport-factory-hero.png",
-  equipmentSecurement: "/images/loads/equipment-securement-real.png",
+  equipmentOnTrailer: "/images/loads/bluport-container-yard.jpg",
+  equipmentSecurement: "/images/loads/IMG_4167.jpg",
   constructionRental: "/images/jobsites/industry-construction-equipment.jpg",
   utilitiesInfrastructure: "/images/jobsites/industry-utilities-infrastructure.jpg",
   dataCenterConstruction: "/images/jobsites/industry-data-center.jpg",
@@ -18,9 +18,14 @@ export const siteImages = {
   premiumHero: "/images/loads/bluport-factory-hero.png",
   capabilityTexture: "/images/jobsites/equipment-yard.jpg",
   fleetShowcase: "/images/fleet/heavy-equipment-transport.png",
-  // Industry grid — dedicated industry-specific photos
-  industriesConstruction: "/images/industries/industry-construction-equipment-rental.jpg",
-  industriesUtilities: "/images/industries/industry-utilities-infrastructure.jpg",
-  industriesIndustrial: "/images/industries/industry-industrial-manufacturing.jpg",
-  industriesDataCenter: "/images/industries/industry-data-center-construction.jpg",
+  // Industry grid (home page) — distinct from the industry detail-page photos
+  industriesConstruction: "/images/jobsites/industry-construction-equipment.jpg",
+  industriesUtilities: "/images/jobsites/industry-utilities-infrastructure.jpg",
+  industriesIndustrial: "/images/jobsites/industry-industrial-manufacturing.jpg",
+  industriesDataCenter: "/images/jobsites/industry-data-center.jpg",
+  // Industry detail pages — dedicated industry-specific photos
+  industryDetailConstruction: "/images/industries/industry-construction-equipment-rental.jpg",
+  industryDetailUtilities: "/images/industries/industry-utilities-infrastructure.jpg",
+  industryDetailIndustrial: "/images/industries/industry-industrial-manufacturing.jpg",
+  industryDetailDataCenter: "/images/industries/industry-data-center-construction.jpg",
 } as const;
