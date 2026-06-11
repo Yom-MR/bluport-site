@@ -7,6 +7,7 @@ import {
   ArrowRight,
   CheckCircle2,
   Gauge,
+  PackageCheck,
   PhoneCall,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
@@ -67,6 +68,41 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </div>
       </PageHero>
 
+      {/* Overview + what we move */}
+      <section className="bg-[var(--navy-950)] py-20 text-white md:py-28">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
+            <Reveal className="space-y-5">
+              <p className="eyebrow">OVERVIEW</p>
+              <h2 className="text-[clamp(1.9rem,3.8vw,2.8rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-balance">
+                Logistics built around how this sector actually works.
+              </h2>
+              <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                {industry.intro}
+              </p>
+            </Reveal>
+
+            <Reveal delay={120} className="rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 md:p-9">
+              <div className="flex items-center gap-2.5">
+                <PackageCheck size={18} aria-hidden className="text-[var(--accent-light)]" />
+                <p className="technical-label">WHAT WE MOVE</p>
+              </div>
+              <ul className="mt-6 grid gap-x-6 gap-y-3.5 sm:grid-cols-2">
+                {industry.cargoTypes.map((cargo) => (
+                  <li key={cargo} className="flex items-start gap-2.5 text-sm leading-6 text-[#dce6ee]">
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent-light)]"
+                      aria-hidden
+                    />
+                    <span>{cargo}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
       {/* Friction + headline stat */}
       <section className="relative overflow-hidden bg-[var(--navy-900)] py-20 text-white md:py-28">
         <div className="absolute inset-0 blueprint-grid opacity-[0.16]" aria-hidden />
@@ -96,7 +132,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
             <Reveal delay={120} className="grid gap-4 sm:grid-cols-1">
               {industry.painPoints.map((point, index) => (
                 <div
-                  key={point}
+                  key={point.title}
                   className="flex items-start gap-4 rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-6"
                 >
                   <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(229,127,67,0.12)] text-[#e8a87c]">
@@ -107,7 +143,10 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                       {String(index + 1).padStart(2, "0")}
                     </p>
                     <p className="mt-1 text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
-                      {point}
+                      {point.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-7 text-[var(--steel-300)]">
+                      {point.description}
                     </p>
                   </div>
                 </div>
@@ -135,7 +174,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
             <Reveal className="space-y-3">
               {industry.solutions.map((item) => (
                 <div
-                  key={item}
+                  key={item.title}
                   className="flex items-start gap-3.5 rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-5"
                 >
                   <CheckCircle2
@@ -143,7 +182,12 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     aria-hidden
                     className="mt-0.5 shrink-0 text-[var(--accent-light)]"
                   />
-                  <p className="text-[1.02rem] leading-7 text-[#e5eef6]">{item}</p>
+                  <div>
+                    <p className="text-[1.02rem] font-semibold leading-6 tracking-[-0.01em] text-white">
+                      {item.title}
+                    </p>
+                    <p className="mt-1.5 text-sm leading-7 text-[#c8d2dd]">{item.description}</p>
+                  </div>
                 </div>
               ))}
             </Reveal>
@@ -200,7 +244,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           <div className="grid gap-4 md:grid-cols-3">
             {industry.benefits.map((benefit, index) => (
               <Reveal
-                key={benefit}
+                key={benefit.title}
                 delay={index * 80}
                 className="rounded-[1.5rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7"
               >
@@ -208,7 +252,10 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <p className="mt-4 text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
-                  {benefit}
+                  {benefit.title}
+                </p>
+                <p className="mt-2 text-sm leading-7 text-[var(--steel-300)]">
+                  {benefit.description}
                 </p>
               </Reveal>
             ))}
