@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Award,
   ClipboardCheck,
@@ -136,8 +137,8 @@ export default function CareersPage() {
         title="Mission after service starts here."
         description="Bluport is a veteran-owned logistics company built for the people who already operate to a standard: veterans, transitioning service members, reservists, guardsmen, and military spouses."
         image={siteImages.careersHero}
-        imageAlt="Professional field operations environment for logistics careers"
-        imagePosition="object-[center_48%]"
+        imageAlt="Veteran logistics operator standing beside a loaded Bluport flatbed truck"
+        imagePosition="object-[center_30%]"
         variant="dark"
       />
 
@@ -171,6 +172,47 @@ export default function CareersPage() {
                 </p>
               </Reveal>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Image feature: a team that operates like you trained */}
+      <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <Reveal className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
+              <Image
+                src={siteImages.careersTeam}
+                alt="Two Bluport operators reviewing a dispatch plan beside a hotshot truck and trailer"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(5,11,22,0.6)_100%)]" />
+            </Reveal>
+            <Reveal delay={120} className="space-y-6">
+              <p className="technical-label">A TEAM THAT OPERATES LIKE YOU TRAINED</p>
+              <h2 className="text-[clamp(1.9rem,3.8vw,3rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
+                Brief, execute, confirm. Then do it again.
+              </h2>
+              <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                Bluport runs on the same rhythm you already know: a clear plan before the move, tight
+                communication during it, and an honest closeout after. No guesswork, no noise, no
+                missing accountability.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Every move planned before dispatch",
+                  "Confirmed handoffs with the right field contacts",
+                  "Documented closeout on every job",
+                ].map((line) => (
+                  <li key={line} className="flex items-start gap-3 text-sm text-[var(--steel-200)] md:text-base">
+                    <ShieldCheck size={18} aria-hidden className="mt-1 shrink-0 text-[var(--accent)]" />
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         </Container>
       </section>

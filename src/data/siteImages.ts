@@ -4,13 +4,16 @@ export const siteImages = {
   // Services hero: close-up securement/binder photo from Bluport loads
   servicesHero: "/images/loads/equipment-securement-real.png",
   industriesHero: "/images/page-heroes/industries-infrastructure.jpg",
-  careersHero: "/images/page-heroes/careers-workforce.jpg",
-  contactHero: "/images/page-heroes/contact-operations.jpg",
+  careersHero: "/images/page-heroes/careers-veteran-operations.png",
+  careersTeam: "/images/page-heroes/careers-team-coordination.png",
+  contactHero: "/images/page-heroes/contact-dispatch-operations.png",
+  contactReady: "/images/page-heroes/contact-ready-to-roll.png",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections
   equipmentOnTrailer: "/images/loads/bluport-container-yard.jpg",
   equipmentSecurement: "/images/loads/IMG_4167.jpg",
+  equipmentRealLoad: "/images/loads/bluport-container-yard.jpg",
   constructionRental: "/images/jobsites/industry-construction-equipment.jpg",
   utilitiesInfrastructure: "/images/jobsites/industry-utilities-infrastructure.jpg",
   dataCenterConstruction: "/images/jobsites/industry-data-center.jpg",

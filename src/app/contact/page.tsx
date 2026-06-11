@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ClipboardList, Mail, MapPin, Phone, Radio } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
@@ -42,8 +43,8 @@ export default function ContactPage() {
         title="Talk to Bluport operations."
         description="Use the right channel for the request so Bluport can route it quickly and keep your move on schedule."
         image={siteImages.contactHero}
-        imageAlt="Dispatch planning and route coordination context"
-        imagePosition="object-[center_52%]"
+        imageAlt="Bluport dispatcher coordinating routes and schedules in an operations room"
+        imagePosition="object-[center_35%]"
         variant="dark"
       />
 
@@ -114,30 +115,50 @@ export default function ContactPage() {
       {/* Contact prep */}
       <section className="section-pad bg-[var(--navy-950)] text-white">
         <Container>
-          <Reveal className="max-w-[760px] space-y-5">
-            <p className="technical-label">CONTACT PREP</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-              Before you contact us, helpful details include:
-            </h2>
-            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              Providing these details upfront helps operations scope the move accurately and respond
-              faster.
-            </p>
-          </Reveal>
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+            <Reveal className="space-y-8">
+              <div className="space-y-5">
+                <p className="technical-label">CONTACT PREP</p>
+                <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+                  Before you contact us, helpful details include:
+                </h2>
+                <p className="max-w-[52ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                  Providing these details upfront helps operations scope the move accurately and
+                  respond faster.
+                </p>
+              </div>
+              <ul className="grid gap-3 sm:grid-cols-2">
+                {prepDetails.map((item, index) => (
+                  <Reveal
+                    as="li"
+                    key={item}
+                    delay={index * 50}
+                    className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-5"
+                  >
+                    <ClipboardList size={18} aria-hidden className="mt-0.5 shrink-0 text-[var(--accent)]" />
+                    <span className="text-sm leading-7 text-[var(--steel-200)]">{item}</span>
+                  </Reveal>
+                ))}
+              </ul>
+            </Reveal>
 
-          <ul className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {prepDetails.map((item, index) => (
-              <Reveal
-                as="li"
-                key={item}
-                delay={index * 50}
-                className="flex items-start gap-3 rounded-2xl border border-[rgba(180,194,209,0.14)] bg-[rgba(255,255,255,0.03)] p-5"
-              >
-                <ClipboardList size={18} aria-hidden className="mt-0.5 shrink-0 text-[var(--accent)]" />
-                <span className="text-sm leading-7 text-[var(--steel-200)] md:text-base">{item}</span>
-              </Reveal>
-            ))}
-          </ul>
+            <Reveal delay={120} className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)] lg:sticky lg:top-28">
+              <Image
+                src={siteImages.contactReady}
+                alt="A loaded Bluport F-350 and gooseneck trailer staged and ready to depart"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(5,11,22,0.85)_100%)]" />
+              <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
+                <p className="technical-label text-[var(--accent-light)]">STAGED &amp; CONFIRMED</p>
+                <p className="mt-2 max-w-[24ch] text-xl font-semibold tracking-[-0.02em] md:text-2xl">
+                  Give us the details and we plan the move before the truck rolls.
+                </p>
+              </div>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
