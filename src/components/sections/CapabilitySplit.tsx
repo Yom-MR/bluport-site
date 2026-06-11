@@ -87,7 +87,7 @@ export default function CapabilitySplit() {
                   return (
                     <details
                       key={item.title}
-                      className="group rounded-2xl border border-[rgba(6,29,51,0.14)] bg-white/90 p-4 transition-colors open:border-[rgba(242,105,28,0.45)]"
+                      className="group rounded-2xl border border-[rgba(6,29,51,0.14)] bg-white/90 p-4 transition-colors open:border-[rgba(47,116,189,0.45)]"
                     >
                       <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
                         <span className="text-[1.08rem] font-semibold tracking-[-0.015em] text-[#031426]">

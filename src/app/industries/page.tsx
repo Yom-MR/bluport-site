@@ -87,9 +87,9 @@ export default function IndustriesPage() {
       </EditorialSection>
 
       <EditorialSection
-        eyebrow="SELECT YOUR INDUSTRY"
-        title="Choose a sector to see the operating details."
-        description="Each page focuses on the pain points, workflow, and support model that matter most to that environment."
+        eyebrow="REQUEST CAPACITY"
+        title="Tell us what the operation needs to move."
+        description="Share the asset, the site, and the window. Bluport scopes the move around your sector's constraints and confirms a plan before dispatch."
         variant="light"
         layout="stack"
         className="border-b-0"

@@ -162,7 +162,7 @@ export default function CareersPage() {
                 delay={index * 70}
                 className="group rounded-[1.5rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-7 transition-colors hover:border-[var(--accent)]"
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(242,105,28,0.14)] text-[var(--accent-light)]">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
                   <item.icon size={22} aria-hidden />
                 </span>
                 <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em]">{item.title}</h3>
@@ -222,7 +222,7 @@ export default function CareersPage() {
         <Container>
           <div className="grid gap-4 lg:grid-cols-2">
             <Reveal className="flex flex-col rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8 md:p-10">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(242,105,28,0.14)] text-[var(--accent-light)]">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
                 <HeartHandshake size={22} aria-hidden />
               </span>
               <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
@@ -319,7 +319,7 @@ export default function CareersPage() {
       {/* Success story placeholder */}
       <section className="section-pad bg-[var(--navy-900)] text-white">
         <Container>
-          <Reveal className="relative overflow-hidden rounded-[2rem] border border-[rgba(180,194,209,0.16)] bg-[linear-gradient(135deg,rgba(242,105,28,0.1),transparent_55%)] p-8 md:p-14">
+          <Reveal className="relative overflow-hidden rounded-[2rem] border border-[rgba(180,194,209,0.16)] bg-[linear-gradient(135deg,rgba(47,116,189,0.1),transparent_55%)] p-8 md:p-14">
             <div className="absolute inset-0 blueprint-grid opacity-40" aria-hidden />
             <div className="relative max-w-[720px]">
               <Quote size={40} aria-hidden className="text-[var(--accent)]" />

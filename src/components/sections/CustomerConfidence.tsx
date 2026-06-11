@@ -57,7 +57,7 @@ export default function CustomerConfidence() {
                 delay={index * 90}
                 className="group bg-[var(--navy-900)] p-7 transition-colors hover:bg-[var(--navy-850)] md:p-8"
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[rgba(242,105,28,0.14)] text-[var(--accent-light)] transition-transform group-hover:-translate-y-0.5">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)] transition-transform group-hover:-translate-y-0.5">
                   <Icon size={22} aria-hidden />
                 </span>
                 <h3 className="mt-5 text-lg font-semibold tracking-[-0.02em] text-white">{item.title}</h3>

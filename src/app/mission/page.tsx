@@ -88,7 +88,7 @@ export default function MissionPage() {
                 key={item.title}
                 className="rounded-2xl border border-[rgba(148,163,184,0.18)] bg-[rgba(255,255,255,0.04)] p-5"
               >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(242,105,28,0.14)] text-[var(--accent-light)]">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
                   <item.icon size={18} aria-hidden />
                 </span>
                 <p className="mt-4 text-lg font-semibold tracking-[-0.03em] text-white">{item.title}</p>

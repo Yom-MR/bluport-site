@@ -20,25 +20,26 @@
   --steel-200: #d6dee7;
   --white: #ffffff;
 
-  /* Muted blue (secondary accent) */
-  --blue-500: #3d82c4;
+  /* Brand blue (primary accent) */
+  --blue-700: #1f4f80;
+  --blue-600: #255a93;
+  --blue-500: #2f74bd;
   --blue-400: #5b9fd8;
+  --blue-300: #84bce8;
 
-  /* Safety orange (primary accent) */
-  --orange-600: #e2570f;
-  --orange-500: #f2691c;
-  --orange-400: #ff8438;
+  /* Cyan highlight (used sparingly) */
+  --cyan-500: #2bb3d9;
+  --cyan-400: #56c7e6;
 
   /* Aliases */
-  --accent: var(--orange-500);
-  --accent-strong: var(--orange-600);
-  --accent-light: var(--orange-400);
-  --blue-300: var(--blue-400);
+  --accent: var(--blue-500);
+  --accent-strong: var(--blue-600);
+  --accent-light: var(--blue-300);
   --muted: var(--steel-400);
   --border: rgba(180, 194, 209, 0.14);
 
-  /* Legacy aliases (map old cyan/blue accents onto the new system) */
-  --cyan: var(--orange-500);
+  /* Legacy aliases (map old cyan/orange accents onto the brand blue system) */
+  --cyan: var(--cyan-400);
   --blue: var(--blue-500);
 }
 
@@ -52,9 +53,9 @@
   --color-steel-light: var(--steel-300);
   --color-blue: var(--blue-500);
   --color-blue-light: var(--blue-400);
-  --color-accent: var(--orange-500);
-  --color-accent-strong: var(--orange-600);
-  --color-accent-light: var(--orange-400);
+  --color-accent: var(--blue-500);
+  --color-accent-strong: var(--blue-600);
+  --color-accent-light: var(--blue-300);
   --color-muted: var(--muted);
   --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
@@ -89,7 +90,7 @@ a {
   left: 1rem;
   top: -3.5rem;
   z-index: 100;
-  border: 1px solid rgba(242, 105, 28, 0.55);
+  border: 1px solid rgba(47, 116, 189, 0.55);
   background: rgba(5, 11, 22, 0.95);
   color: var(--foreground);
   border-radius: 0.5rem;
@@ -109,7 +110,7 @@ select:focus-visible,
 textarea:focus-visible {
   outline: none;
   box-shadow:
-    0 0 0 2px rgba(242, 105, 28, 0.8),
+    0 0 0 2px rgba(47, 116, 189, 0.8),
     0 0 0 4px rgba(5, 11, 22, 0.95);
 }
 

@@ -12,7 +12,7 @@ type ButtonProps = {
 
 const buttonVariants: Record<NonNullable<ButtonProps["variant"]>, string> = {
   primary:
-    "bg-[var(--accent)] text-white shadow-[0_14px_34px_rgba(242,105,28,0.32)] hover:bg-[var(--accent-strong)] hover:-translate-y-0.5",
+    "bg-[var(--accent)] text-white shadow-[0_14px_34px_rgba(47,116,189,0.32)] hover:bg-[var(--accent-strong)] hover:-translate-y-0.5",
   secondary:
     "border border-[rgba(180,194,209,0.28)] bg-[rgba(255,255,255,0.03)] text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent-light)]",
   ghost:

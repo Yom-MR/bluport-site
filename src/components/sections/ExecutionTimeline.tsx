@@ -58,7 +58,7 @@ export default function ExecutionTimeline() {
         <div className="relative">
           {/* Connecting rail */}
           <div
-            className="absolute left-0 right-0 top-[34px] hidden h-px bg-[linear-gradient(90deg,transparent,rgba(242,105,28,0.55)_12%,rgba(242,105,28,0.55)_88%,transparent)] lg:block"
+            className="absolute left-0 right-0 top-[34px] hidden h-px bg-[linear-gradient(90deg,transparent,rgba(47,116,189,0.55)_12%,rgba(47,116,189,0.55)_88%,transparent)] lg:block"
             aria-hidden
           />
           <ol className="grid gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-5">
@@ -67,7 +67,7 @@ export default function ExecutionTimeline() {
               return (
                 <Reveal as="li" key={phase.stage} delay={index * 110} className="relative">
                   <div className="relative mb-6 flex items-center gap-4 lg:block">
-                    <span className="relative z-10 inline-flex h-[68px] w-[68px] items-center justify-center rounded-2xl border border-[rgba(242,105,28,0.4)] bg-[var(--navy-950)] text-[var(--accent-light)] shadow-[0_12px_30px_rgba(0,0,0,0.45)]">
+                    <span className="relative z-10 inline-flex h-[68px] w-[68px] items-center justify-center rounded-2xl border border-[rgba(47,116,189,0.4)] bg-[var(--navy-950)] text-[var(--accent-light)] shadow-[0_12px_30px_rgba(0,0,0,0.45)]">
                       <Icon size={26} aria-hidden />
                     </span>
                     <span className="font-mono text-xs font-bold tracking-[0.16em] text-[#7d92a8] lg:absolute lg:right-2 lg:top-2">

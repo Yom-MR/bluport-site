@@ -40,7 +40,7 @@ export default function StatsBand() {
                 delay={index * 90}
                 className="flex items-start gap-4 py-8 sm:px-7 lg:border-l lg:border-[rgba(200,210,221,0.12)] lg:first:border-l-0"
               >
-                <span className="mt-0.5 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(242,105,28,0.14)] text-[var(--accent-light)]">
+                <span className="mt-0.5 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
                   <Icon size={20} aria-hidden />
                 </span>
                 <span>

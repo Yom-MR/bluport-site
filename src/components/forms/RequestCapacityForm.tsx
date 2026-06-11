@@ -380,7 +380,7 @@ export default function RequestCapacityForm() {
           <button
             type="submit"
             disabled={isSending}
-            className="inline-flex rounded-xl bg-[var(--accent)] px-5 py-3 text-xs font-semibold tracking-[0.12em] text-white uppercase shadow-[0_12px_24px_rgba(242,105,28,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[var(--accent-strong)]"
+            className="inline-flex rounded-xl bg-[var(--accent)] px-5 py-3 text-xs font-semibold tracking-[0.12em] text-white uppercase shadow-[0_12px_24px_rgba(47,116,189,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[var(--accent-strong)]"
           >
             {isSending ? "Sending..." : "Submit Request"}
           </button>

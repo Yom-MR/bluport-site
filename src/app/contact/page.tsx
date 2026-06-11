@@ -63,7 +63,7 @@ export default function ContactPage() {
 
           <div className="mt-12 grid gap-4 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
             <Reveal className="flex flex-col gap-6 rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8 md:p-10">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(242,105,28,0.14)] text-[var(--accent-light)]">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
                 <Radio size={22} aria-hidden />
               </span>
               <div>

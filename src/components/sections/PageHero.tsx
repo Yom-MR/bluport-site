@@ -51,12 +51,12 @@ export default function PageHero({
               "bg-[linear-gradient(94deg,rgba(5,11,22,0.93)_8%,rgba(5,11,22,0.78)_42%,rgba(5,11,22,0.36)_100%)]",
             )}
           />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,105,28,0.2),transparent_36%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,116,189,0.2),transparent_36%)]" />
         </>
       ) : (
         <>
           <div className="absolute inset-0 blueprint-grid opacity-60" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,105,28,0.16),transparent_32%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,116,189,0.16),transparent_32%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_40%,rgba(61,130,196,0.07)_100%)]" />
         </>
       )}

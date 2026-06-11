@@ -31,7 +31,7 @@ export default function MissionStrip() {
             Crews stand idle, schedules slip, and costs compound. Bluport plans around timing, site
             access, securement, communication, and closeout to keep the mission moving.
           </p>
-          <div className="inline-flex items-center gap-3 rounded-2xl border border-[rgba(242,105,28,0.28)] bg-[rgba(242,105,28,0.08)] px-5 py-4">
+          <div className="inline-flex items-center gap-3 rounded-2xl border border-[rgba(47,116,189,0.28)] bg-[rgba(47,116,189,0.08)] px-5 py-4">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--accent)] text-white">
               <TrendingDown size={20} aria-hidden />
             </span>
