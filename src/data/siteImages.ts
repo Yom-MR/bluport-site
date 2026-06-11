@@ -20,7 +20,8 @@ export const siteImages = {
   industrialManufacturing: "/images/jobsites/industry-industrial-manufacturing.jpg",
   premiumHero: "/images/loads/bluport-factory-hero.png",
   capabilityTexture: "/images/jobsites/equipment-yard.jpg",
-  fleetShowcase: "/images/fleet/heavy-equipment-transport.png",
+  fleetShowcase: "/images/loads/f350-container-gooseneck.jpg",
+  oversizeStructureMove: "/images/loads/f350-oversize-structure-move.jpg",
   // Industry grid (home page) — distinct from the industry detail-page photos
   industriesConstruction: "/images/jobsites/industry-construction-equipment.jpg",
   industriesUtilities: "/images/jobsites/industry-utilities-infrastructure.jpg",

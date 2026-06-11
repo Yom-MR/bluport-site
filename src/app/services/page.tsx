@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { CheckCircle2, ChevronDown } from "lucide-react";
+import { ChevronDown, FileCheck2, MapPinned, Radio, ShieldCheck } from "lucide-react";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
 import FeatureRows from "@/components/ui/FeatureRows";
-import QuoteCalculator from "@/components/sections/QuoteCalculator";
 import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
@@ -99,14 +98,27 @@ const supportSteps = [
   },
 ];
 
-const readinessChecklist = [
-  "Pickup location and access",
-  "Delivery location and access",
-  "Asset type",
-  "Dimensions and estimated weight",
-  "Requested pickup and delivery dates",
-  "Loading or securement constraints",
-  "Onsite contact information",
+const differentiators = [
+  {
+    icon: ShieldCheck,
+    title: "Securement discipline",
+    description: "Chain, binder, and tie-down plans documented per load before the truck leaves the yard.",
+  },
+  {
+    icon: MapPinned,
+    title: "Access confirmed first",
+    description: "Gate codes, site contacts, and loading constraints verified before dispatch — not at the gate.",
+  },
+  {
+    icon: Radio,
+    title: "Field-aware comms",
+    description: "Updates framed around jobsites, rental turns, and shutdown windows, not generic tracking pings.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Accountable closeout",
+    description: "Signed POD at delivery and a clean handoff so nothing is left open after the move.",
+  },
 ] as const;
 
 export default function ServicesPage() {
@@ -178,8 +190,6 @@ export default function ServicesPage() {
         </div>
       </EditorialSection>
 
-      <QuoteCalculator />
-
       <EditorialSection
         eyebrow="EXECUTION RHYTHM"
         title="How Bluport executes."
@@ -191,21 +201,27 @@ export default function ServicesPage() {
       </EditorialSection>
 
       <EditorialSection
-        eyebrow="REQUEST READINESS"
-        title="Request readiness checklist."
-        description="The more complete the request details are upfront, the faster operations can scope the move accurately."
+        eyebrow="WHY BLUPORT"
+        title="What separates a Bluport move."
+        description="Service lines matter less than how they are executed. These are the standards behind every Bluport move, regardless of which service you need."
         variant="light"
         layout="stack"
       >
-        <div className="rounded-[1.7rem] border border-[rgba(148,163,184,0.24)] bg-white/80 p-5 md:p-6">
-          <ul className="grid gap-3 md:grid-cols-2">
-            {readinessChecklist.map((item) => (
-              <li key={item} className="flex items-start gap-2.5 border-t border-[rgba(148,163,184,0.24)] pt-3 text-sm text-slate-700 md:text-base">
-                <CheckCircle2 size={16} aria-hidden className="mt-1 shrink-0 text-sky-700" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {differentiators.map((item) => (
+            <div
+              key={item.title}
+              className="flex flex-col rounded-[1.5rem] border border-[rgba(148,163,184,0.2)] bg-white/80 p-6"
+            >
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
+                <item.icon size={20} aria-hidden />
+              </span>
+              <h3 className="mt-5 text-lg font-semibold tracking-[-0.02em] text-slate-950">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
+            </div>
+          ))}
         </div>
       </EditorialSection>
 

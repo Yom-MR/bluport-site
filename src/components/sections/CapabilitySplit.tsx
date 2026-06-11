@@ -89,9 +89,9 @@ export default function CapabilitySplit() {
               </h3>
               <div className="mt-6 grid grid-cols-3 gap-4 border-t border-white/15 pt-6">
                 {[
-                  { value: "40'", label: "Power tilt deck" },
-                  { value: "F-350", label: "Hotshot platform" },
+                  { value: "Same-day", label: "Dispatch capability" },
                   { value: "1:1", label: "Load-level planning" },
+                  { value: "100%", label: "POD on delivery" },
                 ].map((stat) => (
                   <div key={stat.label}>
                     <p className="text-2xl font-bold tracking-[-0.04em] text-white md:text-3xl">

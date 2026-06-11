@@ -53,12 +53,12 @@ export default function FleetShowcase() {
           <div className="max-w-[640px] space-y-4">
             <p className="eyebrow">PLATFORM OVERVIEW</p>
             <h2 className="text-[clamp(2.1rem,4.6vw,3.5rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-white">
-              Built around Ford F-350 hotshot capability.
+              A focused fleet, run with one operating standard.
             </h2>
             <p className="text-base leading-[1.65] text-[#c8d2dd]">
-              Bluport&apos;s current fleet is built around Ford F-350 trucks and 40&apos; power tilt
-              trailers for equipment, attachments, trailers, and field-support movement that needs a
-              disciplined operating rhythm.
+              Equipment, attachments, trailers, and field-support loads move on a tight, repeatable
+              rhythm — ground-level loading, documented securement, and confirmed handoffs on every
+              job. The hardware specs are on the right; the discipline is what customers actually feel.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -80,7 +80,7 @@ export default function FleetShowcase() {
           <Reveal className="group relative aspect-[16/11] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)] lg:aspect-auto">
             <Image
               src={siteImages.fleetShowcase}
-              alt="Bluport Ford F-350 with power tilt trailer hauling heavy equipment"
+              alt="Bluport Ford F-350 hitched to a gooseneck flatbed trailer hauling a shipping container at a Texas yard"
               fill
               className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
               sizes="(max-width: 1024px) 100vw, 60vw"

@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
+  ArrowRight,
   Award,
+  Briefcase,
   ClipboardCheck,
   Compass,
+  Gauge,
   HeartHandshake,
   MapPin,
   Quote,
   Radio,
   ShieldCheck,
+  Star,
   Target,
   Truck,
   Users,
@@ -33,6 +37,50 @@ export const metadata: Metadata = {
     "driver jobs Houston veterans",
   ],
 };
+
+const hiringTracks = [
+  {
+    icon: ShieldCheck,
+    tag: "Primary",
+    title: "Military community",
+    description:
+      "Veterans, transitioning service members, reservists, guardsmen, and military spouses. This is where most of our hiring happens, and where your service experience maps directly to the work.",
+    cta: "See the military track",
+    href: "#military",
+  },
+  {
+    icon: Briefcase,
+    tag: "Selective",
+    title: "Civilian professionals",
+    description:
+      "We also hire high-quality civilians — just at a lower rate. If you bring discipline, accountability, and clear communication, there is a path here for you too.",
+    cta: "See the civilian track",
+    href: "#civilian",
+  },
+] as const;
+
+const civilianTraits = [
+  {
+    icon: Gauge,
+    title: "Bias for ownership",
+    description: "You take a move from request to closeout without needing to be chased.",
+  },
+  {
+    icon: Radio,
+    title: "Clear communicator",
+    description: "Concise, accurate updates — to customers, dispatch, and the field.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Safety-first habits",
+    description: "Securement, compliance, and access discipline are non-negotiable for you.",
+  },
+  {
+    icon: Star,
+    title: "Track record",
+    description: "Demonstrated reliability and performance in demanding, deadline-driven work.",
+  },
+] as const;
 
 const whyVeteransThrive = [
   {
@@ -134,19 +182,67 @@ export default function CareersPage() {
     <>
       <PageHero
         eyebrow="CAREERS · VETERAN-OWNED"
-        title="Mission after service starts here."
-        description="Bluport is a veteran-owned logistics company built for the people who already operate to a standard: veterans, transitioning service members, reservists, guardsmen, and military spouses."
+        title="Built by veterans. Open to operators who hold the standard."
+        description="Bluport is a veteran-owned logistics company. We hire heavily from the military community — veterans, transitioning service members, reservists, guardsmen, and military spouses — and we also bring on high-caliber civilian professionals who operate with the same discipline."
         image={siteImages.careersHero}
         imageAlt="Veteran logistics operator standing beside a loaded Bluport flatbed truck"
         imagePosition="object-[center_30%]"
         variant="dark"
       />
 
-      {/* Why veterans thrive */}
-      <section className="section-pad bg-[var(--navy-900)] text-white">
+      {/* Two hiring tracks */}
+      <section className="section-pad bg-[var(--navy-950)] text-white">
         <Container>
           <Reveal className="max-w-[760px] space-y-5">
-            <p className="technical-label">WHY VETERANS THRIVE AT BLUPORT</p>
+            <p className="technical-label">TWO WAYS IN</p>
+            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+              One standard. Two paths to the team.
+            </h2>
+            <p className="max-w-[60ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+              The bar is the same for everyone: plan the move, communicate clearly, and close it out
+              clean. How you got that bar — in uniform or in industry — is where the two tracks differ.
+            </p>
+          </Reveal>
+
+          <div className="mt-12 grid gap-4 lg:grid-cols-2">
+            {hiringTracks.map((track, index) => (
+              <Reveal
+                key={track.title}
+                delay={index * 90}
+                className="flex flex-col rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8 md:p-10"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
+                    <track.icon size={22} aria-hidden />
+                  </span>
+                  <span className="rounded-full border border-[rgba(180,194,209,0.22)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--steel-300)]">
+                    {track.tag}
+                  </span>
+                </div>
+                <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
+                  {track.title}
+                </h3>
+                <p className="mt-3 text-sm leading-8 text-[var(--steel-300)] md:text-base">
+                  {track.description}
+                </p>
+                <a
+                  href={track.href}
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-light)] transition-colors hover:text-white"
+                >
+                  {track.cta}
+                  <ArrowRight size={16} aria-hidden />
+                </a>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Why veterans thrive */}
+      <section id="military" className="section-pad bg-[var(--navy-900)] text-white scroll-mt-24">
+        <Container>
+          <Reveal className="max-w-[760px] space-y-5">
+            <p className="technical-label text-[var(--accent-light)]">MILITARY TRACK</p>
             <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
               The discipline that made you effective in uniform is the discipline this work runs on.
             </h2>
@@ -316,6 +412,49 @@ export default function CareersPage() {
                   </li>
                 ))}
               </ul>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* Civilian track */}
+      <section id="civilian" className="section-pad bg-[var(--navy-950)] text-white scroll-mt-24">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-16">
+            <Reveal className="space-y-6">
+              <p className="technical-label text-[var(--blue-300)]">CIVILIAN TRACK</p>
+              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+                Not a veteran? You can still earn a seat.
+              </h2>
+              <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                The majority of our hiring comes from the military community, but we also bring on a
+                smaller number of exceptional civilian professionals every year. If you operate with
+                discipline, communicate clearly, and take ownership of outcomes, the door is open.
+              </p>
+              <div className="rounded-2xl border border-[rgba(61,130,196,0.28)] bg-[rgba(61,130,196,0.08)] px-5 py-4">
+                <p className="text-sm font-semibold leading-snug text-[#dce6ee]">
+                  Civilian hires are selective and merit-based. We hire for standard and fit, not to
+                  fill seats — so strong candidates always get a real look.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={100} className="space-y-4">
+              <p className="technical-label">WHAT WE LOOK FOR</p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {civilianTraits.map((trait) => (
+                  <div
+                    key={trait.title}
+                    className="rounded-2xl border border-[rgba(180,194,209,0.14)] bg-[rgba(255,255,255,0.03)] p-5"
+                  >
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[rgba(61,130,196,0.16)] text-[var(--blue-300)]">
+                      <trait.icon size={18} aria-hidden />
+                    </span>
+                    <p className="mt-4 text-base font-semibold tracking-[-0.02em]">{trait.title}</p>
+                    <p className="mt-1.5 text-sm leading-7 text-[var(--steel-300)]">{trait.description}</p>
+                  </div>
+                ))}
+              </div>
             </Reveal>
           </div>
         </Container>
