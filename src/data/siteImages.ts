@@ -34,7 +34,7 @@ export const siteImages = {
   // Industry detail pages — dedicated, cinematic industry-specific heroes
   industryDetailConstruction: "/images/industries/hero-construction-equipment.png",
   industryDetailUtilities: "/images/industries/hero-utilities-infrastructure.png",
-  industryDetailIndustrial: "/images/industries/industrial-manufacturing-v2.png",
+  industryDetailIndustrial: "/images/industries/industrial-manufacturing-v3.png",
   industryDetailDataCenter: "/images/industries/hero-data-center.png",
   industryDetailAerospace: "/images/industries/hero-aerospace-defense.png",
   industryDetailGovernment: "/images/industries/hero-government-emergency.png",

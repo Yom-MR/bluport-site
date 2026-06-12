@@ -60,15 +60,14 @@ export default function IndustriesPage() {
       />
 
       {/* Industry cards */}
-      <section className="relative overflow-hidden bg-[var(--navy-900)] py-20 text-white md:py-28">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.14]" aria-hidden />
+      <section className="relative overflow-hidden bg-[#eef2f8] py-20 text-slate-950 md:py-28">
         <Container className="relative space-y-12">
           <Reveal className="max-w-[720px] space-y-4">
-            <p className="eyebrow">INDUSTRY FIT</p>
-            <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+            <p className="eyebrow text-sky-700">INDUSTRY FIT</p>
+            <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
               Click into the sector that matches your operation.
             </h2>
-            <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
+            <p className="text-base leading-8 text-slate-600 md:text-lg">
               Each page shows the friction points, the Bluport response, and the operating results
               the sector cares about most.
             </p>

@@ -190,95 +190,99 @@ export default function MissionPage() {
           className="absolute -right-32 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(229,127,67,0.1),transparent_70%)]"
           aria-hidden
         />
-        <Container className="relative">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-16">
-            <Reveal className="space-y-6 lg:sticky lg:top-28 lg:self-start">
-              <p className="eyebrow text-[#e8a87c]">THE COST OF DOWNTIME</p>
-              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-                Schedule protection is the whole point.
-              </h2>
-              <p className="max-w-[52ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-                Different sectors feel a late move differently — but the pattern is the same: idle
-                assets, lost hours, and a team stuck waiting. We plan around that reality.
-              </p>
-              <div className="rounded-2xl border-l-2 border-[#e57f43] bg-[rgba(229,127,67,0.08)] px-6 py-5">
-                <p className="text-sm leading-7 text-[#f1d4bf]">
-                  Every move we run is built to keep your people working — not waiting on a truck.
-                </p>
-              </div>
-            </Reveal>
+        <Container className="relative space-y-14">
+          <Reveal className="mx-auto max-w-[680px] space-y-4 text-center">
+            <p className="eyebrow text-[#e8a87c]">THE COST OF DOWNTIME</p>
+            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+              Schedule protection is the whole point.
+            </h2>
+            <p className="mx-auto max-w-[56ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+              Different sectors feel a late move differently — but the pattern is the same: idle
+              assets, lost hours, and a team stuck waiting. We plan around that reality.
+            </p>
+          </Reveal>
 
-            <div className="space-y-3">
-              {downtimeImpacts.map((impact, index) => (
-                <Reveal
-                  key={impact.title}
-                  delay={index * 90}
-                  className="group relative flex items-start gap-5 overflow-hidden rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-6 transition-colors hover:border-[rgba(229,127,67,0.45)] hover:bg-[rgba(255,255,255,0.05)] md:p-7"
+          <div className="grid gap-5 md:grid-cols-3">
+            {downtimeImpacts.map((impact, index) => (
+              <Reveal
+                key={impact.title}
+                delay={index * 90}
+                className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-8 transition-colors hover:border-[rgba(229,127,67,0.45)] hover:bg-[rgba(255,255,255,0.05)]"
+              >
+                <span
+                  className="pointer-events-none absolute -right-6 -top-8 font-mono text-[6rem] font-bold leading-none text-white/[0.04] transition-colors group-hover:text-[rgba(229,127,67,0.1)]"
+                  aria-hidden
                 >
-                  <span
-                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,#e8a87c,rgba(229,127,67,0.2))]"
-                    aria-hidden
-                  />
-                  <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(229,127,67,0.12)] text-[#e8a87c] transition-colors group-hover:bg-[rgba(229,127,67,0.18)]">
-                    <impact.icon size={24} aria-hidden />
-                  </span>
-                  <div className="min-w-0">
-                    <div className="flex items-baseline gap-3">
-                      <span className="font-mono text-sm font-bold text-[rgba(232,168,124,0.55)]">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <p className="text-xl font-semibold tracking-[-0.03em] text-white">
-                        {impact.title}
-                      </p>
-                    </div>
-                    <p className="mt-2 text-sm leading-7 text-[var(--steel-300)] md:text-base">
-                      {impact.body}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="relative inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[rgba(229,127,67,0.12)] text-[#e8a87c] transition-colors group-hover:bg-[rgba(229,127,67,0.18)]">
+                  <impact.icon size={24} aria-hidden />
+                </span>
+                <p className="relative mt-6 text-xl font-semibold tracking-[-0.03em] text-white">
+                  {impact.title}
+                </p>
+                <p className="relative mt-2.5 text-sm leading-7 text-[var(--steel-300)] md:text-base">
+                  {impact.body}
+                </p>
+              </Reveal>
+            ))}
           </div>
+
+          <Reveal delay={120} className="mx-auto max-w-[760px]">
+            <div className="flex items-center gap-4 rounded-2xl border-l-2 border-[#e57f43] bg-[rgba(229,127,67,0.08)] px-6 py-5">
+              <p className="text-sm leading-7 text-[#f1d4bf] md:text-base">
+                Every move we run is built to keep your people working — not waiting on a truck.
+              </p>
+            </div>
+          </Reveal>
         </Container>
       </section>
 
       {/* Operating standard */}
-      <section className="bg-[var(--navy-950)] py-20 text-white md:py-28">
-        <Container className="space-y-14">
-          <Reveal className="max-w-[720px] space-y-4">
-            <p className="eyebrow">OPERATING STANDARD</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-              Four moves we make on every job.
-            </h2>
-            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              The same disciplined sequence runs behind every load, from the first call to the signed
-              proof of delivery.
-            </p>
-          </Reveal>
+      <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
+        <div className="absolute inset-0 blueprint-grid opacity-[0.08]" aria-hidden />
+        <Container className="relative">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
+            <Reveal className="space-y-4 lg:sticky lg:top-28 lg:self-start">
+              <p className="eyebrow">OPERATING STANDARD</p>
+              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+                Four moves we make on every job.
+              </h2>
+              <p className="max-w-[44ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                The same disciplined sequence runs behind every load, from the first call to the
+                signed proof of delivery.
+              </p>
+            </Reveal>
 
-          <div className="relative grid gap-y-12 md:grid-cols-4 md:gap-x-8">
-            <span
-              className="absolute left-0 right-0 top-6 hidden h-px bg-[linear-gradient(90deg,transparent,rgba(91,159,216,0.4)_12%,rgba(91,159,216,0.4)_88%,transparent)] md:block"
-              aria-hidden
-            />
-            {operatingStandard.map((item, index) => (
-              <Reveal key={item.title} delay={index * 80} className="relative">
-                <div className="flex items-center gap-4 md:block">
+            <ol className="relative">
+              <span
+                className="absolute bottom-6 left-[1.4rem] top-6 w-px bg-[linear-gradient(180deg,rgba(91,159,216,0.5),rgba(91,159,216,0.08))]"
+                aria-hidden
+              />
+              {operatingStandard.map((item, index) => (
+                <Reveal
+                  as="li"
+                  key={item.title}
+                  delay={index * 80}
+                  className="relative flex gap-6 pb-10 last:pb-0"
+                >
                   <span className="relative z-10 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[rgba(91,159,216,0.4)] bg-[var(--navy-950)] text-[var(--accent-light)]">
                     <item.icon size={20} aria-hidden />
                   </span>
-                  <span className="font-mono text-sm text-[var(--steel-400)] md:mt-5 md:block">
-                    Step {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <p className="mt-4 text-lg font-semibold tracking-[-0.03em] text-white md:mt-2">
-                  {item.title}
-                </p>
-                <p className="mt-2 max-w-[28ch] text-sm leading-7 text-[var(--steel-300)]">
-                  {item.body}
-                </p>
-              </Reveal>
-            ))}
+                  <div className="pt-1">
+                    <span className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--steel-400)]">
+                      Step {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <p className="mt-1.5 text-lg font-semibold tracking-[-0.03em] text-white">
+                      {item.title}
+                    </p>
+                    <p className="mt-2 max-w-[42ch] text-sm leading-7 text-[var(--steel-300)]">
+                      {item.body}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </ol>
           </div>
         </Container>
       </section>
