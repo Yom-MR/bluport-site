@@ -28,29 +28,25 @@ const metrics = [
 export default function StatsBand() {
   return (
     <section className="relative border-b border-[rgba(200,210,221,0.12)] bg-[var(--navy-950)] text-white">
-      <div className="absolute inset-0 blueprint-grid opacity-30" aria-hidden />
-      <Container className="relative py-4">
-        <ul className="grid grid-cols-2 gap-3 py-6 sm:gap-4 lg:grid-cols-4">
+      <div className="absolute inset-0 blueprint-grid opacity-20" aria-hidden />
+      <Container className="relative">
+        <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 py-5 sm:justify-between sm:gap-x-6">
           {metrics.map((metric, index) => {
             const Icon = metric.icon;
             return (
               <Reveal
                 as="li"
                 key={metric.value}
-                delay={index * 80}
-                className="group flex flex-col gap-3 rounded-2xl border border-[rgba(200,210,221,0.12)] bg-[rgba(255,255,255,0.02)] p-5 transition-colors hover:border-[rgba(47,116,189,0.45)] md:p-6"
+                delay={index * 70}
+                className="flex items-center gap-2.5"
               >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)] transition-transform group-hover:-translate-y-0.5">
-                  <Icon size={19} aria-hidden />
+                <Icon size={16} aria-hidden className="shrink-0 text-[var(--accent-light)]" />
+                <span className="text-sm font-semibold tracking-[-0.01em] text-white">
+                  {metric.value}
                 </span>
-                <div>
-                  <span className="block text-lg font-bold leading-tight tracking-[-0.03em] text-white md:text-xl">
-                    {metric.value}
-                  </span>
-                  <span className="mt-1.5 block text-[0.8rem] font-medium uppercase tracking-[0.1em] text-[var(--steel-400)]">
-                    {metric.label}
-                  </span>
-                </div>
+                <span className="hidden text-[0.78rem] text-[var(--steel-400)] md:inline">
+                  · {metric.label}
+                </span>
               </Reveal>
             );
           })}

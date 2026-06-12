@@ -7,6 +7,8 @@ export const siteImages = {
   industriesHero: "/images/page-heroes/industries-infrastructure.jpg",
   careersHero: "/images/page-heroes/careers-veteran-operations.png",
   careersTeam: "/images/page-heroes/careers-team-coordination.png",
+  careersTrackMilitary: "/images/careers/track-military.png",
+  careersTrackCivilian: "/images/careers/track-civilian.png",
   contactHero: "/images/page-heroes/contact-dispatch-operations.png",
   contactReady: "/images/page-heroes/contact-ready-to-roll.png",
   fieldOperations: "/images/loads/IMG_0426.JPEG",

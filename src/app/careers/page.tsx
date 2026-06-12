@@ -45,6 +45,8 @@ const hiringTracks = [
       "Veterans, transitioning service members, reservists, guardsmen, and military spouses. This is where most of our hiring happens, and where your service experience maps directly to the work.",
     cta: "See the military track",
     href: "#military",
+    image: siteImages.careersTrackMilitary,
+    imageAlt: "Military veteran in field fatigues standing at a Bluport logistics yard",
   },
   {
     icon: Briefcase,
@@ -54,6 +56,8 @@ const hiringTracks = [
       "We also hire high-quality civilians — just at a lower rate. If you bring discipline, accountability, and clear communication, there is a path here for you too.",
     cta: "See the civilian track",
     href: "#civilian",
+    image: siteImages.careersTrackCivilian,
+    imageAlt: "Civilian logistics worker in a safety vest standing at an industrial truck yard",
   },
 ] as const;
 
@@ -174,29 +178,39 @@ export default function CareersPage() {
               <Reveal
                 key={track.title}
                 delay={index * 90}
-                className="flex flex-col rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8 md:p-10"
+                className="group relative flex min-h-[420px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-[rgba(180,194,209,0.16)]"
               >
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
-                    <track.icon size={22} aria-hidden />
-                  </span>
-                  <span className="rounded-full border border-[rgba(180,194,209,0.22)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--steel-300)]">
-                    {track.tag}
-                  </span>
+                <Image
+                  src={track.image}
+                  alt={track.imageAlt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.25)_0%,rgba(5,11,22,0.55)_50%,rgba(5,11,22,0.95)_100%)]" />
+                <div className="relative p-8 md:p-10">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.22)] text-[var(--accent-light)] backdrop-blur-sm">
+                      <track.icon size={22} aria-hidden />
+                    </span>
+                    <span className="rounded-full border border-white/25 bg-[rgba(5,11,22,0.45)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#e5eef6] backdrop-blur-sm">
+                      {track.tag}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
+                    {track.title}
+                  </h3>
+                  <p className="mt-3 max-w-[46ch] text-sm leading-8 text-[#cdd8e3] md:text-base">
+                    {track.description}
+                  </p>
+                  <a
+                    href={track.href}
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-light)] transition-colors hover:text-white"
+                  >
+                    {track.cta}
+                    <ArrowRight size={16} aria-hidden />
+                  </a>
                 </div>
-                <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
-                  {track.title}
-                </h3>
-                <p className="mt-3 text-sm leading-8 text-[var(--steel-300)] md:text-base">
-                  {track.description}
-                </p>
-                <a
-                  href={track.href}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-light)] transition-colors hover:text-white"
-                >
-                  {track.cta}
-                  <ArrowRight size={16} aria-hidden />
-                </a>
               </Reveal>
             ))}
           </div>
@@ -217,20 +231,21 @@ export default function CareersPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {whyVeteransThrive.map((item, index) => (
+          <div className="mt-12 grid gap-x-12 gap-y-2 md:grid-cols-2">
+            {whyVeteransThrive.map((item) => (
               <Reveal
                 key={item.title}
-                delay={index * 70}
-                className="group rounded-[1.5rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-7 transition-colors hover:border-[var(--accent)]"
+                className="flex items-start gap-4 border-b border-[rgba(180,194,209,0.14)] py-6"
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
-                  <item.icon size={22} aria-hidden />
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
+                  <item.icon size={20} aria-hidden />
                 </span>
-                <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[var(--steel-300)] md:text-base">
-                  {item.description}
-                </p>
+                <div>
+                  <h3 className="text-lg font-semibold tracking-[-0.03em]">{item.title}</h3>
+                  <p className="mt-1.5 text-sm leading-7 text-[var(--steel-300)] md:text-base">
+                    {item.description}
+                  </p>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -292,30 +307,33 @@ export default function CareersPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {skillsThatTransfer.map((item, index) => (
-              <Reveal
-                key={item.military}
-                delay={index * 60}
-                className="flex flex-col gap-4 rounded-2xl border border-[rgba(180,194,209,0.14)] bg-[rgba(255,255,255,0.03)] p-6"
-              >
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(61,130,196,0.16)] text-[var(--blue-300)]">
-                  <item.icon size={20} aria-hidden />
-                </span>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
-                    In service
-                  </p>
-                  <p className="mt-1 text-lg font-semibold tracking-[-0.03em]">{item.military}</p>
-                </div>
-                <div className="border-t border-[rgba(180,194,209,0.14)] pt-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--steel-400)]">
-                    At Bluport
-                  </p>
-                  <p className="mt-1 text-sm leading-7 text-[var(--steel-300)]">{item.civilian}</p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="mt-12 overflow-hidden rounded-[1.75rem] border border-[rgba(180,194,209,0.14)] bg-[rgba(255,255,255,0.02)]">
+            <div className="hidden grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-6 border-b border-[rgba(180,194,209,0.14)] px-7 py-4 md:grid">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
+                In service
+              </p>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--steel-400)]">
+                At Bluport
+              </p>
+            </div>
+            <ul className="divide-y divide-[rgba(180,194,209,0.12)]">
+              {skillsThatTransfer.map((item) => (
+                <li
+                  key={item.military}
+                  className="grid items-start gap-3 px-7 py-5 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-6"
+                >
+                  <div className="flex items-center gap-3.5">
+                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[rgba(61,130,196,0.16)] text-[var(--blue-300)]">
+                      <item.icon size={18} aria-hidden />
+                    </span>
+                    <p className="text-base font-semibold tracking-[-0.02em] text-white">
+                      {item.military}
+                    </p>
+                  </div>
+                  <p className="text-sm leading-7 text-[var(--steel-300)] md:pt-2.5">{item.civilian}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </Container>
       </section>

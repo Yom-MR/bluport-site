@@ -109,11 +109,11 @@ export default function CapabilitySplit() {
           {/* What Bluport moves */}
           <Reveal delay={110} className="flex flex-col rounded-[2rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 md:p-9">
             <p className="technical-label">WHAT BLUPORT MOVES</p>
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+            <div className="mt-7 grid flex-1 auto-rows-fr gap-3 sm:grid-cols-2">
               {capabilityItems.map((item) => (
                 <div
                   key={item.label}
-                  className="group flex items-start gap-3.5 rounded-2xl border border-white/8 bg-[rgba(255,255,255,0.02)] p-4 transition-colors hover:border-[rgba(47,116,189,0.5)]"
+                  className="group flex items-center gap-3.5 rounded-2xl border border-white/8 bg-[rgba(255,255,255,0.02)] p-4 transition-colors hover:border-[rgba(47,116,189,0.5)]"
                 >
                   <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[rgba(47,116,189,0.28)]">
                     <item.icon size={18} aria-hidden />
@@ -138,7 +138,7 @@ export default function CapabilitySplit() {
             <h3 className="max-w-[20ch] text-[clamp(1.6rem,2.6vw,2.2rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-balance">
               Built around the details that delay jobs.
             </h3>
-            <p className="technical-label shrink-0">FOUR CHECKS BEFORE DISPATCH</p>
+            <p className="technical-label shrink-0">FROM REQUEST TO CLOSEOUT</p>
           </div>
           <div className="mt-7 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/8 sm:grid-cols-2 lg:grid-cols-4">
             {constraintRows.map((item) => (

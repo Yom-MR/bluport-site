@@ -128,40 +128,41 @@ export default function MissionPage() {
         <div className="absolute inset-0 blueprint-grid opacity-[0.14]" aria-hidden />
         <Container className="relative">
           <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
-            <Reveal className="space-y-6">
-              <p className="eyebrow">WHY WE EXIST</p>
-              <h2 className="text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
-                The cost of a late asset is rarely just transportation.
-              </h2>
-              <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
-                It is lost time, missed work, and a crew waiting on the next step. Bluport was built
-                by veterans to bring planning, accountability, and after-action rigor to the moves
-                that other carriers treat as routine — because in the field, they never are.
-              </p>
-              <div className="grid gap-4 sm:grid-cols-3">
-                {values.map((value) => (
-                  <div
-                    key={value.title}
-                    className="rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-5"
-                  >
-                    <value.icon size={20} aria-hidden className="text-[var(--accent-light)]" />
-                    <p className="mt-3 text-sm font-semibold tracking-[-0.01em] text-white">
-                      {value.title}
-                    </p>
-                    <p className="mt-1.5 text-[0.82rem] leading-6 text-[var(--steel-400)]">
-                      {value.body}
-                    </p>
-                  </div>
-                ))}
+            <Reveal className="space-y-7">
+              <div className="space-y-6">
+                <p className="eyebrow">WHY WE EXIST</p>
+                <h2 className="text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
+                  The cost of a late asset is rarely just transportation.
+                </h2>
+                <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                  It is lost time, missed work, and a crew waiting on the next step. Bluport was built
+                  by veterans to bring planning, accountability, and after-action rigor to the moves
+                  that other carriers treat as routine — because in the field, they never are.
+                </p>
               </div>
+              <ul className="divide-y divide-white/10 border-t border-white/10">
+                {values.map((value) => (
+                  <li key={value.title} className="flex items-start gap-4 py-5">
+                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
+                      <value.icon size={20} aria-hidden />
+                    </span>
+                    <div>
+                      <p className="text-base font-semibold tracking-[-0.02em] text-white">
+                        {value.title}
+                      </p>
+                      <p className="mt-1 text-sm leading-7 text-[var(--steel-400)]">{value.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </Reveal>
 
             <Reveal delay={120} className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
               <Image
-                src={siteImages.careersFlag}
-                alt="American flag waving against a moody sky"
+                src={siteImages.fieldOperations}
+                alt="Bluport crew securing equipment on a flatbed trailer in the field"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.2)_0%,rgba(5,11,22,0.5)_60%,rgba(5,11,22,0.92)_100%)]" />
@@ -178,34 +179,36 @@ export default function MissionPage() {
 
       {/* The cost of downtime */}
       <section className="bg-[var(--navy-900)] py-20 text-white md:py-28">
-        <Container className="space-y-12">
-          <Reveal className="max-w-[720px] space-y-4">
-            <p className="eyebrow">THE COST OF DOWNTIME</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-              Schedule protection is the whole point.
-            </h2>
-            <p className="max-w-[60ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              Different sectors feel a late move differently — but the pattern is the same: idle
-              assets, lost hours, and a team stuck waiting. We plan around that reality.
-            </p>
-          </Reveal>
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+            <Reveal className="space-y-4 lg:sticky lg:top-28 lg:self-start">
+              <p className="eyebrow">THE COST OF DOWNTIME</p>
+              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+                Schedule protection is the whole point.
+              </h2>
+              <p className="max-w-[46ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                Different sectors feel a late move differently — but the pattern is the same: idle
+                assets, lost hours, and a team stuck waiting. We plan around that reality.
+              </p>
+            </Reveal>
 
-          <div className="grid gap-4 md:grid-cols-3">
-            {downtimeImpacts.map((impact, index) => (
-              <Reveal
-                key={impact.title}
-                delay={index * 80}
-                className="rounded-[1.5rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7"
-              >
-                <p className="font-mono text-sm text-[var(--accent-light)]">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <p className="mt-4 text-lg font-semibold tracking-[-0.02em] text-white">
-                  {impact.title}
-                </p>
-                <p className="mt-2 text-sm leading-7 text-[var(--steel-300)]">{impact.body}</p>
-              </Reveal>
-            ))}
+            <Reveal delay={100}>
+              <ul className="divide-y divide-white/10 border-y border-white/10">
+                {downtimeImpacts.map((impact, index) => (
+                  <li key={impact.title} className="flex items-start gap-6 py-6">
+                    <span className="font-mono text-sm text-[var(--accent-light)]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <p className="text-lg font-semibold tracking-[-0.02em] text-white">
+                        {impact.title}
+                      </p>
+                      <p className="mt-1.5 text-sm leading-7 text-[var(--steel-300)]">{impact.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         </Container>
       </section>
@@ -259,21 +262,22 @@ export default function MissionPage() {
             </p>
           </Reveal>
 
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {nonNegotiables.map((item, index) => (
-              <Reveal
-                key={item.label}
-                delay={index * 50}
-                className="flex items-start gap-3.5 rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-6"
-              >
-                <ShieldCheck size={18} aria-hidden className="mt-0.5 shrink-0 text-[var(--accent-light)]" />
-                <div>
-                  <p className="text-base font-semibold tracking-[-0.01em] text-white">{item.label}</p>
-                  <p className="mt-1.5 text-sm leading-7 text-[var(--steel-300)]">{item.detail}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={80}>
+            <ul className="grid gap-x-12 gap-y-1 sm:grid-cols-2">
+              {nonNegotiables.map((item) => (
+                <li
+                  key={item.label}
+                  className="flex items-start gap-3.5 border-b border-white/10 py-5"
+                >
+                  <ShieldCheck size={18} aria-hidden className="mt-0.5 shrink-0 text-[var(--accent-light)]" />
+                  <div>
+                    <p className="text-base font-semibold tracking-[-0.01em] text-white">{item.label}</p>
+                    <p className="mt-1 text-sm leading-7 text-[var(--steel-400)]">{item.detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </Container>
       </section>
 

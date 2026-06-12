@@ -127,16 +127,16 @@ export default function ContactPage() {
                   respond faster.
                 </p>
               </div>
-              <ul className="grid gap-3 sm:grid-cols-2">
+              <ul className="space-y-3.5 border-t border-white/10 pt-6">
                 {prepDetails.map((item, index) => (
                   <Reveal
                     as="li"
                     key={item}
-                    delay={index * 50}
-                    className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-5"
+                    delay={index * 40}
+                    className="flex items-center gap-3 text-base text-[var(--steel-200)]"
                   >
-                    <ClipboardList size={18} aria-hidden className="mt-0.5 shrink-0 text-[var(--accent)]" />
-                    <span className="text-sm leading-7 text-[var(--steel-200)]">{item}</span>
+                    <ClipboardList size={17} aria-hidden className="shrink-0 text-[var(--accent)]" />
+                    <span className="leading-7">{item}</span>
                   </Reveal>
                 ))}
               </ul>

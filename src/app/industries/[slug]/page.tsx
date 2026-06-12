@@ -48,6 +48,8 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
   const otherIndustries = INDUSTRY_ENTRIES.filter((entry) => entry.slug !== industry.slug).slice(0, 3);
 
+  const stages = ["Friction", "Response", "Result"] as const;
+
   return (
     <>
       <PageHero
@@ -112,14 +114,31 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           aria-hidden
         />
         <Container className="relative">
+          <Reveal className="mb-12 flex flex-wrap items-center gap-x-3 gap-y-2">
+            {stages.map((stage, index) => {
+              const isActive = stage === "Friction";
+              return (
+                <div key={stage} className="flex items-center gap-3">
+                  <span
+                    className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] ${
+                      isActive
+                        ? "border-[rgba(229,127,67,0.4)] bg-[rgba(229,127,67,0.12)] text-[#e8a87c]"
+                        : "border-white/12 text-[var(--steel-400)]"
+                    }`}
+                  >
+                    <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
+                    {stage}
+                  </span>
+                  {index < stages.length - 1 ? (
+                    <ArrowRight size={15} aria-hidden className="text-[var(--steel-500)]" />
+                  ) : null}
+                </div>
+              );
+            })}
+          </Reveal>
+
           <div className="grid gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-16">
             <Reveal className="space-y-6 lg:sticky lg:top-28 lg:self-start">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(229,127,67,0.3)] bg-[rgba(229,127,67,0.08)] px-3.5 py-1.5">
-                <AlertTriangle size={14} aria-hidden className="text-[#e8a87c]" />
-                <span className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#e8a87c]">
-                  The friction
-                </span>
-              </div>
               <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
                 What slows this sector down.
               </h2>
@@ -177,20 +196,43 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
       {/* Solution + workflow */}
       <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
         <Container className="relative space-y-12">
-          <Reveal className="max-w-[700px] space-y-4">
-            <p className="eyebrow">THE BLUPORT RESPONSE</p>
-            <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-              How Bluport supports the move.
-            </h2>
-            <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              Clear planning, dispatch, and closeout keep the work moving instead of creating a new
-              bottleneck.
-            </p>
+          <Reveal className="space-y-6">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+              {stages.map((stage, index) => {
+                const isActive = stage === "Response";
+                return (
+                  <div key={stage} className="flex items-center gap-3">
+                    <span
+                      className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] ${
+                        isActive
+                          ? "border-[rgba(47,116,189,0.45)] bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]"
+                          : "border-white/12 text-[var(--steel-400)]"
+                      }`}
+                    >
+                      <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
+                      {stage}
+                    </span>
+                    {index < stages.length - 1 ? (
+                      <ArrowRight size={15} aria-hidden className="text-[var(--steel-500)]" />
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="max-w-[700px] space-y-4">
+              <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+                How Bluport supports the move.
+              </h2>
+              <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                Clear planning, dispatch, and closeout keep the work moving instead of creating a new
+                bottleneck.
+              </p>
+            </div>
           </Reveal>
 
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-10">
+          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-10">
             <Reveal className="space-y-3">
-              {industry.solutions.map((item, index) => (
+              {industry.solutions.map((item) => (
                 <div
                   key={item.title}
                   className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-5 pl-6 transition-colors hover:border-[rgba(47,116,189,0.5)]"
@@ -214,9 +256,12 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               ))}
             </Reveal>
 
-            {/* Workflow timeline */}
-            <Reveal delay={120} className="relative rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 md:p-9">
-              <p className="technical-label">OPERATING WORKFLOW</p>
+            {/* Workflow timeline — no container, reads as an inline sequence */}
+            <Reveal delay={120} className="lg:pl-4">
+              <div className="flex items-center gap-2.5">
+                <p className="technical-label">OPERATING WORKFLOW</p>
+                <span className="h-px flex-1 bg-[rgba(91,159,216,0.2)]" aria-hidden />
+              </div>
               <ol className="mt-7 space-y-0">
                 {industry.workflow.map((step, index) => {
                   const isLast = index === industry.workflow.length - 1;

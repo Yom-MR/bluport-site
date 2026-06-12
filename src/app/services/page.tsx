@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ChevronDown, FileCheck2, MapPinned, Radio, ShieldCheck } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
@@ -98,29 +98,6 @@ const supportSteps = [
   },
 ];
 
-const differentiators = [
-  {
-    icon: ShieldCheck,
-    title: "Securement discipline",
-    description: "Chain, binder, and tie-down plans documented per load before the truck leaves the yard.",
-  },
-  {
-    icon: MapPinned,
-    title: "Access confirmed first",
-    description: "Gate codes, site contacts, and loading constraints verified before dispatch — not at the gate.",
-  },
-  {
-    icon: Radio,
-    title: "Field-aware comms",
-    description: "Updates framed around jobsites, rental turns, and shutdown windows, not generic tracking pings.",
-  },
-  {
-    icon: FileCheck2,
-    title: "Accountable closeout",
-    description: "Signed POD at delivery and a clean handoff so nothing is left open after the move.",
-  },
-] as const;
-
 export default function ServicesPage() {
   return (
     <>
@@ -153,34 +130,48 @@ export default function ServicesPage() {
         variant="light"
         layout="stack"
       >
-        <div className="divide-y divide-[rgba(148,163,184,0.22)] rounded-[2rem] border border-[rgba(148,163,184,0.16)] bg-white/75">
-          {serviceRows.map((service) => (
-            <details key={service.title} id={service.anchor} className="group px-6 py-7 md:px-8 md:py-8">
+        <div className="overflow-hidden rounded-[2rem] border border-[rgba(148,163,184,0.22)] bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)] divide-y divide-[rgba(148,163,184,0.18)]">
+          {serviceRows.map((service, index) => (
+            <details key={service.title} id={service.anchor} className="group px-6 py-6 md:px-8 md:py-7">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-4 lg:gap-10">
-                <div className="grid w-full gap-4 lg:grid-cols-[minmax(0,240px)_minmax(0,1fr)]">
-                  <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
-                    {service.title}
-                  </h3>
+                <div className="grid w-full gap-2 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:gap-8">
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-mono text-xs text-sky-700">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="text-xl font-semibold tracking-[-0.03em] text-slate-950 md:text-2xl">
+                      {service.title}
+                    </h3>
+                  </div>
                   <p className="text-sm leading-7 text-slate-600 md:text-base">{service.summary}</p>
                 </div>
                 <ChevronDown
                   size={20}
                   aria-hidden
-                  className="mt-0.5 shrink-0 text-sky-700 transition-transform duration-200 group-open:rotate-180"
+                  className="mt-1 shrink-0 text-sky-700 transition-transform duration-200 group-open:rotate-180"
                 />
               </summary>
-              <div className="mt-4 grid gap-3 rounded-xl border border-[rgba(148,163,184,0.24)] bg-[rgba(248,252,255,0.9)] p-4 text-sm leading-7 text-slate-700 md:grid-cols-3 md:text-base">
+              <div className="mt-5 grid gap-4 border-t border-[rgba(148,163,184,0.2)] pt-5 text-sm leading-7 text-slate-700 md:grid-cols-3 md:text-[0.95rem] lg:pl-[calc(260px+2rem)]">
                 <p>
-                  <span className="font-semibold text-slate-900">What it solves:</span> {service.solves}
+                  <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-sky-700">
+                    What it solves
+                  </span>
+                  <span className="mt-1 block">{service.solves}</span>
                 </p>
                 <p>
-                  <span className="font-semibold text-slate-900">Best fit:</span> {service.bestFit}
+                  <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-sky-700">
+                    Best fit
+                  </span>
+                  <span className="mt-1 block">{service.bestFit}</span>
                 </p>
                 <p>
-                  <span className="font-semibold text-slate-900">Operational benefit:</span> {service.benefit}
+                  <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-sky-700">
+                    Operational benefit
+                  </span>
+                  <span className="mt-1 block">{service.benefit}</span>
                 </p>
               </div>
-              <div className="mt-4">
+              <div className="mt-5 lg:pl-[calc(260px+2rem)]">
                 <Button href="/#request-capacity" className="text-[11px] tracking-[0.12em] uppercase">
                   Request Quote
                 </Button>
@@ -198,31 +189,6 @@ export default function ServicesPage() {
         layout="split"
       >
         <FeatureRows items={supportSteps} variant="dark" />
-      </EditorialSection>
-
-      <EditorialSection
-        eyebrow="WHY BLUPORT"
-        title="What separates a Bluport move."
-        description="Service lines matter less than how they are executed. These are the standards behind every Bluport move, regardless of which service you need."
-        variant="light"
-        layout="stack"
-      >
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {differentiators.map((item) => (
-            <div
-              key={item.title}
-              className="flex flex-col rounded-[1.5rem] border border-[rgba(148,163,184,0.2)] bg-white/80 p-6"
-            >
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
-                <item.icon size={20} aria-hidden />
-              </span>
-              <h3 className="mt-5 text-lg font-semibold tracking-[-0.02em] text-slate-950">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
-            </div>
-          ))}
-        </div>
       </EditorialSection>
 
       <EditorialSection
