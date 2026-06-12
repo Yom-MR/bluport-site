@@ -12,7 +12,6 @@ import {
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
-import CoverageMap from "@/components/sections/CoverageMap";
 import Reveal from "@/components/ui/Reveal";
 import { getIndustryBySlug, INDUSTRY_ENTRIES } from "@/data/industries";
 
@@ -73,7 +72,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
       {/* Overview + what we move */}
       <section className="bg-[var(--navy-950)] py-20 text-white md:py-28">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start lg:gap-16">
             <Reveal className="space-y-5">
               <p className="eyebrow">OVERVIEW</p>
               <h2 className="text-[clamp(1.9rem,3.8vw,2.8rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-balance">
@@ -84,19 +83,22 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               </p>
             </Reveal>
 
-            <Reveal delay={120} className="rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 md:p-9">
+            <Reveal delay={120} className="rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 md:p-8 lg:self-start">
               <div className="flex items-center gap-2.5">
                 <PackageCheck size={18} aria-hidden className="text-[var(--accent-light)]" />
                 <p className="technical-label">WHAT WE MOVE</p>
               </div>
-              <ul className="mt-6 grid gap-x-6 gap-y-3.5 sm:grid-cols-2">
+              <ul className="mt-5 flex flex-wrap gap-2">
                 {industry.cargoTypes.map((cargo) => (
-                  <li key={cargo} className="flex items-start gap-2.5 text-sm leading-6 text-[#dce6ee]">
+                  <li
+                    key={cargo}
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[rgba(47,116,189,0.1)] px-3.5 py-1.5 text-[0.82rem] font-medium text-[#dce6ee]"
+                  >
                     <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent-light)]"
+                      className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent-light)]"
                       aria-hidden
                     />
-                    <span>{cargo}</span>
+                    {cargo}
                   </li>
                 ))}
               </ul>
@@ -256,30 +258,30 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
             </Reveal>
 
             {/* Workflow timeline — no container, reads as an inline sequence */}
-            <Reveal delay={120} className="lg:pl-4">
+            <Reveal delay={120} className="flex flex-col lg:pl-4">
               <div className="flex items-center gap-2.5">
                 <p className="technical-label">OPERATING WORKFLOW</p>
                 <span className="h-px flex-1 bg-[rgba(91,159,216,0.2)]" aria-hidden />
               </div>
-              <ol className="mt-7 space-y-0">
+              <ol className="mt-5 flex flex-1 flex-col justify-between">
                 {industry.workflow.map((step, index) => {
                   const isLast = index === industry.workflow.length - 1;
                   return (
-                    <li key={step.stage} className="relative flex gap-5 pb-7 last:pb-0">
+                    <li key={step.stage} className={`relative flex gap-4 ${isLast ? "" : "pb-5"}`}>
                       {!isLast ? (
                         <span
-                          className="absolute left-[19px] top-10 bottom-0 w-px bg-[rgba(91,159,216,0.25)]"
+                          className="absolute left-[17px] top-9 bottom-0 w-px bg-[rgba(91,159,216,0.25)]"
                           aria-hidden
                         />
                       ) : null}
-                      <span className="relative z-10 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(91,159,216,0.4)] bg-[var(--navy-900)] font-mono text-sm font-semibold text-[var(--accent-light)]">
+                      <span className="relative z-10 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[rgba(91,159,216,0.4)] bg-[var(--navy-900)] font-mono text-[0.8rem] font-semibold text-[var(--accent-light)]">
                         {index + 1}
                       </span>
-                      <div className="pt-1.5">
-                        <p className="text-sm font-bold uppercase tracking-[0.12em] text-[var(--accent-light)]">
+                      <div className="pt-1">
+                        <p className="text-[0.78rem] font-bold uppercase tracking-[0.12em] text-[var(--accent-light)]">
                           {step.stage}
                         </p>
-                        <p className="mt-1.5 text-sm leading-7 text-[#dce6ee]">{step.description}</p>
+                        <p className="mt-1 text-sm leading-6 text-[#dce6ee]">{step.description}</p>
                       </div>
                     </li>
                   );
@@ -349,26 +351,6 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               </Reveal>
             ))}
           </div>
-        </Container>
-      </section>
-
-      {/* Coverage map */}
-      <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.12]" aria-hidden />
-        <Container className="relative space-y-12">
-          <Reveal className="max-w-[720px] space-y-4">
-            <p className="eyebrow">COVERAGE</p>
-            <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-              Houston-based. Built to run the lanes this sector needs.
-            </h2>
-            <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              Our base is Houston, Texas. Primary lanes run across Texas, extended coverage spans the
-              Gulf Coast, and project freight reaches nationwide when the move calls for it.
-            </p>
-          </Reveal>
-          <Reveal delay={120}>
-            <CoverageMap />
-          </Reveal>
         </Container>
       </section>
 

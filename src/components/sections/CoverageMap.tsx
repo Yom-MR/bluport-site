@@ -16,12 +16,12 @@ const EXTENDED = new Set(["22", "28", "01", "12", "40", "05", "35", "48"]); // L
 
 const HOUSTON: [number, number] = [-95.3698, 29.7604];
 
-const legend = [
+const legend: Array<{ label: string; swatch: string; ring?: boolean }> = [
   { label: "Houston HQ", swatch: "var(--accent-light)", ring: true },
   { label: "Primary lanes — Texas", swatch: "var(--accent)" },
   { label: "Extended coverage — Gulf Coast", swatch: "rgba(47,116,189,0.45)" },
   { label: "National capability", swatch: "rgba(180,194,209,0.14)" },
-] as const;
+];
 
 export default function CoverageMap({ layout = "split" }: { layout?: "split" | "panel" }) {
   const [hovered, setHovered] = useState<string | null>(null);
@@ -47,8 +47,8 @@ export default function CoverageMap({ layout = "split" }: { layout?: "split" | "
           aria-label="Map of Bluport operating coverage across the United States"
         >
           <Geographies geography={GEO_URL}>
-            {({ geographies }) =>
-              geographies.map((geo) => {
+            {({ geographies }: { geographies: Array<Record<string, unknown>> }) =>
+              geographies.map((geo: Record<string, unknown>) => {
                 const id = geo.id as string;
                 const isPrimary = PRIMARY.has(id);
                 const isExtended = EXTENDED.has(id);
@@ -59,9 +59,11 @@ export default function CoverageMap({ layout = "split" }: { layout?: "split" | "
                     : "rgba(180,194,209,0.08)";
                 return (
                   <Geography
-                    key={geo.rsmKey}
+                    key={geo.rsmKey as string}
                     geography={geo}
-                    onMouseEnter={() => setHovered(geo.properties.name as string)}
+                    onMouseEnter={() =>
+                      setHovered((geo.properties as { name?: string })?.name ?? null)
+                    }
                     onMouseLeave={() => setHovered(null)}
                     style={{
                       default: {

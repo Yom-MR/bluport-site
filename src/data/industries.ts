@@ -25,7 +25,7 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     intro:
       "For rental houses and contractors, revenue lives and dies by utilization. A machine sitting in the wrong yard isn't just a logistics problem — it's a stalled crew, a missed rental day, and a customer who remembers the delay. Bluport runs the moves between your yard, your jobsites, and your customers so equipment shows up ready to work and comes back on schedule.",
     image: siteImages.industryDetailConstruction,
-    alt: "Gooseneck flatbed delivering an excavator to an active construction jobsite at golden hour",
+    alt: "Gooseneck trailer delivering an excavator to an active construction jobsite at golden hour",
     statLabel: "What we protect",
     statValue: "Fleet utilization",
     cargoTypes: [
@@ -91,7 +91,7 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     intro:
       "In utility work, the clock is rarely on your side. Outage windows are fixed, restoration timelines are public, and a late transformer or missing piece of equipment can hold an entire crew hostage. Bluport moves the assets that keep restoration and infrastructure work on schedule — with the communication discipline these high-stakes windows demand.",
     image: siteImages.industryDetailUtilities,
-    alt: "Flatbed delivering a transformer to a power substation with transmission towers at dusk",
+    alt: "Gooseneck trailer delivering a transformer to a power substation with transmission towers at dusk",
     statLabel: "What we protect",
     statValue: "Restoration windows",
     cargoTypes: [
@@ -157,7 +157,7 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     intro:
       "Inside a plant, every hour of unplanned downtime is measured in lost production. Turnarounds and shutdowns are planned to the hour, vendors stack up at the dock, and a late delivery can cascade across an entire maintenance window. Bluport sequences support moves around your production reality so the right equipment is staged exactly when the window opens.",
     image: siteImages.industryDetailIndustrial,
-    alt: "Flatbed staged at an industrial plant loading dock during a maintenance window",
+    alt: "Gooseneck trailer staged at an industrial plant loading dock during a maintenance window",
     statLabel: "What we protect",
     statValue: "Production uptime",
     cargoTypes: [
@@ -223,7 +223,7 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     intro:
       "Data center builds run on a critical path where every trade is sequenced and the schedule is unforgiving. A generator, switchgear lineup, or piece of site equipment that arrives early clogs the laydown yard; arriving late stalls the trade waiting on it. Bluport delivers to the build sequence so critical-path assets land exactly when the project needs them.",
     image: siteImages.industryDetailDataCenter,
-    alt: "Flatbed delivering a backup generator to a data center construction site at dusk",
+    alt: "Gooseneck trailer delivering a backup generator to a data center construction site at dusk",
     statLabel: "What we protect",
     statValue: "Critical-path schedule",
     cargoTypes: [
@@ -355,7 +355,7 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     intro:
       "When the mission is public and the clock is real, logistics can't be the weak link. Emergency response and government operations demand fast intake, clear priorities, and assets that reach the staging area when they're needed. Bluport brings the structured execution of a veteran-owned operator to urgent public missions — calm, communicative, and accountable under pressure.",
     image: siteImages.industryDetailGovernment,
-    alt: "Flatbed staged with a mobile generator and response equipment amid emergency response vehicles at dusk",
+    alt: "Gooseneck trailer staged with a mobile generator and response equipment amid emergency response vehicles at dusk",
     statLabel: "What we protect",
     statValue: "Mission timelines",
     cargoTypes: [

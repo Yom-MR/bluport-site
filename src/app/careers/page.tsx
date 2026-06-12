@@ -46,7 +46,7 @@ const hiringTracks = [
     cta: "See the military track",
     href: "#military",
     image: siteImages.careersTrackMilitary,
-    imageAlt: "Military veteran in field fatigues standing at a Bluport logistics yard",
+    imageAlt: "U.S. Army veteran in OCP camouflage uniform standing at a Bluport logistics yard",
   },
   {
     icon: Briefcase,
@@ -154,7 +154,7 @@ export default function CareersPage() {
         title="Built by veterans. Open to operators who hold the standard."
         description="Bluport is a veteran-owned logistics company. We hire heavily from the military community — veterans, transitioning service members, reservists, guardsmen, and military spouses — and we also bring on high-caliber civilian professionals who operate with the same discipline."
         image={siteImages.careersHero}
-        imageAlt="Veteran logistics operator standing beside a loaded Bluport flatbed truck"
+        imageAlt="Split composition: a U.S. soldier in uniform on one side and the same person in civilian Bluport logistics gear on the other"
         imagePosition="object-[center_30%]"
         variant="dark"
       />
@@ -307,33 +307,36 @@ export default function CareersPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 overflow-hidden rounded-[1.75rem] border border-[rgba(180,194,209,0.14)] bg-[rgba(255,255,255,0.02)]">
-            <div className="hidden grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-6 border-b border-[rgba(180,194,209,0.14)] px-7 py-4 md:grid">
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
-                In service
-              </p>
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--steel-400)]">
-                At Bluport
-              </p>
-            </div>
-            <ul className="divide-y divide-[rgba(180,194,209,0.12)]">
-              {skillsThatTransfer.map((item) => (
-                <li
-                  key={item.military}
-                  className="grid items-start gap-3 px-7 py-5 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-6"
-                >
-                  <div className="flex items-center gap-3.5">
-                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[rgba(61,130,196,0.16)] text-[var(--blue-300)]">
-                      <item.icon size={18} aria-hidden />
-                    </span>
-                    <p className="text-base font-semibold tracking-[-0.02em] text-white">
-                      {item.military}
-                    </p>
-                  </div>
-                  <p className="text-sm leading-7 text-[var(--steel-300)] md:pt-2.5">{item.civilian}</p>
-                </li>
-              ))}
-            </ul>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {skillsThatTransfer.map((item, index) => (
+              <Reveal
+                key={item.military}
+                delay={(index % 3) * 80}
+                className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-[rgba(180,194,209,0.14)] bg-[rgba(255,255,255,0.03)] p-7 transition-all hover:-translate-y-1 hover:border-[rgba(61,130,196,0.5)]"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(61,130,196,0.16)] text-[var(--blue-300)] transition-colors group-hover:bg-[rgba(61,130,196,0.28)]">
+                    <item.icon size={22} aria-hidden />
+                  </span>
+                  <span className="rounded-full border border-[rgba(61,130,196,0.3)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--blue-300)]">
+                    In service
+                  </span>
+                </div>
+                <p className="mt-5 text-lg font-semibold tracking-[-0.02em] text-white">
+                  {item.military}
+                </p>
+                <div className="mt-4 flex items-center gap-2 text-[var(--accent-light)]">
+                  <span className="h-px flex-1 bg-[linear-gradient(90deg,rgba(47,116,189,0.5),transparent)]" />
+                  <ArrowRight size={16} aria-hidden />
+                </div>
+                <p className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-[var(--steel-400)]">
+                  At Bluport
+                </p>
+                <p className="mt-1.5 flex-1 text-sm leading-7 text-[var(--steel-300)]">
+                  {item.civilian}
+                </p>
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>
@@ -443,16 +446,13 @@ export default function CareersPage() {
         </Container>
       </section>
 
-      {/* Flag banner — military initiative */}
-      <section className="relative isolate overflow-hidden py-24 text-white md:py-32">
-        <Image
-          src={siteImages.careersFlag}
-          alt="American flag waving against a moody sky"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
+      {/* Team banner — military initiative */}
+      <section className="relative isolate overflow-hidden bg-[var(--navy-950)] py-24 text-white md:py-32">
+        <div className="absolute inset-0 blueprint-grid opacity-[0.14]" aria-hidden />
+        <div
+          className="absolute -left-24 top-1/2 h-[460px] w-[460px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
+          aria-hidden
         />
-        <div className="absolute inset-0 bg-[linear-gradient(96deg,rgba(5,11,22,0.94)_0%,rgba(5,11,22,0.82)_42%,rgba(5,11,22,0.5)_100%)]" />
         <Container className="relative">
           <Reveal className="max-w-[760px] space-y-6">
             <p className="technical-label text-[var(--accent-light)]">A TEAM THAT SERVED</p>
@@ -472,7 +472,7 @@ export default function CareersPage() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-2xl border border-white/15 bg-[rgba(5,11,22,0.45)] px-5 py-4 backdrop-blur-sm"
+                  className="rounded-2xl border border-white/12 bg-[rgba(255,255,255,0.03)] px-5 py-4"
                 >
                   <p className="text-xl font-bold tracking-[-0.03em] text-white">{stat.value}</p>
                   <p className="mt-1 text-[0.78rem] font-medium uppercase tracking-[0.1em] text-[var(--steel-300)]">
