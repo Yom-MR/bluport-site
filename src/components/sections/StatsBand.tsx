@@ -30,7 +30,7 @@ export default function StatsBand() {
     <section className="relative border-b border-[rgba(200,210,221,0.12)] bg-[var(--navy-950)] text-white">
       <div className="absolute inset-0 blueprint-grid opacity-20" aria-hidden />
       <Container className="relative">
-        <ul className="flex items-center justify-between gap-3 overflow-x-auto py-5 sm:gap-5 lg:gap-6">
+        <ul className="flex items-center justify-between gap-2 py-5 sm:gap-5 lg:gap-6">
           {metrics.map((metric, index) => {
             const Icon = metric.icon;
             return (

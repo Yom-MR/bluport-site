@@ -138,8 +138,13 @@ export default function ServicesPage() {
         </div>
       </PageHero>
 
-      <section className="border-b border-[rgba(200,210,221,0.08)] bg-[var(--navy-950)] py-20 text-white md:py-24">
-        <Container className="space-y-12">
+      <section className="relative overflow-hidden border-b border-[rgba(200,210,221,0.08)] bg-[var(--navy-950)] py-20 text-white md:py-24">
+        <div className="absolute inset-0 blueprint-grid opacity-[0.12]" aria-hidden />
+        <div
+          className="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.14),transparent_70%)]"
+          aria-hidden
+        />
+        <Container className="relative space-y-12">
           <Reveal className="max-w-[760px] space-y-5">
             <p className="technical-label">SERVICE LINES</p>
             <h2 className="text-[clamp(2.1rem,4.4vw,3.5rem)] font-semibold leading-[0.96] tracking-[-0.05em] text-balance">
@@ -151,43 +156,47 @@ export default function ServicesPage() {
             </p>
           </Reveal>
 
-          <div className="grid gap-5 lg:grid-cols-2">
+          <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
             {serviceRows.map((service, index) => {
               const Icon = service.icon;
               return (
                 <Reveal
                   key={service.title}
                   id={service.anchor}
-                  delay={(index % 2) * 90}
-                  className="group flex h-full flex-col rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 transition-all hover:-translate-y-1 hover:border-[rgba(47,116,189,0.5)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.4)] md:p-9 scroll-mt-24"
+                  delay={(index % 3) * 90}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(160deg,rgba(47,116,189,0.1),rgba(255,255,255,0.02)_46%)] p-6 transition-all duration-200 hover:-translate-y-1 hover:border-[rgba(91,159,216,0.55)] hover:shadow-[0_22px_55px_rgba(2,10,20,0.55)] scroll-mt-24"
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[rgba(47,116,189,0.28)]">
-                      <Icon size={22} aria-hidden />
+                  <span
+                    className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,var(--accent-light),rgba(47,116,189,0.15))]"
+                    aria-hidden
+                  />
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.18)] text-[var(--accent-light)] shadow-[inset_0_0_0_1px_rgba(91,159,216,0.25)] transition-colors group-hover:bg-[rgba(47,116,189,0.3)]">
+                      <Icon size={20} aria-hidden />
                     </span>
-                    <span className="font-mono text-sm text-[var(--steel-500)]">
+                    <span className="font-mono text-xs text-[var(--steel-500)]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
 
-                  <h3 className="mt-6 text-2xl font-semibold tracking-[-0.03em] text-white">
+                  <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-white">
                     {service.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-[var(--steel-300)] md:text-base">
+                  <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
                     {service.summary}
                   </p>
 
-                  <dl className="mt-6 grid flex-1 gap-px overflow-hidden rounded-2xl border border-white/8 bg-white/8">
+                  <dl className="mt-5 flex-1 space-y-3 border-t border-white/10 pt-5">
                     {[
-                      { k: "What it solves", v: service.solves },
+                      { k: "Solves", v: service.solves },
                       { k: "Best fit", v: service.bestFit },
-                      { k: "Operational benefit", v: service.benefit },
+                      { k: "Benefit", v: service.benefit },
                     ].map((row) => (
-                      <div key={row.k} className="bg-[rgba(5,11,22,0.55)] px-5 py-4">
-                        <dt className="text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-[var(--accent-light)]">
+                      <div key={row.k} className="flex gap-3">
+                        <dt className="w-16 shrink-0 pt-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-[var(--accent-light)]">
                           {row.k}
                         </dt>
-                        <dd className="mt-1 text-sm leading-7 text-[#dce6ee]">{row.v}</dd>
+                        <dd className="text-[0.82rem] leading-6 text-[#cdd9e4]">{row.v}</dd>
                       </div>
                     ))}
                   </dl>

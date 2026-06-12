@@ -53,11 +53,11 @@ const hiringTracks = [
     tag: "Selective",
     title: "Civilian professionals",
     description:
-      "We also hire high-quality civilians — just at a lower rate. If you bring discipline, accountability, and clear communication, there is a path here for you too.",
+      "We also bring on a smaller number of exceptional civilian professionals. If you operate with discipline, accountability, and clear communication, there is a genuine path here for you as well.",
     cta: "See the civilian track",
     href: "#civilian",
     image: siteImages.careersTrackCivilian,
-    imageAlt: "Civilian logistics worker in a safety vest standing at an industrial truck yard",
+    imageAlt: "Civilian logistics professional in a high-visibility safety vest standing at an industrial truck yard",
   },
 ] as const;
 
@@ -154,7 +154,7 @@ export default function CareersPage() {
         title="Built by veterans. Open to operators who hold the standard."
         description="Bluport is a veteran-owned logistics company. We hire heavily from the military community — veterans, transitioning service members, reservists, guardsmen, and military spouses — and we also bring on high-caliber civilian professionals who operate with the same discipline."
         image={siteImages.careersHero}
-        imageAlt="Split composition: a U.S. soldier in uniform on one side and the same person in civilian Bluport logistics gear on the other"
+        imageAlt="Split composition showing a U.S. soldier in uniform on one side and the same person in civilian Bluport logistics gear on the other"
         imagePosition="object-[center_30%]"
         variant="dark"
       />
@@ -261,7 +261,7 @@ export default function CareersPage() {
                 src={siteImages.careersTeam}
                 alt="Two Bluport operators reviewing a dispatch plan beside a hotshot truck and trailer"
                 fill
-                className="object-cover"
+                className="object-cover object-[center_35%]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(5,11,22,0.6)_100%)]" />
@@ -294,8 +294,13 @@ export default function CareersPage() {
       </section>
 
       {/* Military skills that transfer */}
-      <section className="section-pad bg-[var(--navy-950)] text-white">
-        <Container>
+      <section className="relative isolate overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
+        <div className="absolute inset-0 blueprint-grid opacity-[0.12]" aria-hidden />
+        <div
+          className="absolute -right-24 top-0 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.14),transparent_70%)]"
+          aria-hidden
+        />
+        <Container className="relative">
           <Reveal className="max-w-[760px] space-y-5">
             <p className="technical-label">MILITARY SKILLS THAT TRANSFER</p>
             <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
@@ -303,41 +308,46 @@ export default function CareersPage() {
             </h2>
             <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
               You do not need a logistics background to belong here. The skills you built in service
-              translate directly to how Bluport operates.
+              translate directly to how Bluport plans, executes, and closes out every move.
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {skillsThatTransfer.map((item, index) => (
-              <Reveal
-                key={item.military}
-                delay={(index % 3) * 80}
-                className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-[rgba(180,194,209,0.14)] bg-[rgba(255,255,255,0.03)] p-7 transition-all hover:-translate-y-1 hover:border-[rgba(61,130,196,0.5)]"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(61,130,196,0.16)] text-[var(--blue-300)] transition-colors group-hover:bg-[rgba(61,130,196,0.28)]">
-                    <item.icon size={22} aria-hidden />
-                  </span>
-                  <span className="rounded-full border border-[rgba(61,130,196,0.3)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--blue-300)]">
-                    In service
-                  </span>
-                </div>
-                <p className="mt-5 text-lg font-semibold tracking-[-0.02em] text-white">
-                  {item.military}
-                </p>
-                <div className="mt-4 flex items-center gap-2 text-[var(--accent-light)]">
-                  <span className="h-px flex-1 bg-[linear-gradient(90deg,rgba(47,116,189,0.5),transparent)]" />
-                  <ArrowRight size={16} aria-hidden />
-                </div>
-                <p className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-[var(--steel-400)]">
-                  At Bluport
-                </p>
-                <p className="mt-1.5 flex-1 text-sm leading-7 text-[var(--steel-300)]">
-                  {item.civilian}
-                </p>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={90} className="mt-12 overflow-hidden rounded-[1.75rem] border border-white/10 bg-[rgba(5,11,22,0.5)]">
+            <div className="hidden grid-cols-[1fr_auto_1.2fr] items-center gap-4 border-b border-white/10 px-6 py-4 sm:grid md:px-8">
+              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[var(--blue-300)]">
+                In service
+              </p>
+              <span aria-hidden />
+              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[var(--accent-light)]">
+                At Bluport
+              </p>
+            </div>
+            <ul className="divide-y divide-white/8">
+              {skillsThatTransfer.map((item) => (
+                <li
+                  key={item.military}
+                  className="grid gap-3 px-6 py-5 transition-colors hover:bg-white/[0.03] sm:grid-cols-[1fr_auto_1.2fr] sm:items-center sm:gap-4 md:px-8"
+                >
+                  <div className="flex items-center gap-3.5">
+                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[rgba(61,130,196,0.16)] text-[var(--blue-300)]">
+                      <item.icon size={18} aria-hidden />
+                    </span>
+                    <p className="text-sm font-semibold tracking-[-0.01em] text-white md:text-base">
+                      {item.military}
+                    </p>
+                  </div>
+                  <ArrowRight
+                    size={16}
+                    aria-hidden
+                    className="ml-[3.25rem] rotate-90 text-[var(--accent-light)] sm:ml-0 sm:rotate-0"
+                  />
+                  <p className="ml-[3.25rem] text-sm leading-7 text-[var(--steel-300)] sm:ml-0">
+                    {item.civilian}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </Container>
       </section>
 

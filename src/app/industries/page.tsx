@@ -14,6 +14,7 @@ import {
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
+import CoverageMap from "@/components/sections/CoverageMap";
 import Reveal from "@/components/ui/Reveal";
 import { INDUSTRY_ENTRIES } from "@/data/industries";
 import { siteImages } from "@/data/siteImages";
@@ -125,37 +126,32 @@ export default function IndustriesPage() {
       {/* Coverage */}
       <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
         <Container className="relative">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
             <Reveal className="space-y-5">
               <p className="eyebrow">SERVICE COVERAGE</p>
               <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
                 Texas and Gulf Coast coverage built for field operations.
               </h2>
               <p className="max-w-[52ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-                Bluport moves across the corridors where projects are actually happening, with
-                dispatch tuned to timing and access rather than generic lanes.
+                Bluport runs the corridors where projects are actually happening, with dispatch tuned
+                to timing and site access rather than generic, one-size-fits-all lanes.
               </p>
-              <div className="rounded-[1.5rem] border border-white/10 bg-[linear-gradient(150deg,rgba(47,116,189,0.12),rgba(255,255,255,0.02))] p-6">
-                <p className="technical-label text-[var(--accent-light)]">WHY IT MATTERS</p>
-                <p className="mt-3 text-base leading-8 text-[#dce6ee]">
-                  The right lane is only useful if the truck arrives with the asset, the contacts,
-                  and the schedule window all aligned.
-                </p>
-              </div>
+              <ul className="space-y-3 pt-1">
+                {coverageNotes.map((item) => (
+                  <li key={item} className="flex items-start gap-3.5">
+                    <MapPin
+                      size={18}
+                      aria-hidden
+                      className="mt-1 shrink-0 text-[var(--accent-light)]"
+                    />
+                    <p className="text-[0.98rem] leading-7 text-[#dce6ee]">{item}</p>
+                  </li>
+                ))}
+              </ul>
             </Reveal>
 
-            <Reveal delay={120} className="space-y-4">
-              {coverageNotes.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-4 rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-6"
-                >
-                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.16)] text-[var(--accent-light)]">
-                    <MapPin size={20} aria-hidden />
-                  </span>
-                  <p className="text-[1.02rem] leading-7 text-[#e6edf4]">{item}</p>
-                </div>
-              ))}
+            <Reveal delay={120}>
+              <CoverageMap layout="panel" />
             </Reveal>
           </div>
         </Container>

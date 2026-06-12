@@ -124,7 +124,7 @@ export default function MissionPage() {
         title="Veteran-led logistics for critical field work."
         description="Bluport exists to protect the mission behind the move: crews waiting on equipment, rental fleets serving customers, utilities restoring service, and projects working against time."
         image={siteImages.missionHero}
-        imageAlt="Veteran logistics operator beside a loaded gooseneck trailer at golden hour on the Gulf Coast"
+        imageAlt="Bluport logistics team reviewing a load plan beside a loaded gooseneck trailer at golden hour on the Gulf Coast"
         imagePosition="object-[center_45%]"
         variant="dark"
       />
@@ -166,7 +166,7 @@ export default function MissionPage() {
             <Reveal delay={120} className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
               <Image
                 src={siteImages.missionPortrait}
-                alt="Bluport veteran operator beside a gooseneck trailer loaded with secured equipment at blue hour"
+                alt="Bluport veteran operator standing beside a gooseneck trailer loaded with secured equipment at blue hour"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 45vw"
@@ -233,50 +233,56 @@ export default function MissionPage() {
 
       {/* Operating standard */}
       <section className="bg-[var(--navy-950)] py-20 text-white md:py-28">
-        <Container className="space-y-12">
+        <Container className="space-y-14">
           <Reveal className="max-w-[720px] space-y-4">
             <p className="eyebrow">OPERATING STANDARD</p>
             <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
               Four moves we make on every job.
             </h2>
+            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+              The same disciplined sequence runs behind every load, from the first call to the signed
+              proof of delivery.
+            </p>
           </Reveal>
 
-          <div className="grid gap-px overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="relative grid gap-y-12 md:grid-cols-4 md:gap-x-8">
+            <span
+              className="absolute left-0 right-0 top-6 hidden h-px bg-[linear-gradient(90deg,transparent,rgba(91,159,216,0.4)_12%,rgba(91,159,216,0.4)_88%,transparent)] md:block"
+              aria-hidden
+            />
             {operatingStandard.map((item, index) => (
-              <Reveal
-                key={item.title}
-                delay={index * 70}
-                className="bg-[var(--navy-900)] p-7 transition-colors hover:bg-[var(--navy-850)]"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
+              <Reveal key={item.title} delay={index * 80} className="relative">
+                <div className="flex items-center gap-4 md:block">
+                  <span className="relative z-10 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[rgba(91,159,216,0.4)] bg-[var(--navy-950)] text-[var(--accent-light)]">
                     <item.icon size={20} aria-hidden />
                   </span>
-                  <span className="font-mono text-sm text-[var(--steel-400)]">
-                    {String(index + 1).padStart(2, "0")}
+                  <span className="font-mono text-sm text-[var(--steel-400)] md:mt-5 md:block">
+                    Step {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <p className="mt-5 text-lg font-semibold tracking-[-0.03em] text-white">
+                <p className="mt-4 text-lg font-semibold tracking-[-0.03em] text-white md:mt-2">
                   {item.title}
                 </p>
-                <p className="mt-2 text-sm leading-7 text-[var(--steel-300)]">{item.body}</p>
+                <p className="mt-2 max-w-[28ch] text-sm leading-7 text-[var(--steel-300)]">
+                  {item.body}
+                </p>
               </Reveal>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* Non-negotiables */}
-      <section className="bg-[var(--navy-900)] py-20 text-white md:py-28">
+      {/* Non-negotiables — light section for visual rhythm */}
+      <section className="bg-white py-20 text-slate-950 md:py-28">
         <Container className="space-y-12">
           <Reveal className="max-w-[720px] space-y-4">
-            <p className="eyebrow">NON-NEGOTIABLES</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-              What Bluport refuses to ignore.
+            <p className="eyebrow text-sky-700">NON-NEGOTIABLES</p>
+            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
+              The details we refuse to leave to chance.
             </h2>
-            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              When these details are missed, delays and uncertainty follow. So we confirm every one
-              of them before the truck rolls.
+            <p className="max-w-[58ch] text-base leading-8 text-slate-600 md:text-lg">
+              When any one of these is missed, delays and uncertainty follow close behind. So we
+              confirm every one of them before the truck rolls.
             </p>
           </Reveal>
 
@@ -285,12 +291,14 @@ export default function MissionPage() {
               {nonNegotiables.map((item) => (
                 <li
                   key={item.label}
-                  className="flex items-start gap-3.5 border-b border-white/10 py-5"
+                  className="flex items-start gap-3.5 border-b border-slate-200 py-5"
                 >
-                  <ShieldCheck size={18} aria-hidden className="mt-0.5 shrink-0 text-[var(--accent-light)]" />
+                  <ShieldCheck size={18} aria-hidden className="mt-0.5 shrink-0 text-sky-700" />
                   <div>
-                    <p className="text-base font-semibold tracking-[-0.01em] text-white">{item.label}</p>
-                    <p className="mt-1 text-sm leading-7 text-[var(--steel-400)]">{item.detail}</p>
+                    <p className="text-base font-semibold tracking-[-0.01em] text-slate-950">
+                      {item.label}
+                    </p>
+                    <p className="mt-1 text-sm leading-7 text-slate-500">{item.detail}</p>
                   </div>
                 </li>
               ))}

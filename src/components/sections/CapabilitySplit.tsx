@@ -70,95 +70,84 @@ const constraintRows = [
 
 export default function CapabilitySplit() {
   return (
-    <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
-      <div className="absolute inset-0 blueprint-grid opacity-[0.18]" aria-hidden />
-      <div
-        className="absolute -left-40 top-0 h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
-        aria-hidden
-      />
+    <section className="relative overflow-hidden bg-white py-20 text-slate-950 md:py-28">
       <Container className="relative space-y-14">
         <Reveal className="max-w-[760px] space-y-5">
-          <p className="eyebrow">CAPABILITY</p>
-          <h2 className="text-[clamp(2.1rem,4.6vw,3.5rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+          <p className="eyebrow text-sky-700">CAPABILITY</p>
+          <h2 className="text-[clamp(2.1rem,4.6vw,3.5rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
             Practical movement for time-sensitive assets.
           </h2>
-          <p className="max-w-[60ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-            Bluport is built for equipment-heavy moves with field consequences, where the asset, the
-            access, and the schedule all have to line up before a truck ever leaves the yard.
+          <p className="max-w-[60ch] text-base leading-8 text-slate-600 md:text-lg">
+            Bluport is built for equipment-heavy moves with real field consequences — where the
+            asset, the site access, and the schedule all have to line up before a truck ever leaves
+            the yard.
           </p>
         </Reveal>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-8">
-          {/* Coverage map card */}
-          <Reveal className="flex flex-col rounded-[2rem] border border-white/10 bg-[rgba(5,11,22,0.55)] p-7 md:p-9">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start lg:gap-12">
+          {/* Coverage map — dark feature panel for depth against the white section */}
+          <Reveal className="flex flex-col rounded-[2rem] bg-[var(--navy-950)] p-7 text-white shadow-[0_30px_70px_rgba(15,23,42,0.18)] md:p-9">
             <div className="flex items-center gap-2.5">
               <MapPin size={18} aria-hidden className="text-[var(--accent-light)]" />
               <p className="technical-label">SERVICE COVERAGE</p>
             </div>
             <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-white md:text-[1.7rem]">
-              Houston-based. Built for the lanes the work actually runs on.
+              Houston-based, built for the lanes the work actually runs on.
             </h3>
             <p className="mt-3 max-w-[48ch] text-sm leading-7 text-[var(--steel-300)]">
-              Primary lanes run across Texas, extended coverage spans the Gulf Coast, and project
-              freight reaches nationwide when the move calls for it.
+              Primary lanes run throughout Texas, extended coverage spans the Gulf Coast, and
+              project freight reaches nationwide when a move calls for it.
             </p>
             <div className="mt-7 flex-1">
               <CoverageMap layout="panel" />
             </div>
           </Reveal>
 
-          {/* What Bluport moves */}
-          <Reveal delay={110} className="flex flex-col rounded-[2rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 md:p-9">
+          {/* What Bluport moves — clean divided list, not nested cards */}
+          <Reveal delay={110} className="lg:pt-2">
             <div className="flex items-center gap-2.5">
-              <PackageCheck size={18} aria-hidden className="text-[var(--accent-light)]" />
-              <p className="technical-label">WHAT BLUPORT MOVES</p>
+              <PackageCheck size={18} aria-hidden className="text-sky-700" />
+              <p className="technical-label text-sky-700">WHAT BLUPORT MOVES</p>
             </div>
-            <p className="mt-3 max-w-[52ch] text-sm leading-7 text-[var(--steel-300)]">
-              Equipment-heavy freight for the sectors we serve — matched to the right trailer,
+            <p className="mt-3 max-w-[52ch] text-base leading-7 text-slate-600">
+              Equipment-heavy freight for the sectors we serve, matched to the right trailer,
               securement, and delivery window before dispatch.
             </p>
-            <div className="mt-6 grid flex-1 auto-rows-fr gap-3">
+            <ul className="mt-6 divide-y divide-slate-200 border-y border-slate-200">
               {capabilityItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="group flex items-start gap-3.5 rounded-2xl border border-white/8 bg-[rgba(255,255,255,0.02)] p-4 transition-colors hover:border-[rgba(47,116,189,0.5)]"
-                >
-                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[rgba(47,116,189,0.28)]">
+                <li key={item.label} className="group flex items-start gap-4 py-4">
+                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-sky-700 transition-colors group-hover:bg-sky-100">
                     <item.icon size={18} aria-hidden />
                   </span>
                   <div>
-                    <p className="text-[1.02rem] font-semibold tracking-[-0.01em] text-white">
+                    <p className="text-[1.02rem] font-semibold tracking-[-0.01em] text-slate-950">
                       {item.label}
                     </p>
-                    <p className="mt-0.5 text-[0.82rem] leading-snug text-[var(--steel-400)]">
-                      {item.note}
-                    </p>
+                    <p className="mt-0.5 text-[0.85rem] leading-snug text-slate-500">{item.note}</p>
                   </div>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </Reveal>
         </div>
 
-        {/* Constraint workflow */}
-        <Reveal delay={80} className="rounded-[2rem] border border-white/10 bg-[linear-gradient(140deg,rgba(47,116,189,0.08),rgba(255,255,255,0.02)_55%)] p-7 md:p-10">
-          <div className="flex flex-col gap-3 border-b border-white/10 pb-7 md:flex-row md:items-end md:justify-between">
-            <h3 className="max-w-[20ch] text-[clamp(1.6rem,2.6vw,2.2rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-balance">
+        {/* Constraint workflow — light, inline sequence */}
+        <Reveal delay={80} className="border-t border-slate-200 pt-12">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <h3 className="max-w-[22ch] text-[clamp(1.6rem,2.6vw,2.2rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-balance text-slate-950">
               Built around the details that delay jobs.
             </h3>
-            <p className="technical-label shrink-0">FROM REQUEST TO CLOSEOUT</p>
+            <p className="technical-label shrink-0 text-sky-700">FROM REQUEST TO CLOSEOUT</p>
           </div>
-          <div className="mt-7 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-9 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {constraintRows.map((item) => (
-              <div
-                key={item.title}
-                className="bg-[rgba(5,11,22,0.55)] p-6 transition-colors hover:bg-[rgba(47,116,189,0.1)]"
-              >
-                <span className="font-mono text-sm text-[var(--accent-light)]">{item.step}</span>
-                <p className="mt-3 text-lg font-semibold tracking-[-0.02em] text-white">
+              <div key={item.title} className="relative pl-5">
+                <span className="absolute left-0 top-1 h-full w-px bg-sky-200" aria-hidden />
+                <span className="font-mono text-sm text-sky-700">{item.step}</span>
+                <p className="mt-2 text-lg font-semibold tracking-[-0.02em] text-slate-950">
                   {item.title}
                 </p>
-                <p className="mt-2.5 text-sm leading-relaxed text-[var(--steel-300)]">{item.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.body}</p>
               </div>
             ))}
           </div>
