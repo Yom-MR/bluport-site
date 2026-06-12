@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -19,6 +21,9 @@ const buttonVariants: Record<NonNullable<ButtonProps["variant"]>, string> = {
     "text-[var(--foreground)] hover:text-[var(--accent-light)]",
 };
 
+const baseClasses =
+  "group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-[0.8rem] font-semibold tracking-[0.08em] uppercase transition-all duration-200";
+
 export default function Button({
   href,
   children,
@@ -26,19 +31,42 @@ export default function Button({
   className,
   withArrow = false,
 }: ButtonProps) {
-  return (
-    <Link
-      href={href}
-      className={cn(
-        "group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-[0.8rem] font-semibold tracking-[0.08em] uppercase transition-all duration-200",
-        buttonVariants[variant],
-        className,
-      )}
-    >
+  const isRequestCapacity = href.includes("request-capacity");
+  const classes = cn(baseClasses, buttonVariants[variant], className);
+  const content = (
+    <>
       {children}
       {withArrow ? (
-        <ArrowRight size={16} aria-hidden className="transition-transform duration-200 group-hover:translate-x-1" />
+        <ArrowRight
+          size={16}
+          aria-hidden
+          className="transition-transform duration-200 group-hover:translate-x-1"
+        />
       ) : null}
+    </>
+  );
+
+  // Request-capacity buttons open a modal instead of navigating, so they must be
+  // real buttons. Using a Link here causes client-side navigation to fire before
+  // the modal's document click handler can preventDefault, sending users home.
+  if (isRequestCapacity) {
+    return (
+      <button
+        type="button"
+        data-request-capacity="true"
+        onClick={() => {
+          window.dispatchEvent(new Event("open-request-capacity-modal"));
+        }}
+        className={classes}
+      >
+        {content}
+      </button>
+    );
+  }
+
+  return (
+    <Link href={href} className={classes}>
+      {content}
     </Link>
   );
 }

@@ -52,6 +52,10 @@ export default function PageHero({
             )}
           />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,116,189,0.2),transparent_36%)]" />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(180deg,transparent_0%,rgba(5,11,22,0.65)_55%,var(--navy-950)_100%)]"
+            aria-hidden
+          />
         </>
       ) : (
         <>

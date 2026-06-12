@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowUpRight, BadgeCheck, MessageSquare, ShieldCheck, Star } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
@@ -88,8 +87,9 @@ export default function CustomerConfidence() {
           <Reveal delay={100} className="flex flex-col">
             <div className="flex items-center justify-between gap-4">
               <p className="technical-label">WHAT SETS THE STANDARD</p>
-              <Link
-                href="/#request-capacity"
+              <button
+                type="button"
+                data-request-capacity="true"
                 className="group hidden items-center gap-1.5 text-sm font-semibold tracking-[0.04em] text-[var(--accent-light)] transition-colors hover:text-white sm:inline-flex"
               >
                 Request capacity
@@ -98,7 +98,7 @@ export default function CustomerConfidence() {
                   aria-hidden
                   className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
-              </Link>
+              </button>
             </div>
             <ul className="mt-4 divide-y divide-white/10 border-t border-white/10">
               {differentiators.map((item) => {

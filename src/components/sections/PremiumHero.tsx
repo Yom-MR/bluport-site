@@ -16,6 +16,10 @@ export default function PremiumHero() {
       />
       <div className="absolute inset-0 bg-[linear-gradient(96deg,rgba(2,10,20,0.92)_0%,rgba(2,10,20,0.82)_28%,rgba(2,10,20,0.5)_52%,rgba(2,10,20,0.16)_74%,rgba(2,10,20,0.03)_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,10,20,0.56)_0%,rgba(2,10,20,0.1)_44%,rgba(2,10,20,0.66)_100%)]" />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,transparent_0%,rgba(5,11,22,0.7)_55%,var(--navy-950)_100%)]"
+        aria-hidden
+      />
 
       <Container className="relative flex min-h-[760px] items-end py-32 md:py-36">
         <div className="max-w-[720px] space-y-9">
@@ -31,12 +35,13 @@ export default function PremiumHero() {
             protection on every load.
           </p>
           <div className="flex flex-wrap gap-4 pt-1">
-            <Link
-              href="/#request-capacity"
+            <button
+              type="button"
+              data-request-capacity="true"
               className="inline-flex min-h-[54px] items-center justify-center rounded-xl border border-transparent bg-[var(--accent)] px-8 text-sm font-semibold tracking-[0.075em] text-white uppercase shadow-[0_16px_30px_rgba(47,116,189,0.34)] transition-all duration-200 hover:bg-[var(--accent-strong)] hover:-translate-y-0.5"
             >
               Request Capacity
-            </Link>
+            </button>
             <Link
               href="/services"
               className="inline-flex min-h-[54px] items-center justify-center rounded-xl border border-[rgba(200,210,221,0.5)] bg-[rgba(2,10,20,0.24)] px-8 text-sm font-semibold tracking-[0.075em] text-white uppercase transition-all duration-200 hover:border-[var(--accent-light)] hover:text-[var(--accent-light)]"

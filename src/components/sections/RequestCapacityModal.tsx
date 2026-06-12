@@ -142,32 +142,44 @@ export default function RequestCapacityModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="request-capacity-modal-title"
-        className="relative z-10 flex max-h-[92vh] w-full max-w-[920px] flex-col overflow-hidden rounded-[1.6rem] border border-[rgba(180,194,209,0.2)] bg-[var(--navy-850)] text-white shadow-[0_40px_90px_rgba(0,0,0,0.6)]"
+        className="relative z-10 flex max-h-[92vh] w-full max-w-[860px] flex-col overflow-hidden rounded-[1.5rem] bg-white text-slate-900 shadow-[0_40px_90px_rgba(0,0,0,0.6)]"
       >
-        <div className="flex items-start justify-between gap-6 border-b border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.02)] px-6 py-5 md:px-8 md:py-6">
-          <div>
-            <p className="technical-label">REQUEST CAPACITY</p>
-            <h2
-              id="request-capacity-modal-title"
-              className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl"
+        <div className="relative shrink-0 overflow-hidden bg-[var(--navy-950)] px-6 py-6 text-white md:px-8">
+          <div
+            className="absolute inset-0 blueprint-grid opacity-[0.14]"
+            aria-hidden
+          />
+          <div
+            className="absolute -right-16 -top-10 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.32),transparent_70%)]"
+            aria-hidden
+          />
+          <div className="relative flex items-start justify-between gap-6">
+            <div>
+              <p className="technical-label text-[var(--accent-light)]">REQUEST CAPACITY</p>
+              <h2
+                id="request-capacity-modal-title"
+                className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white md:text-[1.7rem]"
+              >
+                Tell us about the move.
+              </h2>
+              <p className="mt-2 max-w-[54ch] text-sm leading-7 text-[var(--steel-300)]">
+                Share the asset, route, timing, and any site constraints. Bluport operations reviews
+                every request and follows up directly.
+              </p>
+            </div>
+            <button
+              ref={closeButtonRef}
+              type="button"
+              onClick={closeModal}
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/5 text-lg text-white transition-colors hover:border-[var(--accent-light)] hover:bg-[rgba(47,116,189,0.2)]"
             >
-              Request capacity
-            </h2>
-            <p className="mt-2 max-w-[56ch] text-sm leading-7 text-[var(--steel-300)]">
-              Send the asset, route, timing, and constraints. Bluport operations will review and follow up.
-            </p>
+              <span aria-hidden>×</span>
+              <span className="sr-only">Close</span>
+            </button>
           </div>
-          <button
-            ref={closeButtonRef}
-            type="button"
-            onClick={closeModal}
-            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(180,194,209,0.25)] bg-[rgba(255,255,255,0.04)] text-lg text-white transition-colors hover:border-[var(--accent)] hover:bg-[rgba(47,116,189,0.16)]"
-          >
-            <span aria-hidden>×</span>
-          </button>
         </div>
 
-        <div className="no-scrollbar overflow-y-auto px-6 py-6 md:px-8 md:py-7">
+        <div className="no-scrollbar overflow-y-auto bg-[#f7f9fc] px-6 py-6 md:px-8 md:py-7">
           <RequestCapacityForm />
         </div>
       </div>

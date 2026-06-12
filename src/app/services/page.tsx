@@ -10,7 +10,6 @@ import {
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
-import FeatureRows from "@/components/ui/FeatureRows";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import { siteImages } from "@/data/siteImages";
@@ -90,29 +89,6 @@ const serviceRows = [
   },
 ];
 
-const supportSteps = [
-  {
-    label: "01",
-    title: "Intake",
-    description: "Capture the asset, timing, access conditions, and operating constraints before planning starts.",
-  },
-  {
-    label: "02",
-    title: "Plan",
-    description: "Match trailer, securement, timing, route, and communication to the actual move profile.",
-  },
-  {
-    label: "03",
-    title: "Dispatch",
-    description: "Coordinate execution with field-aware updates and decision-making that protects the window.",
-  },
-  {
-    label: "04",
-    title: "Closeout",
-    description: "Confirm delivery, close documentation, and complete the final customer handoff cleanly.",
-  },
-];
-
 export default function ServicesPage() {
   return (
     <>
@@ -138,19 +114,18 @@ export default function ServicesPage() {
         </div>
       </PageHero>
 
-      <section className="relative overflow-hidden border-b border-[rgba(200,210,221,0.08)] bg-[var(--navy-950)] py-20 text-white md:py-24">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.12]" aria-hidden />
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[#f4f7fb] py-20 text-slate-950 md:py-24">
         <div
-          className="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.14),transparent_70%)]"
+          className="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.08),transparent_70%)]"
           aria-hidden
         />
         <Container className="relative space-y-12">
           <Reveal className="max-w-[760px] space-y-5">
-            <p className="technical-label">SERVICE LINES</p>
-            <h2 className="text-[clamp(2.1rem,4.4vw,3.5rem)] font-semibold leading-[0.96] tracking-[-0.05em] text-balance">
+            <p className="technical-label text-sky-700">SERVICE LINES</p>
+            <h2 className="text-[clamp(2.1rem,4.4vw,3.5rem)] font-semibold leading-[0.96] tracking-[-0.05em] text-balance text-slate-950">
               Built to support real field operations.
             </h2>
-            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+            <p className="max-w-[58ch] text-base leading-8 text-slate-600 md:text-lg">
               Bluport service lines are designed around timing, securement, customer communication,
               and the realities of live field work.
             </p>
@@ -164,39 +139,39 @@ export default function ServicesPage() {
                   key={service.title}
                   id={service.anchor}
                   delay={(index % 3) * 90}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(160deg,rgba(47,116,189,0.1),rgba(255,255,255,0.02)_46%)] p-6 transition-all duration-200 hover:-translate-y-1 hover:border-[rgba(91,159,216,0.55)] hover:shadow-[0_22px_55px_rgba(2,10,20,0.55)] scroll-mt-24"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_22px_55px_rgba(15,23,42,0.12)] scroll-mt-24"
                 >
                   <span
-                    className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,var(--accent-light),rgba(47,116,189,0.15))]"
+                    className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,var(--accent),rgba(47,116,189,0.15))]"
                     aria-hidden
                   />
                   <div className="flex items-center justify-between gap-4">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.18)] text-[var(--accent-light)] shadow-[inset_0_0_0_1px_rgba(91,159,216,0.25)] transition-colors group-hover:bg-[rgba(47,116,189,0.3)]">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-700 transition-colors group-hover:bg-sky-700 group-hover:text-white">
                       <Icon size={20} aria-hidden />
                     </span>
-                    <span className="font-mono text-xs text-[var(--steel-500)]">
+                    <span className="font-mono text-xs text-slate-400">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
 
-                  <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-white">
+                  <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-slate-950">
                     {service.title}
                   </h3>
-                  <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
+                  <p className="mt-2.5 text-sm leading-7 text-slate-600">
                     {service.summary}
                   </p>
 
-                  <dl className="mt-5 flex-1 space-y-3 border-t border-white/10 pt-5">
+                  <dl className="mt-5 flex-1 space-y-3 border-t border-slate-200 pt-5">
                     {[
                       { k: "Solves", v: service.solves },
                       { k: "Best fit", v: service.bestFit },
                       { k: "Benefit", v: service.benefit },
                     ].map((row) => (
                       <div key={row.k} className="flex gap-3">
-                        <dt className="w-16 shrink-0 pt-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-[var(--accent-light)]">
+                        <dt className="w-16 shrink-0 pt-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-sky-700">
                           {row.k}
                         </dt>
-                        <dd className="text-[0.82rem] leading-6 text-[#cdd9e4]">{row.v}</dd>
+                        <dd className="text-[0.82rem] leading-6 text-slate-600">{row.v}</dd>
                       </div>
                     ))}
                   </dl>
@@ -204,7 +179,7 @@ export default function ServicesPage() {
                   <div className="mt-6">
                     <Button
                       href="/#request-capacity"
-                      variant="secondary"
+                      variant="primary"
                       className="w-full text-[11px] tracking-[0.12em]"
                     >
                       Request Quote
@@ -216,16 +191,6 @@ export default function ServicesPage() {
           </div>
         </Container>
       </section>
-
-      <EditorialSection
-        eyebrow="EXECUTION RHYTHM"
-        title="How Bluport executes."
-        description="Execution stays simple on purpose: understand the move, plan around constraints, dispatch clearly, and close the loop with documentation."
-        variant="dark"
-        layout="split"
-      >
-        <FeatureRows items={supportSteps} variant="dark" />
-      </EditorialSection>
 
       <EditorialSection
         eyebrow="REQUEST CAPACITY"

@@ -83,7 +83,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               </p>
             </Reveal>
 
-            <Reveal delay={120} className="rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 md:p-8 lg:self-start">
+            <Reveal delay={120} className="rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 md:p-8 lg:mt-[3.25rem] lg:self-start">
               <div className="flex items-center gap-2.5">
                 <PackageCheck size={18} aria-hidden className="text-[var(--accent-light)]" />
                 <p className="technical-label">WHAT WE MOVE</p>
@@ -144,8 +144,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                 What slows this sector down.
               </h2>
               <p className="max-w-[42ch] text-base leading-8 text-[var(--steel-300)]">
-                These are the recurring breakdowns that turn a routine move into a delayed job — and
-                exactly what Bluport is built to absorb.
+                Every sector breaks down differently. These are the specific points where a {industry.title.toLowerCase()} move slips — tight access windows, equipment that needs the right trailer and securement, and handoffs that fail when no one owns the timeline. Each one compounds into idle crews and lost days.
               </p>
               <div className="rounded-[1.75rem] border border-white/12 bg-[linear-gradient(150deg,rgba(229,127,67,0.12),rgba(255,255,255,0.02))] p-7">
                 <div className="flex items-center gap-2.5">
@@ -158,7 +157,8 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                   {industry.statValue}
                 </p>
                 <p className="mt-3 text-sm leading-7 text-[var(--steel-300)]">
-                  Bluport builds around the operational friction that matters most in this sector.
+                  This is the cost Bluport plans against — building each move around the friction
+                  that defines this sector instead of treating it as a generic haul.
                 </p>
               </div>
             </Reveal>

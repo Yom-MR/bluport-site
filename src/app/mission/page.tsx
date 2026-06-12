@@ -274,36 +274,51 @@ export default function MissionPage() {
 
       {/* Non-negotiables — light section for visual rhythm */}
       <section className="bg-white py-20 text-slate-950 md:py-28">
-        <Container className="space-y-12">
-          <Reveal className="max-w-[720px] space-y-4">
-            <p className="eyebrow text-sky-700">NON-NEGOTIABLES</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
-              The details we refuse to leave to chance.
-            </h2>
-            <p className="max-w-[58ch] text-base leading-8 text-slate-600 md:text-lg">
-              When any one of these is missed, delays and uncertainty follow close behind. So we
-              confirm every one of them before the truck rolls.
-            </p>
-          </Reveal>
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-16">
+            <Reveal className="space-y-5 lg:sticky lg:top-28 lg:self-start">
+              <p className="eyebrow text-sky-700">NON-NEGOTIABLES</p>
+              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
+                The details we refuse to leave to chance.
+              </h2>
+              <p className="max-w-[48ch] text-base leading-8 text-slate-600 md:text-lg">
+                When any one of these is missed, delays and uncertainty follow close behind. So we
+                confirm every one of them before the truck rolls.
+              </p>
+              <div className="mt-2 inline-flex items-center gap-3 rounded-2xl border border-sky-200 bg-sky-50 px-5 py-4">
+                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-700 text-white">
+                  <ClipboardCheck size={20} aria-hidden />
+                </span>
+                <p className="text-sm font-semibold leading-snug tracking-[-0.01em] text-slate-800">
+                  Confirmed up front — not discovered at the gate.
+                </p>
+              </div>
+            </Reveal>
 
-          <Reveal delay={80}>
-            <ul className="grid gap-x-12 gap-y-1 sm:grid-cols-2">
-              {nonNegotiables.map((item) => (
-                <li
-                  key={item.label}
-                  className="flex items-start gap-3.5 border-b border-slate-200 py-5"
-                >
-                  <ShieldCheck size={18} aria-hidden className="mt-0.5 shrink-0 text-sky-700" />
-                  <div>
-                    <p className="text-base font-semibold tracking-[-0.01em] text-slate-950">
+            <Reveal delay={80}>
+              <ul className="grid gap-4 sm:grid-cols-2">
+                {nonNegotiables.map((item, index) => (
+                  <li
+                    key={item.label}
+                    className="group relative flex flex-col gap-2 rounded-2xl border border-slate-200 bg-slate-50/70 p-6 transition-colors hover:border-sky-300 hover:bg-white"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
+                        <ShieldCheck size={18} aria-hidden />
+                      </span>
+                      <span className="font-mono text-sm font-bold text-slate-300 transition-colors group-hover:text-sky-600">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <p className="mt-2 text-base font-semibold tracking-[-0.01em] text-slate-950">
                       {item.label}
                     </p>
-                    <p className="mt-1 text-sm leading-7 text-slate-500">{item.detail}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
+                    <p className="text-sm leading-7 text-slate-500">{item.detail}</p>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
         </Container>
       </section>
 

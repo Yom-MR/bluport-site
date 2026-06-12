@@ -1,4 +1,4 @@
-import { Activity, MapPin, ShieldCheck, Truck } from "lucide-react";
+import { Activity, MapPin, ShieldCheck } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 
@@ -7,11 +7,6 @@ const metrics = [
     icon: MapPin,
     value: "TX + Gulf Coast",
     label: "Primary operating lanes",
-  },
-  {
-    icon: Truck,
-    value: "40' Power Tilt",
-    label: "Ground-level loading",
   },
   {
     icon: Activity,
@@ -30,7 +25,7 @@ export default function StatsBand() {
     <section className="relative border-b border-[rgba(200,210,221,0.12)] bg-[var(--navy-950)] text-white">
       <div className="absolute inset-0 blueprint-grid opacity-20" aria-hidden />
       <Container className="relative">
-        <ul className="flex items-center justify-between gap-2 py-5 sm:gap-5 lg:gap-6">
+        <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 py-5 sm:gap-x-10 lg:gap-x-14">
           {metrics.map((metric, index) => {
             const Icon = metric.icon;
             return (

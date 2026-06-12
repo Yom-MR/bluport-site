@@ -45,7 +45,7 @@ const initialFormData: RequestCapacityFormData = {
   notes: "",
 };
 
-const labelClass = "technical-label mb-2 block text-[0.64rem] text-[var(--foreground)]";
+const labelClass = "technical-label mb-2 block text-[0.64rem] text-slate-700";
 const inputClass =
   "w-full rounded-xl border border-[rgba(148,163,184,0.35)] bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-[rgba(14,165,233,0.7)] focus:ring-2 focus:ring-[rgba(14,165,233,0.15)]";
 
@@ -119,8 +119,7 @@ export default function RequestCapacityForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl border border-[rgba(148,163,184,0.25)] bg-white p-5 md:p-7" noValidate>
-      <div className="grid gap-6">
+    <form onSubmit={handleSubmit} className="grid gap-6" noValidate>
         <p className="text-xs text-slate-500">Required fields are marked with *.</p>
         <div>
           <p className="technical-label">CONTACT INFORMATION</p>
@@ -371,7 +370,7 @@ export default function RequestCapacityForm() {
         <div className="soft-divider pt-5">
           {submitError ? (
             <div
-              className="mb-4 rounded-xl border border-[rgba(239,68,68,0.45)] bg-[rgba(127,29,29,0.2)] px-4 py-3 text-sm text-[var(--foreground)]"
+              className="mb-4 rounded-xl border border-[rgba(239,68,68,0.4)] bg-[rgba(254,226,226,0.7)] px-4 py-3 text-sm text-red-700"
               role="alert"
             >
               {submitError}
@@ -388,7 +387,6 @@ export default function RequestCapacityForm() {
             Submissions are sent securely to Bluport operations for review.
           </p>
         </div>
-      </div>
     </form>
   );
 }
