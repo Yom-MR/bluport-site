@@ -30,7 +30,7 @@ export default function StatsBand() {
     <section className="relative border-b border-[rgba(200,210,221,0.12)] bg-[var(--navy-950)] text-white">
       <div className="absolute inset-0 blueprint-grid opacity-20" aria-hidden />
       <Container className="relative">
-        <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 py-5 sm:justify-between sm:gap-x-6">
+        <ul className="flex items-center justify-between gap-3 overflow-x-auto py-5 sm:gap-5 lg:gap-6">
           {metrics.map((metric, index) => {
             const Icon = metric.icon;
             return (
@@ -38,13 +38,13 @@ export default function StatsBand() {
                 as="li"
                 key={metric.value}
                 delay={index * 70}
-                className="flex items-center gap-2.5"
+                className="flex shrink-0 items-center gap-2 sm:gap-2.5"
               >
                 <Icon size={16} aria-hidden className="shrink-0 text-[var(--accent-light)]" />
-                <span className="text-sm font-semibold tracking-[-0.01em] text-white">
+                <span className="whitespace-nowrap text-xs font-semibold tracking-[-0.01em] text-white sm:text-sm">
                   {metric.value}
                 </span>
-                <span className="hidden text-[0.78rem] text-[var(--steel-400)] md:inline">
+                <span className="hidden whitespace-nowrap text-[0.78rem] text-[var(--steel-400)] lg:inline">
                   · {metric.label}
                 </span>
               </Reveal>

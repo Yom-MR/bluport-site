@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
-import { ChevronDown } from "lucide-react";
+import {
+  Layers3,
+  Lightbulb,
+  PackageCheck,
+  Truck,
+  Warehouse,
+  Zap,
+} from "lucide-react";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
 import FeatureRows from "@/components/ui/FeatureRows";
+import Container from "@/components/ui/Container";
+import Reveal from "@/components/ui/Reveal";
 import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
@@ -21,6 +30,7 @@ export const metadata: Metadata = {
 const serviceRows = [
   {
     anchor: "equipment-transportation",
+    icon: Truck,
     title: "Equipment Transportation",
     summary:
       "Hotshot movement for machines, attachments, trailers, and jobsite assets where timing, securement, and site access matter.",
@@ -30,6 +40,7 @@ const serviceRows = [
   },
   {
     anchor: "rapid-response-logistics",
+    icon: Zap,
     title: "Rapid Response Logistics",
     summary:
       "Support for urgent moves, replacement equipment, outage-related movement, and schedule recovery when delays create operational cost.",
@@ -39,6 +50,7 @@ const serviceRows = [
   },
   {
     anchor: "dedicated-capacity",
+    icon: PackageCheck,
     title: "Dedicated Capacity",
     summary:
       "Reserved truck and trailer support for recurring routes, rental fleet coverage, and customers who need more predictability than spot-market availability.",
@@ -48,6 +60,7 @@ const serviceRows = [
   },
   {
     anchor: "project-logistics",
+    icon: Layers3,
     title: "Project Logistics",
     summary:
       "Coordinated movement for phased schedules, hard delivery windows, multi-stop work, and equipment sequencing across active jobs.",
@@ -57,6 +70,7 @@ const serviceRows = [
   },
   {
     anchor: "storage-staging",
+    icon: Warehouse,
     title: "Storage & Staging",
     summary:
       "Support for timed releases, yard transitions, and site-readiness coordination when equipment cannot arrive too early or too late.",
@@ -66,6 +80,7 @@ const serviceRows = [
   },
   {
     anchor: "logistics-consulting",
+    icon: Lightbulb,
     title: "Logistics Consulting",
     summary:
       "Practical planning for movement workflows, communication cadence, lane setup, and dispatch standards as operations grow.",
@@ -123,63 +138,75 @@ export default function ServicesPage() {
         </div>
       </PageHero>
 
-      <EditorialSection
-        eyebrow="SERVICE LINES"
-        title="Built to support real field operations."
-        description="Bluport service lines are designed around timing, securement, customer communication, and the realities of live field work."
-        variant="light"
-        layout="stack"
-      >
-        <div className="overflow-hidden rounded-[2rem] border border-[rgba(148,163,184,0.22)] bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)] divide-y divide-[rgba(148,163,184,0.18)]">
-          {serviceRows.map((service, index) => (
-            <details key={service.title} id={service.anchor} className="group px-6 py-6 md:px-8 md:py-7">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 lg:gap-10">
-                <div className="grid w-full gap-2 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:gap-8">
-                  <div className="flex items-baseline gap-3">
-                    <span className="font-mono text-xs text-sky-700">
+      <section className="border-b border-[rgba(200,210,221,0.08)] bg-[var(--navy-950)] py-20 text-white md:py-24">
+        <Container className="space-y-12">
+          <Reveal className="max-w-[760px] space-y-5">
+            <p className="technical-label">SERVICE LINES</p>
+            <h2 className="text-[clamp(2.1rem,4.4vw,3.5rem)] font-semibold leading-[0.96] tracking-[-0.05em] text-balance">
+              Built to support real field operations.
+            </h2>
+            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+              Bluport service lines are designed around timing, securement, customer communication,
+              and the realities of live field work.
+            </p>
+          </Reveal>
+
+          <div className="grid gap-5 lg:grid-cols-2">
+            {serviceRows.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Reveal
+                  key={service.title}
+                  id={service.anchor}
+                  delay={(index % 2) * 90}
+                  className="group flex h-full flex-col rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 transition-all hover:-translate-y-1 hover:border-[rgba(47,116,189,0.5)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.4)] md:p-9 scroll-mt-24"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[rgba(47,116,189,0.28)]">
+                      <Icon size={22} aria-hidden />
+                    </span>
+                    <span className="font-mono text-sm text-[var(--steel-500)]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-xl font-semibold tracking-[-0.03em] text-slate-950 md:text-2xl">
-                      {service.title}
-                    </h3>
                   </div>
-                  <p className="text-sm leading-7 text-slate-600 md:text-base">{service.summary}</p>
-                </div>
-                <ChevronDown
-                  size={20}
-                  aria-hidden
-                  className="mt-1 shrink-0 text-sky-700 transition-transform duration-200 group-open:rotate-180"
-                />
-              </summary>
-              <div className="mt-5 grid gap-4 border-t border-[rgba(148,163,184,0.2)] pt-5 text-sm leading-7 text-slate-700 md:grid-cols-3 md:text-[0.95rem] lg:pl-[calc(260px+2rem)]">
-                <p>
-                  <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-sky-700">
-                    What it solves
-                  </span>
-                  <span className="mt-1 block">{service.solves}</span>
-                </p>
-                <p>
-                  <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-sky-700">
-                    Best fit
-                  </span>
-                  <span className="mt-1 block">{service.bestFit}</span>
-                </p>
-                <p>
-                  <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-sky-700">
-                    Operational benefit
-                  </span>
-                  <span className="mt-1 block">{service.benefit}</span>
-                </p>
-              </div>
-              <div className="mt-5 lg:pl-[calc(260px+2rem)]">
-                <Button href="/#request-capacity" className="text-[11px] tracking-[0.12em] uppercase">
-                  Request Quote
-                </Button>
-              </div>
-            </details>
-          ))}
-        </div>
-      </EditorialSection>
+
+                  <h3 className="mt-6 text-2xl font-semibold tracking-[-0.03em] text-white">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-[var(--steel-300)] md:text-base">
+                    {service.summary}
+                  </p>
+
+                  <dl className="mt-6 grid flex-1 gap-px overflow-hidden rounded-2xl border border-white/8 bg-white/8">
+                    {[
+                      { k: "What it solves", v: service.solves },
+                      { k: "Best fit", v: service.bestFit },
+                      { k: "Operational benefit", v: service.benefit },
+                    ].map((row) => (
+                      <div key={row.k} className="bg-[rgba(5,11,22,0.55)] px-5 py-4">
+                        <dt className="text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-[var(--accent-light)]">
+                          {row.k}
+                        </dt>
+                        <dd className="mt-1 text-sm leading-7 text-[#dce6ee]">{row.v}</dd>
+                      </div>
+                    ))}
+                  </dl>
+
+                  <div className="mt-6">
+                    <Button
+                      href="/#request-capacity"
+                      variant="secondary"
+                      className="w-full text-[11px] tracking-[0.12em]"
+                    >
+                      Request Quote
+                    </Button>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
 
       <EditorialSection
         eyebrow="EXECUTION RHYTHM"

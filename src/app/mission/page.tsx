@@ -3,11 +3,14 @@ import Image from "next/image";
 import {
   ClipboardCheck,
   Compass,
+  Factory,
   MessageSquareText,
   Route,
   ShieldCheck,
   Target,
   Timer,
+  Truck,
+  Zap,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
@@ -52,14 +55,17 @@ const operatingStandard = [
 
 const downtimeImpacts = [
   {
+    icon: Truck,
     title: "Rental fleets",
     body: "Late repositioning creates idle assets and delayed revenue for customers waiting on equipment.",
   },
   {
+    icon: Zap,
     title: "Utilities",
     body: "When a response move slips, restoration crews lose time that should have gone to the field.",
   },
   {
+    icon: Factory,
     title: "Manufacturing",
     body: "Shutdown windows are expensive; a missed handoff can push work into the next slot.",
   },
@@ -118,8 +124,8 @@ export default function MissionPage() {
         title="Veteran-led logistics for critical field work."
         description="Bluport exists to protect the mission behind the move: crews waiting on equipment, rental fleets serving customers, utilities restoring service, and projects working against time."
         image={siteImages.missionHero}
-        imageAlt="Veteran logistics operator beside a loaded hotshot trailer at golden hour with an American flag in the background"
-        imagePosition="object-[center_35%]"
+        imageAlt="Veteran logistics operator beside a loaded gooseneck trailer at golden hour on the Gulf Coast"
+        imagePosition="object-[center_45%]"
         variant="dark"
       />
 
@@ -159,8 +165,8 @@ export default function MissionPage() {
 
             <Reveal delay={120} className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
               <Image
-                src={siteImages.fieldOperations}
-                alt="Bluport crew securing equipment on a flatbed trailer in the field"
+                src={siteImages.missionPortrait}
+                alt="Bluport veteran operator beside a gooseneck trailer loaded with secured equipment at blue hour"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 45vw"
@@ -178,37 +184,49 @@ export default function MissionPage() {
       </section>
 
       {/* The cost of downtime */}
-      <section className="bg-[var(--navy-900)] py-20 text-white md:py-28">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
-            <Reveal className="space-y-4 lg:sticky lg:top-28 lg:self-start">
-              <p className="eyebrow">THE COST OF DOWNTIME</p>
-              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-                Schedule protection is the whole point.
-              </h2>
-              <p className="max-w-[46ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-                Different sectors feel a late move differently — but the pattern is the same: idle
-                assets, lost hours, and a team stuck waiting. We plan around that reality.
-              </p>
-            </Reveal>
+      <section className="relative overflow-hidden bg-[var(--navy-900)] py-20 text-white md:py-28">
+        <div className="absolute inset-0 blueprint-grid opacity-[0.12]" aria-hidden />
+        <div
+          className="absolute -right-32 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(229,127,67,0.1),transparent_70%)]"
+          aria-hidden
+        />
+        <Container className="relative space-y-12">
+          <Reveal className="max-w-[720px] space-y-4">
+            <p className="eyebrow">THE COST OF DOWNTIME</p>
+            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+              Schedule protection is the whole point.
+            </h2>
+            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+              Different sectors feel a late move differently — but the pattern is the same: idle
+              assets, lost hours, and a team stuck waiting. We plan around that reality.
+            </p>
+          </Reveal>
 
-            <Reveal delay={100}>
-              <ul className="divide-y divide-white/10 border-y border-white/10">
-                {downtimeImpacts.map((impact, index) => (
-                  <li key={impact.title} className="flex items-start gap-6 py-6">
-                    <span className="font-mono text-sm text-[var(--accent-light)]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <p className="text-lg font-semibold tracking-[-0.02em] text-white">
-                        {impact.title}
-                      </p>
-                      <p className="mt-1.5 text-sm leading-7 text-[var(--steel-300)]">{impact.body}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
+          <div className="grid gap-4 lg:grid-cols-3">
+            {downtimeImpacts.map((impact, index) => (
+              <Reveal
+                key={impact.title}
+                delay={index * 90}
+                className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 transition-colors hover:border-[rgba(229,127,67,0.4)]"
+              >
+                <span
+                  className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#e8a87c,rgba(229,127,67,0.2))]"
+                  aria-hidden
+                />
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(229,127,67,0.12)] text-[#e8a87c]">
+                    <impact.icon size={22} aria-hidden />
+                  </span>
+                  <span className="font-mono text-2xl font-bold text-[rgba(232,168,124,0.4)] transition-colors group-hover:text-[#e8a87c]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <p className="mt-6 text-xl font-semibold tracking-[-0.03em] text-white">
+                  {impact.title}
+                </p>
+                <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">{impact.body}</p>
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>

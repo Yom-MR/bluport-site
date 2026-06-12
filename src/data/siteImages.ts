@@ -1,11 +1,12 @@
 export const siteImages = {
   heroMain: "/images/backgrounds/hero-equipment-logistics.jpg",
-  missionHero: "/images/page-heroes/mission-veteran-led.png",
+  missionHero: "/images/page-heroes/mission-hero-new.png",
+  missionPortrait: "/images/loads/mission-portrait-new.png",
   careersFlag: "/images/page-heroes/careers-flag-veteran.png",
   // Services hero: close-up securement/binder photo from Bluport loads
   servicesHero: "/images/loads/equipment-securement-real.png",
-  industriesHero: "/images/page-heroes/industries-infrastructure.jpg",
-  careersHero: "/images/page-heroes/careers-veteran-operations.png",
+  industriesHero: "/images/industries/hero-all-industries.png",
+  careersHero: "/images/page-heroes/careers-hero-split.png",
   careersTeam: "/images/page-heroes/careers-team-coordination.png",
   careersTrackMilitary: "/images/careers/track-military.png",
   careersTrackCivilian: "/images/careers/track-civilian.png",
@@ -23,7 +24,7 @@ export const siteImages = {
   industrialManufacturing: "/images/jobsites/industry-industrial-manufacturing.jpg",
   premiumHero: "/images/loads/bluport-factory-hero.png",
   capabilityTexture: "/images/jobsites/equipment-yard.jpg",
-  fleetShowcase: "/images/loads/f350-container-gooseneck.jpg",
+  fleetShowcase: "/images/loads/platform-overview-new.png",
   oversizeStructureMove: "/images/loads/f350-oversize-structure-move.jpg",
   // Industry grid (home page) — distinct from the industry detail-page photos
   industriesConstruction: "/images/jobsites/industry-construction-equipment.jpg",

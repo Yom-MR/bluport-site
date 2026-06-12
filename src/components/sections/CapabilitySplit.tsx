@@ -1,24 +1,48 @@
 import {
   Boxes,
-  ClipboardCheck,
-  Layers,
+  Building2,
+  Cpu,
+  Factory,
   MapPin,
   PackageCheck,
+  Radio,
   Truck,
-  Wrench,
 } from "lucide-react";
-import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import { siteImages } from "@/data/siteImages";
+import CoverageMap from "@/components/sections/CoverageMap";
 
 const capabilityItems = [
-  { icon: Wrench, label: "Equipment", note: "Machines, skids, and powered units" },
-  { icon: Layers, label: "Attachments", note: "Buckets, booms, and implements" },
-  { icon: Truck, label: "Trailers", note: "Gooseneck, tilt, and flat decks" },
-  { icon: Boxes, label: "Utility assets", note: "Poles, pipe, and field material" },
-  { icon: PackageCheck, label: "Field-support materials", note: "Crew and jobsite supply" },
-  { icon: ClipboardCheck, label: "Project-critical freight", note: "Schedule-driven loads" },
+  {
+    icon: Truck,
+    label: "Construction & rental fleets",
+    note: "Excavators, skid steers, attachments, light towers, and generators between yards and jobsites.",
+  },
+  {
+    icon: Radio,
+    label: "Utilities & infrastructure",
+    note: "Transformers, switchgear, cable reels, poles, and crew support for outage-sensitive work.",
+  },
+  {
+    icon: Cpu,
+    label: "Data center equipment",
+    note: "Backup generators, switchgear lineups, and cooling units delivered to the build sequence.",
+  },
+  {
+    icon: Factory,
+    label: "Industrial & manufacturing",
+    note: "Motors, pumps, tooling, and turnaround assets staged to the shutdown window.",
+  },
+  {
+    icon: Boxes,
+    label: "Containers & project freight",
+    note: "Shipping containers, prefab assemblies, and schedule-driven loads on gooseneck decks.",
+  },
+  {
+    icon: Building2,
+    label: "Government & response assets",
+    note: "Mobile power, deployable equipment, and staging gear for time-critical public missions.",
+  },
 ] as const;
 
 const constraintRows = [
@@ -65,55 +89,39 @@ export default function CapabilitySplit() {
         </Reveal>
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-8">
-          {/* Image card with overlaid proof */}
-          <Reveal className="group relative min-h-[460px] overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.5)] lg:min-h-[560px]">
-            <Image
-              src={siteImages.equipmentRealLoad}
-              alt="Bluport truck hauling a loaded gooseneck trailer at a Texas yard"
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-              sizes="(max-width: 1024px) 100vw, 52vw"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.18)_0%,rgba(5,11,22,0.55)_52%,rgba(5,11,22,0.94)_100%)]" />
-
-            <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-[rgba(5,11,22,0.55)] px-3.5 py-1.5 backdrop-blur-md">
-              <MapPin size={14} aria-hidden className="text-[var(--accent-light)]" />
-              <span className="text-xs font-semibold tracking-[0.06em] text-[#e7eef6]">
-                Houston, TX &amp; Gulf Coast
-              </span>
+          {/* Coverage map card */}
+          <Reveal className="flex flex-col rounded-[2rem] border border-white/10 bg-[rgba(5,11,22,0.55)] p-7 md:p-9">
+            <div className="flex items-center gap-2.5">
+              <MapPin size={18} aria-hidden className="text-[var(--accent-light)]" />
+              <p className="technical-label">SERVICE COVERAGE</p>
             </div>
-
-            <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
-              <h3 className="text-2xl font-semibold tracking-[-0.03em] md:text-3xl">
-                Equipment-heavy moves with field consequences.
-              </h3>
-              <div className="mt-6 grid grid-cols-3 gap-4 border-t border-white/15 pt-6">
-                {[
-                  { value: "Same-day", label: "Dispatch capability" },
-                  { value: "1:1", label: "Load-level planning" },
-                  { value: "100%", label: "POD on delivery" },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <p className="text-2xl font-bold tracking-[-0.04em] text-white md:text-3xl">
-                      {stat.value}
-                    </p>
-                    <p className="mt-1 text-[0.7rem] font-medium uppercase tracking-[0.12em] text-[var(--steel-300)]">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
+            <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-white md:text-[1.7rem]">
+              Houston-based. Built for the lanes the work actually runs on.
+            </h3>
+            <p className="mt-3 max-w-[48ch] text-sm leading-7 text-[var(--steel-300)]">
+              Primary lanes run across Texas, extended coverage spans the Gulf Coast, and project
+              freight reaches nationwide when the move calls for it.
+            </p>
+            <div className="mt-7 flex-1">
+              <CoverageMap layout="panel" />
             </div>
           </Reveal>
 
           {/* What Bluport moves */}
           <Reveal delay={110} className="flex flex-col rounded-[2rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 md:p-9">
-            <p className="technical-label">WHAT BLUPORT MOVES</p>
-            <div className="mt-7 grid flex-1 auto-rows-fr gap-3 sm:grid-cols-2">
+            <div className="flex items-center gap-2.5">
+              <PackageCheck size={18} aria-hidden className="text-[var(--accent-light)]" />
+              <p className="technical-label">WHAT BLUPORT MOVES</p>
+            </div>
+            <p className="mt-3 max-w-[52ch] text-sm leading-7 text-[var(--steel-300)]">
+              Equipment-heavy freight for the sectors we serve — matched to the right trailer,
+              securement, and delivery window before dispatch.
+            </p>
+            <div className="mt-6 grid flex-1 auto-rows-fr gap-3">
               {capabilityItems.map((item) => (
                 <div
                   key={item.label}
-                  className="group flex items-center gap-3.5 rounded-2xl border border-white/8 bg-[rgba(255,255,255,0.02)] p-4 transition-colors hover:border-[rgba(47,116,189,0.5)]"
+                  className="group flex items-start gap-3.5 rounded-2xl border border-white/8 bg-[rgba(255,255,255,0.02)] p-4 transition-colors hover:border-[rgba(47,116,189,0.5)]"
                 >
                   <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[rgba(47,116,189,0.28)]">
                     <item.icon size={18} aria-hidden />

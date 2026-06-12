@@ -7,9 +7,9 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Image from "next/image";
-import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import SpecSheetModal from "@/components/sections/SpecSheetModal";
 import { siteImages } from "@/data/siteImages";
 
 const operationalProof = [
@@ -67,7 +67,7 @@ export default function FleetShowcase() {
             <Reveal delay={80} className="group relative aspect-[16/10] flex-1 overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
               <Image
                 src={siteImages.fleetShowcase}
-                alt="Bluport Ford F-350 hitched to a gooseneck flatbed trailer hauling a shipping container at a Texas yard"
+                alt="Bluport Ford F-350 hitched to a gooseneck trailer hauling a shipping container and secured equipment at a Texas yard"
                 fill
                 className="object-cover object-[center_60%] transition-transform duration-700 group-hover:scale-[1.03]"
                 sizes="(max-width: 1024px) 100vw, 55vw"
@@ -124,9 +124,7 @@ export default function FleetShowcase() {
               ))}
             </ul>
             <div className="mt-6">
-              <Button href="/downloads/bluport-equipment-spec-sheet.txt" variant="secondary">
-                Download equipment spec sheet
-              </Button>
+              <SpecSheetModal />
             </div>
           </Reveal>
         </div>

@@ -23,11 +23,19 @@ const legend = [
   { label: "National capability", swatch: "rgba(180,194,209,0.14)" },
 ] as const;
 
-export default function CoverageMap() {
+export default function CoverageMap({ layout = "split" }: { layout?: "split" | "panel" }) {
   const [hovered, setHovered] = useState<string | null>(null);
 
+  const isPanel = layout === "panel";
+
   return (
-    <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center lg:gap-12">
+    <div
+      className={
+        isPanel
+          ? "flex flex-col gap-5"
+          : "grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center lg:gap-12"
+      }
+    >
       <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[rgba(5,11,22,0.55)] p-2">
         <div className="absolute inset-0 blueprint-grid opacity-[0.12]" aria-hidden />
         <ComposableMap
@@ -92,7 +100,7 @@ export default function CoverageMap() {
         </p>
       </div>
 
-      <ul className="space-y-3.5">
+      <ul className={isPanel ? "grid gap-2.5 sm:grid-cols-2" : "space-y-3.5"}>
         {legend.map((item) => (
           <li
             key={item.label}
