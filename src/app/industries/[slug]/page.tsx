@@ -355,18 +355,18 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
       </section>
 
       {/* Related industries */}
-      <section className="bg-[var(--navy-950)] py-20 text-white md:py-24">
+      <section className="bg-[#eef2f8] py-20 text-slate-950 md:py-24">
         <Container className="space-y-10">
           <Reveal className="flex flex-wrap items-end justify-between gap-4">
             <div className="space-y-3">
-              <p className="eyebrow">MORE SECTORS</p>
-              <h2 className="text-[clamp(1.7rem,3.4vw,2.5rem)] font-semibold leading-[1] tracking-[-0.04em]">
+              <p className="eyebrow text-sky-700">MORE SECTORS</p>
+              <h2 className="text-[clamp(1.7rem,3.4vw,2.5rem)] font-semibold leading-[1] tracking-[-0.04em] text-slate-950">
                 Explore other industries.
               </h2>
             </div>
             <Link
               href="/industries"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-light)] transition-colors hover:text-white"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 transition-colors hover:text-sky-900"
             >
               View all industries
               <ArrowRight size={16} aria-hidden />
@@ -378,7 +378,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               <Reveal key={entry.slug}>
                 <Link
                   href={`/industries/${entry.slug}`}
-                  className="group block overflow-hidden rounded-[1.5rem] border border-white/10 bg-[rgba(255,255,255,0.03)] transition-all hover:-translate-y-1 hover:border-[rgba(47,116,189,0.5)]"
+                  className="group block overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_22px_55px_rgba(15,23,42,0.12)]"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
@@ -391,13 +391,13 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_40%,rgba(5,11,22,0.7)_100%)]" />
                   </div>
                   <div className="flex items-center justify-between gap-3 p-6">
-                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-white transition-colors group-hover:text-[var(--accent-light)]">
+                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-slate-950 transition-colors group-hover:text-sky-700">
                       {entry.title}
                     </h3>
                     <ArrowRight
                       size={18}
                       aria-hidden
-                      className="shrink-0 text-[var(--steel-400)] transition-transform group-hover:translate-x-1 group-hover:text-[var(--accent-light)]"
+                      className="shrink-0 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-sky-700"
                     />
                   </div>
                 </Link>

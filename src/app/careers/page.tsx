@@ -253,54 +253,53 @@ export default function CareersPage() {
       </section>
 
       {/* Military skills that transfer */}
-      <section className="relative isolate overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.12]" aria-hidden />
+      <section className="relative isolate overflow-hidden bg-[#eef2f8] py-20 text-slate-950 md:py-28">
         <div
-          className="absolute -right-24 top-0 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.14),transparent_70%)]"
+          className="absolute -right-24 top-0 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.08),transparent_70%)]"
           aria-hidden
         />
         <Container className="relative">
           <Reveal className="max-w-[760px] space-y-5">
-            <p className="technical-label">MILITARY SKILLS THAT TRANSFER</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+            <p className="technical-label text-sky-700">MILITARY SKILLS THAT TRANSFER</p>
+            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
               Your MOS already maps to this work.
             </h2>
-            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+            <p className="max-w-[58ch] text-base leading-8 text-slate-600 md:text-lg">
               You do not need a logistics background to belong here. The skills you built in service
               translate directly to how Bluport plans, executes, and closes out every move.
             </p>
           </Reveal>
 
-          <Reveal delay={90} className="mt-12 overflow-hidden rounded-[1.75rem] border border-white/10 bg-[rgba(5,11,22,0.5)]">
-            <div className="hidden grid-cols-[1fr_auto_1.2fr] items-center gap-4 border-b border-white/10 px-6 py-4 sm:grid md:px-8">
-              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[var(--blue-300)]">
+          <Reveal delay={90} className="mt-12 overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_22px_55px_rgba(15,23,42,0.08)]">
+            <div className="hidden grid-cols-[1fr_auto_1.2fr] items-center gap-4 border-b border-slate-200 bg-slate-50 px-6 py-4 sm:grid md:px-8">
+              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-500">
                 In service
               </p>
               <span aria-hidden />
-              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[var(--accent-light)]">
+              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-sky-700">
                 At Bluport
               </p>
             </div>
-            <ul className="divide-y divide-white/8">
+            <ul className="divide-y divide-slate-200">
               {skillsThatTransfer.map((item) => (
                 <li
                   key={item.military}
-                  className="grid gap-3 px-6 py-5 transition-colors hover:bg-white/[0.03] sm:grid-cols-[1fr_auto_1.2fr] sm:items-center sm:gap-4 md:px-8"
+                  className="grid gap-3 px-6 py-5 transition-colors hover:bg-slate-50 sm:grid-cols-[1fr_auto_1.2fr] sm:items-center sm:gap-4 md:px-8"
                 >
                   <div className="flex items-center gap-3.5">
-                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[rgba(61,130,196,0.16)] text-[var(--blue-300)]">
+                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
                       <item.icon size={18} aria-hidden />
                     </span>
-                    <p className="text-sm font-semibold tracking-[-0.01em] text-white md:text-base">
+                    <p className="text-sm font-semibold tracking-[-0.01em] text-slate-950 md:text-base">
                       {item.military}
                     </p>
                   </div>
                   <ArrowRight
                     size={16}
                     aria-hidden
-                    className="ml-[3.25rem] rotate-90 text-[var(--accent-light)] sm:ml-0 sm:rotate-0"
+                    className="ml-[3.25rem] rotate-90 text-sky-600 sm:ml-0 sm:rotate-0"
                   />
-                  <p className="ml-[3.25rem] text-sm leading-7 text-[var(--steel-300)] sm:ml-0">
+                  <p className="ml-[3.25rem] text-sm leading-7 text-slate-600 sm:ml-0">
                     {item.civilian}
                   </p>
                 </li>
@@ -373,21 +372,21 @@ export default function CareersPage() {
       </section>
 
       {/* Civilian track */}
-      <section id="civilian" className="section-pad bg-[var(--navy-950)] text-white scroll-mt-24">
+      <section id="civilian" className="section-pad bg-[#eef2f8] text-slate-950 scroll-mt-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-16">
             <Reveal className="space-y-6">
-              <p className="technical-label text-[var(--blue-300)]">CIVILIAN TRACK</p>
-              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+              <p className="technical-label text-sky-700">CIVILIAN TRACK</p>
+              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
                 Not a veteran? You can still earn a seat.
               </h2>
-              <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+              <p className="max-w-[58ch] text-base leading-8 text-slate-600 md:text-lg">
                 The majority of our hiring comes from the military community, but we also bring on a
                 smaller number of exceptional civilian professionals every year. If you operate with
                 discipline, communicate clearly, and take ownership of outcomes, the door is open.
               </p>
-              <div className="rounded-2xl border border-[rgba(61,130,196,0.28)] bg-[rgba(61,130,196,0.08)] px-5 py-4">
-                <p className="text-sm font-semibold leading-snug text-[#dce6ee]">
+              <div className="rounded-2xl border border-sky-200 bg-sky-50 px-5 py-4">
+                <p className="text-sm font-semibold leading-snug text-slate-700">
                   Civilian hires are selective and merit-based. We hire for standard and fit, not to
                   fill seats — so strong candidates always get a real look.
                 </p>
@@ -395,18 +394,18 @@ export default function CareersPage() {
             </Reveal>
 
             <Reveal delay={100} className="space-y-4">
-              <p className="technical-label">WHAT WE LOOK FOR</p>
+              <p className="technical-label text-sky-700">WHAT WE LOOK FOR</p>
               <div className="grid gap-3 sm:grid-cols-2">
                 {civilianTraits.map((trait) => (
                   <div
                     key={trait.title}
-                    className="rounded-2xl border border-[rgba(180,194,209,0.14)] bg-[rgba(255,255,255,0.03)] p-5"
+                    className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-colors hover:border-sky-300"
                   >
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[rgba(61,130,196,0.16)] text-[var(--blue-300)]">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
                       <trait.icon size={18} aria-hidden />
                     </span>
-                    <p className="mt-4 text-base font-semibold tracking-[-0.02em]">{trait.title}</p>
-                    <p className="mt-1.5 text-sm leading-7 text-[var(--steel-300)]">{trait.description}</p>
+                    <p className="mt-4 text-base font-semibold tracking-[-0.02em] text-slate-950">{trait.title}</p>
+                    <p className="mt-1.5 text-sm leading-7 text-slate-600">{trait.description}</p>
                   </div>
                 ))}
               </div>
