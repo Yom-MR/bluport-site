@@ -139,39 +139,39 @@ export default function ServicesPage() {
                   key={service.title}
                   id={service.anchor}
                   delay={(index % 3) * 90}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_22px_55px_rgba(15,23,42,0.12)] scroll-mt-24"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[var(--navy-900)] p-6 text-white shadow-[0_18px_45px_rgba(15,23,42,0.18)] transition-all duration-200 hover:-translate-y-1 hover:border-[rgba(91,159,216,0.5)] hover:shadow-[0_28px_70px_rgba(15,23,42,0.3)] scroll-mt-24"
                 >
                   <span
                     className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,var(--accent),rgba(47,116,189,0.15))]"
                     aria-hidden
                   />
                   <div className="flex items-center justify-between gap-4">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-700 transition-colors group-hover:bg-sky-700 group-hover:text-white">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
                       <Icon size={20} aria-hidden />
                     </span>
-                    <span className="font-mono text-xs text-slate-400">
+                    <span className="font-mono text-xs text-[var(--steel-400)]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
 
-                  <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-slate-950">
+                  <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-white">
                     {service.title}
                   </h3>
-                  <p className="mt-2.5 text-sm leading-7 text-slate-600">
+                  <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
                     {service.summary}
                   </p>
 
-                  <dl className="mt-5 flex-1 space-y-3 border-t border-slate-200 pt-5">
+                  <dl className="mt-5 flex-1 space-y-3 border-t border-white/10 pt-5">
                     {[
                       { k: "Solves", v: service.solves },
                       { k: "Best fit", v: service.bestFit },
                       { k: "Benefit", v: service.benefit },
                     ].map((row) => (
                       <div key={row.k} className="flex gap-3">
-                        <dt className="w-16 shrink-0 pt-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-sky-700">
+                        <dt className="w-16 shrink-0 pt-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-[var(--accent-light)]">
                           {row.k}
                         </dt>
-                        <dd className="text-[0.82rem] leading-6 text-slate-600">{row.v}</dd>
+                        <dd className="text-[0.82rem] leading-6 text-[var(--steel-300)]">{row.v}</dd>
                       </div>
                     ))}
                   </dl>

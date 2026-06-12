@@ -270,42 +270,36 @@ export default function CareersPage() {
             </p>
           </Reveal>
 
-          <Reveal delay={90} className="mt-12 overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_22px_55px_rgba(15,23,42,0.08)]">
-            <div className="hidden grid-cols-[1fr_auto_1.2fr] items-center gap-4 border-b border-slate-200 bg-slate-50 px-6 py-4 sm:grid md:px-8">
-              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-500">
-                In service
-              </p>
-              <span aria-hidden />
-              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-sky-700">
-                At Bluport
-              </p>
-            </div>
-            <ul className="divide-y divide-slate-200">
-              {skillsThatTransfer.map((item) => (
-                <li
-                  key={item.military}
-                  className="grid gap-3 px-6 py-5 transition-colors hover:bg-slate-50 sm:grid-cols-[1fr_auto_1.2fr] sm:items-center sm:gap-4 md:px-8"
-                >
-                  <div className="flex items-center gap-3.5">
-                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
-                      <item.icon size={18} aria-hidden />
-                    </span>
-                    <p className="text-sm font-semibold tracking-[-0.01em] text-slate-950 md:text-base">
-                      {item.military}
-                    </p>
-                  </div>
-                  <ArrowRight
-                    size={16}
-                    aria-hidden
-                    className="ml-[3.25rem] rotate-90 text-sky-600 sm:ml-0 sm:rotate-0"
-                  />
-                  <p className="ml-[3.25rem] text-sm leading-7 text-slate-600 sm:ml-0">
-                    {item.civilian}
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {skillsThatTransfer.map((item, index) => (
+              <Reveal
+                key={item.military}
+                delay={(index % 3) * 80}
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_22px_55px_rgba(15,23,42,0.12)]"
+              >
+                <div className="flex items-center gap-3.5">
+                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-700 transition-colors group-hover:bg-sky-700 group-hover:text-white">
+                    <item.icon size={20} aria-hidden />
+                  </span>
+                  <p className="text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-slate-400">
+                    In service
                   </p>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
+                </div>
+                <p className="mt-4 text-base font-semibold tracking-[-0.02em] text-slate-950">
+                  {item.military}
+                </p>
+                <div className="mt-4 flex items-start gap-2.5 border-t border-slate-200 pt-4">
+                  <ArrowRight size={15} aria-hidden className="mt-1 shrink-0 text-sky-600" />
+                  <div>
+                    <p className="text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-sky-700">
+                      At Bluport
+                    </p>
+                    <p className="mt-1 text-sm leading-7 text-slate-600">{item.civilian}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 
@@ -409,61 +403,6 @@ export default function CareersPage() {
                   </div>
                 ))}
               </div>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* Team banner — military initiative */}
-      <section className="relative isolate overflow-hidden bg-[var(--navy-950)] py-24 text-white md:py-32">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.14]" aria-hidden />
-        <div
-          className="absolute -left-24 top-1/2 h-[460px] w-[460px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
-          aria-hidden
-        />
-        <Container className="relative">
-          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
-            <Reveal className="space-y-6">
-              <p className="technical-label text-[var(--accent-light)]">A TEAM THAT SERVED</p>
-              <h2 className="text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
-                Built by people who held the line. Now we hold the standard.
-              </h2>
-              <p className="max-w-[58ch] text-base leading-8 text-[#dce6ee] md:text-lg">
-                Bluport is staffed by a team that is over 82% military — veterans, active duty,
-                spouses, and family. We hire from the community we come from because that discipline is
-                exactly what this work demands.
-              </p>
-              <div className="flex flex-wrap gap-3 pt-2">
-                {[
-                  { value: "82%", label: "Military-staffed team" },
-                  { value: "Veteran-owned", label: "Leadership that served" },
-                  { value: "Spouse & family", label: "Hiring built for the community" },
-                ].map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="rounded-2xl border border-white/12 bg-[rgba(255,255,255,0.03)] px-5 py-4"
-                  >
-                    <p className="text-xl font-bold tracking-[-0.03em] text-white">{stat.value}</p>
-                    <p className="mt-1 text-[0.78rem] font-medium uppercase tracking-[0.1em] text-[var(--steel-300)]">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-
-            <Reveal
-              delay={120}
-              className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)] sm:aspect-[4/3] lg:aspect-[4/5]"
-            >
-              <Image
-                src={siteImages.careersTeam}
-                alt="A diverse Bluport crew coordinating a dispatch plan beside a hotshot truck and trailer"
-                fill
-                className="object-cover object-[center_35%]"
-                sizes="(max-width: 1024px) 100vw, 45vw"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(5,11,22,0.65)_100%)]" />
             </Reveal>
           </div>
         </Container>

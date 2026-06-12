@@ -375,10 +375,10 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
           <div className="grid gap-5 md:grid-cols-3">
             {otherIndustries.map((entry) => (
-              <Reveal key={entry.slug}>
+              <Reveal key={entry.slug} className="h-full">
                 <Link
                   href={`/industries/${entry.slug}`}
-                  className="group block overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_22px_55px_rgba(15,23,42,0.12)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_22px_55px_rgba(15,23,42,0.12)]"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
@@ -388,17 +388,24 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                       className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                       sizes="(min-width: 768px) 30vw, 100vw"
                     />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_40%,rgba(5,11,22,0.7)_100%)]" />
-                  </div>
-                  <div className="flex items-center justify-between gap-3 p-6">
-                    <h3 className="text-lg font-semibold tracking-[-0.02em] text-slate-950 transition-colors group-hover:text-sky-700">
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_35%,rgba(5,11,22,0.78)_100%)]" />
+                    <span className="absolute left-4 top-4 inline-flex items-center rounded-full bg-[rgba(5,11,22,0.55)] px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm">
+                      {entry.statValue}
+                    </span>
+                    <h3 className="absolute inset-x-0 bottom-0 p-5 text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
                       {entry.title}
                     </h3>
-                    <ArrowRight
-                      size={18}
-                      aria-hidden
-                      className="shrink-0 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-sky-700"
-                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="text-sm leading-7 text-slate-600">{entry.summary}</p>
+                    <span className="mt-5 inline-flex items-center gap-2 border-t border-slate-200 pt-4 text-sm font-semibold text-sky-700 transition-colors group-hover:text-sky-900">
+                      View sector
+                      <ArrowRight
+                        size={16}
+                        aria-hidden
+                        className="transition-transform group-hover:translate-x-1"
+                      />
+                    </span>
                   </div>
                 </Link>
               </Reveal>

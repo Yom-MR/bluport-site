@@ -113,36 +113,36 @@ export default function ContactPage() {
       </section>
 
       {/* Contact prep */}
-      <section className="section-pad bg-[var(--navy-950)] text-white">
+      <section className="section-pad bg-[#eef2f8] text-slate-950">
         <Container>
           <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
             <Reveal className="space-y-8">
               <div className="space-y-5">
-                <p className="technical-label">CONTACT PREP</p>
-                <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+                <p className="technical-label text-sky-700">CONTACT PREP</p>
+                <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
                   Before you contact us, helpful details include:
                 </h2>
-                <p className="max-w-[52ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                <p className="max-w-[52ch] text-base leading-8 text-slate-600 md:text-lg">
                   Providing these details upfront helps operations scope the move accurately and
                   respond faster.
                 </p>
               </div>
-              <ul className="space-y-3.5 border-t border-white/10 pt-6">
+              <ul className="space-y-3.5 border-t border-slate-200 pt-6">
                 {prepDetails.map((item, index) => (
                   <Reveal
                     as="li"
                     key={item}
                     delay={index * 40}
-                    className="flex items-center gap-3 text-base text-[var(--steel-200)]"
+                    className="flex items-center gap-3 text-base text-slate-700"
                   >
-                    <ClipboardList size={17} aria-hidden className="shrink-0 text-[var(--accent)]" />
+                    <ClipboardList size={17} aria-hidden className="shrink-0 text-sky-600" />
                     <span className="leading-7">{item}</span>
                   </Reveal>
                 ))}
               </ul>
             </Reveal>
 
-            <Reveal delay={120} className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)] lg:sticky lg:top-28">
+            <Reveal delay={120} className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_30px_80px_rgba(15,23,42,0.18)] lg:sticky lg:top-28">
               <Image
                 src={siteImages.contactReady}
                 alt="A loaded Bluport F-350 and gooseneck trailer staged and ready to depart"
