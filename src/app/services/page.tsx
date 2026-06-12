@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { CheckCircle2, ChevronDown } from "lucide-react";
+import {
+  Layers3,
+  Lightbulb,
+  PackageCheck,
+  Truck,
+  Warehouse,
+  Zap,
+} from "lucide-react";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/sections/PageHero";
 import EditorialSection from "@/components/ui/EditorialSection";
-import FeatureRows from "@/components/ui/FeatureRows";
-import QuoteCalculator from "@/components/sections/QuoteCalculator";
+import Container from "@/components/ui/Container";
+import Reveal from "@/components/ui/Reveal";
 import { siteImages } from "@/data/siteImages";
 
 export const metadata: Metadata = {
@@ -22,6 +29,7 @@ export const metadata: Metadata = {
 const serviceRows = [
   {
     anchor: "equipment-transportation",
+    icon: Truck,
     title: "Equipment Transportation",
     summary:
       "Hotshot movement for machines, attachments, trailers, and jobsite assets where timing, securement, and site access matter.",
@@ -31,6 +39,7 @@ const serviceRows = [
   },
   {
     anchor: "rapid-response-logistics",
+    icon: Zap,
     title: "Rapid Response Logistics",
     summary:
       "Support for urgent moves, replacement equipment, outage-related movement, and schedule recovery when delays create operational cost.",
@@ -40,6 +49,7 @@ const serviceRows = [
   },
   {
     anchor: "dedicated-capacity",
+    icon: PackageCheck,
     title: "Dedicated Capacity",
     summary:
       "Reserved truck and trailer support for recurring routes, rental fleet coverage, and customers who need more predictability than spot-market availability.",
@@ -49,6 +59,7 @@ const serviceRows = [
   },
   {
     anchor: "project-logistics",
+    icon: Layers3,
     title: "Project Logistics",
     summary:
       "Coordinated movement for phased schedules, hard delivery windows, multi-stop work, and equipment sequencing across active jobs.",
@@ -58,6 +69,7 @@ const serviceRows = [
   },
   {
     anchor: "storage-staging",
+    icon: Warehouse,
     title: "Storage & Staging",
     summary:
       "Support for timed releases, yard transitions, and site-readiness coordination when equipment cannot arrive too early or too late.",
@@ -67,6 +79,7 @@ const serviceRows = [
   },
   {
     anchor: "logistics-consulting",
+    icon: Lightbulb,
     title: "Logistics Consulting",
     summary:
       "Practical planning for movement workflows, communication cadence, lane setup, and dispatch standards as operations grow.",
@@ -75,39 +88,6 @@ const serviceRows = [
     benefit: "Better operating discipline before complexity turns into avoidable cost.",
   },
 ];
-
-const supportSteps = [
-  {
-    label: "01",
-    title: "Intake",
-    description: "Capture the asset, timing, access conditions, and operating constraints before planning starts.",
-  },
-  {
-    label: "02",
-    title: "Plan",
-    description: "Match trailer, securement, timing, route, and communication to the actual move profile.",
-  },
-  {
-    label: "03",
-    title: "Dispatch",
-    description: "Coordinate execution with field-aware updates and decision-making that protects the window.",
-  },
-  {
-    label: "04",
-    title: "Closeout",
-    description: "Confirm delivery, close documentation, and complete the final customer handoff cleanly.",
-  },
-];
-
-const readinessChecklist = [
-  "Pickup location and access",
-  "Delivery location and access",
-  "Asset type",
-  "Dimensions and estimated weight",
-  "Requested pickup and delivery dates",
-  "Loading or securement constraints",
-  "Onsite contact information",
-] as const;
 
 export default function ServicesPage() {
   return (
@@ -134,80 +114,83 @@ export default function ServicesPage() {
         </div>
       </PageHero>
 
-      <EditorialSection
-        eyebrow="SERVICE LINES"
-        title="Built to support real field operations."
-        description="Bluport service lines are designed around timing, securement, customer communication, and the realities of live field work."
-        variant="light"
-        layout="stack"
-      >
-        <div className="divide-y divide-[rgba(148,163,184,0.22)] rounded-[2rem] border border-[rgba(148,163,184,0.16)] bg-white/75">
-          {serviceRows.map((service) => (
-            <details key={service.title} id={service.anchor} className="group px-6 py-7 md:px-8 md:py-8">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 lg:gap-10">
-                <div className="grid w-full gap-4 lg:grid-cols-[minmax(0,240px)_minmax(0,1fr)]">
-                  <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[#f4f7fb] py-20 text-slate-950 md:py-24">
+        <div
+          className="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.08),transparent_70%)]"
+          aria-hidden
+        />
+        <Container className="relative space-y-12">
+          <Reveal className="max-w-[760px] space-y-5">
+            <p className="technical-label text-sky-700">SERVICE LINES</p>
+            <h2 className="text-[clamp(2.1rem,4.4vw,3.5rem)] font-semibold leading-[0.96] tracking-[-0.05em] text-balance text-slate-950">
+              Built to support real field operations.
+            </h2>
+            <p className="max-w-[58ch] text-base leading-8 text-slate-600 md:text-lg">
+              Bluport service lines are designed around timing, securement, customer communication,
+              and the realities of live field work.
+            </p>
+          </Reveal>
+
+          <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+            {serviceRows.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Reveal
+                  key={service.title}
+                  id={service.anchor}
+                  delay={(index % 3) * 90}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_22px_55px_rgba(15,23,42,0.12)] scroll-mt-24"
+                >
+                  <span
+                    className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,var(--accent),rgba(47,116,189,0.15))]"
+                    aria-hidden
+                  />
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-700 transition-colors group-hover:bg-sky-700 group-hover:text-white">
+                      <Icon size={20} aria-hidden />
+                    </span>
+                    <span className="font-mono text-xs text-slate-400">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-slate-950">
                     {service.title}
                   </h3>
-                  <p className="text-sm leading-7 text-slate-600 md:text-base">{service.summary}</p>
-                </div>
-                <ChevronDown
-                  size={20}
-                  aria-hidden
-                  className="mt-0.5 shrink-0 text-sky-700 transition-transform duration-200 group-open:rotate-180"
-                />
-              </summary>
-              <div className="mt-4 grid gap-3 rounded-xl border border-[rgba(148,163,184,0.24)] bg-[rgba(248,252,255,0.9)] p-4 text-sm leading-7 text-slate-700 md:grid-cols-3 md:text-base">
-                <p>
-                  <span className="font-semibold text-slate-900">What it solves:</span> {service.solves}
-                </p>
-                <p>
-                  <span className="font-semibold text-slate-900">Best fit:</span> {service.bestFit}
-                </p>
-                <p>
-                  <span className="font-semibold text-slate-900">Operational benefit:</span> {service.benefit}
-                </p>
-              </div>
-              <div className="mt-4">
-                <Button href="/#request-capacity" className="text-[11px] tracking-[0.12em] uppercase">
-                  Request Quote
-                </Button>
-              </div>
-            </details>
-          ))}
-        </div>
-      </EditorialSection>
+                  <p className="mt-2.5 text-sm leading-7 text-slate-600">
+                    {service.summary}
+                  </p>
 
-      <QuoteCalculator />
+                  <dl className="mt-5 flex-1 space-y-3 border-t border-slate-200 pt-5">
+                    {[
+                      { k: "Solves", v: service.solves },
+                      { k: "Best fit", v: service.bestFit },
+                      { k: "Benefit", v: service.benefit },
+                    ].map((row) => (
+                      <div key={row.k} className="flex gap-3">
+                        <dt className="w-16 shrink-0 pt-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-sky-700">
+                          {row.k}
+                        </dt>
+                        <dd className="text-[0.82rem] leading-6 text-slate-600">{row.v}</dd>
+                      </div>
+                    ))}
+                  </dl>
 
-      <EditorialSection
-        eyebrow="EXECUTION RHYTHM"
-        title="How Bluport executes."
-        description="Execution stays simple on purpose: understand the move, plan around constraints, dispatch clearly, and close the loop with documentation."
-        variant="dark"
-        layout="split"
-      >
-        <FeatureRows items={supportSteps} variant="dark" />
-      </EditorialSection>
-
-      <EditorialSection
-        eyebrow="REQUEST READINESS"
-        title="Request readiness checklist."
-        description="The more complete the request details are upfront, the faster operations can scope the move accurately."
-        variant="light"
-        layout="stack"
-      >
-        <div className="rounded-[1.7rem] border border-[rgba(148,163,184,0.24)] bg-white/80 p-5 md:p-6">
-          <ul className="grid gap-3 md:grid-cols-2">
-            {readinessChecklist.map((item) => (
-              <li key={item} className="flex items-start gap-2.5 border-t border-[rgba(148,163,184,0.24)] pt-3 text-sm text-slate-700 md:text-base">
-                <CheckCircle2 size={16} aria-hidden className="mt-1 shrink-0 text-sky-700" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </EditorialSection>
+                  <div className="mt-6">
+                    <Button
+                      href="/#request-capacity"
+                      variant="primary"
+                      className="w-full text-[11px] tracking-[0.12em]"
+                    >
+                      Request Quote
+                    </Button>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
 
       <EditorialSection
         eyebrow="REQUEST CAPACITY"

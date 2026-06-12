@@ -14,9 +14,9 @@ export default function BrandLogo({ variant = "light", placement = "navbar" }: B
     () =>
       variant === "light"
         ? [
+            "/images/brand/bpl-logo-white-letters.png",
             "/images/brand/bpl-logo-transparent-white.png",
             "/images/brand/BPL White png.png",
-            "/images/brand/bpl-logo-white.png",
             "/images/brand/bpl-logo-white.png",
             "/images/brand/bpl-logo-white-cropped.png",
           ]

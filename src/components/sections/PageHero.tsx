@@ -29,10 +29,10 @@ export default function PageHero({
   return (
     <section
       className={cn(
-        "relative isolate overflow-hidden border-b border-[rgba(200,210,221,0.08)]",
+        "relative isolate overflow-hidden border-b border-[rgba(200,210,221,0.08)] text-white",
         isLight
-          ? "bg-[linear-gradient(180deg,#f7fafc_0%,#eef4f8_100%)] text-slate-950"
-          : "bg-[linear-gradient(180deg,#031426_0%,#071d33_100%)] text-white",
+          ? "bg-[linear-gradient(180deg,#0c1a2c_0%,#08111f_100%)]"
+          : "bg-[linear-gradient(180deg,#08111f_0%,#050b16_100%)]",
       )}
     >
       {image ? (
@@ -48,40 +48,31 @@ export default function PageHero({
           <div
             className={cn(
               "absolute inset-0",
-              isLight
-                ? "bg-[linear-gradient(90deg,rgba(247,250,252,0.96)_4%,rgba(247,250,252,0.82)_45%,rgba(247,250,252,0.36)_100%)]"
-                : "bg-[linear-gradient(94deg,rgba(2,10,20,0.92)_8%,rgba(2,10,20,0.76)_42%,rgba(2,10,20,0.34)_100%)]",
+              "bg-[linear-gradient(94deg,rgba(5,11,22,0.93)_8%,rgba(5,11,22,0.78)_42%,rgba(5,11,22,0.36)_100%)]",
             )}
           />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(31,182,232,0.18),transparent_32%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,116,189,0.2),transparent_36%)]" />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(180deg,transparent_0%,rgba(5,11,22,0.65)_55%,var(--navy-950)_100%)]"
+            aria-hidden
+          />
         </>
       ) : (
         <>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(31,182,232,0.16),transparent_30%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_40%,rgba(31,182,232,0.06)_100%)]" />
+          <div className="absolute inset-0 blueprint-grid opacity-60" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,116,189,0.16),transparent_32%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_40%,rgba(61,130,196,0.07)_100%)]" />
         </>
       )}
 
       <Container className="relative z-10 flex min-h-[420px] items-end py-20 md:min-h-[480px] md:py-24 lg:min-h-[520px] lg:py-28">
         <div className="max-w-[760px] space-y-6">
-          <p className={cn("technical-label", isLight ? "text-sky-700" : "text-[var(--cyan)]")}>
-            {eyebrow}
-          </p>
+          <p className="technical-label">{eyebrow}</p>
           <div className="space-y-5">
-            <h1
-              className={cn(
-                "max-w-[12ch] text-[clamp(2.7rem,5.8vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.05em] text-balance",
-                isLight ? "text-slate-950" : "text-white",
-              )}
-            >
+            <h1 className="max-w-[12ch] text-[clamp(2.7rem,5.8vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.05em] text-balance text-white">
               {title}
             </h1>
-            <p
-              className={cn(
-                "max-w-[60ch] text-base leading-8 md:text-lg",
-                isLight ? "text-slate-700" : "text-[rgba(226,232,240,0.88)]",
-              )}
-            >
+            <p className="max-w-[60ch] text-base leading-8 text-[rgba(226,232,240,0.88)] md:text-lg">
               {description}
             </p>
           </div>

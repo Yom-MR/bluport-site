@@ -1,31 +1,72 @@
+"use client";
+
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type ButtonProps = {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "ghost";
   className?: string;
+  withArrow?: boolean;
 };
 
 const buttonVariants: Record<NonNullable<ButtonProps["variant"]>, string> = {
   primary:
-    "border border-transparent bg-[var(--blue)] text-slate-950 shadow-[0_0_0_1px_rgba(14,165,233,0.25),0_10px_30px_rgba(14,165,233,0.22)] hover:bg-[var(--cyan)] hover:text-slate-950",
+    "bg-[var(--accent)] text-white shadow-[0_14px_34px_rgba(47,116,189,0.32)] hover:bg-[var(--accent-strong)] hover:-translate-y-0.5",
   secondary:
-    "border border-[var(--border)] bg-[rgba(15,23,42,0.35)] text-[var(--foreground)] hover:border-[var(--blue)] hover:text-[var(--cyan)]",
+    "border border-[rgba(180,194,209,0.28)] bg-[rgba(255,255,255,0.03)] text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent-light)]",
+  ghost:
+    "text-[var(--foreground)] hover:text-[var(--accent-light)]",
 };
 
-export default function Button({ href, children, variant = "primary", className }: ButtonProps) {
-  return (
-    <Link
-      href={href}
-      className={cn(
-        "inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold tracking-[0.05em] transition-colors duration-200",
-        buttonVariants[variant],
-        className,
-      )}
-    >
+const baseClasses =
+  "group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-[0.8rem] font-semibold tracking-[0.08em] uppercase transition-all duration-200";
+
+export default function Button({
+  href,
+  children,
+  variant = "primary",
+  className,
+  withArrow = false,
+}: ButtonProps) {
+  const isRequestCapacity = href.includes("request-capacity");
+  const classes = cn(baseClasses, buttonVariants[variant], className);
+  const content = (
+    <>
       {children}
+      {withArrow ? (
+        <ArrowRight
+          size={16}
+          aria-hidden
+          className="transition-transform duration-200 group-hover:translate-x-1"
+        />
+      ) : null}
+    </>
+  );
+
+  // Request-capacity buttons open a modal instead of navigating, so they must be
+  // real buttons. Using a Link here causes client-side navigation to fire before
+  // the modal's document click handler can preventDefault, sending users home.
+  if (isRequestCapacity) {
+    return (
+      <button
+        type="button"
+        data-request-capacity="true"
+        onClick={() => {
+          window.dispatchEvent(new Event("open-request-capacity-modal"));
+        }}
+        className={classes}
+      >
+        {content}
+      </button>
+    );
+  }
+
+  return (
+    <Link href={href} className={classes}>
+      {content}
     </Link>
   );
 }

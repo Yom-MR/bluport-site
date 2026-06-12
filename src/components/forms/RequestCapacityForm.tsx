@@ -45,7 +45,7 @@ const initialFormData: RequestCapacityFormData = {
   notes: "",
 };
 
-const labelClass = "technical-label mb-2 block text-[0.64rem] text-[var(--foreground)]";
+const labelClass = "technical-label mb-2 block text-[0.64rem] text-slate-700";
 const inputClass =
   "w-full rounded-xl border border-[rgba(148,163,184,0.35)] bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-[rgba(14,165,233,0.7)] focus:ring-2 focus:ring-[rgba(14,165,233,0.15)]";
 
@@ -97,7 +97,7 @@ export default function RequestCapacityForm() {
   if (isSubmitted) {
     return (
       <div className="rounded-2xl border border-[rgba(148,163,184,0.3)] bg-white p-6 md:p-7" role="status" aria-live="polite">
-        <p className="technical-label text-[var(--blue)]">INTAKE STATUS</p>
+        <p className="technical-label">INTAKE STATUS</p>
         <h3 className="mt-3 text-xl font-semibold text-slate-900">
           Mission request received. Bluport operations will review the details and follow up.
         </h3>
@@ -119,11 +119,10 @@ export default function RequestCapacityForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl border border-[rgba(148,163,184,0.25)] bg-white p-5 md:p-7" noValidate>
-      <div className="grid gap-6">
+    <form onSubmit={handleSubmit} className="grid gap-6" noValidate>
         <p className="text-xs text-slate-500">Required fields are marked with *.</p>
         <div>
-          <p className="technical-label text-[var(--blue)]">CONTACT INFORMATION</p>
+          <p className="technical-label">CONTACT INFORMATION</p>
           <div className="mt-3 grid gap-4 md:grid-cols-2">
             <div>
               <label className={labelClass} htmlFor="fullName">
@@ -189,7 +188,7 @@ export default function RequestCapacityForm() {
         </div>
 
         <div className="soft-divider pt-5">
-          <p className="technical-label text-[var(--blue)]">MOVE DETAILS</p>
+          <p className="technical-label">MOVE DETAILS</p>
           <div className="mt-3 grid gap-4 md:grid-cols-2">
             <div>
               <label className={labelClass} htmlFor="pickupLocation">
@@ -332,7 +331,7 @@ export default function RequestCapacityForm() {
         </div>
 
         <div className="soft-divider pt-5">
-          <p className="technical-label text-[var(--blue)]">ADDITIONAL DETAILS</p>
+          <p className="technical-label">ADDITIONAL DETAILS</p>
           <div className="mt-3 grid gap-4 md:grid-cols-2">
             <div className="md:col-span-2">
               <label className={labelClass} htmlFor="notes">
@@ -371,7 +370,7 @@ export default function RequestCapacityForm() {
         <div className="soft-divider pt-5">
           {submitError ? (
             <div
-              className="mb-4 rounded-xl border border-[rgba(239,68,68,0.45)] bg-[rgba(127,29,29,0.2)] px-4 py-3 text-sm text-[var(--foreground)]"
+              className="mb-4 rounded-xl border border-[rgba(239,68,68,0.4)] bg-[rgba(254,226,226,0.7)] px-4 py-3 text-sm text-red-700"
               role="alert"
             >
               {submitError}
@@ -380,7 +379,7 @@ export default function RequestCapacityForm() {
           <button
             type="submit"
             disabled={isSending}
-            className="inline-flex rounded-xl bg-[var(--blue)] px-5 py-3 text-xs font-semibold tracking-[0.12em] text-white uppercase shadow-[0_12px_24px_rgba(14,165,233,0.26)] transition-all hover:-translate-y-0.5 hover:bg-[var(--cyan)]"
+            className="inline-flex rounded-xl bg-[var(--accent)] px-5 py-3 text-xs font-semibold tracking-[0.12em] text-white uppercase shadow-[0_12px_24px_rgba(47,116,189,0.3)] transition-all hover:-translate-y-0.5 hover:bg-[var(--accent-strong)]"
           >
             {isSending ? "Sending..." : "Submit Request"}
           </button>
@@ -388,7 +387,6 @@ export default function RequestCapacityForm() {
             Submissions are sent securely to Bluport operations for review.
           </p>
         </div>
-      </div>
     </form>
   );
 }
