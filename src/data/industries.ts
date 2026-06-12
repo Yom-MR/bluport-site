@@ -78,9 +78,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Confirm handoff, POD, and any follow-up notes." },
     ],
     benefits: [
-      { title: "Fewer idle crews", description: "Equipment arrives inside the window so labor isn't burning on standby." },
-      { title: "Higher rental readiness", description: "Faster turns between jobs keep more of your fleet earning." },
-      { title: "Schedule protection", description: "On-time returns keep the next customer's promise intact." },
+      { title: "Fewer idle crews", description: "Equipment arrives inside the committed window, so labor isn't burning hours on standby waiting for a machine that's still in transit." },
+      { title: "Higher rental readiness", description: "Faster, more predictable turns between jobs mean more of your fleet stays deployed and earning instead of stranded on a closed site." },
+      { title: "Schedule protection", description: "On-time returns and repositioning keep the promise you made to the next customer intact — no cascading delays down the calendar." },
     ],
   },
   {
@@ -144,9 +144,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Confirm arrival and completion with the right contacts." },
     ],
     benefits: [
-      { title: "Faster response support", description: "Critical assets reach crews inside the restoration window." },
-      { title: "Less waiting on equipment", description: "Sequenced delivery keeps high-priority work moving first." },
-      { title: "More reliable handoffs", description: "Confirmed access and contacts mean fewer gate delays." },
+      { title: "Faster response support", description: "Critical assets reach crews inside the restoration window, so the outage clears on the timeline your customers and regulators are watching." },
+      { title: "Less waiting on equipment", description: "Moves sequenced to the response plan put the highest-priority gear on site first, instead of whenever a truck happens to free up." },
+      { title: "More reliable handoffs", description: "Pre-confirmed access, escorts, and contacts mean crews aren't stuck waiting at a locked substation gate with the clock running." },
     ],
   },
   {
@@ -210,9 +210,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Confirm handoff and record completion details." },
     ],
     benefits: [
-      { title: "Less production disruption", description: "Equipment is staged before the window opens, not after it starts." },
-      { title: "Better maintenance timing", description: "Moves sync to the turnaround plan so crews aren't waiting." },
-      { title: "Cleaner plant coordination", description: "Dock scheduling and access are handled before arrival." },
+      { title: "Less production disruption", description: "Equipment is staged before the maintenance window opens, not after it starts — protecting the uptime that every hour of downtime erodes." },
+      { title: "Better maintenance timing", description: "Moves sync to the turnaround plan and dock schedule so maintenance crews work their sequence instead of waiting on a late delivery." },
+      { title: "Cleaner plant coordination", description: "Security, safety orientation, and dock scheduling are handled before arrival, so trucks don't stack up or stall the receiving dock." },
     ],
   },
   {
@@ -276,9 +276,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Confirm delivery and handoff with project controls." },
     ],
     benefits: [
-      { title: "Protected project sequencing", description: "Deliveries align to the build plan so the critical path holds." },
-      { title: "Less trade interference", description: "Timed drops keep the site clear for the crews already working." },
-      { title: "Higher delivery visibility", description: "Stakeholders know what's arriving and when, every time." },
+      { title: "Protected project sequencing", description: "Deliveries align to the build plan so the critical path holds — no early arrivals clogging the laydown yard, no late ones stalling a trade." },
+      { title: "Less trade interference", description: "Timed, scheduled drops keep the site clear for the crews already working, instead of adding congestion to an already-packed pad." },
+      { title: "Higher delivery visibility", description: "Project controls, the GC, and superintendents know exactly what's arriving and when, so no one is planning around a guess." },
     ],
   },
   {
@@ -342,9 +342,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Record completion and documentation details." },
     ],
     benefits: [
-      { title: "More controlled movement", description: "Every step follows protocol from securement to handoff." },
-      { title: "Fewer handoff errors", description: "Approved contacts and documentation keep custody clean." },
-      { title: "Confidence under scrutiny", description: "Records hold up to the compliance and audit demands of the work." },
+      { title: "More controlled movement", description: "Every step follows protocol from pre-departure securement to the final handoff, so sensitive cargo is handled the same disciplined way each time." },
+      { title: "Fewer handoff errors", description: "Approved contacts, escorts, and documented custody keep the chain clean — no wrong receivers, no undocumented gaps to explain later." },
+      { title: "Confidence under scrutiny", description: "Complete closeout records hold up to the compliance, security, and audit demands these programs are measured against." },
     ],
   },
   {
@@ -408,9 +408,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Confirm completion and document the handoff." },
     ],
     benefits: [
-      { title: "Better mission support", description: "Assets reach the staging area inside the response window." },
-      { title: "Faster deployment visibility", description: "Stakeholders always know where the move stands." },
-      { title: "Cleaner coordination", description: "Structured comms keep multi-agency moves from fragmenting." },
+      { title: "Better mission support", description: "Assets reach the staging area inside the response window, so field teams have what they need when the mission can't wait." },
+      { title: "Faster deployment visibility", description: "Stakeholders always know where the move stands, which keeps decision-makers acting on current information instead of stale updates." },
+      { title: "Cleaner coordination", description: "Structured intake and disciplined comms keep multi-agency moves from fragmenting, even as priorities shift mid-mission." },
     ],
   },
 ];

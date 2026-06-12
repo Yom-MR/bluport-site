@@ -252,47 +252,6 @@ export default function CareersPage() {
         </Container>
       </section>
 
-      {/* Image feature: a team that operates like you trained */}
-      <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
-        <Container>
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <Reveal className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
-              <Image
-                src={siteImages.careersTeam}
-                alt="Two Bluport operators reviewing a dispatch plan beside a hotshot truck and trailer"
-                fill
-                className="object-cover object-[center_35%]"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(5,11,22,0.6)_100%)]" />
-            </Reveal>
-            <Reveal delay={120} className="space-y-6">
-              <p className="technical-label">A TEAM THAT OPERATES LIKE YOU TRAINED</p>
-              <h2 className="text-[clamp(1.9rem,3.8vw,3rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
-                Brief, execute, confirm. Then do it again.
-              </h2>
-              <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
-                Bluport runs on the same rhythm you already know: a clear plan before the move, tight
-                communication during it, and an honest closeout after. No guesswork, no noise, no
-                missing accountability.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "Every move planned before dispatch",
-                  "Confirmed handoffs with the right field contacts",
-                  "Documented closeout on every job",
-                ].map((line) => (
-                  <li key={line} className="flex items-start gap-3 text-sm text-[var(--steel-200)] md:text-base">
-                    <ShieldCheck size={18} aria-hidden className="mt-1 shrink-0 text-[var(--accent)]" />
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
       {/* Military skills that transfer */}
       <section className="relative isolate overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
         <div className="absolute inset-0 blueprint-grid opacity-[0.12]" aria-hidden />
@@ -464,34 +423,50 @@ export default function CareersPage() {
           aria-hidden
         />
         <Container className="relative">
-          <Reveal className="max-w-[760px] space-y-6">
-            <p className="technical-label text-[var(--accent-light)]">A TEAM THAT SERVED</p>
-            <h2 className="text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
-              Built by people who held the line. Now we hold the standard.
-            </h2>
-            <p className="max-w-[58ch] text-base leading-8 text-[#dce6ee] md:text-lg">
-              Bluport is staffed by a team that is over 82% military — veterans, active duty,
-              spouses, and family. We hire from the community we come from because that discipline is
-              exactly what this work demands.
-            </p>
-            <div className="flex flex-wrap gap-3 pt-2">
-              {[
-                { value: "82%", label: "Military-staffed team" },
-                { value: "Veteran-owned", label: "Leadership that served" },
-                { value: "Spouse & family", label: "Hiring built for the community" },
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl border border-white/12 bg-[rgba(255,255,255,0.03)] px-5 py-4"
-                >
-                  <p className="text-xl font-bold tracking-[-0.03em] text-white">{stat.value}</p>
-                  <p className="mt-1 text-[0.78rem] font-medium uppercase tracking-[0.1em] text-[var(--steel-300)]">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
+          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
+            <Reveal className="space-y-6">
+              <p className="technical-label text-[var(--accent-light)]">A TEAM THAT SERVED</p>
+              <h2 className="text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
+                Built by people who held the line. Now we hold the standard.
+              </h2>
+              <p className="max-w-[58ch] text-base leading-8 text-[#dce6ee] md:text-lg">
+                Bluport is staffed by a team that is over 82% military — veterans, active duty,
+                spouses, and family. We hire from the community we come from because that discipline is
+                exactly what this work demands.
+              </p>
+              <div className="flex flex-wrap gap-3 pt-2">
+                {[
+                  { value: "82%", label: "Military-staffed team" },
+                  { value: "Veteran-owned", label: "Leadership that served" },
+                  { value: "Spouse & family", label: "Hiring built for the community" },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-2xl border border-white/12 bg-[rgba(255,255,255,0.03)] px-5 py-4"
+                  >
+                    <p className="text-xl font-bold tracking-[-0.03em] text-white">{stat.value}</p>
+                    <p className="mt-1 text-[0.78rem] font-medium uppercase tracking-[0.1em] text-[var(--steel-300)]">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal
+              delay={120}
+              className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)] sm:aspect-[4/3] lg:aspect-[4/5]"
+            >
+              <Image
+                src={siteImages.careersTeam}
+                alt="A diverse Bluport crew coordinating a dispatch plan beside a hotshot truck and trailer"
+                fill
+                className="object-cover object-[center_35%]"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(5,11,22,0.65)_100%)]" />
+            </Reveal>
+          </div>
         </Container>
       </section>
 
