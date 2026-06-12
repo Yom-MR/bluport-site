@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  AlertTriangle,
   ArrowRight,
   CheckCircle2,
   Gauge,
@@ -298,14 +297,37 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           aria-hidden
         />
         <Container className="relative space-y-12">
-          <Reveal className="max-w-[700px] space-y-4">
-            <p className="eyebrow">THE RESULT</p>
-            <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-              Operational results customers can feel.
-            </h2>
-            <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              These outcomes tie back to schedule integrity, visibility, and reduced downtime.
-            </p>
+          <Reveal className="max-w-[700px] space-y-6">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+              {stages.map((stage, index) => {
+                const isActive = stage === "Result";
+                return (
+                  <div key={stage} className="flex items-center gap-3">
+                    <span
+                      className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] ${
+                        isActive
+                          ? "border-[rgba(74,163,116,0.45)] bg-[rgba(74,163,116,0.12)] text-[#7bd0a0]"
+                          : "border-white/12 text-[var(--steel-400)]"
+                      }`}
+                    >
+                      <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
+                      {stage}
+                    </span>
+                    {index < stages.length - 1 ? (
+                      <ArrowRight size={15} aria-hidden className="text-[var(--steel-500)]" />
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="space-y-4">
+              <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+                Operational results customers can feel.
+              </h2>
+              <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                These outcomes tie back to schedule integrity, visibility, and reduced downtime.
+              </p>
+            </div>
           </Reveal>
 
           <div className="grid gap-4 md:grid-cols-3">
