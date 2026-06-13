@@ -11,7 +11,7 @@ export const siteImages = {
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
   contactHero: "/images/page-heroes/contact-dispatch-operations.png",
-  contactReady: "/images/page-heroes/contact-prep-operator.png",
+  contactReady: "/images/page-heroes/contact-prep-documents.png",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections

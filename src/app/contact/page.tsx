@@ -129,7 +129,7 @@ export default function ContactPage() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_30px_80px_rgba(15,23,42,0.18)]">
                 <Image
                   src={siteImages.contactReady}
-                  alt="A Bluport veteran dispatcher on the phone coordinating a move with a route plan and two-way radio at the ops desk"
+                  alt="A Bluport operator completing load documents and a securement checklist on a clipboard beside a two-way radio before dispatch"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
