@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ClipboardList, MapPin, Phone, Radio, UserRoundCheck, Users } from "lucide-react";
+import { ClipboardList, MapPin, Phone, Radio } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
@@ -24,15 +24,6 @@ export const metadata: Metadata = {
     "mission-critical logistics intake",
   ],
 };
-
-const industryLiaisons = [
-  "Construction",
-  "Equipment Rental",
-  "Utilities",
-  "Industrial",
-  "Data Centers",
-  "Government",
-] as const;
 
 const prepDetails = [
   "Pickup and delivery locations",
@@ -99,69 +90,6 @@ export default function ContactPage() {
 
             <Reveal delay={60}>
               <ContactChannels />
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* Dedicated support structure */}
-      <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.08]" aria-hidden />
-        <div
-          className="pointer-events-none absolute -right-40 top-0 h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
-          aria-hidden
-        />
-        <Container className="relative">
-          <Reveal className="max-w-[720px] space-y-5">
-            <p className="technical-label text-[var(--accent-light)]">DEDICATED SUPPORT STRUCTURE</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-              Support built around your operation — not a ticket queue.
-            </h2>
-            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              Active customers work with people who know their operation. Two roles keep
-              communication aligned with how you actually run.
-            </p>
-          </Reveal>
-
-          <div className="mt-12 grid gap-4 lg:grid-cols-2">
-            <Reveal className="group flex flex-col rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8 transition-colors hover:border-[rgba(47,116,189,0.5)] md:p-10">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)] ring-1 ring-inset ring-white/10">
-                <UserRoundCheck size={22} aria-hidden />
-              </span>
-              <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] md:text-[1.7rem]">
-                Dedicated account representatives
-              </h3>
-              <p className="mt-4 text-sm leading-8 text-[var(--steel-300)] md:text-base">
-                Every active customer receives a dedicated point of contact who understands their
-                operation, priorities, and scheduling requirements — so coordination is fast and
-                nothing gets lost in translation.
-              </p>
-            </Reveal>
-
-            <Reveal
-              delay={90}
-              className="group flex flex-col rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8 transition-colors hover:border-[rgba(47,116,189,0.5)] md:p-10"
-            >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(61,130,196,0.16)] text-[var(--blue-300)] ring-1 ring-inset ring-white/10">
-                <Users size={22} aria-hidden />
-              </span>
-              <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] md:text-[1.7rem]">
-                Industry liaisons
-              </h3>
-              <p className="mt-4 text-sm leading-8 text-[var(--steel-300)] md:text-base">
-                Bluport assigns personnel familiar with your industry so communication is aligned with
-                your operational environment.
-              </p>
-              <ul className="mt-6 flex flex-wrap gap-2.5">
-                {industryLiaisons.map((sector) => (
-                  <li
-                    key={sector}
-                    className="rounded-full border border-white/12 bg-[rgba(255,255,255,0.04)] px-3.5 py-1.5 text-xs font-semibold tracking-[0.02em] text-[#cdd8e3]"
-                  >
-                    {sector}
-                  </li>
-                ))}
-              </ul>
             </Reveal>
           </div>
         </Container>

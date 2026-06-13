@@ -1,6 +1,6 @@
 export const siteImages = {
   heroMain: "/images/backgrounds/hero-equipment-logistics.jpg",
-  missionHero: "/images/page-heroes/mission-operations-hero.png",
+  missionHero: "/images/page-heroes/mission-veteran-led-hero.png",
   missionPortrait: "/images/loads/why-we-exist-v2.png",
   careersFlag: "/images/page-heroes/careers-flag-veteran.png",
   // Services hero: close-up securement/binder photo from Bluport loads
@@ -34,7 +34,7 @@ export const siteImages = {
   // Industry detail pages — dedicated, cinematic industry-specific heroes
   industryDetailConstruction: "/images/industries/hero-construction-equipment.png",
   industryDetailUtilities: "/images/industries/hero-utilities-infrastructure.png",
-  industryDetailIndustrial: "/images/industries/industrial-manufacturing-v3.png",
+  industryDetailIndustrial: "/images/industries/industrial-manufacturing-v4.png",
   industryDetailDataCenter: "/images/industries/hero-data-center.png",
   industryDetailAerospace: "/images/industries/hero-aerospace-defense.png",
   industryDetailGovernment: "/images/industries/hero-government-emergency.png",

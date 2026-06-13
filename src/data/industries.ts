@@ -283,22 +283,22 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
   },
   {
     slug: "aerospace-defense",
-    title: "Aerospace & Defense",
+    title: "Aerospace, Defense & Military Logistics",
     summary:
-      "Support mission-oriented ground movement that requires clear communication and controlled execution standards.",
+      "Support mission-oriented ground movement and military logistics that demand clear communication, secure handling, and controlled execution standards.",
     intro:
-      "Aerospace and defense moves leave no margin for improvisation. Cargo is sensitive, sites are controlled, and a sloppy handoff isn't an inconvenience — it's a compliance and security problem. As a veteran-owned company, Bluport operates with the briefing-and-closeout discipline this work requires, so every move is controlled, documented, and accountable.",
+      "Aerospace, defense, and military logistics leave no margin for improvisation. Cargo is sensitive, sites are controlled, and a sloppy handoff isn't an inconvenience — it's a compliance and security problem. As a veteran-owned company, Bluport speaks the language of military logistics and operates with the briefing-and-closeout discipline this work requires — supporting base deliveries, defense contractors, and program logistics so every move is controlled, documented, and accountable.",
     image: siteImages.industryDetailAerospace,
-    alt: "Tarped, chain-secured cargo staged outside a controlled-access aerospace facility",
+    alt: "Tarped, chain-secured military and defense cargo staged outside a controlled-access aerospace facility",
     statLabel: "What we protect",
     statValue: "Controlled handling",
     cargoTypes: [
+      "Military & base logistics support",
       "Tooling & ground support equipment",
       "Sensitive components & assemblies",
       "Test & calibration equipment",
       "Containerized & crated cargo",
-      "Program-specific equipment",
-      "Secure-site deliveries",
+      "Defense program & secure-site deliveries",
     ],
     painPoints: [
       {
@@ -307,9 +307,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
           "High-value, delicate, or controlled items require securement and handling that leaves nothing to chance.",
       },
       {
-        title: "Strict access requirements",
+        title: "Base & controlled-site access",
         description:
-          "Controlled facilities demand approved contacts, escorts, and credentials that carriers must respect exactly.",
+          "Installations and controlled facilities demand approved contacts, escorts, gate credentials, and protocol that carriers must respect exactly.",
       },
       {
         title: "Low tolerance for handoff errors",
@@ -318,6 +318,11 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       },
     ],
     solutions: [
+      {
+        title: "Military logistics fluency",
+        description:
+          "As a veteran-owned team, we understand base access, defense program protocol, and the chain-of-custody discipline military and DoD-adjacent moves demand.",
+      },
       {
         title: "Securement discipline before departure",
         description:

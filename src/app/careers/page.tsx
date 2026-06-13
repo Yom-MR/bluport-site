@@ -61,6 +61,12 @@ const hiringTracks = [
   },
 ] as const;
 
+const veteranStats = [
+  { value: "82%", label: "Of our team is military-connected" },
+  { value: "100%", label: "Veteran-owned & operated" },
+  { value: "Day 1", label: "Standard you already know" },
+] as const;
+
 const civilianTraits = [
   {
     icon: Gauge,
@@ -159,72 +165,92 @@ export default function CareersPage() {
         variant="dark"
       />
 
-      {/* Two hiring tracks — alternating split layouts on a lighter field */}
-      <section className="section-pad bg-[#eef2f8] text-slate-950">
+      {/* Two hiring tracks */}
+      <section className="section-pad bg-[var(--navy-950)] text-white">
         <Container>
           <Reveal className="max-w-[760px] space-y-5">
-            <p className="technical-label text-sky-700">TWO WAYS IN</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
+            <p className="technical-label">TWO WAYS IN</p>
+            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
               One standard. Two paths to the team.
             </h2>
-            <p className="max-w-[60ch] text-base leading-8 text-slate-600 md:text-lg">
+            <p className="max-w-[60ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
               The bar is the same for everyone: plan the move, communicate clearly, and close it out
               clean. How you got that bar — in uniform or in industry — is where the two tracks differ.
             </p>
           </Reveal>
 
-          <div className="mt-14 space-y-12 lg:space-y-20">
-            {hiringTracks.map((track, index) => {
-              const imageRight = index % 2 === 1;
-              return (
-                <Reveal
-                  key={track.title}
-                  delay={index * 90}
-                  className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14"
-                >
-                  <div
-                    className={`group relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-slate-200 shadow-[0_24px_60px_rgba(15,23,42,0.14)] sm:aspect-[16/10] ${
-                      imageRight ? "lg:order-2" : ""
-                    }`}
-                  >
-                    <Image
-                      src={track.image}
-                      alt={track.imageAlt}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(5,11,22,0.45)_100%)]" />
-                    <span className="absolute left-5 top-5 rounded-full border border-white/25 bg-[rgba(5,11,22,0.5)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#e5eef6] backdrop-blur-sm">
+          <div className="mt-12 grid gap-4 lg:grid-cols-2">
+            {hiringTracks.map((track, index) => (
+              <Reveal
+                key={track.title}
+                delay={index * 90}
+                className="group relative flex min-h-[420px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-[rgba(180,194,209,0.16)]"
+              >
+                <Image
+                  src={track.image}
+                  alt={track.imageAlt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.25)_0%,rgba(5,11,22,0.55)_50%,rgba(5,11,22,0.95)_100%)]" />
+                <div className="relative p-8 md:p-10">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.22)] text-[var(--accent-light)] backdrop-blur-sm">
+                      <track.icon size={22} aria-hidden />
+                    </span>
+                    <span className="rounded-full border border-white/25 bg-[rgba(5,11,22,0.45)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#e5eef6] backdrop-blur-sm">
                       {track.tag}
                     </span>
                   </div>
+                  <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
+                    {track.title}
+                  </h3>
+                  <p className="mt-3 max-w-[46ch] text-sm leading-8 text-[#cdd8e3] md:text-base">
+                    {track.description}
+                  </p>
+                  <a
+                    href={track.href}
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-light)] transition-colors hover:text-white"
+                  >
+                    {track.cta}
+                    <ArrowRight size={16} aria-hidden />
+                  </a>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-                  <div className={imageRight ? "lg:order-1" : ""}>
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-700 text-white shadow-[0_12px_28px_rgba(2,132,199,0.3)]">
-                      <track.icon size={22} aria-hidden />
-                    </span>
-                    <h3 className="mt-6 text-[clamp(1.7rem,3vw,2.4rem)] font-semibold tracking-[-0.04em] text-slate-950">
-                      {track.title}
-                    </h3>
-                    <p className="mt-4 max-w-[48ch] text-base leading-8 text-slate-600 md:text-lg">
-                      {track.description}
-                    </p>
-                    <a
-                      href={track.href}
-                      className="group/cta mt-7 inline-flex items-center gap-2 text-sm font-semibold text-sky-700 transition-colors hover:text-sky-900"
-                    >
-                      {track.cta}
-                      <ArrowRight
-                        size={16}
-                        aria-hidden
-                        className="transition-transform group-hover/cta:translate-x-1"
-                      />
-                    </a>
-                  </div>
-                </Reveal>
-              );
-            })}
+      {/* Veteran-owned signature band */}
+      <section className="relative isolate overflow-hidden bg-[var(--navy-900)] py-16 text-white md:py-20">
+        <div className="absolute inset-0 blueprint-grid opacity-[0.1]" aria-hidden />
+        <div
+          className="pointer-events-none absolute -left-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
+          aria-hidden
+        />
+        <Container className="relative">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16">
+            <Reveal className="space-y-4">
+              <p className="technical-label text-[var(--accent-light)]">WHO WE ARE</p>
+              <p className="text-[clamp(1.6rem,3vw,2.3rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-balance">
+                A veteran-owned team that staffs the standard from the inside.
+              </p>
+            </Reveal>
+
+            <Reveal delay={120} className="grid grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/10 sm:grid-cols-3">
+              {veteranStats.map((stat) => (
+                <div key={stat.label} className="bg-[var(--navy-900)] p-6 md:p-7">
+                  <p className="text-[clamp(2rem,4vw,2.9rem)] font-bold leading-none tracking-[-0.04em] text-white">
+                    {stat.value}
+                  </p>
+                  <p className="mt-3 text-[0.78rem] font-semibold uppercase leading-snug tracking-[0.1em] text-[var(--steel-300)]">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </Reveal>
           </div>
         </Container>
       </section>
