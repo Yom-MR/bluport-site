@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Layers3,
   Lightbulb,
@@ -115,6 +116,20 @@ export default function ServicesPage() {
       </PageHero>
 
       <section className="relative overflow-hidden border-b border-slate-200 bg-[#f4f7fb] py-20 text-slate-950 md:py-24">
+        {/* faint field-operations texture */}
+        <Image
+          src={siteImages.capabilityTexture}
+          alt=""
+          aria-hidden
+          fill
+          className="pointer-events-none object-cover opacity-[0.06] [mask-image:linear-gradient(180deg,transparent,black_30%,black_85%,transparent)]"
+          sizes="100vw"
+        />
+        {/* gradient transition continuing the dark hero into the light section */}
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[linear-gradient(180deg,var(--navy-950)_0%,rgba(8,17,31,0.4)_50%,transparent_100%)]"
+          aria-hidden
+        />
         <div
           className="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.08),transparent_70%)]"
           aria-hidden

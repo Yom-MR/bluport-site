@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowUpRight, MapPin, Phone } from "lucide-react";
 import Container from "@/components/ui/Container";
 import BrandLogo from "@/components/ui/BrandLogo";
-import Button from "@/components/ui/Button";
 import { SITE_TAGLINE } from "@/lib/constants";
 import { BLUPORT_BASE_DISPLAY, BLUPORT_PHONE_DISPLAY, BLUPORT_PHONE_E164, CONTACT_CHANNEL_LIST } from "@/lib/contact";
 
@@ -35,11 +34,6 @@ export default function Footer() {
                 <MapPin size={15} aria-hidden className="text-[var(--accent)]" />
                 {BLUPORT_BASE_DISPLAY}
               </span>
-            </div>
-            <div className="pt-2">
-              <Button href="/#request-capacity" withArrow>
-                Request Capacity
-              </Button>
             </div>
           </div>
 

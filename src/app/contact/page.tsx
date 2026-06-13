@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ClipboardList, MapPin, Phone, Radio } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
@@ -49,8 +48,13 @@ export default function ContactPage() {
       />
 
       {/* Command channels */}
-      <section className="section-pad bg-[var(--navy-900)] text-white">
-        <Container>
+      <section className="relative section-pad bg-[var(--navy-900)] text-white">
+        {/* gradient transition blending the dark hero into the operations section */}
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-[linear-gradient(180deg,var(--navy-950)_0%,transparent_100%)]"
+          aria-hidden
+        />
+        <Container className="relative">
           <Reveal className="max-w-[760px] space-y-5">
             <p className="technical-label">OPERATIONS CONTACT</p>
             <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
@@ -98,50 +102,40 @@ export default function ContactPage() {
       {/* Contact prep */}
       <section className="section-pad bg-[#eef2f8] text-slate-950">
         <Container>
-          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
-            <Reveal className="space-y-8">
-              <div className="space-y-5">
-                <p className="technical-label text-sky-700">CONTACT PREP</p>
-                <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
-                  Before you contact us, helpful details include:
-                </h2>
-                <p className="max-w-[52ch] text-base leading-8 text-slate-600 md:text-lg">
-                  Providing these details upfront helps operations scope the move accurately and
-                  respond faster.
+          <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
+            <Reveal className="space-y-6 lg:sticky lg:top-28">
+              <p className="technical-label text-sky-700">CONTACT PREP</p>
+              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
+                Have these ready and we move faster.
+              </h2>
+              <p className="max-w-[52ch] text-base leading-8 text-slate-600 md:text-lg">
+                Providing these details upfront helps operations scope the move accurately and
+                respond faster.
+              </p>
+              <div className="flex items-start gap-3 rounded-2xl border border-sky-200 bg-white px-5 py-4 shadow-[0_1px_3px_rgba(15,23,42,0.06)]">
+                <ClipboardList size={20} aria-hidden className="mt-0.5 shrink-0 text-sky-600" />
+                <p className="text-sm leading-7 text-slate-700">
+                  No detail yet? Call anyway — operations will help you scope it on the spot.
                 </p>
               </div>
-              <ul className="space-y-3.5 border-t border-slate-200 pt-6">
-                {prepDetails.map((item, index) => (
-                  <Reveal
-                    as="li"
-                    key={item}
-                    delay={index * 40}
-                    className="flex items-center gap-3 text-base text-slate-700"
-                  >
-                    <ClipboardList size={17} aria-hidden className="shrink-0 text-sky-600" />
-                    <span className="leading-7">{item}</span>
-                  </Reveal>
-                ))}
-              </ul>
             </Reveal>
 
-            <Reveal delay={120} className="lg:sticky lg:top-28">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_30px_80px_rgba(15,23,42,0.18)]">
-                <Image
-                  src={siteImages.contactReady}
-                  alt="A Bluport operator completing load documents and a securement checklist on a clipboard beside a two-way radio before dispatch"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(5,11,22,0.85)_100%)]" />
-                <div className="absolute inset-x-0 bottom-0 p-7 text-white md:p-9">
-                  <p className="technical-label text-[var(--accent-light)]">STAGED &amp; CONFIRMED</p>
-                  <p className="mt-2 max-w-[24ch] text-xl font-semibold tracking-[-0.02em] md:text-2xl">
-                    Give us the details and we plan the move before the truck rolls.
-                  </p>
-                </div>
-              </div>
+            <Reveal delay={120}>
+              <ul className="grid gap-3 sm:grid-cols-2">
+                {prepDetails.map((item, index) => (
+                  <li
+                    key={item}
+                    className="group flex items-start gap-3.5 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-[0_18px_45px_rgba(15,23,42,0.1)]"
+                  >
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky-100 font-mono text-sm font-bold text-sky-700 transition-colors group-hover:bg-sky-700 group-hover:text-white">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="pt-1 text-[0.95rem] font-medium leading-6 text-slate-800">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           </div>
         </Container>

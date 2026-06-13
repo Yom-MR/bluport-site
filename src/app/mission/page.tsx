@@ -206,15 +206,18 @@ export default function MissionPage() {
       {/* CTA */}
       <section className="bg-[var(--navy-950)] py-20 text-white md:py-28">
         <Container>
-          <Reveal className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(47,116,189,0.12),rgba(255,255,255,0.02)_55%)] p-8 md:p-14">
-            <div className="absolute inset-0 blueprint-grid opacity-30" aria-hidden />
+          <Reveal className="relative overflow-hidden rounded-[2rem] border border-sky-200 bg-[linear-gradient(135deg,#ffffff,#eef4fb_60%)] p-8 shadow-[0_30px_80px_rgba(5,11,22,0.45)] md:p-14">
+            <div
+              className="pointer-events-none absolute -right-24 -top-24 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.12),transparent_70%)]"
+              aria-hidden
+            />
             <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-[620px] space-y-4">
-                <p className="technical-label">REQUEST CAPACITY</p>
-                <h2 className="text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1] tracking-[-0.04em] text-balance">
+                <p className="technical-label text-sky-700">REQUEST CAPACITY</p>
+                <h2 className="text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1] tracking-[-0.04em] text-balance text-slate-950">
                   When the move matters, the process matters.
                 </h2>
-                <p className="text-sm leading-8 text-[var(--steel-300)] md:text-base">
+                <p className="text-sm leading-8 text-slate-600 md:text-base">
                   Bring Bluport in when the move needs to support the work around it — not just reach
                   the destination.
                 </p>

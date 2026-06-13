@@ -122,11 +122,10 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </Container>
       </section>
 
-      {/* Friction + headline stat */}
-      <section className="relative overflow-hidden bg-[var(--navy-900)] py-20 text-white md:py-28">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.16]" aria-hidden />
+      {/* Friction + headline stat — light section to separate from the dark overview */}
+      <section className="relative overflow-hidden bg-[#eef2f8] py-20 text-slate-950 md:py-28">
         <div
-          className="absolute -right-32 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(229,127,67,0.12),transparent_70%)]"
+          className="absolute -right-32 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(194,65,12,0.08),transparent_70%)]"
           aria-hidden
         />
         <Container className="relative">
@@ -138,15 +137,15 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                   <span
                     className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] ${
                       isActive
-                        ? "border-[rgba(229,127,67,0.4)] bg-[rgba(229,127,67,0.12)] text-[#e8a87c]"
-                        : "border-white/12 text-[var(--steel-400)]"
+                        ? "border-[rgba(194,65,12,0.35)] bg-[rgba(194,65,12,0.1)] text-[#b4531c]"
+                        : "border-slate-300 text-slate-400"
                     }`}
                   >
                     <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
                     {stage}
                   </span>
                   {index < stages.length - 1 ? (
-                    <ArrowRight size={15} aria-hidden className="text-[var(--steel-500)]" />
+                    <ArrowRight size={15} aria-hidden className="text-slate-400" />
                   ) : null}
                 </div>
               );
@@ -155,23 +154,23 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
           <div className="grid gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-16">
             <Reveal className="space-y-6 lg:sticky lg:top-28 lg:self-start">
-              <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
+              <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance text-slate-950">
                 What slows this sector down.
               </h2>
-              <p className="max-w-[42ch] text-base leading-8 text-[var(--steel-300)]">
+              <p className="max-w-[42ch] text-base leading-8 text-slate-600">
                 Every sector breaks down differently. These are the specific points where a {industry.title.toLowerCase()} move slips — tight access windows, equipment that needs the right trailer and securement, and handoffs that fail when no one owns the timeline. Each one compounds into idle crews and lost days.
               </p>
-              <div className="rounded-[1.75rem] border border-white/12 bg-[linear-gradient(150deg,rgba(229,127,67,0.12),rgba(255,255,255,0.02))] p-7">
+              <div className="rounded-[1.75rem] border border-[rgba(194,65,12,0.2)] bg-[linear-gradient(150deg,rgba(194,65,12,0.08),#ffffff_60%)] p-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)]">
                 <div className="flex items-center gap-2.5">
-                  <Gauge size={18} aria-hidden className="text-[#e8a87c]" />
-                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--steel-400)]">
+                  <Gauge size={18} aria-hidden className="text-[#c2410c]" />
+                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
                     {industry.statLabel}
                   </p>
                 </div>
-                <p className="mt-3 text-[clamp(2.2rem,4vw,3rem)] font-bold leading-none tracking-[-0.04em] text-white">
+                <p className="mt-3 text-[clamp(2.2rem,4vw,3rem)] font-bold leading-none tracking-[-0.04em] text-slate-950">
                   {industry.statValue}
                 </p>
-                <p className="mt-3 text-sm leading-7 text-[var(--steel-300)]">
+                <p className="mt-3 text-sm leading-7 text-slate-600">
                   This is the cost Bluport plans against — building each move around the friction
                   that defines this sector instead of treating it as a generic haul.
                 </p>
@@ -183,21 +182,21 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                 <Reveal
                   key={point.title}
                   delay={index * 90}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-6 pl-7 transition-colors hover:border-[rgba(229,127,67,0.4)] md:p-7 md:pl-8"
+                  className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 pl-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-[rgba(194,65,12,0.4)] hover:shadow-[0_18px_45px_rgba(15,23,42,0.1)] md:p-7 md:pl-8"
                 >
                   <span
-                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,#e8a87c,rgba(229,127,67,0.2))]"
+                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,#c2410c,rgba(194,65,12,0.25))]"
                     aria-hidden
                   />
                   <div className="flex items-start gap-5">
-                    <span className="font-mono text-2xl font-bold leading-none text-[rgba(232,168,124,0.4)] transition-colors group-hover:text-[#e8a87c]">
+                    <span className="font-mono text-2xl font-bold leading-none text-[rgba(194,65,12,0.35)] transition-colors group-hover:text-[#c2410c]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <p className="text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
+                      <p className="text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
                         {point.title}
                       </p>
-                      <p className="mt-2 text-sm leading-7 text-[var(--steel-300)]">
+                      <p className="mt-2 text-sm leading-7 text-slate-600">
                         {point.description}
                       </p>
                     </div>
@@ -209,8 +208,13 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </Container>
       </section>
 
-      {/* Solution + workflow — calm steel section for contrast against the dark friction/result stages */}
-      <section className="relative overflow-hidden bg-[#d4ddea] py-20 text-slate-950 md:py-28">
+      {/* Solution + workflow — dark section to separate the light friction and result stages */}
+      <section className="relative overflow-hidden bg-[var(--navy-900)] py-20 text-white md:py-28">
+        <div className="absolute inset-0 blueprint-grid opacity-[0.14]" aria-hidden />
+        <div
+          className="absolute -left-32 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
+          aria-hidden
+        />
         <Container className="relative space-y-12">
           <Reveal className="space-y-6">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
@@ -221,109 +225,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     <span
                       className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] ${
                         isActive
-                          ? "border-sky-300 bg-sky-100 text-sky-700"
-                          : "border-slate-300 text-slate-400"
-                      }`}
-                    >
-                      <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
-                      {stage}
-                    </span>
-                    {index < stages.length - 1 ? (
-                      <ArrowRight size={15} aria-hidden className="text-slate-400" />
-                    ) : null}
-                  </div>
-                );
-              })}
-            </div>
-            <div className="max-w-[700px] space-y-4">
-              <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
-                How Bluport supports the move.
-              </h2>
-              <p className="text-base leading-8 text-slate-600 md:text-lg">
-                Clear planning, dispatch, and closeout keep the work moving instead of creating a new
-                bottleneck.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-10">
-            <Reveal className="space-y-3">
-              {industry.solutions.map((item) => (
-                <div
-                  key={item.title}
-                  className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 pl-6 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-[0_18px_45px_rgba(15,23,42,0.1)]"
-                >
-                  <span
-                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,var(--accent),rgba(47,116,189,0.25))]"
-                    aria-hidden
-                  />
-                  <div className="flex items-start gap-4">
-                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-700 transition-colors group-hover:bg-sky-700 group-hover:text-white">
-                      <CheckCircle2 size={18} aria-hidden />
-                    </span>
-                    <div>
-                      <p className="text-[1.02rem] font-semibold leading-6 tracking-[-0.01em] text-slate-950">
-                        {item.title}
-                      </p>
-                      <p className="mt-1.5 text-sm leading-7 text-slate-600">{item.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </Reveal>
-
-            {/* Workflow timeline */}
-            <Reveal delay={120} className="flex flex-col rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)] lg:p-8">
-              <div className="flex items-center gap-2.5">
-                <p className="technical-label text-sky-700">OPERATING WORKFLOW</p>
-                <span className="h-px flex-1 bg-slate-200" aria-hidden />
-              </div>
-              <ol className="mt-5 flex flex-1 flex-col justify-between">
-                {industry.workflow.map((step, index) => {
-                  const isLast = index === industry.workflow.length - 1;
-                  return (
-                    <li key={step.stage} className={`relative flex gap-4 ${isLast ? "" : "pb-5"}`}>
-                      {!isLast ? (
-                        <span
-                          className="absolute left-[17px] top-9 bottom-0 w-px bg-sky-200"
-                          aria-hidden
-                        />
-                      ) : null}
-                      <span className="relative z-10 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-300 bg-sky-50 font-mono text-[0.8rem] font-semibold text-sky-700">
-                        {index + 1}
-                      </span>
-                      <div className="pt-1">
-                        <p className="text-[0.78rem] font-bold uppercase tracking-[0.12em] text-sky-700">
-                          {step.stage}
-                        </p>
-                        <p className="mt-1 text-sm leading-6 text-slate-600">{step.description}</p>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ol>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* Benefits */}
-      <section className="relative overflow-hidden bg-[var(--navy-900)] py-20 text-white md:py-28">
-        <div
-          className="absolute -right-32 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
-          aria-hidden
-        />
-        <Container className="relative space-y-12">
-          <Reveal className="max-w-[700px] space-y-6">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-              {stages.map((stage, index) => {
-                const isActive = stage === "Result";
-                return (
-                  <div key={stage} className="flex items-center gap-3">
-                    <span
-                      className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] ${
-                        isActive
-                          ? "border-[rgba(74,163,116,0.45)] bg-[rgba(74,163,116,0.12)] text-[#7bd0a0]"
+                          ? "border-[rgba(91,159,216,0.4)] bg-[rgba(91,159,216,0.14)] text-[var(--accent-light)]"
                           : "border-white/12 text-[var(--steel-400)]"
                       }`}
                     >
@@ -337,11 +239,113 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                 );
               })}
             </div>
-            <div className="space-y-4">
-              <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-                Operational results customers can feel.
+            <div className="max-w-[700px] space-y-4">
+              <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-white">
+                How Bluport supports the move.
               </h2>
               <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                Clear planning, dispatch, and closeout keep the work moving instead of creating a new
+                bottleneck.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-10">
+            <Reveal className="space-y-3">
+              {industry.solutions.map((item) => (
+                <div
+                  key={item.title}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-5 pl-6 transition-all hover:-translate-y-0.5 hover:border-[rgba(91,159,216,0.5)] hover:bg-[rgba(255,255,255,0.05)]"
+                >
+                  <span
+                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,var(--accent),rgba(47,116,189,0.25))]"
+                    aria-hidden
+                  />
+                  <div className="flex items-start gap-4">
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
+                      <CheckCircle2 size={18} aria-hidden />
+                    </span>
+                    <div>
+                      <p className="text-[1.02rem] font-semibold leading-6 tracking-[-0.01em] text-white">
+                        {item.title}
+                      </p>
+                      <p className="mt-1.5 text-sm leading-7 text-[var(--steel-300)]">{item.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Reveal>
+
+            {/* Workflow timeline */}
+            <Reveal delay={120} className="flex flex-col rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 lg:p-8">
+              <div className="flex items-center gap-2.5">
+                <p className="technical-label text-[var(--accent-light)]">OPERATING WORKFLOW</p>
+                <span className="h-px flex-1 bg-white/10" aria-hidden />
+              </div>
+              <ol className="mt-5 flex flex-1 flex-col justify-between">
+                {industry.workflow.map((step, index) => {
+                  const isLast = index === industry.workflow.length - 1;
+                  return (
+                    <li key={step.stage} className={`relative flex gap-4 ${isLast ? "" : "pb-5"}`}>
+                      {!isLast ? (
+                        <span
+                          className="absolute left-[17px] top-9 bottom-0 w-px bg-[rgba(91,159,216,0.3)]"
+                          aria-hidden
+                        />
+                      ) : null}
+                      <span className="relative z-10 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[rgba(91,159,216,0.4)] bg-[rgba(91,159,216,0.1)] font-mono text-[0.8rem] font-semibold text-[var(--accent-light)]">
+                        {index + 1}
+                      </span>
+                      <div className="pt-1">
+                        <p className="text-[0.78rem] font-bold uppercase tracking-[0.12em] text-[var(--accent-light)]">
+                          {step.stage}
+                        </p>
+                        <p className="mt-1 text-sm leading-6 text-[var(--steel-300)]">{step.description}</p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ol>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* Benefits — light section to separate the dark response stage from the related sectors */}
+      <section className="relative overflow-hidden bg-white py-20 text-slate-950 md:py-28">
+        <div
+          className="absolute -right-32 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(47,163,116,0.08),transparent_70%)]"
+          aria-hidden
+        />
+        <Container className="relative space-y-12">
+          <Reveal className="max-w-[700px] space-y-6">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+              {stages.map((stage, index) => {
+                const isActive = stage === "Result";
+                return (
+                  <div key={stage} className="flex items-center gap-3">
+                    <span
+                      className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] ${
+                        isActive
+                          ? "border-[rgba(47,125,82,0.4)] bg-[rgba(47,125,82,0.1)] text-[#2f7d52]"
+                          : "border-slate-300 text-slate-400"
+                      }`}
+                    >
+                      <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
+                      {stage}
+                    </span>
+                    {index < stages.length - 1 ? (
+                      <ArrowRight size={15} aria-hidden className="text-slate-400" />
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="space-y-4">
+              <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
+                Operational results customers can feel.
+              </h2>
+              <p className="text-base leading-8 text-slate-600 md:text-lg">
                 These outcomes tie back to schedule integrity, visibility, and reduced downtime.
               </p>
             </div>
@@ -352,24 +356,24 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               <Reveal
                 key={benefit.title}
                 delay={index * 80}
-                className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(165deg,rgba(74,163,116,0.08),rgba(255,255,255,0.02)_60%)] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(74,163,116,0.45)] hover:shadow-[0_28px_60px_rgba(5,11,22,0.4)]"
+                className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-[linear-gradient(165deg,rgba(47,125,82,0.06),#ffffff_55%)] p-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(47,125,82,0.4)] hover:shadow-[0_28px_60px_rgba(15,23,42,0.14)]"
               >
                 <span
-                  className="pointer-events-none absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-[linear-gradient(90deg,#7bd0a0,rgba(123,208,160,0))] opacity-0 transition-all duration-300 group-hover:scale-x-100 group-hover:opacity-100"
+                  className="pointer-events-none absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-[linear-gradient(90deg,#2f7d52,rgba(47,125,82,0))] opacity-0 transition-all duration-300 group-hover:scale-x-100 group-hover:opacity-100"
                   aria-hidden
                 />
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(74,163,116,0.14)] text-[#7bd0a0] transition-colors group-hover:bg-[rgba(74,163,116,0.22)]">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,125,82,0.12)] text-[#2f7d52] transition-colors group-hover:bg-[rgba(47,125,82,0.2)]">
                     <CheckCircle2 size={22} aria-hidden />
                   </span>
-                  <span className="font-mono text-2xl font-bold leading-none text-white/10 transition-colors group-hover:text-[rgba(123,208,160,0.45)]">
+                  <span className="font-mono text-2xl font-bold leading-none text-slate-200 transition-colors group-hover:text-[rgba(47,125,82,0.45)]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <p className="mt-6 text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
+                <p className="mt-6 text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
                   {benefit.title}
                 </p>
-                <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
+                <p className="mt-2.5 text-sm leading-7 text-slate-600">
                   {benefit.description}
                 </p>
               </Reveal>

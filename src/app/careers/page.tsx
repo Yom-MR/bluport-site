@@ -287,10 +287,16 @@ export default function CareersPage() {
 
       {/* Military skills that transfer */}
       <section className="relative isolate overflow-hidden bg-[#eef2f8] py-20 text-slate-950 md:py-28">
-        <div
-          className="absolute -right-24 top-0 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.08),transparent_70%)]"
+        {/* faint stars-and-stripes texture tying the section to military service */}
+        <Image
+          src={siteImages.flagTexture}
+          alt=""
           aria-hidden
+          fill
+          className="pointer-events-none object-cover opacity-[0.08] [mask-image:linear-gradient(180deg,transparent,black_25%,black_80%,transparent)]"
+          sizes="100vw"
         />
+        <div className="absolute inset-0 bg-[rgba(238,242,248,0.5)]" aria-hidden />
         <Container className="relative">
           <Reveal className="max-w-[760px] space-y-5">
             <p className="technical-label text-sky-700">MILITARY SKILLS THAT TRANSFER</p>
