@@ -4,10 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  Building2,
   CheckCircle2,
+  Cpu,
+  Factory,
   Gauge,
   PackageCheck,
   PhoneCall,
+  Radio,
+  ShieldCheck,
+  Truck,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
@@ -17,6 +23,15 @@ import { getIndustryBySlug, INDUSTRY_ENTRIES } from "@/data/industries";
 
 type IndustryPageProps = {
   params: Promise<{ slug: string }>;
+};
+
+const industryIcons: Record<string, typeof Truck> = {
+  "construction-equipment-rental": Truck,
+  "utilities-infrastructure": Radio,
+  "data-center-construction": Cpu,
+  "industrial-manufacturing": Factory,
+  "aerospace-defense": ShieldCheck,
+  "government-emergency-response": Building2,
 };
 
 export function generateStaticParams() {
@@ -194,8 +209,8 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </Container>
       </section>
 
-      {/* Solution + workflow */}
-      <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
+      {/* Solution + workflow — light section for contrast against the dark friction/result stages */}
+      <section className="relative overflow-hidden bg-[#eef2f8] py-20 text-slate-950 md:py-28">
         <Container className="relative space-y-12">
           <Reveal className="space-y-6">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
@@ -206,25 +221,25 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     <span
                       className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] ${
                         isActive
-                          ? "border-[rgba(47,116,189,0.45)] bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]"
-                          : "border-white/12 text-[var(--steel-400)]"
+                          ? "border-sky-300 bg-sky-100 text-sky-700"
+                          : "border-slate-300 text-slate-400"
                       }`}
                     >
                       <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
                       {stage}
                     </span>
                     {index < stages.length - 1 ? (
-                      <ArrowRight size={15} aria-hidden className="text-[var(--steel-500)]" />
+                      <ArrowRight size={15} aria-hidden className="text-slate-400" />
                     ) : null}
                   </div>
                 );
               })}
             </div>
             <div className="max-w-[700px] space-y-4">
-              <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+              <h2 className="text-[clamp(2rem,4.4vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
                 How Bluport supports the move.
               </h2>
-              <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
+              <p className="text-base leading-8 text-slate-600 md:text-lg">
                 Clear planning, dispatch, and closeout keep the work moving instead of creating a new
                 bottleneck.
               </p>
@@ -236,32 +251,32 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               {industry.solutions.map((item) => (
                 <div
                   key={item.title}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-5 pl-6 transition-colors hover:border-[rgba(47,116,189,0.5)]"
+                  className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 pl-6 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-[0_18px_45px_rgba(15,23,42,0.1)]"
                 >
                   <span
-                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,var(--accent-light),rgba(47,116,189,0.2))]"
+                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,var(--accent),rgba(47,116,189,0.25))]"
                     aria-hidden
                   />
                   <div className="flex items-start gap-4">
-                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[rgba(47,116,189,0.28)]">
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-700 transition-colors group-hover:bg-sky-700 group-hover:text-white">
                       <CheckCircle2 size={18} aria-hidden />
                     </span>
                     <div>
-                      <p className="text-[1.02rem] font-semibold leading-6 tracking-[-0.01em] text-white">
+                      <p className="text-[1.02rem] font-semibold leading-6 tracking-[-0.01em] text-slate-950">
                         {item.title}
                       </p>
-                      <p className="mt-1.5 text-sm leading-7 text-[#c8d2dd]">{item.description}</p>
+                      <p className="mt-1.5 text-sm leading-7 text-slate-600">{item.description}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </Reveal>
 
-            {/* Workflow timeline — no container, reads as an inline sequence */}
-            <Reveal delay={120} className="flex flex-col lg:pl-4">
+            {/* Workflow timeline */}
+            <Reveal delay={120} className="flex flex-col rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)] lg:p-8">
               <div className="flex items-center gap-2.5">
-                <p className="technical-label">OPERATING WORKFLOW</p>
-                <span className="h-px flex-1 bg-[rgba(91,159,216,0.2)]" aria-hidden />
+                <p className="technical-label text-sky-700">OPERATING WORKFLOW</p>
+                <span className="h-px flex-1 bg-slate-200" aria-hidden />
               </div>
               <ol className="mt-5 flex flex-1 flex-col justify-between">
                 {industry.workflow.map((step, index) => {
@@ -270,18 +285,18 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     <li key={step.stage} className={`relative flex gap-4 ${isLast ? "" : "pb-5"}`}>
                       {!isLast ? (
                         <span
-                          className="absolute left-[17px] top-9 bottom-0 w-px bg-[rgba(91,159,216,0.25)]"
+                          className="absolute left-[17px] top-9 bottom-0 w-px bg-sky-200"
                           aria-hidden
                         />
                       ) : null}
-                      <span className="relative z-10 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[rgba(91,159,216,0.4)] bg-[var(--navy-900)] font-mono text-[0.8rem] font-semibold text-[var(--accent-light)]">
+                      <span className="relative z-10 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sky-300 bg-sky-50 font-mono text-[0.8rem] font-semibold text-sky-700">
                         {index + 1}
                       </span>
                       <div className="pt-1">
-                        <p className="text-[0.78rem] font-bold uppercase tracking-[0.12em] text-[var(--accent-light)]">
+                        <p className="text-[0.78rem] font-bold uppercase tracking-[0.12em] text-sky-700">
                           {step.stage}
                         </p>
-                        <p className="mt-1 text-sm leading-6 text-[#dce6ee]">{step.description}</p>
+                        <p className="mt-1 text-sm leading-6 text-slate-600">{step.description}</p>
                       </div>
                     </li>
                   );
@@ -373,43 +388,58 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
             </Link>
           </Reveal>
 
-          <div className="grid gap-5 md:grid-cols-3">
-            {otherIndustries.map((entry) => (
-              <Reveal key={entry.slug} className="h-full">
-                <Link
-                  href={`/industries/${entry.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_22px_55px_rgba(15,23,42,0.12)]"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image
-                      src={entry.image}
-                      alt={entry.alt}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
-                      sizes="(min-width: 768px) 30vw, 100vw"
-                    />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_35%,rgba(5,11,22,0.78)_100%)]" />
-                    <span className="absolute left-4 top-4 inline-flex items-center rounded-full bg-[rgba(5,11,22,0.55)] px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm">
-                      {entry.statValue}
-                    </span>
-                    <h3 className="absolute inset-x-0 bottom-0 p-5 text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
-                      {entry.title}
-                    </h3>
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <p className="text-sm leading-7 text-slate-600">{entry.summary}</p>
-                    <span className="mt-5 inline-flex items-center gap-2 border-t border-slate-200 pt-4 text-sm font-semibold text-sky-700 transition-colors group-hover:text-sky-900">
-                      View sector
-                      <ArrowRight
-                        size={16}
-                        aria-hidden
-                        className="transition-transform group-hover:translate-x-1"
+          <div className="grid gap-6 md:grid-cols-3">
+            {otherIndustries.map((entry, index) => {
+              const Icon = industryIcons[entry.slug] ?? Truck;
+              return (
+                <Reveal key={entry.slug} delay={index * 70} className="h-full">
+                  <Link
+                    href={`/industries/${entry.slug}`}
+                    className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-slate-200 bg-[var(--navy-950)] shadow-[0_10px_30px_rgba(15,23,42,0.1)] ring-1 ring-transparent transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(47,116,189,0.6)] hover:shadow-[0_32px_70px_rgba(15,23,42,0.28)] hover:ring-[rgba(47,116,189,0.45)]"
+                  >
+                    {/* Top: industry image */}
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image
+                        src={entry.image}
+                        alt={entry.alt}
+                        fill
+                        className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.07]"
+                        sizes="(min-width: 768px) 30vw, 100vw"
                       />
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.05)_0%,rgba(5,11,22,0.25)_60%,rgba(5,11,22,0.7)_100%)]" />
+                      <span className="absolute left-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-[rgba(5,11,22,0.55)] text-[var(--accent-light)] backdrop-blur-md transition-colors group-hover:bg-[rgba(47,116,189,0.45)]">
+                        <Icon size={20} aria-hidden />
+                      </span>
+                      <span className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-[rgba(5,11,22,0.55)] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[#e7eef6] backdrop-blur-md">
+                        {entry.statValue}
+                      </span>
+                    </div>
+
+                    {/* Bottom: dark navy overlay panel */}
+                    <div className="relative flex flex-1 flex-col border-t border-white/10 p-6">
+                      <span
+                        className="absolute inset-x-0 top-0 h-px scale-x-0 bg-[var(--accent-light)] opacity-0 transition-all duration-300 group-hover:scale-x-100 group-hover:opacity-80"
+                        aria-hidden
+                      />
+                      <h3 className="text-xl font-semibold tracking-[-0.03em] text-white transition-colors group-hover:text-[var(--accent-light)] md:text-2xl">
+                        {entry.title}
+                      </h3>
+                      <p className="mt-3 flex-1 text-sm leading-7 text-[var(--steel-300)]">
+                        {entry.summary}
+                      </p>
+                      <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-light)]">
+                        View sector
+                        <ArrowRight
+                          size={16}
+                          aria-hidden
+                          className="transition-transform group-hover:translate-x-1"
+                        />
+                      </span>
+                    </div>
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
         </Container>
       </section>

@@ -6,14 +6,12 @@ import {
   Compass,
   Factory,
   HardHat,
-  MessageSquareText,
   PhoneIncoming,
   Radio,
   Route,
   Send,
   ShieldCheck,
   Target,
-  Timer,
   Truck,
   Zap,
 } from "lucide-react";
@@ -34,29 +32,6 @@ export const metadata: Metadata = {
     "field operations logistics",
   ],
 };
-
-const operatingStandard = [
-  {
-    title: "Plan the move",
-    icon: Route,
-    body: "Access, asset fit, and timing confirmed before a truck is ever dispatched.",
-  },
-  {
-    title: "Protect the schedule",
-    icon: Timer,
-    body: "The delivery window drives the plan — not the other way around.",
-  },
-  {
-    title: "Communicate clearly",
-    icon: MessageSquareText,
-    body: "Concise, jobsite-aware updates so no one has to chase the asset.",
-  },
-  {
-    title: "Close the loop",
-    icon: ClipboardCheck,
-    body: "POD signed, handoff confirmed, and follow-up complete before the job closes.",
-  },
-] as const;
 
 const operatingModel = [
   {
@@ -157,8 +132,8 @@ export default function MissionPage() {
         title="We prevent downtime through disciplined execution."
         description="Bluport is built around a single operating principle: plan precisely, communicate clearly, and execute on time — so crews, fleets, utilities, and projects never sit waiting on a truck."
         image={siteImages.missionHero}
-        imageAlt="Bluport operations team reviewing a route plan and dispatch board in a logistics command center"
-        imagePosition="object-[center_40%]"
+        imageAlt="Bluport veteran logistics operator reviewing a move plan beside a Ford Super Duty and loaded gooseneck trailer at golden hour"
+        imagePosition="object-[center_35%]"
         variant="dark"
       />
 
@@ -169,14 +144,14 @@ export default function MissionPage() {
           <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
             <Reveal className="space-y-7">
               <div className="space-y-6">
-                <p className="eyebrow">WHY WE EXIST</p>
+                <p className="eyebrow">WHO WE ARE</p>
                 <h2 className="text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
-                  The cost of a late asset is rarely just transportation.
+                  Built by veterans to run the moves others treat as routine.
                 </h2>
                 <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
-                  It is lost time, missed work, and a crew waiting on the next step. Bluport was built
-                  by veterans to bring planning, accountability, and after-action rigor to the moves
-                  that other carriers treat as routine — because in the field, they never are.
+                  Bluport brings military planning, accountability, and after-action rigor to
+                  field logistics. The way we operate is not a marketing line — it is the standard
+                  our team carried in uniform, applied to every load we move.
                 </p>
               </div>
               <ul className="divide-y divide-white/10 border-t border-white/10">
@@ -329,55 +304,6 @@ export default function MissionPage() {
               </p>
             </div>
           </Reveal>
-        </Container>
-      </section>
-
-      {/* Operating standard */}
-      <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.08]" aria-hidden />
-        <Container className="relative">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
-            <Reveal className="space-y-4 lg:sticky lg:top-28 lg:self-start">
-              <p className="eyebrow">OPERATING STANDARD</p>
-              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-                Four moves we make on every job.
-              </h2>
-              <p className="max-w-[44ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-                The same disciplined sequence runs behind every load, from the first call to the
-                signed proof of delivery.
-              </p>
-            </Reveal>
-
-            <ol className="relative">
-              <span
-                className="absolute bottom-6 left-[1.4rem] top-6 w-px bg-[linear-gradient(180deg,rgba(91,159,216,0.5),rgba(91,159,216,0.08))]"
-                aria-hidden
-              />
-              {operatingStandard.map((item, index) => (
-                <Reveal
-                  as="li"
-                  key={item.title}
-                  delay={index * 80}
-                  className="relative flex gap-6 pb-10 last:pb-0"
-                >
-                  <span className="relative z-10 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[rgba(91,159,216,0.4)] bg-[var(--navy-950)] text-[var(--accent-light)]">
-                    <item.icon size={20} aria-hidden />
-                  </span>
-                  <div className="pt-1">
-                    <span className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--steel-400)]">
-                      Step {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <p className="mt-1.5 text-lg font-semibold tracking-[-0.03em] text-white">
-                      {item.title}
-                    </p>
-                    <p className="mt-2 max-w-[42ch] text-sm leading-7 text-[var(--steel-300)]">
-                      {item.body}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </ol>
-          </div>
         </Container>
       </section>
 
