@@ -62,26 +62,30 @@ export default function ContactPage() {
             </p>
           </Reveal>
 
-          <div className="mt-10 space-y-3">
-            <Reveal className="flex flex-wrap items-center gap-x-8 gap-y-4 rounded-2xl border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] px-6 py-5">
-              <span className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
-                Operational contact
+          <div className="mt-12 grid gap-4 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+            <Reveal className="flex flex-col gap-6 rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
+                <Radio size={22} aria-hidden />
               </span>
-              <a
-                href={`tel:${BLUPORT_PHONE_E164}`}
-                className="flex items-center gap-2.5 text-xl font-semibold tracking-[-0.03em] transition-colors hover:text-[var(--accent-light)]"
-              >
-                <Phone size={18} aria-hidden className="text-[var(--accent)]" />
-                {BLUPORT_PHONE_DISPLAY}
-              </a>
-              <span className="hidden h-5 w-px bg-white/15 sm:block" aria-hidden />
-              <span className="flex items-center gap-2 text-sm text-[var(--steel-300)]">
-                <MapPin size={16} aria-hidden className="text-[var(--accent)]" />
-                {BLUPORT_BASE_DISPLAY}
-              </span>
-              <span className="ml-auto text-xs text-[var(--steel-400)]">
-                Mission intake &amp; move planning
-              </span>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
+                  Operational contact
+                </p>
+                <a
+                  href={`tel:${BLUPORT_PHONE_E164}`}
+                  className="mt-3 flex items-center gap-2.5 text-2xl font-semibold tracking-[-0.03em] transition-colors hover:text-[var(--accent-light)]"
+                >
+                  <Phone size={20} aria-hidden className="text-[var(--accent)]" />
+                  {BLUPORT_PHONE_DISPLAY}
+                </a>
+                <p className="mt-4 flex items-center gap-2.5 text-base text-[var(--steel-200)]">
+                  <MapPin size={18} aria-hidden className="text-[var(--accent)]" />
+                  {BLUPORT_BASE_DISPLAY}
+                </p>
+                <p className="mt-3 text-sm leading-7 text-[var(--steel-400)]">
+                  Mission intake and move planning
+                </p>
+              </div>
             </Reveal>
 
             <Reveal delay={60}>
@@ -125,7 +129,7 @@ export default function ContactPage() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_30px_80px_rgba(15,23,42,0.18)]">
                 <Image
                   src={siteImages.contactReady}
-                  alt="A loaded Bluport F-350 and gooseneck trailer staged and ready to depart"
+                  alt="A Bluport operations planner reviewing a route and load plan before dispatch"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
