@@ -80,25 +80,32 @@ export default function IndustriesPage() {
                 <Reveal key={item.slug} delay={index * 70}>
                   <Link
                     href={`/industries/${item.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] transition-all hover:-translate-y-1 hover:border-[rgba(47,116,189,0.5)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.4)]"
+                    className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-slate-200 bg-[var(--navy-950)] shadow-[0_10px_30px_rgba(15,23,42,0.1)] ring-1 ring-transparent transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(47,116,189,0.6)] hover:shadow-[0_32px_70px_rgba(15,23,42,0.28)] hover:ring-[rgba(47,116,189,0.45)]"
                   >
+                    {/* Top: industry image */}
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
                         src={item.image}
                         alt={item.alt}
                         fill
-                        className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.06]"
+                        className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.07]"
                         sizes="(min-width: 1280px) 28vw, (min-width: 768px) 44vw, 100vw"
                       />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.1)_0%,rgba(5,11,22,0.35)_55%,rgba(5,11,22,0.88)_100%)]" />
-                      <span className="absolute left-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-[rgba(5,11,22,0.55)] text-[var(--accent-light)] backdrop-blur-md">
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.05)_0%,rgba(5,11,22,0.25)_60%,rgba(5,11,22,0.7)_100%)]" />
+                      <span className="absolute left-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-[rgba(5,11,22,0.55)] text-[var(--accent-light)] backdrop-blur-md transition-colors group-hover:bg-[rgba(47,116,189,0.45)]">
                         <Icon size={20} aria-hidden />
                       </span>
                       <span className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-[rgba(5,11,22,0.55)] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[#e7eef6] backdrop-blur-md">
                         {item.statValue}
                       </span>
                     </div>
-                    <div className="flex flex-1 flex-col p-6">
+
+                    {/* Bottom: dark navy overlay panel */}
+                    <div className="relative flex flex-1 flex-col border-t border-white/10 p-6">
+                      <span
+                        className="absolute inset-x-0 top-0 h-px scale-x-0 bg-[var(--accent-light)] opacity-0 transition-all duration-300 group-hover:scale-x-100 group-hover:opacity-80"
+                        aria-hidden
+                      />
                       <h3 className="text-xl font-semibold tracking-[-0.03em] text-white transition-colors group-hover:text-[var(--accent-light)] md:text-2xl">
                         {item.title}
                       </h3>

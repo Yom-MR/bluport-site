@@ -1,6 +1,6 @@
 export const siteImages = {
   heroMain: "/images/backgrounds/hero-equipment-logistics.jpg",
-  missionHero: "/images/page-heroes/mission-hero-v3.png",
+  missionHero: "/images/page-heroes/mission-operations-hero.png",
   missionPortrait: "/images/loads/why-we-exist-v2.png",
   careersFlag: "/images/page-heroes/careers-flag-veteran.png",
   // Services hero: close-up securement/binder photo from Bluport loads
