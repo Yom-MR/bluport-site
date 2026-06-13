@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
+  CheckCircle2,
   ClipboardCheck,
   Compass,
   Factory,
+  HardHat,
   MessageSquareText,
+  PhoneIncoming,
+  Radio,
   Route,
+  Send,
   ShieldCheck,
   Target,
   Timer,
@@ -49,6 +54,34 @@ const operatingStandard = [
   {
     title: "Close the loop",
     icon: ClipboardCheck,
+    body: "POD signed, handoff confirmed, and follow-up complete before the job closes.",
+  },
+] as const;
+
+const operatingModel = [
+  {
+    icon: PhoneIncoming,
+    title: "Intake",
+    body: "Asset, route, window, and site constraints captured in one structured request.",
+  },
+  {
+    icon: Route,
+    title: "Planning",
+    body: "Trailer fit, securement, access, and timing engineered before anything moves.",
+  },
+  {
+    icon: Send,
+    title: "Dispatch",
+    body: "The right truck and operator assigned to the plan and released to the lane.",
+  },
+  {
+    icon: HardHat,
+    title: "Field execution",
+    body: "Jobsite-aware delivery with proactive updates from pickup to gate.",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Closeout",
     body: "POD signed, handoff confirmed, and follow-up complete before the job closes.",
   },
 ] as const;
@@ -120,12 +153,12 @@ export default function MissionPage() {
   return (
     <>
       <PageHero
-        eyebrow="MISSION"
-        title="Veteran-led logistics for critical field work."
-        description="Bluport exists to protect the mission behind the move: crews waiting on equipment, rental fleets serving customers, utilities restoring service, and projects working against time."
+        eyebrow="MISSION · HOW WE OPERATE"
+        title="We prevent downtime through disciplined execution."
+        description="Bluport is built around a single operating principle: plan precisely, communicate clearly, and execute on time — so crews, fleets, utilities, and projects never sit waiting on a truck."
         image={siteImages.missionHero}
-        imageAlt="Bluport logistics team reviewing a load plan beside a loaded gooseneck trailer at golden hour on the Gulf Coast"
-        imagePosition="object-[center_45%]"
+        imageAlt="Bluport operations team reviewing a route plan and dispatch board in a logistics command center"
+        imagePosition="object-[center_40%]"
         variant="dark"
       />
 
@@ -232,6 +265,67 @@ export default function MissionPage() {
             <div className="flex items-center gap-4 rounded-2xl border-l-2 border-[#e57f43] bg-[rgba(229,127,67,0.08)] px-6 py-5">
               <p className="text-sm leading-7 text-[#f1d4bf] md:text-base">
                 Every move we run is built to keep your people working — not waiting on a truck.
+              </p>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* Operating model — communication & execution flow */}
+      <section className="relative overflow-hidden bg-white py-20 text-slate-950 md:py-28">
+        <Container className="relative">
+          <Reveal className="mx-auto max-w-[680px] space-y-4 text-center">
+            <p className="eyebrow justify-center text-sky-700">THE OPERATING MODEL</p>
+            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
+              One flow, run the same way every time.
+            </h2>
+            <p className="mx-auto max-w-[58ch] text-base leading-8 text-slate-600 md:text-lg">
+              Every Bluport move follows the same disciplined sequence — a closed loop from the first
+              call to a signed proof of delivery, with communication running across each stage.
+            </p>
+          </Reveal>
+
+          <div className="relative mt-16">
+            {/* connecting rail (desktop) */}
+            <span
+              className="pointer-events-none absolute left-0 right-0 top-7 hidden h-px bg-[linear-gradient(90deg,transparent,rgba(47,116,189,0.35)_12%,rgba(47,116,189,0.35)_88%,transparent)] md:block"
+              aria-hidden
+            />
+            <ol className="grid gap-y-10 md:grid-cols-5 md:gap-x-6">
+              {operatingModel.map((stage, index) => {
+                const Icon = stage.icon;
+                return (
+                  <Reveal
+                    as="li"
+                    key={stage.title}
+                    delay={index * 80}
+                    className="relative flex flex-col items-center text-center md:px-2"
+                  >
+                    <span className="relative z-10 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-200 bg-white text-sky-700 shadow-[0_10px_30px_rgba(15,23,42,0.1)]">
+                      <Icon size={22} aria-hidden />
+                    </span>
+                    <span className="mt-4 font-mono text-xs uppercase tracking-[0.18em] text-sky-700">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <p className="mt-1.5 text-lg font-semibold tracking-[-0.02em] text-slate-950">
+                      {stage.title}
+                    </p>
+                    <p className="mt-2 max-w-[26ch] text-sm leading-7 text-slate-600">{stage.body}</p>
+                  </Reveal>
+                );
+              })}
+            </ol>
+          </div>
+
+          <Reveal delay={120} className="mt-14">
+            <div className="flex flex-col items-start gap-4 rounded-2xl border border-sky-200 bg-sky-50 px-6 py-5 sm:flex-row sm:items-center md:px-8">
+              <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-700 text-white">
+                <Radio size={20} aria-hidden />
+              </span>
+              <p className="text-sm leading-7 text-slate-700 md:text-base">
+                <span className="font-semibold text-slate-950">Communication is the connective tissue.</span>{" "}
+                Proactive, jobsite-aware updates run across every stage — so the customer never has to
+                chase status on the asset.
               </p>
             </div>
           </Reveal>
