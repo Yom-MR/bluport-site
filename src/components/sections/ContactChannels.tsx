@@ -121,7 +121,7 @@ export default function ContactChannels() {
 
   return (
     <>
-      <div className="grid gap-x-8 gap-y-px overflow-hidden rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] sm:grid-cols-2">
+      <div className="grid gap-px overflow-hidden rounded-2xl border border-[rgba(180,194,209,0.16)] bg-[rgba(180,194,209,0.12)] sm:grid-cols-2 lg:grid-cols-3">
         {CHANNELS.map(({ key, title }) => {
           const channel = CONTACT_CHANNELS[key];
           return (
@@ -129,18 +129,21 @@ export default function ContactChannels() {
               key={key}
               type="button"
               onClick={() => openModal(key, title)}
-              className="group flex flex-col gap-2 border-b border-[rgba(180,194,209,0.12)] p-6 text-left transition-colors hover:bg-[rgba(47,116,189,0.08)] sm:[&:nth-last-child(-n+1)]:border-b-0 sm:[&:nth-last-child(2)]:border-b-0"
+              className="group flex flex-col gap-1 bg-[var(--navy-900)] px-5 py-4 text-left transition-colors hover:bg-[rgba(47,116,189,0.12)]"
             >
-              <span className="flex items-center gap-2.5 text-base font-semibold tracking-[-0.02em] text-white">
-                <Mail size={17} aria-hidden className="text-[var(--accent)]" />
-                <span className="transition-colors group-hover:text-[var(--accent-light)]">
+              <span className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-[var(--steel-400)]">
+                {title}
+              </span>
+              <span className="flex items-center gap-2 text-sm font-semibold tracking-[-0.01em] text-white">
+                <Mail size={15} aria-hidden className="shrink-0 text-[var(--accent)]" />
+                <span className="truncate transition-colors group-hover:text-[var(--accent-light)]">
                   {channel.email}
                 </span>
-              </span>
-              <span className="text-sm leading-7 text-[var(--steel-300)]">{channel.purpose}</span>
-              <span className="mt-1 inline-flex items-center gap-1.5 text-[0.78rem] font-semibold text-[var(--accent-light)] opacity-0 transition-opacity group-hover:opacity-100">
-                Message this department
-                <ArrowRight size={14} aria-hidden className="transition-transform group-hover:translate-x-0.5" />
+                <ArrowRight
+                  size={14}
+                  aria-hidden
+                  className="ml-auto shrink-0 text-[var(--accent-light)] opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100"
+                />
               </span>
             </button>
           );

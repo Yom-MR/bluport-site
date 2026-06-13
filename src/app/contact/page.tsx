@@ -62,32 +62,26 @@ export default function ContactPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 space-y-4">
-            <Reveal className="flex flex-col gap-6 rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8 md:flex-row md:items-center md:justify-between md:gap-10 md:p-10">
-              <div className="flex items-start gap-5">
-                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
-                  <Radio size={22} aria-hidden />
-                </span>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
-                    Operational contact
-                  </p>
-                  <a
-                    href={`tel:${BLUPORT_PHONE_E164}`}
-                    className="mt-2 flex items-center gap-2.5 text-2xl font-semibold tracking-[-0.03em] transition-colors hover:text-[var(--accent-light)]"
-                  >
-                    <Phone size={20} aria-hidden className="text-[var(--accent)]" />
-                    {BLUPORT_PHONE_DISPLAY}
-                  </a>
-                  <p className="mt-2 text-sm leading-7 text-[var(--steel-400)]">
-                    Mission intake and move planning
-                  </p>
-                </div>
-              </div>
-              <p className="flex items-center gap-2.5 text-base text-[var(--steel-200)] md:shrink-0">
-                <MapPin size={18} aria-hidden className="text-[var(--accent)]" />
+          <div className="mt-10 space-y-3">
+            <Reveal className="flex flex-wrap items-center gap-x-8 gap-y-4 rounded-2xl border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] px-6 py-5">
+              <span className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
+                Operational contact
+              </span>
+              <a
+                href={`tel:${BLUPORT_PHONE_E164}`}
+                className="flex items-center gap-2.5 text-xl font-semibold tracking-[-0.03em] transition-colors hover:text-[var(--accent-light)]"
+              >
+                <Phone size={18} aria-hidden className="text-[var(--accent)]" />
+                {BLUPORT_PHONE_DISPLAY}
+              </a>
+              <span className="hidden h-5 w-px bg-white/15 sm:block" aria-hidden />
+              <span className="flex items-center gap-2 text-sm text-[var(--steel-300)]">
+                <MapPin size={16} aria-hidden className="text-[var(--accent)]" />
                 {BLUPORT_BASE_DISPLAY}
-              </p>
+              </span>
+              <span className="ml-auto text-xs text-[var(--steel-400)]">
+                Mission intake &amp; move planning
+              </span>
             </Reveal>
 
             <Reveal delay={60}>
