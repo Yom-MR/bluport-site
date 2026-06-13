@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-import PageHero from "@/components/sections/PageHero";
 import Reveal from "@/components/ui/Reveal";
 import { siteImages } from "@/data/siteImages";
 import { CONTACT_CHANNELS } from "@/lib/contact";
@@ -155,27 +154,23 @@ const hrEmail = CONTACT_CHANNELS.hr.email;
 export default function CareersPage() {
   return (
     <>
-      <PageHero
-        eyebrow="CAREERS · VETERAN-OWNED"
-        title="Built by veterans. Open to operators who hold the standard."
-        description="Bluport is a veteran-owned logistics company. We hire heavily from the military community — veterans, transitioning service members, reservists, guardsmen, and military spouses — and we also bring on high-caliber civilian professionals who operate with the same discipline."
-        image={siteImages.careersHero}
-        imageAlt="Split composition showing a U.S. soldier in uniform on one side and the same person in civilian Bluport logistics gear on the other"
-        imagePosition="object-[center_30%]"
-        variant="dark"
-      />
-
-      {/* Two hiring tracks */}
-      <section className="section-pad bg-[var(--navy-950)] text-white">
-        <Container>
-          <Reveal className="max-w-[760px] space-y-5">
-            <p className="technical-label">TWO WAYS IN</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+      {/* Hero — Two ways in */}
+      <section className="relative isolate overflow-hidden border-b border-[rgba(200,210,221,0.08)] bg-[linear-gradient(180deg,#08111f_0%,#050b16_100%)] pb-20 pt-32 text-white md:pb-28 md:pt-40">
+        <div className="absolute inset-0 blueprint-grid opacity-50" aria-hidden />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,116,189,0.18),transparent_38%)]"
+          aria-hidden
+        />
+        <Container className="relative">
+          <Reveal className="max-w-[820px] space-y-6">
+            <p className="technical-label">CAREERS · TWO WAYS IN</p>
+            <h1 className="text-[clamp(2.7rem,5.8vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.05em] text-balance text-white">
               One standard. Two paths to the team.
-            </h2>
-            <p className="max-w-[60ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              The bar is the same for everyone: plan the move, communicate clearly, and close it out
-              clean. How you got that bar — in uniform or in industry — is where the two tracks differ.
+            </h1>
+            <p className="max-w-[62ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+              Bluport is a veteran-owned logistics company. The bar is the same for everyone: plan the
+              move, communicate clearly, and close it out clean. How you got that bar — in uniform or
+              in industry — is where the two tracks differ.
             </p>
           </Reveal>
 
@@ -221,6 +216,11 @@ export default function CareersPage() {
             ))}
           </div>
         </Container>
+        {/* gradient transition blending the dark hero into the light Who We Are band */}
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent_0%,#eef2f8_100%)]"
+          aria-hidden
+        />
       </section>
 
       {/* Veteran-owned signature band */}
@@ -293,10 +293,10 @@ export default function CareersPage() {
           alt=""
           aria-hidden
           fill
-          className="pointer-events-none object-cover opacity-[0.08] [mask-image:linear-gradient(180deg,transparent,black_25%,black_80%,transparent)]"
+          className="pointer-events-none object-cover opacity-[0.16] [mask-image:linear-gradient(180deg,transparent,black_22%,black_82%,transparent)]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[rgba(238,242,248,0.5)]" aria-hidden />
+        <div className="absolute inset-0 bg-[rgba(238,242,248,0.35)]" aria-hidden />
         <Container className="relative">
           <Reveal className="max-w-[760px] space-y-5">
             <p className="technical-label text-sky-700">MILITARY SKILLS THAT TRANSFER</p>

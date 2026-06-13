@@ -122,7 +122,7 @@ export default function ServicesPage() {
           alt=""
           aria-hidden
           fill
-          className="pointer-events-none object-cover opacity-[0.06] [mask-image:linear-gradient(180deg,transparent,black_30%,black_85%,transparent)]"
+          className="pointer-events-none object-cover opacity-[0.12] [mask-image:linear-gradient(180deg,transparent,black_25%,black_85%,transparent)]"
           sizes="100vw"
         />
         {/* gradient transition continuing the dark hero into the light section */}

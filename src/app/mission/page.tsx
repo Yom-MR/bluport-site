@@ -90,6 +90,11 @@ export default function MissionPage() {
 
       {/* Operating model — communication & execution flow */}
       <section className="relative overflow-hidden bg-white py-20 text-slate-950 md:py-28">
+        {/* gradient transition blending the dark hero into the light section */}
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[linear-gradient(180deg,var(--navy-950)_0%,transparent_100%)]"
+          aria-hidden
+        />
         <Container className="relative">
           <Reveal className="mx-auto max-w-[680px] space-y-4 text-center">
             <p className="eyebrow justify-center text-sky-700">THE OPERATING MODEL</p>

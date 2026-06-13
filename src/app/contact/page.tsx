@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
-import { ClipboardList, MapPin, Phone, Radio } from "lucide-react";
+import { ClipboardList, Phone } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
-import ContactChannels from "@/components/sections/ContactChannels";
+import LoadPlanDiagram from "@/components/sections/LoadPlanDiagram";
+import ContactMessageBox from "@/components/sections/ContactMessageBox";
 import Reveal from "@/components/ui/Reveal";
 import { siteImages } from "@/data/siteImages";
-import {
-  BLUPORT_BASE_DISPLAY,
-  BLUPORT_PHONE_DISPLAY,
-  BLUPORT_PHONE_E164,
-} from "@/lib/contact";
+import { BLUPORT_PHONE_DISPLAY, BLUPORT_PHONE_E164 } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -23,16 +20,6 @@ export const metadata: Metadata = {
     "mission-critical logistics intake",
   ],
 };
-
-const prepDetails = [
-  "Pickup and delivery locations",
-  "Requested pickup/delivery dates",
-  "Asset type",
-  "Dimensions/weight",
-  "Site access constraints",
-  "Urgency level",
-  "Preferred contact method",
-] as const;
 
 export default function ContactPage() {
   return (
@@ -47,95 +34,67 @@ export default function ContactPage() {
         variant="dark"
       />
 
-      {/* Command channels */}
-      <section className="relative section-pad bg-[var(--navy-900)] text-white">
-        {/* gradient transition blending the dark hero into the operations section */}
+      {/* Contact prep — load plan */}
+      <section className="relative section-pad bg-[#eef2f8] text-slate-950">
+        {/* gradient transition blending the dark hero into the prep section */}
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-[linear-gradient(180deg,var(--navy-950)_0%,transparent_100%)]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[linear-gradient(180deg,var(--navy-950)_0%,transparent_100%)]"
           aria-hidden
         />
         <Container className="relative">
-          <Reveal className="max-w-[760px] space-y-5">
-            <p className="technical-label">OPERATIONS CONTACT</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-              Command channel details.
-            </h2>
-            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              Use these points of contact for urgent intake, scheduling discussions, and operating
-              coordination.
-            </p>
-          </Reveal>
-
-          <div className="mt-12 grid gap-4 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-            <Reveal className="flex flex-col gap-6 rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
-                <Radio size={22} aria-hidden />
-              </span>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
-                  Operational contact
-                </p>
-                <a
-                  href={`tel:${BLUPORT_PHONE_E164}`}
-                  className="mt-3 flex items-center gap-2.5 text-2xl font-semibold tracking-[-0.03em] transition-colors hover:text-[var(--accent-light)]"
-                >
-                  <Phone size={20} aria-hidden className="text-[var(--accent)]" />
-                  {BLUPORT_PHONE_DISPLAY}
-                </a>
-                <p className="mt-4 flex items-center gap-2.5 text-base text-[var(--steel-200)]">
-                  <MapPin size={18} aria-hidden className="text-[var(--accent)]" />
-                  {BLUPORT_BASE_DISPLAY}
-                </p>
-                <p className="mt-3 text-sm leading-7 text-[var(--steel-400)]">
-                  Mission intake and move planning
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={60}>
-              <ContactChannels />
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* Contact prep */}
-      <section className="section-pad bg-[#eef2f8] text-slate-950">
-        <Container>
-          <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
-            <Reveal className="space-y-6 lg:sticky lg:top-28">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+            <Reveal className="space-y-6">
               <p className="technical-label text-sky-700">CONTACT PREP</p>
               <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
-                Have these ready and we move faster.
+                Every detail comes together to form the load plan.
               </h2>
               <p className="max-w-[52ch] text-base leading-8 text-slate-600 md:text-lg">
-                Providing these details upfront helps operations scope the move accurately and
-                respond faster.
+                The more of these you can share upfront, the faster operations scopes the move and
+                builds an accurate load plan before the truck rolls.
               </p>
               <div className="flex items-start gap-3 rounded-2xl border border-sky-200 bg-white px-5 py-4 shadow-[0_1px_3px_rgba(15,23,42,0.06)]">
                 <ClipboardList size={20} aria-hidden className="mt-0.5 shrink-0 text-sky-600" />
                 <p className="text-sm leading-7 text-slate-700">
-                  No detail yet? Call anyway — operations will help you scope it on the spot.
+                  Don&apos;t have every detail yet? Send a message below — operations will help you
+                  scope it.
                 </p>
               </div>
             </Reveal>
 
             <Reveal delay={120}>
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {prepDetails.map((item, index) => (
-                  <li
-                    key={item}
-                    className="group flex items-start gap-3.5 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-[0_18px_45px_rgba(15,23,42,0.1)]"
-                  >
-                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky-100 font-mono text-sm font-bold text-sky-700 transition-colors group-hover:bg-sky-700 group-hover:text-white">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="pt-1 text-[0.95rem] font-medium leading-6 text-slate-800">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <LoadPlanDiagram />
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* Send a message */}
+      <section className="section-pad bg-white text-slate-950">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-16">
+            <Reveal className="space-y-5 lg:sticky lg:top-28">
+              <p className="technical-label text-sky-700">SEND A MESSAGE</p>
+              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
+                Message the right department directly.
+              </h2>
+              <p className="max-w-[52ch] text-base leading-8 text-slate-600 md:text-lg">
+                Choose a department and your message routes straight to the matching Bluport inbox —
+                no digging for the right email address.
+              </p>
+              <p className="flex items-center gap-2 text-sm text-slate-600">
+                <Phone size={16} aria-hidden className="text-sky-600" />
+                Prefer to call?{" "}
+                <a
+                  href={`tel:${BLUPORT_PHONE_E164}`}
+                  className="font-semibold text-slate-900 transition-colors hover:text-sky-700"
+                >
+                  {BLUPORT_PHONE_DISPLAY}
+                </a>
+              </p>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <ContactMessageBox />
             </Reveal>
           </div>
         </Container>

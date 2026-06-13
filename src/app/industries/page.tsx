@@ -61,6 +61,20 @@ export default function IndustriesPage() {
 
       {/* Industry cards */}
       <section className="relative overflow-hidden bg-[#eef2f8] py-20 text-slate-950 md:py-28">
+        {/* faint industrial blueprint texture correlating to the sectors served */}
+        <Image
+          src={siteImages.industriesFitTexture}
+          alt=""
+          aria-hidden
+          fill
+          className="pointer-events-none object-cover opacity-[0.07] [mask-image:linear-gradient(180deg,transparent,black_18%,black_88%,transparent)]"
+          sizes="100vw"
+        />
+        {/* gradient transition blending the dark hero into the light section */}
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[linear-gradient(180deg,var(--navy-950)_0%,transparent_100%)]"
+          aria-hidden
+        />
         <Container className="relative space-y-12">
           <Reveal className="max-w-[720px] space-y-4">
             <p className="eyebrow text-sky-700">INDUSTRY FIT</p>
