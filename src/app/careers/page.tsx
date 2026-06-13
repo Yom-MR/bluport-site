@@ -224,28 +224,23 @@ export default function CareersPage() {
       </section>
 
       {/* Veteran-owned signature band */}
-      <section className="relative isolate overflow-hidden bg-[var(--navy-900)] py-16 text-white md:py-20">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.1]" aria-hidden />
-        <div
-          className="pointer-events-none absolute -left-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
-          aria-hidden
-        />
+      <section className="relative isolate overflow-hidden bg-[#eef2f8] py-16 text-slate-950 md:py-20">
         <Container className="relative">
           <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16">
             <Reveal className="space-y-4">
-              <p className="technical-label text-[var(--accent-light)]">WHO WE ARE</p>
-              <p className="text-[clamp(1.6rem,3vw,2.3rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-balance">
+              <p className="technical-label text-sky-700">WHO WE ARE</p>
+              <p className="text-[clamp(1.6rem,3vw,2.3rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-balance text-slate-950">
                 A veteran-owned team that staffs the standard from the inside.
               </p>
             </Reveal>
 
-            <Reveal delay={120} className="grid grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/10 sm:grid-cols-3">
+            <Reveal delay={120} className="grid grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-200 sm:grid-cols-3">
               {veteranStats.map((stat) => (
-                <div key={stat.label} className="bg-[var(--navy-900)] p-6 md:p-7">
-                  <p className="text-[clamp(2rem,4vw,2.9rem)] font-bold leading-none tracking-[-0.04em] text-white">
+                <div key={stat.label} className="bg-white p-6 md:p-7">
+                  <p className="text-[clamp(2rem,4vw,2.9rem)] font-bold leading-none tracking-[-0.04em] text-slate-950">
                     {stat.value}
                   </p>
-                  <p className="mt-3 text-[0.78rem] font-semibold uppercase leading-snug tracking-[0.1em] text-[var(--steel-300)]">
+                  <p className="mt-3 text-[0.78rem] font-semibold uppercase leading-snug tracking-[0.1em] text-slate-500">
                     {stat.label}
                   </p>
                 </div>

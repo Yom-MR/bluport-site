@@ -209,8 +209,8 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </Container>
       </section>
 
-      {/* Solution + workflow — light section for contrast against the dark friction/result stages */}
-      <section className="relative overflow-hidden bg-[#eef2f8] py-20 text-slate-950 md:py-28">
+      {/* Solution + workflow — calm steel section for contrast against the dark friction/result stages */}
+      <section className="relative overflow-hidden bg-[#d4ddea] py-20 text-slate-950 md:py-28">
         <Container className="relative space-y-12">
           <Reveal className="space-y-6">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
@@ -352,15 +352,24 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               <Reveal
                 key={benefit.title}
                 delay={index * 80}
-                className="rounded-[1.5rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7"
+                className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(165deg,rgba(74,163,116,0.08),rgba(255,255,255,0.02)_60%)] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(74,163,116,0.45)] hover:shadow-[0_28px_60px_rgba(5,11,22,0.4)]"
               >
-                <p className="font-mono text-sm text-[var(--accent-light)]">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <p className="mt-4 text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
+                <span
+                  className="pointer-events-none absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-[linear-gradient(90deg,#7bd0a0,rgba(123,208,160,0))] opacity-0 transition-all duration-300 group-hover:scale-x-100 group-hover:opacity-100"
+                  aria-hidden
+                />
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(74,163,116,0.14)] text-[#7bd0a0] transition-colors group-hover:bg-[rgba(74,163,116,0.22)]">
+                    <CheckCircle2 size={22} aria-hidden />
+                  </span>
+                  <span className="font-mono text-2xl font-bold leading-none text-white/10 transition-colors group-hover:text-[rgba(123,208,160,0.45)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <p className="mt-6 text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
                   {benefit.title}
                 </p>
-                <p className="mt-2 text-sm leading-7 text-[var(--steel-300)]">
+                <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
                   {benefit.description}
                 </p>
               </Reveal>

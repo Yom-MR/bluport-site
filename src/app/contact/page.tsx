@@ -62,30 +62,32 @@ export default function ContactPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-4 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-            <Reveal className="flex flex-col gap-6 rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8 md:p-10">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
-                <Radio size={22} aria-hidden />
-              </span>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
-                  Operational contact
-                </p>
-                <a
-                  href={`tel:${BLUPORT_PHONE_E164}`}
-                  className="mt-3 flex items-center gap-2.5 text-2xl font-semibold tracking-[-0.03em] transition-colors hover:text-[var(--accent-light)]"
-                >
-                  <Phone size={20} aria-hidden className="text-[var(--accent)]" />
-                  {BLUPORT_PHONE_DISPLAY}
-                </a>
-                <p className="mt-4 flex items-center gap-2.5 text-base text-[var(--steel-200)]">
-                  <MapPin size={18} aria-hidden className="text-[var(--accent)]" />
-                  {BLUPORT_BASE_DISPLAY}
-                </p>
-                <p className="mt-3 text-sm leading-7 text-[var(--steel-400)]">
-                  Mission intake and move planning
-                </p>
+          <div className="mt-12 space-y-4">
+            <Reveal className="flex flex-col gap-6 rounded-[1.75rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8 md:flex-row md:items-center md:justify-between md:gap-10 md:p-10">
+              <div className="flex items-start gap-5">
+                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
+                  <Radio size={22} aria-hidden />
+                </span>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
+                    Operational contact
+                  </p>
+                  <a
+                    href={`tel:${BLUPORT_PHONE_E164}`}
+                    className="mt-2 flex items-center gap-2.5 text-2xl font-semibold tracking-[-0.03em] transition-colors hover:text-[var(--accent-light)]"
+                  >
+                    <Phone size={20} aria-hidden className="text-[var(--accent)]" />
+                    {BLUPORT_PHONE_DISPLAY}
+                  </a>
+                  <p className="mt-2 text-sm leading-7 text-[var(--steel-400)]">
+                    Mission intake and move planning
+                  </p>
+                </div>
               </div>
+              <p className="flex items-center gap-2.5 text-base text-[var(--steel-200)] md:shrink-0">
+                <MapPin size={18} aria-hidden className="text-[var(--accent)]" />
+                {BLUPORT_BASE_DISPLAY}
+              </p>
             </Reveal>
 
             <Reveal delay={60}>
@@ -125,20 +127,22 @@ export default function ContactPage() {
               </ul>
             </Reveal>
 
-            <Reveal delay={120} className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_30px_80px_rgba(15,23,42,0.18)] lg:sticky lg:top-28">
-              <Image
-                src={siteImages.contactReady}
-                alt="A loaded Bluport F-350 and gooseneck trailer staged and ready to depart"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(5,11,22,0.85)_100%)]" />
-              <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
-                <p className="technical-label text-[var(--accent-light)]">STAGED &amp; CONFIRMED</p>
-                <p className="mt-2 max-w-[24ch] text-xl font-semibold tracking-[-0.02em] md:text-2xl">
-                  Give us the details and we plan the move before the truck rolls.
-                </p>
+            <Reveal delay={120} className="lg:sticky lg:top-28">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_30px_80px_rgba(15,23,42,0.18)]">
+                <Image
+                  src={siteImages.contactReady}
+                  alt="A loaded Bluport F-350 and gooseneck trailer staged and ready to depart"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(5,11,22,0.85)_100%)]" />
+                <div className="absolute inset-x-0 bottom-0 p-7 text-white md:p-9">
+                  <p className="technical-label text-[var(--accent-light)]">STAGED &amp; CONFIRMED</p>
+                  <p className="mt-2 max-w-[24ch] text-xl font-semibold tracking-[-0.02em] md:text-2xl">
+                    Give us the details and we plan the move before the truck rolls.
+                  </p>
+                </div>
               </div>
             </Reveal>
           </div>
