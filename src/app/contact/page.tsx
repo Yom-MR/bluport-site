@@ -37,30 +37,32 @@ export default function ContactPage() {
       {/* Contact prep — load plan */}
       <section className="relative section-pad bg-[#eef2f8] text-slate-950">
         <Container className="relative">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
-            <Reveal className="space-y-6">
-              <p className="technical-label text-sky-700">CONTACT PREP</p>
-              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
-                Come prepared and the quote moves faster.
-              </h2>
-              <p className="max-w-[52ch] text-base leading-8 text-slate-600 md:text-lg">
-                These are the details operations needs to scope a move. Share what you can upfront and
-                we can size the trailer, plan securement, and confirm timing without a round of
-                back-and-forth.
-              </p>
-              <div className="flex items-start gap-3 rounded-2xl border border-sky-200 bg-white px-5 py-4 shadow-[0_1px_3px_rgba(15,23,42,0.06)]">
-                <ClipboardList size={20} aria-hidden className="mt-0.5 shrink-0 text-sky-600" />
-                <p className="text-sm leading-7 text-slate-700">
-                  Don&apos;t have every detail yet? Send a message below — operations will help you
-                  scope it.
-                </p>
-              </div>
-            </Reveal>
+          <Reveal className="mx-auto flex max-w-2xl flex-col items-center text-center">
+            <p className="technical-label text-sky-700">CONTACT PREP</p>
+            <h2 className="mt-4 text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
+              Come prepared and the quote moves faster.
+            </h2>
+            <p className="mt-5 max-w-[56ch] text-base leading-8 text-slate-600 md:text-lg">
+              These are the details operations needs to scope a move. Share what you can upfront and
+              we can size the trailer, plan securement, and confirm timing without a round of
+              back-and-forth.
+            </p>
+          </Reveal>
 
-            <Reveal delay={120}>
-              <LoadPlanDiagram />
-            </Reveal>
-          </div>
+          <Reveal delay={120} className="mt-14">
+            <LoadPlanDiagram />
+          </Reveal>
+
+          <Reveal
+            delay={180}
+            className="mx-auto mt-12 flex max-w-xl items-start gap-3 rounded-2xl border border-sky-200 bg-white px-5 py-4 text-left shadow-[0_1px_3px_rgba(15,23,42,0.06)]"
+          >
+            <ClipboardList size={20} aria-hidden className="mt-0.5 shrink-0 text-sky-600" />
+            <p className="text-sm leading-7 text-slate-700">
+              Don&apos;t have every detail yet? Send a message below — operations will help you
+              scope it.
+            </p>
+          </Reveal>
         </Container>
       </section>
 

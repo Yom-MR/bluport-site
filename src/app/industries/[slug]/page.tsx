@@ -21,6 +21,7 @@ import {
   Shuffle,
   Siren,
   Timer,
+  TrendingUp,
   Truck,
   Users,
   Warehouse,
@@ -149,6 +150,19 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
       {/* Friction + headline stat — light section to separate from the dark overview */}
       <section className="relative overflow-hidden bg-[#eef2f8] py-20 text-slate-950 md:py-28">
+        {/* faint industry scene reinforcing the friction described in this sector */}
+        <Image
+          src={industry.image}
+          alt=""
+          fill
+          sizes="100vw"
+          aria-hidden
+          className="pointer-events-none select-none object-cover opacity-[0.06] [mask-image:linear-gradient(180deg,transparent,black_25%,black_72%,transparent)]"
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[#eef2f8]/55"
+          aria-hidden
+        />
         <div
           className="absolute -right-32 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(194,65,12,0.08),transparent_70%)]"
           aria-hidden
@@ -282,7 +296,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           </Reveal>
 
           {/* Solution cards — each answers the matching friction point */}
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-3">
             {industry.solutions.map((item, index) => {
               const answers = industry.painPoints[index]?.title;
               const Icon = stageIcons[index] ?? Gauge;
@@ -290,32 +304,39 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                 <Reveal
                   key={item.title}
                   delay={index * 80}
-                  className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(165deg,rgba(91,159,216,0.1),rgba(255,255,255,0.02)_60%)] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(91,159,216,0.5)] hover:shadow-[0_28px_60px_rgba(5,11,22,0.45)]"
+                  className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,rgba(91,159,216,0.08),rgba(255,255,255,0.015))] transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(91,159,216,0.5)] hover:shadow-[0_28px_60px_rgba(5,11,22,0.45)]"
                 >
-                  <span
-                    className="pointer-events-none absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-[linear-gradient(90deg,var(--accent-light),rgba(91,159,216,0))] opacity-0 transition-all duration-300 group-hover:scale-x-100 group-hover:opacity-100"
-                    aria-hidden
-                  />
-                  <div className="flex items-center justify-between">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)] ring-1 ring-[rgba(91,159,216,0.25)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
-                      <Icon size={22} aria-hidden />
-                    </span>
-                    <span className="font-mono text-2xl font-bold leading-none text-white/10 transition-colors group-hover:text-[rgba(91,159,216,0.45)]">
+                  {/* header band: icon medallion + oversized step number */}
+                  <div className="relative flex items-center justify-between overflow-hidden border-b border-white/10 bg-white/[0.04] px-6 py-5">
+                    <span
+                      className="pointer-events-none absolute -right-4 -top-6 font-mono text-[5.5rem] font-bold leading-none text-white/[0.05] transition-colors duration-300 group-hover:text-[rgba(91,159,216,0.18)]"
+                      aria-hidden
+                    >
                       {String(index + 1).padStart(2, "0")}
                     </span>
+                    <span className="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(91,159,216,0.18)] text-[var(--accent-light)] ring-1 ring-[rgba(91,159,216,0.3)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
+                      <Icon size={22} aria-hidden />
+                    </span>
+                    <span className="relative font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[var(--steel-400)]">
+                      Step {String(index + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                  {answers ? (
-                    <p className="mt-6 flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
-                      <ArrowRight size={12} aria-hidden />
-                      Answers: {answers}
+
+                  {/* body */}
+                  <div className="flex flex-1 flex-col px-6 py-6">
+                    <p className="text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
+                      {item.title}
                     </p>
-                  ) : null}
-                  <p className="mt-2 text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
-                    {item.title}
-                  </p>
-                  <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
-                    {item.description}
-                  </p>
+                    <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
+                      {item.description}
+                    </p>
+                    {answers ? (
+                      <p className="mt-5 flex items-center gap-1.5 border-t border-white/10 pt-4 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
+                        <ArrowRight size={12} aria-hidden className="shrink-0" />
+                        Answers: {answers}
+                      </p>
+                    ) : null}
+                  </div>
                 </Reveal>
               );
             })}
@@ -399,8 +420,8 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           aria-hidden
         />
         <Container className="relative space-y-12">
-          <Reveal className="max-w-[700px] space-y-6">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <Reveal className="mx-auto flex max-w-[640px] flex-col items-center space-y-6 text-center">
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
               {stages.map((stage, index) => {
                 const isActive = stage === "Result";
                 return (
@@ -432,31 +453,32 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
             </div>
           </Reveal>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             {industry.benefits.map((benefit, index) => {
               const Icon = stageIcons[index] ?? Gauge;
               return (
                 <Reveal
                   key={benefit.title}
                   delay={index * 80}
-                  className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-[linear-gradient(165deg,rgba(47,125,82,0.06),#ffffff_55%)] p-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(47,125,82,0.4)] hover:shadow-[0_28px_60px_rgba(15,23,42,0.14)]"
+                  className="group relative flex flex-col items-center px-4 text-center"
                 >
-                  <span
-                    className="pointer-events-none absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-[linear-gradient(90deg,#2f7d52,rgba(47,125,82,0))] opacity-0 transition-all duration-300 group-hover:scale-x-100 group-hover:opacity-100"
-                    aria-hidden
-                  />
-                  <div className="flex items-center justify-between">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,125,82,0.12)] text-[#2f7d52] ring-1 ring-[rgba(47,125,82,0.22)] transition-colors group-hover:bg-[rgba(47,125,82,0.2)]">
-                      <Icon size={22} aria-hidden />
+                  {/* large illustrative outcome badge with a positive upward-trend marker */}
+                  <span className="relative inline-flex h-24 w-24 items-center justify-center">
+                    <span
+                      className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(47,163,116,0.2),transparent_70%)] blur-md transition-transform duration-300 group-hover:scale-110"
+                      aria-hidden
+                    />
+                    <span className="relative inline-flex h-20 w-20 items-center justify-center rounded-full bg-[linear-gradient(160deg,#ffffff,rgba(47,125,82,0.1))] text-[#2f7d52] ring-1 ring-[rgba(47,125,82,0.28)] shadow-[0_12px_30px_rgba(47,125,82,0.16)] transition-transform duration-300 group-hover:-translate-y-1">
+                      <Icon size={32} strokeWidth={1.75} aria-hidden />
                     </span>
-                    <span className="font-mono text-2xl font-bold leading-none text-slate-200 transition-colors group-hover:text-[rgba(47,125,82,0.45)]">
-                      {String(index + 1).padStart(2, "0")}
+                    <span className="absolute -right-1 -top-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#2f7d52] text-white shadow-[0_6px_16px_rgba(47,125,82,0.4)]">
+                      <TrendingUp size={16} aria-hidden />
                     </span>
-                  </div>
+                  </span>
                   <p className="mt-6 text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
                     {benefit.title}
                   </p>
-                  <p className="mt-2.5 text-sm leading-7 text-slate-600">
+                  <p className="mt-2.5 max-w-[34ch] text-sm leading-7 text-slate-600">
                     {benefit.description}
                   </p>
                 </Reveal>

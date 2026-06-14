@@ -67,7 +67,7 @@ function LoadPlanNode({ className = "" }: { className?: string }) {
 
 export default function LoadPlanDiagram() {
   return (
-    <div className="lg:ml-auto lg:max-w-[460px]">
+    <div className="mx-auto max-w-[680px]">
       {/* Convergence diagram — md and up */}
       <div className="hidden md:grid md:grid-cols-[minmax(0,1fr)_84px_auto] md:items-center">
         {/* Inputs */}
