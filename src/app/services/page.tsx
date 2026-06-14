@@ -125,11 +125,6 @@ export default function ServicesPage() {
           className="pointer-events-none object-cover opacity-[0.12] [mask-image:linear-gradient(180deg,transparent,black_25%,black_85%,transparent)]"
           sizes="100vw"
         />
-        {/* gradient transition continuing the dark hero into the light section */}
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[linear-gradient(180deg,var(--navy-950)_0%,rgba(8,17,31,0.4)_50%,transparent_100%)]"
-          aria-hidden
-        />
         <div
           className="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.08),transparent_70%)]"
           aria-hidden

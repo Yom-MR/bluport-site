@@ -155,7 +155,7 @@ export default function CareersPage() {
   return (
     <>
       {/* Hero — Two ways in */}
-      <section className="relative isolate overflow-hidden border-b border-[rgba(200,210,221,0.08)] bg-[linear-gradient(180deg,#08111f_0%,#050b16_100%)] pb-20 pt-32 text-white md:pb-28 md:pt-40">
+      <section className="relative isolate overflow-hidden border-b border-[rgba(200,210,221,0.08)] bg-[linear-gradient(180deg,#08111f_0%,#050b16_100%)] pb-20 pt-28 text-white md:pb-28 md:pt-32">
         <div className="absolute inset-0 blueprint-grid opacity-50" aria-hidden />
         <div
           className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,116,189,0.18),transparent_38%)]"
@@ -216,11 +216,6 @@ export default function CareersPage() {
             ))}
           </div>
         </Container>
-        {/* gradient transition blending the dark hero into the light Who We Are band */}
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent_0%,#eef2f8_100%)]"
-          aria-hidden
-        />
       </section>
 
       {/* Veteran-owned signature band */}
@@ -466,9 +461,8 @@ export default function CareersPage() {
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
-              <Button href={`mailto:${hrEmail}`}>Contact recruiting</Button>
-              <Button href="/#request-capacity" variant="secondary">
-                Request capacity
+              <Button href={`mailto:${hrEmail}`} withArrow>
+                Contact recruiting
               </Button>
             </div>
           </Reveal>

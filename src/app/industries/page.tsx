@@ -55,7 +55,7 @@ export default function IndustriesPage() {
         description="Bluport supports sectors where equipment timing affects crews, production, restoration, and project delivery."
         image={siteImages.industriesHero}
         imageAlt="Critical infrastructure and industrial operations environment"
-        imagePosition="object-[center_50%]"
+        imagePosition="object-[center_64%]"
         variant="dark"
       />
 
@@ -67,7 +67,7 @@ export default function IndustriesPage() {
           alt=""
           aria-hidden
           fill
-          className="pointer-events-none object-cover opacity-[0.07] [mask-image:linear-gradient(180deg,transparent,black_18%,black_88%,transparent)]"
+          className="pointer-events-none object-cover opacity-[0.1] [mask-image:linear-gradient(180deg,transparent,black_18%,black_88%,transparent)]"
           sizes="100vw"
         />
         {/* gradient transition blending the dark hero into the light section */}

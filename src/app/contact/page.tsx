@@ -36,11 +36,6 @@ export default function ContactPage() {
 
       {/* Contact prep — load plan */}
       <section className="relative section-pad bg-[#eef2f8] text-slate-950">
-        {/* gradient transition blending the dark hero into the prep section */}
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[linear-gradient(180deg,var(--navy-950)_0%,transparent_100%)]"
-          aria-hidden
-        />
         <Container className="relative">
           <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
             <Reveal className="space-y-6">
@@ -73,13 +68,14 @@ export default function ContactPage() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-16">
             <Reveal className="space-y-5 lg:sticky lg:top-28">
-              <p className="technical-label text-sky-700">SEND A MESSAGE</p>
+              <p className="technical-label text-sky-700">DIRECT LINE</p>
               <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
-                Message the right department directly.
+                Reach the desk that can actually move it.
               </h2>
               <p className="max-w-[52ch] text-base leading-8 text-slate-600 md:text-lg">
-                Choose a department and your message routes straight to the matching Bluport inbox —
-                no digging for the right email address.
+                Pick a department and your note lands with the people who own that work — booking,
+                billing, compliance, or recruiting. No shared inbox, no forwarding chain, no waiting
+                on someone to pass it along.
               </p>
               <p className="flex items-center gap-2 text-sm text-slate-600">
                 <Phone size={16} aria-hidden className="text-sky-600" />

@@ -55,19 +55,19 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     ],
     solutions: [
       {
-        title: "Pre-called site access & windows",
+        title: "On-time repositioning between jobs",
         description:
-          "We confirm gate access, ground conditions, and the delivery window before dispatch — not at the gate.",
+          "We plan the move around the next job's start so the machine reaches the new site inside its window and billable days don't slip.",
       },
       {
-        title: "Securement matched to each machine",
+        title: "Scheduled returns that clear the yard",
         description:
-          "Chains, binders, and tie-downs are planned per asset so nothing shifts and nothing gets damaged in transit.",
+          "Pickups are coordinated the moment a job closes, so machines come back on schedule and stay available for the next customer.",
       },
       {
-        title: "Clear handoff with yard or field",
+        title: "Confirmed delivery windows and handoffs",
         description:
-          "Confirmed contact at both ends so the machine lands where the crew can run it immediately.",
+          "We confirm the contact and the window at both ends before dispatch, so the crew isn't standing around waiting on an unconfirmed drop.",
       },
     ],
     workflow: [
@@ -78,9 +78,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Confirm handoff, POD, and any follow-up notes." },
     ],
     benefits: [
-      { title: "Fewer idle crews", description: "Equipment arrives inside the committed window, so labor isn't burning hours on standby waiting for a machine that's still in transit." },
-      { title: "Higher rental readiness", description: "Faster, more predictable turns between jobs mean more of your fleet stays deployed and earning instead of stranded on a closed site." },
-      { title: "Schedule protection", description: "On-time returns and repositioning keep the promise you made to the next customer intact — no cascading delays down the calendar." },
+      { title: "More billable rental days", description: "Equipment reaches the next job inside its window, so you stop losing revenue to machines stuck in transit between sites." },
+      { title: "Higher fleet availability", description: "On-time returns keep the yard clear and assets ready, so the machine you promised the next customer is actually there." },
+      { title: "Fewer idle crew hours", description: "Confirmed windows mean labor starts working the moment the machine lands instead of burning hours on standby." },
     ],
   },
   {
