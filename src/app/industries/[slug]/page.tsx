@@ -307,33 +307,24 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                 <Reveal
                   key={item.title}
                   delay={index * 80}
-                  className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,rgba(91,159,216,0.08),rgba(255,255,255,0.015))] transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(91,159,216,0.5)] hover:shadow-[0_28px_60px_rgba(5,11,22,0.45)]"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-[rgba(91,159,216,0.5)] hover:shadow-[0_28px_60px_rgba(5,11,22,0.45)] md:p-7"
                 >
-                  {/* header band: icon medallion + oversized step number */}
-                  <div className="relative flex items-center justify-between overflow-hidden border-b border-white/10 bg-white/[0.04] px-6 py-5">
-                    <span
-                      className="pointer-events-none absolute -right-4 -top-6 font-mono text-[5.5rem] font-bold leading-none text-white/[0.05] transition-colors duration-300 group-hover:text-[rgba(91,159,216,0.18)]"
-                      aria-hidden
-                    >
-                      {String(index + 1).padStart(2, "0")}
+                  <span
+                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,var(--accent-light),rgba(91,159,216,0.25))]"
+                    aria-hidden
+                  />
+                  <span className="relative inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)] ring-1 ring-[rgba(91,159,216,0.3)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
+                    <Icon size={24} aria-hidden />
+                    <span className="absolute -right-1.5 -top-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[var(--accent)] font-mono text-[0.6rem] font-bold text-white shadow-sm">
+                      {index + 1}
                     </span>
-                    <span className="relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(91,159,216,0.18)] text-[var(--accent-light)] ring-1 ring-[rgba(91,159,216,0.3)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
-                      <Icon size={22} aria-hidden />
-                    </span>
-                    <span className="relative font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[var(--steel-400)]">
-                      Step {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-
-                  {/* body */}
-                  <div className="flex flex-1 flex-col px-6 py-6">
-                    <p className="text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
-                      {item.title}
-                    </p>
-                    <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
-                      {item.description}
-                    </p>
-                  </div>
+                  </span>
+                  <p className="mt-5 text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
+                    {item.title}
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-[var(--steel-300)]">
+                    {item.description}
+                  </p>
                 </Reveal>
               );
             })}
@@ -343,7 +334,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
       </section>
 
       {/* Operating workflow — bridges the Response and Result stages */}
-      <div className="relative overflow-hidden bg-[#eef6f1]">
+      <div className="relative overflow-hidden bg-white">
         {/* upper band continues the dark Response section; the card floats on the seam */}
         <div className="absolute inset-x-0 top-0 h-1/2 bg-[var(--navy-900)]" aria-hidden />
         <div
@@ -398,22 +389,22 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
 
           {/* connector flowing down into the Result stage */}
           <div className="relative mt-5 flex flex-col items-center" aria-hidden>
-            <span className="h-7 w-px bg-[linear-gradient(180deg,rgba(91,159,216,0.6),rgba(47,125,82,0.7))]" />
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(47,125,82,0.4)] bg-white text-[#2f7d52] shadow-[0_8px_20px_rgba(15,23,42,0.14)]">
+            <span className="h-7 w-px bg-[linear-gradient(180deg,rgba(91,159,216,0.6),rgba(47,116,189,0.7))]" />
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(47,116,189,0.4)] bg-white text-[#2f74bd] shadow-[0_8px_20px_rgba(15,23,42,0.14)]">
               <ArrowDown size={16} />
             </span>
           </div>
         </Container>
       </div>
 
-      {/* Benefits — positive blue-tinted section signaling beneficial outcomes */}
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eaf1f9_0%,#f5f9fd_55%,#ffffff_100%)] pb-20 pt-10 text-slate-950 md:pb-28 md:pt-12">
+      {/* Benefits — white results section with subtle blue accents */}
+      <section className="relative overflow-hidden bg-white pb-20 pt-10 text-slate-950 md:pb-28 md:pt-12">
         <div
-          className="absolute -right-32 top-10 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
+          className="absolute -right-32 top-10 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.08),transparent_70%)]"
           aria-hidden
         />
         <div
-          className="absolute -left-24 bottom-0 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.1),transparent_70%)]"
+          className="absolute -left-24 bottom-0 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.06),transparent_70%)]"
           aria-hidden
         />
         <Container className="relative space-y-12">

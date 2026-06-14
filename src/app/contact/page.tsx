@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ClipboardList, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
@@ -51,17 +51,6 @@ export default function ContactPage() {
 
           <Reveal delay={120} className="mt-14">
             <LoadPlanDiagram />
-          </Reveal>
-
-          <Reveal
-            delay={180}
-            className="mx-auto mt-12 flex max-w-xl items-start gap-3 rounded-2xl border border-sky-200 bg-white px-5 py-4 text-left shadow-[0_1px_3px_rgba(15,23,42,0.06)]"
-          >
-            <ClipboardList size={20} aria-hidden className="mt-0.5 shrink-0 text-sky-600" />
-            <p className="text-sm leading-7 text-slate-700">
-              Don&apos;t have every detail yet? Send a message below — operations will help you
-              scope it.
-            </p>
           </Reveal>
         </Container>
       </section>
