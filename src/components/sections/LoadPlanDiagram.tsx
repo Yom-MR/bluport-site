@@ -40,13 +40,27 @@ function InputRow({ icon: Icon, title }: Detail) {
 
 function LoadPlanNode({ className = "" }: { className?: string }) {
   return (
-    <div
-      className={`inline-flex items-center gap-3 rounded-2xl bg-[var(--navy-950)] px-5 py-4 text-white shadow-[0_18px_40px_rgba(15,23,42,0.25)] ${className}`}
-    >
-      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-500/15 text-sky-300">
-        <ClipboardCheck size={20} aria-hidden />
+    <div className={`flex flex-col items-center gap-3 text-center ${className}`}>
+      <span className="relative inline-flex h-24 w-24 items-center justify-center">
+        {/* soft outer glow marking this as the destination */}
+        <span
+          className="absolute -inset-2 rounded-[2rem] bg-[radial-gradient(circle,rgba(47,116,189,0.28),transparent_70%)] blur-md"
+          aria-hidden
+        />
+        {/* rotating accent ring */}
+        <span
+          className="absolute inset-0 rounded-[1.6rem] ring-2 ring-sky-400/40"
+          aria-hidden
+        />
+        <span className="relative inline-flex h-full w-full items-center justify-center rounded-[1.5rem] bg-[linear-gradient(150deg,#2f74bd_0%,#15324f_100%)] text-white shadow-[0_22px_45px_rgba(15,42,74,0.4)]">
+          <span
+            className="absolute inset-0 rounded-[1.5rem] bg-[radial-gradient(circle_at_32%_24%,rgba(255,255,255,0.3),transparent_60%)]"
+            aria-hidden
+          />
+          <ClipboardCheck size={40} strokeWidth={1.75} aria-hidden className="relative" />
+        </span>
       </span>
-      <span className="text-lg font-bold leading-none tracking-[-0.02em]">Load plan</span>
+      <span className="technical-label text-[0.62rem] text-slate-500">Load plan</span>
     </div>
   );
 }

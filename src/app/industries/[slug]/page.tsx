@@ -325,7 +325,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
       </section>
 
       {/* Operating workflow — bridges the Response and Result stages */}
-      <div className="relative overflow-hidden bg-white">
+      <div className="relative overflow-hidden bg-[#eef6f1]">
         {/* upper band continues the dark Response section; the card floats on the seam */}
         <div className="absolute inset-x-0 top-0 h-1/2 bg-[var(--navy-900)]" aria-hidden />
         <div
@@ -333,20 +333,20 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           aria-hidden
         />
         <Container className="relative py-14 md:py-16">
-          <Reveal className="overflow-hidden rounded-[1.75rem] border border-white/12 bg-[var(--navy-950)] p-7 shadow-[0_36px_80px_rgba(5,11,22,0.5)] md:p-9">
+          <Reveal className="overflow-hidden rounded-[1.75rem] border border-white/20 bg-[linear-gradient(135deg,#2f74bd_0%,#1f4f86_100%)] p-7 shadow-[0_36px_80px_rgba(15,42,74,0.45)] md:p-9">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2.5">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)]">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/15 text-white">
                 <Workflow size={18} aria-hidden />
               </span>
-              <p className="technical-label text-[var(--accent-light)]">OPERATING WORKFLOW</p>
-              <span className="hidden h-px flex-1 bg-white/10 sm:block" aria-hidden />
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[rgba(91,159,216,0.3)] bg-[rgba(91,159,216,0.12)] px-3 py-1 text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[var(--accent-light)]">
+              <p className="technical-label !text-white">OPERATING WORKFLOW</p>
+              <span className="hidden h-px flex-1 bg-white/20 sm:block" aria-hidden />
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/15 px-3 py-1 text-[0.6rem] font-bold uppercase tracking-[0.16em] text-white">
                 Response
                 <ArrowRight size={11} aria-hidden />
                 Result
               </span>
             </div>
-            <p className="mt-4 max-w-[60ch] text-sm leading-7 text-[var(--steel-300)]">
+            <p className="mt-4 max-w-[60ch] text-sm leading-7 text-white/85">
               The same disciplined sequence runs every move from request to closeout — turning the
               response above into the results below.
             </p>
@@ -356,20 +356,20 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                 return (
                   <li key={step.stage} className="relative">
                     <div className="flex items-center gap-3">
-                      <span className="relative z-10 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[rgba(91,159,216,0.4)] bg-[rgba(91,159,216,0.1)] font-mono text-[0.8rem] font-semibold text-[var(--accent-light)]">
+                      <span className="relative z-10 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/45 bg-white/15 font-mono text-[0.8rem] font-semibold text-white">
                         {index + 1}
                       </span>
                       {!isLast ? (
                         <span
-                          className="hidden h-px flex-1 bg-[rgba(91,159,216,0.3)] lg:block"
+                          className="hidden h-px flex-1 bg-white/30 lg:block"
                           aria-hidden
                         />
                       ) : null}
                     </div>
-                    <p className="mt-3 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-[var(--accent-light)]">
+                    <p className="mt-3 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-white">
                       {step.stage}
                     </p>
-                    <p className="mt-1.5 text-sm leading-6 text-[var(--steel-300)]">
+                    <p className="mt-1.5 text-sm leading-6 text-white/80">
                       {step.description}
                     </p>
                   </li>
@@ -388,10 +388,14 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </Container>
       </div>
 
-      {/* Benefits — light section to separate the dark response stage from the related sectors */}
-      <section className="relative overflow-hidden bg-white py-20 text-slate-950 md:py-28">
+      {/* Benefits — positive green-tinted section signaling beneficial outcomes */}
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eef6f1_0%,#f7fbf8_55%,#ffffff_100%)] py-20 text-slate-950 md:py-28">
         <div
-          className="absolute -right-32 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(47,163,116,0.08),transparent_70%)]"
+          className="absolute -right-32 top-10 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(47,163,116,0.16),transparent_70%)]"
+          aria-hidden
+        />
+        <div
+          className="absolute -left-24 bottom-0 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(47,125,82,0.1),transparent_70%)]"
           aria-hidden
         />
         <Container className="relative space-y-12">
