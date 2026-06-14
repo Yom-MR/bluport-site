@@ -3,6 +3,17 @@
 import { useState } from "react";
 import { CONTACT_CHANNELS } from "@/lib/contact";
 
+const OPERATION_TYPES = [
+  "Equipment Transport",
+  "Rapid Response",
+  "Dedicated Capacity",
+  "Project Logistics",
+  "Storage / Staging",
+  "Consulting",
+] as const;
+
+type OperationType = (typeof OPERATION_TYPES)[number];
+
 type RequestCapacityFormData = {
   fullName: string;
   company: string;
@@ -16,13 +27,7 @@ type RequestCapacityFormData = {
   estimatedWeight: string;
   dimensions: string;
   urgencyLevel: "Standard" | "Time-Critical" | "Emergency / Rapid Response";
-  operationType:
-    | "Equipment Transport"
-    | "Rapid Response"
-    | "Dedicated Capacity"
-    | "Project Logistics"
-    | "Storage / Staging"
-    | "Consulting";
+  operationType: OperationType;
   preferredContactMethod: "Email" | "Phone" | "Either";
   notes: string;
 };
@@ -49,8 +54,21 @@ const labelClass = "technical-label mb-2 block text-[0.64rem] text-slate-700";
 const inputClass =
   "w-full rounded-xl border border-[rgba(148,163,184,0.35)] bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-[rgba(14,165,233,0.7)] focus:ring-2 focus:ring-[rgba(14,165,233,0.15)]";
 
-export default function RequestCapacityForm() {
-  const [formData, setFormData] = useState<RequestCapacityFormData>(initialFormData);
+function isOperationType(value: string): value is OperationType {
+  return (OPERATION_TYPES as readonly string[]).includes(value);
+}
+
+export default function RequestCapacityForm({
+  presetOperationType = "",
+}: {
+  presetOperationType?: string;
+}) {
+  const [formData, setFormData] = useState<RequestCapacityFormData>(() => ({
+    ...initialFormData,
+    operationType: isOperationType(presetOperationType)
+      ? presetOperationType
+      : initialFormData.operationType,
+  }));
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [submitError, setSubmitError] = useState("");

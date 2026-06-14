@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-import PageHero from "@/components/sections/PageHero";
 import Reveal from "@/components/ui/Reveal";
 import { siteImages } from "@/data/siteImages";
 import { CONTACT_CHANNELS } from "@/lib/contact";
@@ -155,27 +154,23 @@ const hrEmail = CONTACT_CHANNELS.hr.email;
 export default function CareersPage() {
   return (
     <>
-      <PageHero
-        eyebrow="CAREERS · VETERAN-OWNED"
-        title="Built by veterans. Open to operators who hold the standard."
-        description="Bluport is a veteran-owned logistics company. We hire heavily from the military community — veterans, transitioning service members, reservists, guardsmen, and military spouses — and we also bring on high-caliber civilian professionals who operate with the same discipline."
-        image={siteImages.careersHero}
-        imageAlt="Split composition showing a U.S. soldier in uniform on one side and the same person in civilian Bluport logistics gear on the other"
-        imagePosition="object-[center_30%]"
-        variant="dark"
-      />
-
-      {/* Two hiring tracks */}
-      <section className="section-pad bg-[var(--navy-950)] text-white">
-        <Container>
-          <Reveal className="max-w-[760px] space-y-5">
-            <p className="technical-label">TWO WAYS IN</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
+      {/* Hero — Two ways in */}
+      <section className="relative isolate overflow-hidden border-b border-[rgba(200,210,221,0.08)] bg-[linear-gradient(180deg,#08111f_0%,#050b16_100%)] pb-20 pt-28 text-white md:pb-28 md:pt-32">
+        <div className="absolute inset-0 blueprint-grid opacity-50" aria-hidden />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,116,189,0.18),transparent_38%)]"
+          aria-hidden
+        />
+        <Container className="relative">
+          <Reveal className="max-w-[820px] space-y-6">
+            <p className="technical-label">CAREERS · TWO WAYS IN</p>
+            <h1 className="text-[clamp(2.7rem,5.8vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.05em] text-balance text-white">
               One standard. Two paths to the team.
-            </h2>
-            <p className="max-w-[60ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              The bar is the same for everyone: plan the move, communicate clearly, and close it out
-              clean. How you got that bar — in uniform or in industry — is where the two tracks differ.
+            </h1>
+            <p className="max-w-[62ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+              Bluport is a veteran-owned logistics company. The bar is the same for everyone: plan the
+              move, communicate clearly, and close it out clean. How you got that bar — in uniform or
+              in industry — is where the two tracks differ.
             </p>
           </Reveal>
 
@@ -206,7 +201,7 @@ export default function CareersPage() {
                   <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
                     {track.title}
                   </h3>
-                  <p className="mt-3 max-w-[46ch] text-sm leading-8 text-[#cdd8e3] md:text-base">
+                  <p className="mt-3 max-w-[46ch] text-sm leading-8 text-[#cdd8e3] md:min-h-[7.5rem] md:text-base">
                     {track.description}
                   </p>
                   <a
@@ -224,28 +219,23 @@ export default function CareersPage() {
       </section>
 
       {/* Veteran-owned signature band */}
-      <section className="relative isolate overflow-hidden bg-[var(--navy-900)] py-16 text-white md:py-20">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.1]" aria-hidden />
-        <div
-          className="pointer-events-none absolute -left-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
-          aria-hidden
-        />
+      <section className="relative isolate overflow-hidden bg-[#eef2f8] py-16 text-slate-950 md:py-20">
         <Container className="relative">
           <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16">
             <Reveal className="space-y-4">
-              <p className="technical-label text-[var(--accent-light)]">WHO WE ARE</p>
-              <p className="text-[clamp(1.6rem,3vw,2.3rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-balance">
+              <p className="technical-label text-sky-700">WHO WE ARE</p>
+              <p className="text-[clamp(1.6rem,3vw,2.3rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-balance text-slate-950">
                 A veteran-owned team that staffs the standard from the inside.
               </p>
             </Reveal>
 
-            <Reveal delay={120} className="grid grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/10 sm:grid-cols-3">
+            <Reveal delay={120} className="grid grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-200 sm:grid-cols-3">
               {veteranStats.map((stat) => (
-                <div key={stat.label} className="bg-[var(--navy-900)] p-6 md:p-7">
-                  <p className="text-[clamp(2rem,4vw,2.9rem)] font-bold leading-none tracking-[-0.04em] text-white">
+                <div key={stat.label} className="bg-white p-6 md:p-7">
+                  <p className="text-[clamp(2rem,4vw,2.9rem)] font-bold leading-none tracking-[-0.04em] text-slate-950">
                     {stat.value}
                   </p>
-                  <p className="mt-3 text-[0.78rem] font-semibold uppercase leading-snug tracking-[0.1em] text-[var(--steel-300)]">
+                  <p className="mt-3 text-[0.78rem] font-semibold uppercase leading-snug tracking-[0.1em] text-slate-500">
                     {stat.label}
                   </p>
                 </div>
@@ -292,12 +282,18 @@ export default function CareersPage() {
 
       {/* Military skills that transfer */}
       <section className="relative isolate overflow-hidden bg-[#eef2f8] py-20 text-slate-950 md:py-28">
-        <div
-          className="absolute -right-24 top-0 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.08),transparent_70%)]"
+        {/* faint stars-and-stripes texture tying the section to military service */}
+        <Image
+          src={siteImages.flagTexture}
+          alt=""
           aria-hidden
+          fill
+          className="pointer-events-none object-cover opacity-[0.16] [mask-image:linear-gradient(180deg,transparent,black_22%,black_82%,transparent)]"
+          sizes="100vw"
         />
+        <div className="absolute inset-0 bg-[rgba(238,242,248,0.35)]" aria-hidden />
         <Container className="relative">
-          <Reveal className="max-w-[760px] space-y-5">
+          <Reveal className="mx-auto flex max-w-[760px] flex-col items-center space-y-5 text-center">
             <p className="technical-label text-sky-700">MILITARY SKILLS THAT TRANSFER</p>
             <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
               Your MOS already maps to this work.
@@ -465,9 +461,8 @@ export default function CareersPage() {
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
-              <Button href={`mailto:${hrEmail}`}>Contact recruiting</Button>
-              <Button href="/#request-capacity" variant="secondary">
-                Request capacity
+              <Button href={`mailto:${hrEmail}`} withArrow>
+                Contact recruiting
               </Button>
             </div>
           </Reveal>

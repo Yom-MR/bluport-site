@@ -3,6 +3,8 @@ export const siteImages = {
   missionHero: "/images/page-heroes/mission-veteran-led-hero.png",
   missionPortrait: "/images/loads/why-we-exist-v2.png",
   careersFlag: "/images/page-heroes/careers-flag-veteran.png",
+  flagTexture: "/images/backgrounds/american-flag-texture.png",
+  industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
   // Services hero: close-up securement/binder photo from Bluport loads
   servicesHero: "/images/loads/equipment-securement-real.png",
   industriesHero: "/images/industries/hero-all-industries.png",
@@ -11,7 +13,6 @@ export const siteImages = {
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
   contactHero: "/images/page-heroes/contact-dispatch-operations.png",
-  contactReady: "/images/page-heroes/contact-ready-to-roll.png",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections

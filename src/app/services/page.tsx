@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Layers3,
   Lightbulb,
@@ -30,6 +31,7 @@ const serviceRows = [
   {
     anchor: "equipment-transportation",
     icon: Truck,
+    operationType: "Equipment Transport",
     title: "Equipment Transportation",
     summary:
       "Hotshot movement for machines, attachments, trailers, and jobsite assets where timing, securement, and site access matter.",
@@ -40,6 +42,7 @@ const serviceRows = [
   {
     anchor: "rapid-response-logistics",
     icon: Zap,
+    operationType: "Rapid Response",
     title: "Rapid Response Logistics",
     summary:
       "Support for urgent moves, replacement equipment, outage-related movement, and schedule recovery when delays create operational cost.",
@@ -50,6 +53,7 @@ const serviceRows = [
   {
     anchor: "dedicated-capacity",
     icon: PackageCheck,
+    operationType: "Dedicated Capacity",
     title: "Dedicated Capacity",
     summary:
       "Reserved truck and trailer support for recurring routes, rental fleet coverage, and customers who need more predictability than spot-market availability.",
@@ -60,6 +64,7 @@ const serviceRows = [
   {
     anchor: "project-logistics",
     icon: Layers3,
+    operationType: "Project Logistics",
     title: "Project Logistics",
     summary:
       "Coordinated movement for phased schedules, hard delivery windows, multi-stop work, and equipment sequencing across active jobs.",
@@ -70,6 +75,7 @@ const serviceRows = [
   {
     anchor: "storage-staging",
     icon: Warehouse,
+    operationType: "Storage / Staging",
     title: "Storage & Staging",
     summary:
       "Support for timed releases, yard transitions, and site-readiness coordination when equipment cannot arrive too early or too late.",
@@ -80,6 +86,7 @@ const serviceRows = [
   {
     anchor: "logistics-consulting",
     icon: Lightbulb,
+    operationType: "Consulting",
     title: "Logistics Consulting",
     summary:
       "Practical planning for movement workflows, communication cadence, lane setup, and dispatch standards as operations grow.",
@@ -115,6 +122,15 @@ export default function ServicesPage() {
       </PageHero>
 
       <section className="relative overflow-hidden border-b border-slate-200 bg-[#f4f7fb] py-20 text-slate-950 md:py-24">
+        {/* faint field-operations texture */}
+        <Image
+          src={siteImages.capabilityTexture}
+          alt=""
+          aria-hidden
+          fill
+          className="pointer-events-none object-cover opacity-[0.12] [mask-image:linear-gradient(180deg,transparent,black_25%,black_85%,transparent)]"
+          sizes="100vw"
+        />
         <div
           className="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.08),transparent_70%)]"
           aria-hidden
@@ -177,13 +193,14 @@ export default function ServicesPage() {
                   </dl>
 
                   <div className="mt-6">
-                    <Button
-                      href="/#request-capacity"
-                      variant="primary"
-                      className="w-full text-[11px] tracking-[0.12em]"
-                    >
-                      Request Quote
-                    </Button>
+                  <Button
+                    href="/#request-capacity"
+                    variant="primary"
+                    operationType={service.operationType}
+                    className="w-full text-[11px] tracking-[0.12em]"
+                  >
+                    Request Quote
+                  </Button>
                   </div>
                 </Reveal>
               );

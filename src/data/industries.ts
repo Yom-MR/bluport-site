@@ -55,19 +55,19 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     ],
     solutions: [
       {
-        title: "Pre-called site access & windows",
+        title: "On-time repositioning between jobs",
         description:
-          "We confirm gate access, ground conditions, and the delivery window before dispatch — not at the gate.",
+          "We plan the move around the next job's start so the machine reaches the new site inside its window and billable days don't slip.",
       },
       {
-        title: "Securement matched to each machine",
+        title: "Scheduled returns that clear the yard",
         description:
-          "Chains, binders, and tie-downs are planned per asset so nothing shifts and nothing gets damaged in transit.",
+          "Pickups are coordinated the moment a job closes, so machines come back on schedule and stay available for the next customer.",
       },
       {
-        title: "Clear handoff with yard or field",
+        title: "Confirmed delivery windows and handoffs",
         description:
-          "Confirmed contact at both ends so the machine lands where the crew can run it immediately.",
+          "We confirm the contact and the window at both ends before dispatch, so the crew isn't standing around waiting on an unconfirmed drop.",
       },
     ],
     workflow: [
@@ -78,9 +78,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Confirm handoff, POD, and any follow-up notes." },
     ],
     benefits: [
-      { title: "Fewer idle crews", description: "Equipment arrives inside the committed window, so labor isn't burning hours on standby waiting for a machine that's still in transit." },
-      { title: "Higher rental readiness", description: "Faster, more predictable turns between jobs mean more of your fleet stays deployed and earning instead of stranded on a closed site." },
-      { title: "Schedule protection", description: "On-time returns and repositioning keep the promise you made to the next customer intact — no cascading delays down the calendar." },
+      { title: "More billable rental days", description: "Equipment reaches the next job inside its window, so you stop losing revenue to machines stuck in transit between sites." },
+      { title: "Higher fleet availability", description: "On-time returns keep the yard clear and assets ready, so the machine you promised the next customer is actually there." },
+      { title: "Fewer idle crew hours", description: "Confirmed windows mean labor starts working the moment the machine lands instead of burning hours on standby." },
     ],
   },
   {
@@ -126,14 +126,14 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
           "Moves are sequenced to the restoration plan so critical assets land first, not whenever a truck is free.",
       },
       {
-        title: "Coordinated field handoffs",
+        title: "Access cleared before arrival",
         description:
-          "We line up the site contact, escort, and access details so the equipment isn't stuck at a locked gate.",
+          "We line up the site contact, escort, gate credentials, and terrain notes so equipment isn't stuck at a locked substation or an impassable right-of-way.",
       },
       {
-        title: "Documented accountability",
+        title: "Adapts as the event changes",
         description:
-          "Clean closeout records support the reporting and audit trail utility work depends on.",
+          "When storm priorities shift mid-restoration, we re-sequence the move and keep the field updated instead of losing the thread.",
       },
     ],
     workflow: [
@@ -144,9 +144,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Confirm arrival and completion with the right contacts." },
     ],
     benefits: [
-      { title: "Faster response support", description: "Critical assets reach crews inside the restoration window, so the outage clears on the timeline your customers and regulators are watching." },
-      { title: "Less waiting on equipment", description: "Moves sequenced to the response plan put the highest-priority gear on site first, instead of whenever a truck happens to free up." },
-      { title: "More reliable handoffs", description: "Pre-confirmed access, escorts, and contacts mean crews aren't stuck waiting at a locked substation gate with the clock running." },
+      { title: "Restoration windows held", description: "Critical assets reach crews inside the outage window, so the restoration clears on the timeline customers and regulators are watching." },
+      { title: "No waiting at the gate", description: "Pre-confirmed access, escorts, and credentials mean crews aren't stuck at a locked substation while the clock runs." },
+      { title: "Steady through the chaos", description: "When the event shifts, re-sequenced moves and clear updates keep the response on track instead of fragmenting under pressure." },
     ],
   },
   {
@@ -192,14 +192,14 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
           "Deliveries are timed to the maintenance window and dock schedule, not just route convenience.",
       },
       {
-        title: "Coordinated with maintenance teams",
+        title: "Dock slots that avoid the pileup",
         description:
-          "We work directly with shutdown and maintenance contacts so the load lands when the crew is ready for it.",
+          "We book the delivery against the dock schedule and other vendors' timing so the loads that matter most aren't stuck behind congestion.",
       },
       {
-        title: "Documentation through closeout",
+        title: "Plant access handled in advance",
         description:
-          "Every move is tracked and confirmed so plant records and accountability stay clean.",
+          "Security, safety orientation, and gate scheduling are cleared before the truck arrives, so the handoff happens on time instead of stalling at the gate.",
       },
     ],
     workflow: [
@@ -210,9 +210,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Confirm handoff and record completion details." },
     ],
     benefits: [
-      { title: "Less production disruption", description: "Equipment is staged before the maintenance window opens, not after it starts — protecting the uptime that every hour of downtime erodes." },
-      { title: "Better maintenance timing", description: "Moves sync to the turnaround plan and dock schedule so maintenance crews work their sequence instead of waiting on a late delivery." },
-      { title: "Cleaner plant coordination", description: "Security, safety orientation, and dock scheduling are handled before arrival, so trucks don't stack up or stall the receiving dock." },
+      { title: "Protected production uptime", description: "Equipment is staged before the maintenance window opens, so the turnaround sequence holds and downtime doesn't cascade." },
+      { title: "No dock congestion", description: "Deliveries timed against the dock schedule keep priority loads moving instead of buried behind a stack of vendor trucks." },
+      { title: "Clean plant handoffs", description: "Security, safety orientation, and gate scheduling are handled before arrival, so the truck doesn't stall the receiving dock." },
     ],
   },
   {
@@ -258,14 +258,14 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
           "We sequence drops to the build schedule so assets arrive when the receiving trade is ready for them.",
       },
       {
-        title: "Clear multi-stakeholder comms",
+        title: "Long-lead gear to its install window",
         description:
-          "Project controls, the GC, and site superintendents stay aligned on timing through every move.",
+          "Generators, switchgear, and high-value lineups are delivered to the narrow window tied to the energization plan — not early to clog laydown, not late to stall install.",
       },
       {
-        title: "Documented every step",
+        title: "Gate and laydown timing managed",
         description:
-          "Closeout records support the tight reporting and accountability these projects run on.",
+          "We hit the scheduled delivery slot and coordinate laydown space so the arrival fits the plan instead of crowding a site managed to the hour.",
       },
     ],
     workflow: [
@@ -276,9 +276,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Confirm delivery and handoff with project controls." },
     ],
     benefits: [
-      { title: "Protected project sequencing", description: "Deliveries align to the build plan so the critical path holds — no early arrivals clogging the laydown yard, no late ones stalling a trade." },
-      { title: "Less trade interference", description: "Timed, scheduled drops keep the site clear for the crews already working, instead of adding congestion to an already-packed pad." },
-      { title: "Higher delivery visibility", description: "Project controls, the GC, and superintendents know exactly what's arriving and when, so no one is planning around a guess." },
+      { title: "Critical path protected", description: "Drops align to the build sequence so the trade waiting on each asset can keep working instead of stalling out." },
+      { title: "Energization stays on plan", description: "Long-lead generators and switchgear hit their install window, so the path to energization doesn't slip behind a mistimed delivery." },
+      { title: "No laydown crowding", description: "Scheduled gate slots and managed laydown space keep the pad clear, even on a site controlled to the hour." },
     ],
   },
   {
@@ -319,24 +319,19 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     ],
     solutions: [
       {
-        title: "Military logistics fluency",
+        title: "Securement verified before departure",
         description:
-          "As a veteran-owned team, we understand base access, defense program protocol, and the chain-of-custody discipline military and DoD-adjacent moves demand.",
+          "Sensitive, high-value, and controlled items are inspected and secured to standard before the truck moves — verified, not assumed.",
       },
       {
-        title: "Securement discipline before departure",
+        title: "Base access handled to protocol",
         description:
-          "Loads are inspected and secured to standard before the truck moves — verified, not assumed.",
+          "As a veteran-owned team, we line up approved contacts, escorts, and gate credentials so controlled-site access follows protocol exactly.",
       },
       {
-        title: "Controlled communication",
+        title: "Documented chain of custody",
         description:
-          "We coordinate only with approved contacts and follow site protocol through the entire move.",
-      },
-      {
-        title: "Records that support accountability",
-        description:
-          "Documented closeout gives your program the paper trail it needs to satisfy scrutiny.",
+          "We hand off only to the approved receiver and record every step, so there are no wrong receivers and no undocumented gaps.",
       },
     ],
     workflow: [
@@ -347,9 +342,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Record completion and documentation details." },
     ],
     benefits: [
-      { title: "More controlled movement", description: "Every step follows protocol from pre-departure securement to the final handoff, so sensitive cargo is handled the same disciplined way each time." },
-      { title: "Fewer handoff errors", description: "Approved contacts, escorts, and documented custody keep the chain clean — no wrong receivers, no undocumented gaps to explain later." },
-      { title: "Confidence under scrutiny", description: "Complete closeout records hold up to the compliance, security, and audit demands these programs are measured against." },
+      { title: "Cargo handled to standard", description: "Verified pre-departure securement means sensitive, high-value items move the same disciplined way every time — nothing left to chance." },
+      { title: "Access without friction", description: "Approved contacts, escorts, and credentials are set in advance, so controlled-site deliveries clear the gate on protocol." },
+      { title: "A clean chain of custody", description: "Approved receivers and documented handoffs keep the record intact, so there's nothing undocumented to explain under audit." },
     ],
   },
   {
@@ -400,9 +395,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
           "We keep the relevant stakeholders informed so coordination doesn't break down under pressure.",
       },
       {
-        title: "Simple confirmation flow",
+        title: "Re-routes as priorities shift",
         description:
-          "A clean closeout confirms the asset reached the staging area and the handoff is complete.",
+          "When the deployment target changes mid-mission, we adapt the route and destination cleanly without dropping the thread.",
       },
     ],
     workflow: [
@@ -413,9 +408,9 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
       { stage: "Closeout", description: "Confirm completion and document the handoff." },
     ],
     benefits: [
-      { title: "Better mission support", description: "Assets reach the staging area inside the response window, so field teams have what they need when the mission can't wait." },
-      { title: "Faster deployment visibility", description: "Stakeholders always know where the move stands, which keeps decision-makers acting on current information instead of stale updates." },
-      { title: "Cleaner coordination", description: "Structured intake and disciplined comms keep multi-agency moves from fragmenting, even as priorities shift mid-mission." },
+      { title: "Mission timelines met", description: "Structured intake and dispatch get assets to the staging area inside the response window, so field teams aren't waiting when the mission can't wait." },
+      { title: "One clear line of comms", description: "Updates flow to the right contacts across every agency, so coordination doesn't fragment when it matters most." },
+      { title: "Adapts mid-mission", description: "When the deployment target shifts, the move re-routes cleanly instead of losing the thread under pressure." },
     ],
   },
 ];

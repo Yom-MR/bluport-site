@@ -9,6 +9,7 @@ const FOCUSABLE_SELECTOR =
 
 export default function RequestCapacityModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [presetOperationType, setPresetOperationType] = useState("");
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const lastFocusedRef = useRef<HTMLElement | null>(null);
@@ -19,9 +20,15 @@ export default function RequestCapacityModal() {
   };
 
   useEffect(() => {
-    const onRequestOpen = () => {
+    const onRequestOpen = (operationType?: string) => {
       lastFocusedRef.current = document.activeElement as HTMLElement | null;
+      setPresetOperationType(operationType ?? "");
       setIsOpen(true);
+    };
+
+    const onWindowOpen = (event: Event) => {
+      const detail = (event as CustomEvent).detail as { operationType?: string } | undefined;
+      onRequestOpen(detail?.operationType);
     };
 
     const onDocumentClick = (event: MouseEvent) => {
@@ -47,7 +54,7 @@ export default function RequestCapacityModal() {
       }
 
       event.preventDefault();
-      onRequestOpen();
+      onRequestOpen(trigger.getAttribute("data-operation-type") ?? undefined);
     };
 
     const onEscape = (event: KeyboardEvent) => {
@@ -56,12 +63,12 @@ export default function RequestCapacityModal() {
       }
     };
 
-    window.addEventListener("open-request-capacity-modal", onRequestOpen);
+    window.addEventListener("open-request-capacity-modal", onWindowOpen);
     document.addEventListener("click", onDocumentClick);
     document.addEventListener("keydown", onEscape);
 
     return () => {
-      window.removeEventListener("open-request-capacity-modal", onRequestOpen);
+      window.removeEventListener("open-request-capacity-modal", onWindowOpen);
       document.removeEventListener("click", onDocumentClick);
       document.removeEventListener("keydown", onEscape);
     };
@@ -180,7 +187,10 @@ export default function RequestCapacityModal() {
         </div>
 
         <div className="no-scrollbar overflow-y-auto bg-[#f7f9fc] px-6 py-6 md:px-8 md:py-7">
-          <RequestCapacityForm />
+          <RequestCapacityForm
+            key={presetOperationType || "default"}
+            presetOperationType={presetOperationType}
+          />
         </div>
       </div>
     </div>

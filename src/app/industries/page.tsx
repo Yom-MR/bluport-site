@@ -55,12 +55,21 @@ export default function IndustriesPage() {
         description="Bluport supports sectors where equipment timing affects crews, production, restoration, and project delivery."
         image={siteImages.industriesHero}
         imageAlt="Critical infrastructure and industrial operations environment"
-        imagePosition="object-[center_50%]"
+        imagePosition="object-[center_64%]"
         variant="dark"
       />
 
       {/* Industry cards */}
       <section className="relative overflow-hidden bg-[#eef2f8] py-20 text-slate-950 md:py-28">
+        {/* faint industrial blueprint texture correlating to the sectors served */}
+        <Image
+          src={siteImages.industriesFitTexture}
+          alt=""
+          aria-hidden
+          fill
+          className="pointer-events-none object-cover opacity-[0.1] [mask-image:linear-gradient(180deg,transparent,black_18%,black_88%,transparent)]"
+          sizes="100vw"
+        />
         <Container className="relative space-y-12">
           <Reveal className="max-w-[720px] space-y-4">
             <p className="eyebrow text-sky-700">INDUSTRY FIT</p>
@@ -164,15 +173,15 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[var(--navy-900)] py-20 text-white md:py-24">
+      <section className="bg-[#eef2f8] py-20 text-slate-950 md:py-24">
         <Container>
-          <Reveal className="flex flex-col items-start gap-6 rounded-[2rem] border border-white/12 bg-[linear-gradient(135deg,rgba(47,116,189,0.12),rgba(255,255,255,0.02)_60%)] p-8 md:flex-row md:items-center md:justify-between md:p-12">
+          <Reveal className="flex flex-col items-start gap-6 rounded-[2rem] border border-slate-200 bg-[linear-gradient(135deg,rgba(47,116,189,0.08),#ffffff_60%)] p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] md:flex-row md:items-center md:justify-between md:p-12">
             <div className="max-w-[640px] space-y-4">
-              <p className="technical-label">REQUEST CAPACITY</p>
-              <h2 className="text-[clamp(1.8rem,3.6vw,2.8rem)] font-semibold leading-[1] tracking-[-0.04em] text-balance">
+              <p className="technical-label text-sky-700">REQUEST CAPACITY</p>
+              <h2 className="text-[clamp(1.8rem,3.6vw,2.8rem)] font-semibold leading-[1] tracking-[-0.04em] text-balance text-slate-950">
                 Tell us what the operation needs to move.
               </h2>
-              <p className="text-sm leading-8 text-[var(--steel-300)] md:text-base">
+              <p className="text-sm leading-8 text-slate-600 md:text-base">
                 Share the asset, the site, and the window. Bluport scopes the move around your
                 sector&apos;s constraints and confirms a plan before dispatch.
               </p>
@@ -181,7 +190,11 @@ export default function IndustriesPage() {
               <Button href="/#request-capacity" withArrow>
                 Request capacity
               </Button>
-              <Button href="/contact" variant="secondary">
+              <Button
+                href="/contact"
+                variant="secondary"
+                className="border-slate-300 bg-white text-slate-800 hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
                 Speak with operations
               </Button>
             </div>

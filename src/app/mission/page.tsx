@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   CheckCircle2,
-  ClipboardCheck,
   Compass,
-  Factory,
   HardHat,
   PhoneIncoming,
   Radio,
@@ -12,8 +10,6 @@ import {
   Send,
   ShieldCheck,
   Target,
-  Truck,
-  Zap,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
@@ -61,51 +57,6 @@ const operatingModel = [
   },
 ] as const;
 
-const downtimeImpacts = [
-  {
-    icon: Truck,
-    title: "Rental fleets",
-    body: "Late repositioning creates idle assets and delayed revenue for customers waiting on equipment.",
-  },
-  {
-    icon: Zap,
-    title: "Utilities",
-    body: "When a response move slips, restoration crews lose time that should have gone to the field.",
-  },
-  {
-    icon: Factory,
-    title: "Manufacturing",
-    body: "Shutdown windows are expensive; a missed handoff can push work into the next slot.",
-  },
-] as const;
-
-const nonNegotiables = [
-  {
-    label: "Site access details",
-    detail: "Gate entry, yard instructions, and unloading conditions.",
-  },
-  {
-    label: "Equipment dimensions and weight",
-    detail: "Trailer fit, clearance, and handling assumptions.",
-  },
-  {
-    label: "Securement requirements",
-    detail: "Tie-down method, handling sensitivity, and transit risk.",
-  },
-  {
-    label: "Delivery window constraints",
-    detail: "Timing expectations aligned before dispatch.",
-  },
-  {
-    label: "Contact and handoff details",
-    detail: "Who receives, who signs, and who confirms completion.",
-  },
-  {
-    label: "Documentation after delivery",
-    detail: "POD, follow-up, and closeout records.",
-  },
-] as const;
-
 const values = [
   {
     icon: ShieldCheck,
@@ -136,115 +87,6 @@ export default function MissionPage() {
         imagePosition="object-[center_35%]"
         variant="dark"
       />
-
-      {/* Mission statement + portrait */}
-      <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.14]" aria-hidden />
-        <Container className="relative">
-          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
-            <Reveal className="space-y-7">
-              <div className="space-y-6">
-                <p className="eyebrow">WHO WE ARE</p>
-                <h2 className="text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
-                  Built by veterans to run the moves others treat as routine.
-                </h2>
-                <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
-                  Bluport brings military planning, accountability, and after-action rigor to
-                  field logistics. The way we operate is not a marketing line — it is the standard
-                  our team carried in uniform, applied to every load we move.
-                </p>
-              </div>
-              <ul className="divide-y divide-white/10 border-t border-white/10">
-                {values.map((value) => (
-                  <li key={value.title} className="flex items-start gap-4 py-5">
-                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
-                      <value.icon size={20} aria-hidden />
-                    </span>
-                    <div>
-                      <p className="text-base font-semibold tracking-[-0.02em] text-white">
-                        {value.title}
-                      </p>
-                      <p className="mt-1 text-sm leading-7 text-[var(--steel-400)]">{value.body}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-
-            <Reveal delay={120} className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
-              <Image
-                src={siteImages.missionPortrait}
-                alt="Bluport veteran operator standing beside a gooseneck trailer loaded with secured equipment at blue hour"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 45vw"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.2)_0%,rgba(5,11,22,0.5)_60%,rgba(5,11,22,0.92)_100%)]" />
-              <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
-                <p className="technical-label text-[var(--accent-light)]">VETERAN-OWNED &amp; OPERATED</p>
-                <p className="mt-3 text-xl font-semibold leading-snug tracking-[-0.02em] text-white md:text-2xl">
-                  Staffed by a team that is 82% military — veterans, active duty, spouses, and family.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* The cost of downtime */}
-      <section className="relative overflow-hidden bg-[var(--navy-900)] py-20 text-white md:py-28">
-        <div className="absolute inset-0 blueprint-grid opacity-[0.12]" aria-hidden />
-        <div
-          className="absolute -right-32 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(229,127,67,0.1),transparent_70%)]"
-          aria-hidden
-        />
-        <Container className="relative space-y-14">
-          <Reveal className="mx-auto max-w-[680px] space-y-4 text-center">
-            <p className="eyebrow text-[#e8a87c]">THE COST OF DOWNTIME</p>
-            <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance">
-              Schedule protection is the whole point.
-            </h2>
-            <p className="mx-auto max-w-[56ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
-              Different sectors feel a late move differently — but the pattern is the same: idle
-              assets, lost hours, and a team stuck waiting. We plan around that reality.
-            </p>
-          </Reveal>
-
-          <div className="grid gap-5 md:grid-cols-3">
-            {downtimeImpacts.map((impact, index) => (
-              <Reveal
-                key={impact.title}
-                delay={index * 90}
-                className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-8 transition-colors hover:border-[rgba(229,127,67,0.45)] hover:bg-[rgba(255,255,255,0.05)]"
-              >
-                <span
-                  className="pointer-events-none absolute -right-6 -top-8 font-mono text-[6rem] font-bold leading-none text-white/[0.04] transition-colors group-hover:text-[rgba(229,127,67,0.1)]"
-                  aria-hidden
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="relative inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[rgba(229,127,67,0.12)] text-[#e8a87c] transition-colors group-hover:bg-[rgba(229,127,67,0.18)]">
-                  <impact.icon size={24} aria-hidden />
-                </span>
-                <p className="relative mt-6 text-xl font-semibold tracking-[-0.03em] text-white">
-                  {impact.title}
-                </p>
-                <p className="relative mt-2.5 text-sm leading-7 text-[var(--steel-300)] md:text-base">
-                  {impact.body}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={120} className="mx-auto max-w-[760px]">
-            <div className="flex items-center gap-4 rounded-2xl border-l-2 border-[#e57f43] bg-[rgba(229,127,67,0.08)] px-6 py-5">
-              <p className="text-sm leading-7 text-[#f1d4bf] md:text-base">
-                Every move we run is built to keep your people working — not waiting on a truck.
-              </p>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
 
       {/* Operating model — communication & execution flow */}
       <section className="relative overflow-hidden bg-white py-20 text-slate-950 md:py-28">
@@ -307,51 +149,55 @@ export default function MissionPage() {
         </Container>
       </section>
 
-      {/* Non-negotiables — light section for visual rhythm */}
-      <section className="bg-white py-20 text-slate-950 md:py-28">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-16">
-            <Reveal className="space-y-5 lg:sticky lg:top-28 lg:self-start">
-              <p className="eyebrow text-sky-700">NON-NEGOTIABLES</p>
-              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
-                The details we refuse to leave to chance.
-              </h2>
-              <p className="max-w-[48ch] text-base leading-8 text-slate-600 md:text-lg">
-                When any one of these is missed, delays and uncertainty follow close behind. So we
-                confirm every one of them before the truck rolls.
-              </p>
-              <div className="mt-2 inline-flex items-center gap-3 rounded-2xl border border-sky-200 bg-sky-50 px-5 py-4">
-                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-700 text-white">
-                  <ClipboardCheck size={20} aria-hidden />
-                </span>
-                <p className="text-sm font-semibold leading-snug tracking-[-0.01em] text-slate-800">
-                  Confirmed up front — not discovered at the gate.
+      {/* Mission statement + portrait */}
+      <section className="relative overflow-hidden bg-[var(--navy-950)] py-20 text-white md:py-28">
+        <div className="absolute inset-0 blueprint-grid opacity-[0.14]" aria-hidden />
+        <Container className="relative">
+          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
+            <Reveal className="space-y-7">
+              <div className="space-y-6">
+                <p className="eyebrow">WHO WE ARE</p>
+                <h2 className="text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1] tracking-[-0.05em] text-balance">
+                  Built by veterans to run the moves others treat as routine.
+                </h2>
+                <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
+                  Bluport brings military planning, accountability, and after-action rigor to
+                  field logistics. The way we operate is not a marketing line — it is the standard
+                  our team carried in uniform, applied to every load we move.
                 </p>
               </div>
-            </Reveal>
-
-            <Reveal delay={80}>
-              <ul className="grid gap-4 sm:grid-cols-2">
-                {nonNegotiables.map((item, index) => (
-                  <li
-                    key={item.label}
-                    className="group relative flex flex-col gap-2 rounded-2xl border border-slate-200 bg-slate-50/70 p-6 transition-colors hover:border-sky-300 hover:bg-white"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
-                        <ShieldCheck size={18} aria-hidden />
-                      </span>
-                      <span className="font-mono text-sm font-bold text-slate-300 transition-colors group-hover:text-sky-600">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+              <ul className="divide-y divide-white/10 border-t border-white/10">
+                {values.map((value) => (
+                  <li key={value.title} className="flex items-start gap-4 py-5">
+                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[rgba(47,116,189,0.14)] text-[var(--accent-light)]">
+                      <value.icon size={20} aria-hidden />
+                    </span>
+                    <div>
+                      <p className="text-base font-semibold tracking-[-0.02em] text-white">
+                        {value.title}
+                      </p>
+                      <p className="mt-1 text-sm leading-7 text-[var(--steel-400)]">{value.body}</p>
                     </div>
-                    <p className="mt-2 text-base font-semibold tracking-[-0.01em] text-slate-950">
-                      {item.label}
-                    </p>
-                    <p className="text-sm leading-7 text-slate-500">{item.detail}</p>
                   </li>
                 ))}
               </ul>
+            </Reveal>
+
+            <Reveal delay={120} className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
+              <Image
+                src={siteImages.missionPortrait}
+                alt="Bluport veteran operator standing beside a gooseneck trailer loaded with secured equipment at blue hour"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.2)_0%,rgba(5,11,22,0.5)_60%,rgba(5,11,22,0.92)_100%)]" />
+              <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
+                <p className="technical-label text-[var(--accent-light)]">VETERAN-OWNED &amp; OPERATED</p>
+                <p className="mt-3 text-xl font-semibold leading-snug tracking-[-0.02em] text-white md:text-2xl">
+                  Staffed by a team that is 82% military — veterans, active duty, spouses, and family.
+                </p>
+              </div>
             </Reveal>
           </div>
         </Container>
@@ -360,15 +206,18 @@ export default function MissionPage() {
       {/* CTA */}
       <section className="bg-[var(--navy-950)] py-20 text-white md:py-28">
         <Container>
-          <Reveal className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(47,116,189,0.12),rgba(255,255,255,0.02)_55%)] p-8 md:p-14">
-            <div className="absolute inset-0 blueprint-grid opacity-30" aria-hidden />
+          <Reveal className="relative overflow-hidden rounded-[2rem] border border-sky-200 bg-[linear-gradient(135deg,#ffffff,#eef4fb_60%)] p-8 shadow-[0_30px_80px_rgba(5,11,22,0.45)] md:p-14">
+            <div
+              className="pointer-events-none absolute -right-24 -top-24 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.12),transparent_70%)]"
+              aria-hidden
+            />
             <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-[620px] space-y-4">
-                <p className="technical-label">REQUEST CAPACITY</p>
-                <h2 className="text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1] tracking-[-0.04em] text-balance">
+                <p className="technical-label text-sky-700">REQUEST CAPACITY</p>
+                <h2 className="text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1] tracking-[-0.04em] text-balance text-slate-950">
                   When the move matters, the process matters.
                 </h2>
-                <p className="text-sm leading-8 text-[var(--steel-300)] md:text-base">
+                <p className="text-sm leading-8 text-slate-600 md:text-base">
                   Bring Bluport in when the move needs to support the work around it — not just reach
                   the destination.
                 </p>
