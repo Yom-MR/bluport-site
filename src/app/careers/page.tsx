@@ -293,7 +293,7 @@ export default function CareersPage() {
         />
         <div className="absolute inset-0 bg-[rgba(238,242,248,0.35)]" aria-hidden />
         <Container className="relative">
-          <Reveal className="max-w-[760px] space-y-5">
+          <Reveal className="mx-auto flex max-w-[760px] flex-col items-center space-y-5 text-center">
             <p className="technical-label text-sky-700">MILITARY SKILLS THAT TRANSFER</p>
             <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
               Your MOS already maps to this work.

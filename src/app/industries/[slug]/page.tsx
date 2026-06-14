@@ -406,14 +406,14 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
         </Container>
       </div>
 
-      {/* Benefits — positive green-tinted section signaling beneficial outcomes */}
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eef6f1_0%,#f7fbf8_55%,#ffffff_100%)] pb-20 pt-10 text-slate-950 md:pb-28 md:pt-12">
+      {/* Benefits — positive blue-tinted section signaling beneficial outcomes */}
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eaf1f9_0%,#f5f9fd_55%,#ffffff_100%)] pb-20 pt-10 text-slate-950 md:pb-28 md:pt-12">
         <div
-          className="absolute -right-32 top-10 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(47,163,116,0.16),transparent_70%)]"
+          className="absolute -right-32 top-10 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
           aria-hidden
         />
         <div
-          className="absolute -left-24 bottom-0 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(47,125,82,0.1),transparent_70%)]"
+          className="absolute -left-24 bottom-0 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.1),transparent_70%)]"
           aria-hidden
         />
         <Container className="relative space-y-12">
@@ -426,7 +426,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     <span
                       className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] ${
                         isActive
-                          ? "border-[rgba(47,125,82,0.4)] bg-[rgba(47,125,82,0.1)] text-[#2f7d52]"
+                          ? "border-[rgba(47,116,189,0.4)] bg-[rgba(47,116,189,0.1)] text-[#2f74bd]"
                           : "border-slate-300 text-slate-400"
                       }`}
                     >
@@ -462,13 +462,13 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                   {/* large illustrative outcome badge with a positive upward-trend marker */}
                   <span className="relative inline-flex h-24 w-24 items-center justify-center">
                     <span
-                      className="absolute inset-1 rounded-[1.6rem] bg-[radial-gradient(circle,rgba(47,163,116,0.2),transparent_70%)] blur-md transition-transform duration-300 group-hover:scale-110"
+                      className="absolute inset-1 rounded-[1.6rem] bg-[radial-gradient(circle,rgba(47,116,189,0.22),transparent_70%)] blur-md transition-transform duration-300 group-hover:scale-110"
                       aria-hidden
                     />
-                    <span className="relative inline-flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-[linear-gradient(160deg,#ffffff,rgba(47,125,82,0.1))] text-[#2f7d52] ring-1 ring-[rgba(47,125,82,0.28)] shadow-[0_12px_30px_rgba(47,125,82,0.16)] transition-transform duration-300 group-hover:-translate-y-1">
+                    <span className="relative inline-flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-[linear-gradient(160deg,#ffffff,rgba(47,116,189,0.1))] text-[#2f74bd] ring-1 ring-[rgba(47,116,189,0.28)] shadow-[0_12px_30px_rgba(47,116,189,0.16)] transition-transform duration-300 group-hover:-translate-y-1">
                       <Icon size={32} strokeWidth={1.75} aria-hidden />
                     </span>
-                    <span className="absolute -right-1 -top-1 inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[#2f7d52] text-white shadow-[0_6px_16px_rgba(47,125,82,0.4)]">
+                    <span className="absolute -right-1 -top-1 inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[#2f74bd] text-white shadow-[0_6px_16px_rgba(47,116,189,0.4)]">
                       <TrendingUp size={16} aria-hidden />
                     </span>
                   </span>

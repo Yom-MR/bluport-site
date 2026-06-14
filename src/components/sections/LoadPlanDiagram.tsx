@@ -28,11 +28,14 @@ const LOAD_PLAN_DETAILS: Detail[] = [
 
 function InputTile({ icon: Icon, title }: Detail) {
   return (
-    <div className="flex w-[148px] flex-col items-center gap-2.5 rounded-2xl border border-slate-200 bg-white/70 px-4 py-5 text-center transition-colors hover:border-sky-300 hover:bg-white">
-      <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
-        <Icon size={20} aria-hidden />
-      </span>
-      <span className="text-[0.78rem] font-semibold leading-tight text-slate-800 text-balance">
+    <div className="group flex w-[120px] flex-col items-center gap-2 text-center">
+      <Icon
+        size={22}
+        strokeWidth={1.75}
+        aria-hidden
+        className="text-sky-600/80 transition-colors group-hover:text-sky-700"
+      />
+      <span className="text-[0.72rem] font-medium leading-tight text-slate-600 text-balance">
         {title}
       </span>
     </div>
@@ -41,27 +44,27 @@ function InputTile({ icon: Icon, title }: Detail) {
 
 function LoadPlanNode({ className = "" }: { className?: string }) {
   return (
-    <div className={`flex flex-col items-center gap-3 text-center ${className}`}>
-      <span className="relative inline-flex h-24 w-24 items-center justify-center">
+    <div className={`flex flex-col items-center gap-3.5 text-center ${className}`}>
+      <span className="relative inline-flex h-32 w-32 items-center justify-center">
         {/* soft outer glow marking this as the destination */}
         <span
-          className="absolute -inset-2 rounded-[2rem] bg-[radial-gradient(circle,rgba(47,116,189,0.28),transparent_70%)] blur-md"
+          className="absolute -inset-3 rounded-[2.4rem] bg-[radial-gradient(circle,rgba(47,116,189,0.32),transparent_70%)] blur-lg"
           aria-hidden
         />
-        {/* rotating accent ring */}
+        {/* accent ring */}
         <span
-          className="absolute inset-0 rounded-[1.6rem] ring-2 ring-sky-400/40"
+          className="absolute inset-0 rounded-[2rem] ring-2 ring-sky-400/40"
           aria-hidden
         />
-        <span className="relative inline-flex h-full w-full items-center justify-center rounded-[1.5rem] bg-[linear-gradient(150deg,#2f74bd_0%,#15324f_100%)] text-white shadow-[0_22px_45px_rgba(15,42,74,0.4)]">
+        <span className="relative inline-flex h-full w-full items-center justify-center rounded-[1.9rem] bg-[linear-gradient(150deg,#2f74bd_0%,#15324f_100%)] text-white shadow-[0_26px_55px_rgba(15,42,74,0.45)]">
           <span
-            className="absolute inset-0 rounded-[1.5rem] bg-[radial-gradient(circle_at_32%_24%,rgba(255,255,255,0.3),transparent_60%)]"
+            className="absolute inset-0 rounded-[1.9rem] bg-[radial-gradient(circle_at_32%_24%,rgba(255,255,255,0.3),transparent_60%)]"
             aria-hidden
           />
-          <ClipboardCheck size={40} strokeWidth={1.75} aria-hidden className="relative" />
+          <ClipboardCheck size={54} strokeWidth={1.75} aria-hidden className="relative" />
         </span>
       </span>
-      <span className="technical-label text-[0.62rem] text-slate-500">Load plan</span>
+      <span className="technical-label text-sky-700">Load plan</span>
     </div>
   );
 }
@@ -70,7 +73,7 @@ export default function LoadPlanDiagram() {
   return (
     <div className="mx-auto max-w-[760px]">
       {/* Details laid out horizontally, converging downward into the load plan */}
-      <div className="flex flex-wrap justify-center gap-3">
+      <div className="flex flex-wrap justify-center gap-x-6 gap-y-7">
         {LOAD_PLAN_DETAILS.map((detail) => (
           <InputTile key={detail.title} {...detail} />
         ))}
