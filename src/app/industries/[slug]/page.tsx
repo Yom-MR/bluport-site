@@ -199,17 +199,21 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               <p className="max-w-[42ch] text-base leading-8 text-slate-600">
                 Every sector breaks down differently. These are the specific points where a {industry.title.toLowerCase()} move slips — tight access windows, equipment that needs the right trailer and securement, and handoffs that fail when no one owns the timeline. Each one compounds into idle crews and lost days.
               </p>
-              <div className="rounded-[1.75rem] border border-[rgba(194,65,12,0.2)] bg-[linear-gradient(150deg,rgba(194,65,12,0.08),#ffffff_60%)] p-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)]">
-                <div className="flex items-center gap-2.5">
-                  <Gauge size={18} aria-hidden className="text-[#c2410c]" />
-                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
+              <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[linear-gradient(150deg,var(--navy-900),var(--navy-950))] p-7 shadow-[0_18px_45px_rgba(15,23,42,0.18)]">
+                <div
+                  className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[radial-gradient(circle,rgba(91,159,216,0.18),transparent_70%)]"
+                  aria-hidden
+                />
+                <div className="relative flex items-center gap-2.5">
+                  <Gauge size={18} aria-hidden className="text-[var(--accent-light)]" />
+                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--steel-400)]">
                     {industry.statLabel}
                   </p>
                 </div>
-                <p className="mt-3 text-[clamp(2.2rem,4vw,3rem)] font-bold leading-none tracking-[-0.04em] text-slate-950">
+                <p className="relative mt-3 text-[clamp(2.2rem,4vw,3rem)] font-bold leading-none tracking-[-0.04em] text-white">
                   {industry.statValue}
                 </p>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
+                <p className="relative mt-3 text-sm leading-7 text-[var(--steel-300)]">
                   This is the cost Bluport plans against — building each move around the friction
                   that defines this sector instead of treating it as a generic haul.
                 </p>
@@ -298,7 +302,6 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           {/* Solution cards — each answers the matching friction point */}
           <div className="grid gap-5 md:grid-cols-3">
             {industry.solutions.map((item, index) => {
-              const answers = industry.painPoints[index]?.title;
               const Icon = stageIcons[index] ?? Gauge;
               return (
                 <Reveal
@@ -330,12 +333,6 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
                       {item.description}
                     </p>
-                    {answers ? (
-                      <p className="mt-5 flex items-center gap-1.5 border-t border-white/10 pt-4 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
-                        <ArrowRight size={12} aria-hidden className="shrink-0" />
-                        Answers: {answers}
-                      </p>
-                    ) : null}
                   </div>
                 </Reveal>
               );
@@ -410,7 +407,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
       </div>
 
       {/* Benefits — positive green-tinted section signaling beneficial outcomes */}
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eef6f1_0%,#f7fbf8_55%,#ffffff_100%)] py-20 text-slate-950 md:py-28">
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eef6f1_0%,#f7fbf8_55%,#ffffff_100%)] pb-20 pt-10 text-slate-950 md:pb-28 md:pt-12">
         <div
           className="absolute -right-32 top-10 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(47,163,116,0.16),transparent_70%)]"
           aria-hidden
@@ -465,13 +462,13 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                   {/* large illustrative outcome badge with a positive upward-trend marker */}
                   <span className="relative inline-flex h-24 w-24 items-center justify-center">
                     <span
-                      className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(47,163,116,0.2),transparent_70%)] blur-md transition-transform duration-300 group-hover:scale-110"
+                      className="absolute inset-1 rounded-[1.6rem] bg-[radial-gradient(circle,rgba(47,163,116,0.2),transparent_70%)] blur-md transition-transform duration-300 group-hover:scale-110"
                       aria-hidden
                     />
-                    <span className="relative inline-flex h-20 w-20 items-center justify-center rounded-full bg-[linear-gradient(160deg,#ffffff,rgba(47,125,82,0.1))] text-[#2f7d52] ring-1 ring-[rgba(47,125,82,0.28)] shadow-[0_12px_30px_rgba(47,125,82,0.16)] transition-transform duration-300 group-hover:-translate-y-1">
+                    <span className="relative inline-flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-[linear-gradient(160deg,#ffffff,rgba(47,125,82,0.1))] text-[#2f7d52] ring-1 ring-[rgba(47,125,82,0.28)] shadow-[0_12px_30px_rgba(47,125,82,0.16)] transition-transform duration-300 group-hover:-translate-y-1">
                       <Icon size={32} strokeWidth={1.75} aria-hidden />
                     </span>
-                    <span className="absolute -right-1 -top-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#2f7d52] text-white shadow-[0_6px_16px_rgba(47,125,82,0.4)]">
+                    <span className="absolute -right-1 -top-1 inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[#2f7d52] text-white shadow-[0_6px_16px_rgba(47,125,82,0.4)]">
                       <TrendingUp size={16} aria-hidden />
                     </span>
                   </span>

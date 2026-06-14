@@ -1,6 +1,5 @@
 import {
   ArrowDown,
-  ArrowRight,
   Boxes,
   CalendarClock,
   ClipboardCheck,
@@ -27,13 +26,15 @@ const LOAD_PLAN_DETAILS: Detail[] = [
   { icon: PhoneCall, title: "Preferred contact method" },
 ];
 
-function InputRow({ icon: Icon, title }: Detail) {
+function InputTile({ icon: Icon, title }: Detail) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/70 px-3.5 py-2.5 transition-colors hover:border-sky-300 hover:bg-white">
-      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700">
-        <Icon size={16} aria-hidden />
+    <div className="flex w-[148px] flex-col items-center gap-2.5 rounded-2xl border border-slate-200 bg-white/70 px-4 py-5 text-center transition-colors hover:border-sky-300 hover:bg-white">
+      <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
+        <Icon size={20} aria-hidden />
       </span>
-      <span className="text-[0.78rem] font-semibold leading-tight text-slate-800">{title}</span>
+      <span className="text-[0.78rem] font-semibold leading-tight text-slate-800 text-balance">
+        {title}
+      </span>
     </div>
   );
 }
@@ -67,66 +68,24 @@ function LoadPlanNode({ className = "" }: { className?: string }) {
 
 export default function LoadPlanDiagram() {
   return (
-    <div className="mx-auto max-w-[680px]">
-      {/* Convergence diagram — md and up */}
-      <div className="hidden md:grid md:grid-cols-[minmax(0,1fr)_84px_auto] md:items-center">
-        {/* Inputs */}
-        <div className="relative z-10 flex flex-col gap-2.5">
-          {LOAD_PLAN_DETAILS.map((detail) => (
-            <InputRow key={detail.title} {...detail} />
-          ))}
-        </div>
-
-        {/* Connectors converging toward the load plan */}
-        <div className="relative self-stretch">
-          <svg
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            className="absolute inset-0 h-full w-full"
-            aria-hidden
-          >
-            {LOAD_PLAN_DETAILS.map((detail, index) => {
-              const y = ((index + 0.5) / LOAD_PLAN_DETAILS.length) * 100;
-              return (
-                <path
-                  key={detail.title}
-                  d={`M0 ${y} C 45 ${y}, 55 50, 100 50`}
-                  fill="none"
-                  stroke="rgba(47,116,189,0.4)"
-                  strokeWidth={0.7}
-                  strokeDasharray="1.6 1.6"
-                  vectorEffect="non-scaling-stroke"
-                />
-              );
-            })}
-          </svg>
-          <span
-            className="absolute right-0 top-1/2 z-10 flex h-7 w-7 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full border border-sky-200 bg-white text-sky-600 shadow-[0_4px_12px_rgba(15,23,42,0.12)]"
-            aria-hidden
-          >
-            <ArrowRight size={15} />
-          </span>
-        </div>
-
-        {/* Load plan endpoint */}
-        <LoadPlanNode className="justify-self-end" />
+    <div className="mx-auto max-w-[760px]">
+      {/* Details laid out horizontally, converging downward into the load plan */}
+      <div className="flex flex-wrap justify-center gap-3">
+        {LOAD_PLAN_DETAILS.map((detail) => (
+          <InputTile key={detail.title} {...detail} />
+        ))}
       </div>
 
-      {/* Stacked fallback — small screens */}
-      <div className="md:hidden">
-        <div className="grid grid-cols-1 gap-2.5">
-          {LOAD_PLAN_DETAILS.map((detail) => (
-            <InputRow key={detail.title} {...detail} />
-          ))}
-        </div>
-        <div className="my-4 flex justify-center" aria-hidden>
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-sky-200 bg-white text-sky-600 shadow-[0_4px_12px_rgba(15,23,42,0.12)]">
-            <ArrowDown size={16} />
-          </span>
-        </div>
-        <div className="flex justify-center">
-          <LoadPlanNode />
-        </div>
+      {/* connector flowing down to the destination */}
+      <div className="my-6 flex justify-center" aria-hidden>
+        <span className="flex h-9 w-9 items-center justify-center rounded-full border border-sky-200 bg-white text-sky-600 shadow-[0_4px_12px_rgba(15,23,42,0.12)]">
+          <ArrowDown size={18} />
+        </span>
+      </div>
+
+      {/* Load plan endpoint */}
+      <div className="flex justify-center">
+        <LoadPlanNode />
       </div>
     </div>
   );
