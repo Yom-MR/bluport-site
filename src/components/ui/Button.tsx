@@ -10,6 +10,8 @@ type ButtonProps = {
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
   withArrow?: boolean;
+  /** For request-capacity buttons: prepopulate the form's Operation Type. */
+  operationType?: string;
 };
 
 const buttonVariants: Record<NonNullable<ButtonProps["variant"]>, string> = {
@@ -30,6 +32,7 @@ export default function Button({
   variant = "primary",
   className,
   withArrow = false,
+  operationType,
 }: ButtonProps) {
   const isRequestCapacity = href.includes("request-capacity");
   const classes = cn(baseClasses, buttonVariants[variant], className);
@@ -54,8 +57,13 @@ export default function Button({
       <button
         type="button"
         data-request-capacity="true"
+        data-operation-type={operationType || undefined}
         onClick={() => {
-          window.dispatchEvent(new Event("open-request-capacity-modal"));
+          window.dispatchEvent(
+            new CustomEvent("open-request-capacity-modal", {
+              detail: { operationType: operationType || "" },
+            }),
+          );
         }}
         className={classes}
       >

@@ -41,11 +41,12 @@ export default function ContactPage() {
             <Reveal className="space-y-6">
               <p className="technical-label text-sky-700">CONTACT PREP</p>
               <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
-                Every detail comes together to form the load plan.
+                Come prepared and the quote moves faster.
               </h2>
               <p className="max-w-[52ch] text-base leading-8 text-slate-600 md:text-lg">
-                The more of these you can share upfront, the faster operations scopes the move and
-                builds an accurate load plan before the truck rolls.
+                These are the details operations needs to scope a move. Share what you can upfront and
+                we can size the trailer, plan securement, and confirm timing without a round of
+                back-and-forth.
               </p>
               <div className="flex items-start gap-3 rounded-2xl border border-sky-200 bg-white px-5 py-4 shadow-[0_1px_3px_rgba(15,23,42,0.06)]">
                 <ClipboardList size={20} aria-hidden className="mt-0.5 shrink-0 text-sky-600" />

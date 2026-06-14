@@ -244,70 +244,84 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                 How Bluport supports the move.
               </h2>
               <p className="text-base leading-8 text-[var(--steel-300)] md:text-lg">
-                Clear planning, dispatch, and closeout keep the work moving instead of creating a new
-                bottleneck.
+                Each move is built to answer the friction above — point for point — then run through a
+                consistent operating workflow from request to closeout.
               </p>
             </div>
           </Reveal>
 
-          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-10">
-            <Reveal className="space-y-3">
-              {industry.solutions.map((item) => (
-                <div
+          {/* Solution cards — each answers the matching friction point */}
+          <div className="grid gap-4 md:grid-cols-3">
+            {industry.solutions.map((item, index) => {
+              const answers = industry.painPoints[index]?.title;
+              return (
+                <Reveal
                   key={item.title}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.03)] p-5 pl-6 transition-all hover:-translate-y-0.5 hover:border-[rgba(91,159,216,0.5)] hover:bg-[rgba(255,255,255,0.05)]"
+                  delay={index * 80}
+                  className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(165deg,rgba(91,159,216,0.1),rgba(255,255,255,0.02)_60%)] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(91,159,216,0.5)] hover:shadow-[0_28px_60px_rgba(5,11,22,0.45)]"
                 >
                   <span
-                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,var(--accent),rgba(47,116,189,0.25))]"
+                    className="pointer-events-none absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-[linear-gradient(90deg,var(--accent-light),rgba(91,159,216,0))] opacity-0 transition-all duration-300 group-hover:scale-x-100 group-hover:opacity-100"
                     aria-hidden
                   />
-                  <div className="flex items-start gap-4">
-                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
-                      <CheckCircle2 size={18} aria-hidden />
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
+                      <CheckCircle2 size={22} aria-hidden />
                     </span>
-                    <div>
-                      <p className="text-[1.02rem] font-semibold leading-6 tracking-[-0.01em] text-white">
-                        {item.title}
-                      </p>
-                      <p className="mt-1.5 text-sm leading-7 text-[var(--steel-300)]">{item.description}</p>
-                    </div>
+                    <span className="font-mono text-2xl font-bold leading-none text-white/10 transition-colors group-hover:text-[rgba(91,159,216,0.45)]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                </div>
-              ))}
-            </Reveal>
+                  {answers ? (
+                    <p className="mt-6 flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[var(--accent-light)]">
+                      <ArrowRight size={12} aria-hidden />
+                      Answers: {answers}
+                    </p>
+                  ) : null}
+                  <p className="mt-2 text-lg font-semibold leading-snug tracking-[-0.02em] text-white">
+                    {item.title}
+                  </p>
+                  <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
+                    {item.description}
+                  </p>
+                </Reveal>
+              );
+            })}
+          </div>
 
-            {/* Workflow timeline */}
-            <Reveal delay={120} className="flex flex-col rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 lg:p-8">
-              <div className="flex items-center gap-2.5">
-                <p className="technical-label text-[var(--accent-light)]">OPERATING WORKFLOW</p>
-                <span className="h-px flex-1 bg-white/10" aria-hidden />
-              </div>
-              <ol className="mt-5 flex flex-1 flex-col justify-between">
-                {industry.workflow.map((step, index) => {
-                  const isLast = index === industry.workflow.length - 1;
-                  return (
-                    <li key={step.stage} className={`relative flex gap-4 ${isLast ? "" : "pb-5"}`}>
-                      {!isLast ? (
-                        <span
-                          className="absolute left-[17px] top-9 bottom-0 w-px bg-[rgba(91,159,216,0.3)]"
-                          aria-hidden
-                        />
-                      ) : null}
+          {/* Operating workflow — horizontal stepper */}
+          <Reveal delay={120} className="rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 lg:p-8">
+            <div className="flex items-center gap-2.5">
+              <p className="technical-label text-[var(--accent-light)]">OPERATING WORKFLOW</p>
+              <span className="h-px flex-1 bg-white/10" aria-hidden />
+            </div>
+            <ol className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
+              {industry.workflow.map((step, index) => {
+                const isLast = index === industry.workflow.length - 1;
+                return (
+                  <li key={step.stage} className="relative">
+                    <div className="flex items-center gap-3">
                       <span className="relative z-10 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[rgba(91,159,216,0.4)] bg-[rgba(91,159,216,0.1)] font-mono text-[0.8rem] font-semibold text-[var(--accent-light)]">
                         {index + 1}
                       </span>
-                      <div className="pt-1">
-                        <p className="text-[0.78rem] font-bold uppercase tracking-[0.12em] text-[var(--accent-light)]">
-                          {step.stage}
-                        </p>
-                        <p className="mt-1 text-sm leading-6 text-[var(--steel-300)]">{step.description}</p>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ol>
-            </Reveal>
-          </div>
+                      {!isLast ? (
+                        <span
+                          className="hidden h-px flex-1 bg-[rgba(91,159,216,0.3)] lg:block"
+                          aria-hidden
+                        />
+                      ) : null}
+                    </div>
+                    <p className="mt-3 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-[var(--accent-light)]">
+                      {step.stage}
+                    </p>
+                    <p className="mt-1.5 text-sm leading-6 text-[var(--steel-300)]">
+                      {step.description}
+                    </p>
+                  </li>
+                );
+              })}
+            </ol>
+          </Reveal>
         </Container>
       </section>
 
