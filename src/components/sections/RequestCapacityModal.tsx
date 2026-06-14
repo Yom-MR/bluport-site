@@ -187,7 +187,10 @@ export default function RequestCapacityModal() {
         </div>
 
         <div className="no-scrollbar overflow-y-auto bg-[#f7f9fc] px-6 py-6 md:px-8 md:py-7">
-          <RequestCapacityForm presetOperationType={presetOperationType} />
+          <RequestCapacityForm
+            key={presetOperationType || "default"}
+            presetOperationType={presetOperationType}
+          />
         </div>
       </div>
     </div>

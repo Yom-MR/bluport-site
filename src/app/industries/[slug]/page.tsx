@@ -3,17 +3,30 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowDown,
   ArrowRight,
   Building2,
-  CheckCircle2,
+  CalendarClock,
+  ClipboardCheck,
+  Clock,
   Cpu,
   Factory,
   Gauge,
+  Layers,
+  Lock,
   PackageCheck,
   PhoneCall,
   Radio,
   ShieldCheck,
+  Shuffle,
+  Siren,
+  Timer,
   Truck,
+  Users,
+  Warehouse,
+  Workflow,
+  Zap,
+  type LucideIcon,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
@@ -32,6 +45,17 @@ const industryIcons: Record<string, typeof Truck> = {
   "industrial-manufacturing": Factory,
   "aerospace-defense": ShieldCheck,
   "government-emergency-response": Building2,
+};
+
+// One icon per friction/response/result row, reused across all three stages so the
+// eye can follow each thread from the problem to the response to the result.
+const rowIcons: Record<string, [LucideIcon, LucideIcon, LucideIcon]> = {
+  "construction-equipment-rental": [Clock, Warehouse, Users],
+  "utilities-infrastructure": [Timer, Lock, Shuffle],
+  "industrial-manufacturing": [CalendarClock, Truck, ShieldCheck],
+  "data-center-construction": [Layers, Zap, CalendarClock],
+  "aerospace-defense": [PackageCheck, Lock, ClipboardCheck],
+  "government-emergency-response": [Siren, Radio, Shuffle],
 };
 
 export function generateStaticParams() {
@@ -62,6 +86,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
   const otherIndustries = INDUSTRY_ENTRIES.filter((entry) => entry.slug !== industry.slug).slice(0, 3);
 
   const stages = ["Friction", "Response", "Result"] as const;
+  const stageIcons = rowIcons[industry.slug] ?? [Gauge, Gauge, Gauge];
 
   return (
     <>
@@ -178,31 +203,37 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
             </Reveal>
 
             <div className="grid gap-4">
-              {industry.painPoints.map((point, index) => (
-                <Reveal
-                  key={point.title}
-                  delay={index * 90}
-                  className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 pl-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-[rgba(194,65,12,0.4)] hover:shadow-[0_18px_45px_rgba(15,23,42,0.1)] md:p-7 md:pl-8"
-                >
-                  <span
-                    className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,#c2410c,rgba(194,65,12,0.25))]"
-                    aria-hidden
-                  />
-                  <div className="flex items-start gap-5">
-                    <span className="font-mono text-2xl font-bold leading-none text-[rgba(194,65,12,0.35)] transition-colors group-hover:text-[#c2410c]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <p className="text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
-                        {point.title}
-                      </p>
-                      <p className="mt-2 text-sm leading-7 text-slate-600">
-                        {point.description}
-                      </p>
+              {industry.painPoints.map((point, index) => {
+                const Icon = stageIcons[index] ?? Gauge;
+                return (
+                  <Reveal
+                    key={point.title}
+                    delay={index * 90}
+                    className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-[rgba(194,65,12,0.4)] hover:shadow-[0_18px_45px_rgba(15,23,42,0.1)] md:p-7"
+                  >
+                    <span
+                      className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,#c2410c,rgba(194,65,12,0.25))]"
+                      aria-hidden
+                    />
+                    <div className="flex items-start gap-5">
+                      <span className="relative inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(194,65,12,0.1)] text-[#c2410c] ring-1 ring-[rgba(194,65,12,0.18)] transition-colors group-hover:bg-[rgba(194,65,12,0.16)]">
+                        <Icon size={24} aria-hidden />
+                        <span className="absolute -right-1.5 -top-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#c2410c] font-mono text-[0.6rem] font-bold text-white shadow-sm">
+                          {index + 1}
+                        </span>
+                      </span>
+                      <div>
+                        <p className="text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
+                          {point.title}
+                        </p>
+                        <p className="mt-2 text-sm leading-7 text-slate-600">
+                          {point.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Reveal>
-              ))}
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </Container>
@@ -254,6 +285,7 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           <div className="grid gap-4 md:grid-cols-3">
             {industry.solutions.map((item, index) => {
               const answers = industry.painPoints[index]?.title;
+              const Icon = stageIcons[index] ?? Gauge;
               return (
                 <Reveal
                   key={item.title}
@@ -265,8 +297,8 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     aria-hidden
                   />
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
-                      <CheckCircle2 size={22} aria-hidden />
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)] ring-1 ring-[rgba(91,159,216,0.25)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
+                      <Icon size={22} aria-hidden />
                     </span>
                     <span className="font-mono text-2xl font-bold leading-none text-white/10 transition-colors group-hover:text-[rgba(91,159,216,0.45)]">
                       {String(index + 1).padStart(2, "0")}
@@ -289,12 +321,35 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
             })}
           </div>
 
-          {/* Operating workflow — horizontal stepper */}
-          <Reveal delay={120} className="rounded-[1.75rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-7 lg:p-8">
-            <div className="flex items-center gap-2.5">
+        </Container>
+      </section>
+
+      {/* Operating workflow — bridges the Response and Result stages */}
+      <div className="relative overflow-hidden bg-white">
+        {/* upper band continues the dark Response section; the card floats on the seam */}
+        <div className="absolute inset-x-0 top-0 h-1/2 bg-[var(--navy-900)]" aria-hidden />
+        <div
+          className="pointer-events-none absolute -left-32 top-0 h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(91,159,216,0.18),transparent_70%)]"
+          aria-hidden
+        />
+        <Container className="relative py-14 md:py-16">
+          <Reveal className="overflow-hidden rounded-[1.75rem] border border-white/12 bg-[var(--navy-950)] p-7 shadow-[0_36px_80px_rgba(5,11,22,0.5)] md:p-9">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2.5">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)]">
+                <Workflow size={18} aria-hidden />
+              </span>
               <p className="technical-label text-[var(--accent-light)]">OPERATING WORKFLOW</p>
-              <span className="h-px flex-1 bg-white/10" aria-hidden />
+              <span className="hidden h-px flex-1 bg-white/10 sm:block" aria-hidden />
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[rgba(91,159,216,0.3)] bg-[rgba(91,159,216,0.12)] px-3 py-1 text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[var(--accent-light)]">
+                Response
+                <ArrowRight size={11} aria-hidden />
+                Result
+              </span>
             </div>
+            <p className="mt-4 max-w-[60ch] text-sm leading-7 text-[var(--steel-300)]">
+              The same disciplined sequence runs every move from request to closeout — turning the
+              response above into the results below.
+            </p>
             <ol className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
               {industry.workflow.map((step, index) => {
                 const isLast = index === industry.workflow.length - 1;
@@ -322,8 +377,16 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               })}
             </ol>
           </Reveal>
+
+          {/* connector flowing down into the Result stage */}
+          <div className="relative mt-5 flex flex-col items-center" aria-hidden>
+            <span className="h-7 w-px bg-[linear-gradient(180deg,rgba(91,159,216,0.6),rgba(47,125,82,0.7))]" />
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(47,125,82,0.4)] bg-white text-[#2f7d52] shadow-[0_8px_20px_rgba(15,23,42,0.14)]">
+              <ArrowDown size={16} />
+            </span>
+          </div>
         </Container>
-      </section>
+      </div>
 
       {/* Benefits — light section to separate the dark response stage from the related sectors */}
       <section className="relative overflow-hidden bg-white py-20 text-slate-950 md:py-28">
@@ -366,32 +429,35 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
           </Reveal>
 
           <div className="grid gap-4 md:grid-cols-3">
-            {industry.benefits.map((benefit, index) => (
-              <Reveal
-                key={benefit.title}
-                delay={index * 80}
-                className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-[linear-gradient(165deg,rgba(47,125,82,0.06),#ffffff_55%)] p-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(47,125,82,0.4)] hover:shadow-[0_28px_60px_rgba(15,23,42,0.14)]"
-              >
-                <span
-                  className="pointer-events-none absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-[linear-gradient(90deg,#2f7d52,rgba(47,125,82,0))] opacity-0 transition-all duration-300 group-hover:scale-x-100 group-hover:opacity-100"
-                  aria-hidden
-                />
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,125,82,0.12)] text-[#2f7d52] transition-colors group-hover:bg-[rgba(47,125,82,0.2)]">
-                    <CheckCircle2 size={22} aria-hidden />
-                  </span>
-                  <span className="font-mono text-2xl font-bold leading-none text-slate-200 transition-colors group-hover:text-[rgba(47,125,82,0.45)]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <p className="mt-6 text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
-                  {benefit.title}
-                </p>
-                <p className="mt-2.5 text-sm leading-7 text-slate-600">
-                  {benefit.description}
-                </p>
-              </Reveal>
-            ))}
+            {industry.benefits.map((benefit, index) => {
+              const Icon = stageIcons[index] ?? Gauge;
+              return (
+                <Reveal
+                  key={benefit.title}
+                  delay={index * 80}
+                  className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-[linear-gradient(165deg,rgba(47,125,82,0.06),#ffffff_55%)] p-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(47,125,82,0.4)] hover:shadow-[0_28px_60px_rgba(15,23,42,0.14)]"
+                >
+                  <span
+                    className="pointer-events-none absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-[linear-gradient(90deg,#2f7d52,rgba(47,125,82,0))] opacity-0 transition-all duration-300 group-hover:scale-x-100 group-hover:opacity-100"
+                    aria-hidden
+                  />
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,125,82,0.12)] text-[#2f7d52] ring-1 ring-[rgba(47,125,82,0.22)] transition-colors group-hover:bg-[rgba(47,125,82,0.2)]">
+                      <Icon size={22} aria-hidden />
+                    </span>
+                    <span className="font-mono text-2xl font-bold leading-none text-slate-200 transition-colors group-hover:text-[rgba(47,125,82,0.45)]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <p className="mt-6 text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
+                    {benefit.title}
+                  </p>
+                  <p className="mt-2.5 text-sm leading-7 text-slate-600">
+                    {benefit.description}
+                  </p>
+                </Reveal>
+              );
+            })}
           </div>
         </Container>
       </section>

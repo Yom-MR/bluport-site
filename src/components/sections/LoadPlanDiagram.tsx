@@ -29,7 +29,7 @@ const LOAD_PLAN_DETAILS: Detail[] = [
 
 function InputRow({ icon: Icon, title }: Detail) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-colors hover:border-sky-300">
+    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/70 px-3.5 py-2.5 transition-colors hover:border-sky-300 hover:bg-white">
       <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-sky-700">
         <Icon size={16} aria-hidden />
       </span>
@@ -38,27 +38,24 @@ function InputRow({ icon: Icon, title }: Detail) {
   );
 }
 
-function LoadPlanHub({ className = "" }: { className?: string }) {
+function LoadPlanNode({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`flex flex-col items-center justify-center gap-2 rounded-2xl bg-[linear-gradient(150deg,#1d4e82,#0f2c4d)] px-5 py-6 text-center text-white shadow-[0_24px_50px_rgba(15,23,42,0.3)] ring-4 ring-white/60 ${className}`}
+      className={`inline-flex items-center gap-3 rounded-2xl bg-[var(--navy-950)] px-5 py-4 text-white shadow-[0_18px_40px_rgba(15,23,42,0.25)] ${className}`}
     >
-      <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-sky-200">
-        <ClipboardCheck size={22} aria-hidden />
+      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-500/15 text-sky-300">
+        <ClipboardCheck size={20} aria-hidden />
       </span>
-      <p className="text-[0.6rem] font-semibold uppercase tracking-[0.22em] text-sky-200">The Output</p>
-      <p className="text-xl font-bold leading-none tracking-[-0.02em]">Load Plan</p>
+      <span className="text-lg font-bold leading-none tracking-[-0.02em]">Load plan</span>
     </div>
   );
 }
 
 export default function LoadPlanDiagram() {
   return (
-    <div className="rounded-[1.75rem] border border-slate-200 bg-[#f6f9fd] p-5 shadow-[0_1px_3px_rgba(15,23,42,0.06)] md:p-7">
-      <p className="technical-label mb-5 text-sky-700">INPUTS → PLAN</p>
-
+    <div className="lg:ml-auto lg:max-w-[460px]">
       {/* Convergence diagram — md and up */}
-      <div className="hidden md:grid md:grid-cols-[minmax(0,1fr)_92px_minmax(0,180px)] md:items-center">
+      <div className="hidden md:grid md:grid-cols-[minmax(0,1fr)_84px_auto] md:items-center">
         {/* Inputs */}
         <div className="relative z-10 flex flex-col gap-2.5">
           {LOAD_PLAN_DETAILS.map((detail) => (
@@ -66,7 +63,7 @@ export default function LoadPlanDiagram() {
           ))}
         </div>
 
-        {/* Connectors converging into the hub */}
+        {/* Connectors converging toward the load plan */}
         <div className="relative self-stretch">
           <svg
             viewBox="0 0 100 100"
@@ -97,8 +94,8 @@ export default function LoadPlanDiagram() {
           </span>
         </div>
 
-        {/* Output hub */}
-        <LoadPlanHub className="justify-self-end" />
+        {/* Load plan endpoint */}
+        <LoadPlanNode className="justify-self-end" />
       </div>
 
       {/* Stacked fallback — small screens */}
@@ -113,7 +110,9 @@ export default function LoadPlanDiagram() {
             <ArrowDown size={16} />
           </span>
         </div>
-        <LoadPlanHub />
+        <div className="flex justify-center">
+          <LoadPlanNode />
+        </div>
       </div>
     </div>
   );

@@ -201,7 +201,7 @@ export default function CareersPage() {
                   <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
                     {track.title}
                   </h3>
-                  <p className="mt-3 max-w-[46ch] text-sm leading-8 text-[#cdd8e3] md:text-base">
+                  <p className="mt-3 max-w-[46ch] text-sm leading-8 text-[#cdd8e3] md:min-h-[7.5rem] md:text-base">
                     {track.description}
                   </p>
                   <a
