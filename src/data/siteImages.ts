@@ -7,21 +7,21 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
-  // Mission hero: real flatbed trailer loaded with a tracked excavator
-  transportCommandCenter: "/images/page-heroes/mission-flatbed-excavator.jpg",
+  // Mission hero: flatbed trailer loaded with a tracked excavator at a yard
+  transportCommandCenter: "/images/page-heroes/mission-flatbed-gen.png",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
-  // Services hero: real aerial/overhead view of a truck hauling along a highway
-  servicesHero: "/images/page-heroes/services-aerial-truck.jpg",
+  // Services hero: overhead aerial of a hotshot pickup + flatbed hauling on a highway
+  servicesHero: "/images/page-heroes/services-hotshot-gen.png",
   // Industries index hero: real aerial photo of a busy construction project
   industriesHero: "/images/page-heroes/industries-construction-aerial.jpg",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
-  // Contact hero: real worker in hard hat coordinating on a cell phone
-  contactHero: "/images/page-heroes/contact-on-phone.jpg",
+  // Contact hero: driver on the phone beside the cab of a semi truck
+  contactHero: "/images/page-heroes/contact-dispatch-gen.png",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections
