@@ -7,19 +7,21 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
-  // Mission hero: realistic freight/transportation dispatch command center
-  transportCommandCenter: "/images/page-heroes/transport-command-center-v2.png",
+  // Mission hero: real freight rail dispatch command center (Union Pacific Harriman Dispatch Center)
+  transportCommandCenter: "/images/page-heroes/mission-dispatch-center-real.jpg",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
   // Services hero: real aerial drone photo of a worksite at golden hour (Unsplash, Anton Lukin)
   servicesHero: "/images/page-heroes/services-aerial-worksite-real.jpg",
-  industriesHero: "/images/industries/hero-all-industries.png",
+  // Industries index hero: real aerial photo of a busy container shipping port
+  industriesHero: "/images/page-heroes/industries-port-real.jpg",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
-  contactHero: "/images/page-heroes/contact-dispatch-operations.png",
+  // Contact hero: real operations room with dispatchers monitoring live camera walls
+  contactHero: "/images/page-heroes/contact-ops-center-real.jpg",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections
@@ -39,11 +41,11 @@ export const siteImages = {
   industriesUtilities: "/images/jobsites/industry-utilities-infrastructure.jpg",
   industriesIndustrial: "/images/jobsites/industry-industrial-manufacturing.jpg",
   industriesDataCenter: "/images/jobsites/industry-data-center.jpg",
-  // Industry detail pages — dedicated, cinematic industry-specific heroes
-  industryDetailConstruction: "/images/industries/hero-construction-equipment.png",
-  industryDetailUtilities: "/images/industries/hero-utilities-infrastructure.png",
-  industryDetailIndustrial: "/images/industries/industrial-manufacturing-v4.png",
-  industryDetailDataCenter: "/images/industries/hero-data-center.png",
-  industryDetailAerospace: "/images/industries/hero-aerospace-defense.png",
-  industryDetailGovernment: "/images/industries/hero-government-emergency.png",
+  // Industry detail pages — real, premium industry-specific photos
+  industryDetailConstruction: "/images/industries/construction-real.jpg",
+  industryDetailUtilities: "/images/industries/utilities-real.jpg",
+  industryDetailIndustrial: "/images/industries/industrial-real.jpg",
+  industryDetailDataCenter: "/images/industries/datacenter-real.jpg",
+  industryDetailAerospace: "/images/industries/aerospace-real.jpg",
+  industryDetailGovernment: "/images/industries/government-real.jpg",
 } as const;
