@@ -54,7 +54,7 @@ export default function IndustriesPage() {
         title="Industries we serve."
         description="Bluport supports sectors where equipment timing affects crews, production, restoration, and project delivery."
         image={siteImages.industriesHero}
-        imageAlt="Aerial view of a busy container shipping port with cranes, stacked containers, and trucks"
+        imageAlt="Aerial view of a large construction project with tower cranes, trucks, and active earthwork"
         imagePosition="object-[center_64%]"
         variant="dark"
       />

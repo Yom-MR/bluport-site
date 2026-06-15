@@ -7,21 +7,21 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
-  // Mission hero: real freight rail dispatch command center (Union Pacific Harriman Dispatch Center)
-  transportCommandCenter: "/images/page-heroes/mission-dispatch-center-real.jpg",
+  // Mission hero: real military combined air operations command center (Al Udeid)
+  transportCommandCenter: "/images/page-heroes/mission-operations-center.jpg",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
   // Services hero: real aerial drone photo of a worksite at golden hour (Unsplash, Anton Lukin)
   servicesHero: "/images/page-heroes/services-aerial-worksite-real.jpg",
-  // Industries index hero: real aerial photo of a busy container shipping port
-  industriesHero: "/images/page-heroes/industries-port-real.jpg",
+  // Industries index hero: real aerial photo of a busy construction project
+  industriesHero: "/images/page-heroes/industries-construction-aerial.jpg",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
-  // Contact hero: real operations room with dispatchers monitoring live camera walls
-  contactHero: "/images/page-heroes/contact-ops-center-real.jpg",
+  // Contact hero: real combined air operations center watch floor with map screens
+  contactHero: "/images/page-heroes/contact-operations-center.jpg",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections
@@ -44,8 +44,8 @@ export const siteImages = {
   // Industry detail pages — real, premium industry-specific photos
   industryDetailConstruction: "/images/industries/construction-real.jpg",
   industryDetailUtilities: "/images/industries/utilities-real.jpg",
-  industryDetailIndustrial: "/images/industries/industrial-real.jpg",
-  industryDetailDataCenter: "/images/industries/datacenter-real.jpg",
+  industryDetailIndustrial: "/images/industries/oil-gas-real.jpg",
+  industryDetailDataCenter: "/images/industries/datacenter-construction-real.jpg",
   industryDetailAerospace: "/images/industries/aerospace-real.jpg",
-  industryDetailGovernment: "/images/industries/government-real.jpg",
+  industryDetailGovernment: "/images/industries/government-staging-real.jpg",
 } as const;
