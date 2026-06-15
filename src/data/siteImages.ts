@@ -7,21 +7,21 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
-  // Mission hero: real flatbed trailer loaded with heavy equipment (bulldozer)
-  transportCommandCenter: "/images/page-heroes/mission-loaded-flatbed.jpg",
+  // Mission hero: real flatbed trailer loaded with a tracked excavator
+  transportCommandCenter: "/images/page-heroes/mission-flatbed-excavator.jpg",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
-  // Services hero: real overhead aerial view of an active work site with heavy equipment
-  servicesHero: "/images/page-heroes/services-worksite-aerial.jpg",
+  // Services hero: real aerial/overhead view of a truck hauling along a highway
+  servicesHero: "/images/page-heroes/services-aerial-truck.jpg",
   // Industries index hero: real aerial photo of a busy construction project
   industriesHero: "/images/page-heroes/industries-construction-aerial.jpg",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
-  // Contact hero: real crew in hard hats and hi-vis coordinating on site
-  contactHero: "/images/page-heroes/contact-crew.jpg",
+  // Contact hero: real worker in hard hat coordinating on a cell phone
+  contactHero: "/images/page-heroes/contact-on-phone.jpg",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections
