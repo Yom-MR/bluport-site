@@ -7,21 +7,21 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
-  // Mission hero: real NASA control room (flag-free, dashboard/feed screens — no maps)
-  transportCommandCenter: "/images/page-heroes/ops-goddard-a.jpg",
+  // Mission hero: real driver/crew member at work in front of a freight truck
+  transportCommandCenter: "/images/page-heroes/mission-driver.jpg",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
-  // Services hero: real flatbed semi hauling a tracked excavator on the highway
-  servicesHero: "/images/page-heroes/services-heavy-haul.jpg",
+  // Services hero: real overhead/aerial view of a depot with trucks staged
+  servicesHero: "/images/page-heroes/services-depot-aerial.jpg",
   // Industries index hero: real aerial photo of a busy construction project
   industriesHero: "/images/page-heroes/industries-construction-aerial.jpg",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
-  // Contact hero: real satellite operations center with operators at dashboard workstations
-  contactHero: "/images/page-heroes/ops-saocom.jpg",
+  // Contact hero: real dispatcher working at a desk with laptop and clipboard
+  contactHero: "/images/page-heroes/contact-dispatch-desk.jpg",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections
