@@ -12,8 +12,8 @@ export const siteImages = {
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
-  // Services hero: heavy-haul equipment yard at dusk representing the full service range
-  servicesHero: "/images/page-heroes/services-equipment-yard-v3.png",
+  // Services hero: aerial worksite view encompassing equipment transport, staging, and active operations
+  servicesHero: "/images/page-heroes/services-aerial-worksite-v4.png",
   industriesHero: "/images/industries/hero-all-industries.png",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
