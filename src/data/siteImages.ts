@@ -12,8 +12,8 @@ export const siteImages = {
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
-  // Services hero: aerial worksite view encompassing equipment transport, staging, and active operations
-  servicesHero: "/images/page-heroes/services-aerial-worksite-v4.png",
+  // Services hero: real aerial drone photo of a worksite at golden hour (Unsplash, Anton Lukin)
+  servicesHero: "/images/page-heroes/services-aerial-worksite-real.jpg",
   industriesHero: "/images/industries/hero-all-industries.png",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
