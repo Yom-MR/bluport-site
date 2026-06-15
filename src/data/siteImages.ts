@@ -8,12 +8,12 @@ export const siteImages = {
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
   // Mission hero: realistic freight/transportation dispatch command center
-  transportCommandCenter: "/images/page-heroes/transport-command-center.png",
+  transportCommandCenter: "/images/page-heroes/transport-command-center-v2.png",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
   // Services hero: heavy-haul equipment yard at dusk representing the full service range
-  servicesHero: "/images/page-heroes/services-equipment-yard.png",
+  servicesHero: "/images/page-heroes/services-equipment-yard-v2.png",
   industriesHero: "/images/industries/hero-all-industries.png",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
