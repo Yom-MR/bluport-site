@@ -4,6 +4,9 @@ export const siteImages = {
   missionPortrait: "/images/loads/why-we-exist-v2.png",
   careersFlag: "/images/page-heroes/careers-flag-veteran.png",
   flagTexture: "/images/backgrounds/american-flag-texture.png",
+  flagStarsField: "/images/backgrounds/flag-stars-field.png",
+  skillsPlanning: "/images/backgrounds/military-skills-planning.png",
+  digitalOperations: "/images/backgrounds/digital-operations.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
   // Services hero: close-up securement/binder photo from Bluport loads
   servicesHero: "/images/loads/equipment-securement-real.png",

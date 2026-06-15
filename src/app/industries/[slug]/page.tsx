@@ -227,27 +227,36 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                   <Reveal
                     key={point.title}
                     delay={index * 90}
-                    className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-[rgba(194,65,12,0.4)] hover:shadow-[0_18px_45px_rgba(15,23,42,0.1)] md:p-7"
+                    className="group relative flex items-stretch overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-[rgba(194,65,12,0.4)] hover:shadow-[0_18px_45px_rgba(15,23,42,0.1)]"
                   >
-                    <span
-                      className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,#c2410c,rgba(194,65,12,0.25))]"
-                      aria-hidden
-                    />
-                    <div className="flex items-start gap-5">
-                      <span className="relative inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(194,65,12,0.1)] text-[#c2410c] ring-1 ring-[rgba(194,65,12,0.18)] transition-colors group-hover:bg-[rgba(194,65,12,0.16)]">
+                    {/* icon + index rail anchors the left edge */}
+                    <div className="relative flex w-[88px] shrink-0 flex-col items-center justify-center gap-2.5 overflow-hidden border-r border-slate-100 bg-[linear-gradient(160deg,rgba(194,65,12,0.07),rgba(194,65,12,0.02))] px-3 md:w-[104px]">
+                      <span
+                        className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,#c2410c,rgba(194,65,12,0.25))]"
+                        aria-hidden
+                      />
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#c2410c] ring-1 ring-[rgba(194,65,12,0.2)] shadow-sm transition-colors group-hover:bg-[#c2410c] group-hover:text-white">
                         <Icon size={24} aria-hidden />
-                        <span className="absolute -right-1.5 -top-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#c2410c] font-mono text-[0.6rem] font-bold text-white shadow-sm">
-                          {index + 1}
-                        </span>
                       </span>
-                      <div>
-                        <p className="text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
-                          {point.title}
-                        </p>
-                        <p className="mt-2 text-sm leading-7 text-slate-600">
-                          {point.description}
-                        </p>
-                      </div>
+                      <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[rgba(194,65,12,0.55)]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+
+                    {/* content fills the remaining width */}
+                    <div className="relative flex flex-1 flex-col justify-center px-6 py-6 md:px-7">
+                      <span
+                        className="pointer-events-none absolute -right-3 top-1/2 hidden -translate-y-1/2 font-mono text-[5.5rem] font-bold leading-none text-[rgba(194,65,12,0.05)] transition-colors duration-300 group-hover:text-[rgba(194,65,12,0.1)] lg:block"
+                        aria-hidden
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <p className="relative text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
+                        {point.title}
+                      </p>
+                      <p className="relative mt-2 max-w-[52ch] text-sm leading-7 text-slate-600">
+                        {point.description}
+                      </p>
                     </div>
                   </Reveal>
                 );

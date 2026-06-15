@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
+  ArrowDown,
   ArrowRight,
   Award,
   Briefcase,
@@ -156,6 +157,16 @@ export default function CareersPage() {
     <>
       {/* Hero — Two ways in */}
       <section className="relative isolate overflow-hidden border-b border-[rgba(200,210,221,0.08)] bg-[linear-gradient(180deg,#08111f_0%,#050b16_100%)] pb-20 pt-28 text-white md:pb-28 md:pt-32">
+        {/* faint field-of-stars from the flag, anchored to the right */}
+        <Image
+          src={siteImages.flagStarsField}
+          alt=""
+          aria-hidden
+          fill
+          priority
+          className="pointer-events-none select-none object-cover object-right opacity-[0.22] [mask-image:linear-gradient(90deg,transparent,black_55%,black_100%)]"
+          sizes="100vw"
+        />
         <div className="absolute inset-0 blueprint-grid opacity-50" aria-hidden />
         <div
           className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,116,189,0.18),transparent_38%)]"
@@ -206,10 +217,14 @@ export default function CareersPage() {
                   </p>
                   <a
                     href={track.href}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-light)] transition-colors hover:text-white"
+                    className="group/cta mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-light)] transition-colors hover:text-white"
                   >
                     {track.cta}
-                    <ArrowRight size={16} aria-hidden />
+                    <ArrowDown
+                      size={16}
+                      aria-hidden
+                      className="transition-transform group-hover/cta:translate-y-0.5"
+                    />
                   </a>
                 </div>
               </Reveal>
@@ -282,16 +297,16 @@ export default function CareersPage() {
 
       {/* Military skills that transfer */}
       <section className="relative isolate overflow-hidden bg-[#eef2f8] py-20 text-slate-950 md:py-28">
-        {/* faint stars-and-stripes texture tying the section to military service */}
+        {/* faint mission-planning texture tying the section to military logistics skills */}
         <Image
-          src={siteImages.flagTexture}
+          src={siteImages.skillsPlanning}
           alt=""
           aria-hidden
           fill
-          className="pointer-events-none object-cover opacity-[0.16] [mask-image:linear-gradient(180deg,transparent,black_22%,black_82%,transparent)]"
+          className="pointer-events-none object-cover opacity-[0.1] [mask-image:linear-gradient(180deg,transparent,black_22%,black_82%,transparent)]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[rgba(238,242,248,0.35)]" aria-hidden />
+        <div className="absolute inset-0 bg-[rgba(238,242,248,0.55)]" aria-hidden />
         <Container className="relative">
           <Reveal className="mx-auto flex max-w-[760px] flex-col items-center space-y-5 text-center">
             <p className="technical-label text-sky-700">MILITARY SKILLS THAT TRANSFER</p>
@@ -334,6 +349,12 @@ export default function CareersPage() {
               </Reveal>
             ))}
           </div>
+
+          <Reveal className="mt-12 flex justify-center">
+            <Button href={`mailto:${hrEmail}`} withArrow>
+              Talk to a recruiter
+            </Button>
+          </Reveal>
         </Container>
       </section>
 
@@ -418,6 +439,11 @@ export default function CareersPage() {
                   Civilian hires are selective and merit-based. We hire for standard and fit, not to
                   fill seats — so strong candidates always get a real look.
                 </p>
+              </div>
+              <div className="pt-2">
+                <Button href={`mailto:${hrEmail}`} withArrow>
+                  Talk to a recruiter
+                </Button>
               </div>
             </Reveal>
 

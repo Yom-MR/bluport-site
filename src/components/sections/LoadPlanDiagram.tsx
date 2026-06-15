@@ -26,14 +26,14 @@ const LOAD_PLAN_DETAILS: Detail[] = [
 
 function InputTile({ icon: Icon, title }: Detail) {
   return (
-    <div className="group flex w-[120px] flex-col items-center gap-2 text-center">
+    <div className="group flex w-[150px] flex-col items-center gap-3 text-center">
       <Icon
-        size={22}
-        strokeWidth={1.75}
+        size={40}
+        strokeWidth={1.5}
         aria-hidden
-        className="text-sky-600/80 transition-colors group-hover:text-sky-700"
+        className="text-sky-600/85 transition-colors group-hover:text-sky-700"
       />
-      <span className="text-[0.72rem] font-medium leading-tight text-slate-600 text-balance">
+      <span className="text-[0.8rem] font-medium leading-tight text-slate-600 text-balance">
         {title}
       </span>
     </div>
@@ -42,9 +42,9 @@ function InputTile({ icon: Icon, title }: Detail) {
 
 export default function LoadPlanDiagram() {
   return (
-    <div className="mx-auto max-w-[760px]">
+    <div className="mx-auto max-w-[820px]">
       {/* Details operations needs, laid out horizontally */}
-      <div className="flex flex-wrap justify-center gap-x-8 gap-y-8">
+      <div className="flex flex-wrap justify-center gap-x-10 gap-y-10">
         {LOAD_PLAN_DETAILS.map((detail) => (
           <InputTile key={detail.title} {...detail} />
         ))}
