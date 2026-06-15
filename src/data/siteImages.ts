@@ -7,21 +7,21 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
-  // Mission hero: real military combined air operations command center (Al Udeid)
-  transportCommandCenter: "/images/page-heroes/mission-operations-center.jpg",
+  // Mission hero: real NASA control room (flag-free, dashboard/feed screens — no maps)
+  transportCommandCenter: "/images/page-heroes/ops-goddard-a.jpg",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
-  // Services hero: real aerial drone photo of a worksite at golden hour (Unsplash, Anton Lukin)
-  servicesHero: "/images/page-heroes/services-aerial-worksite-real.jpg",
+  // Services hero: real flatbed semi hauling a tracked excavator on the highway
+  servicesHero: "/images/page-heroes/services-heavy-haul.jpg",
   // Industries index hero: real aerial photo of a busy construction project
   industriesHero: "/images/page-heroes/industries-construction-aerial.jpg",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
-  // Contact hero: real combined air operations center watch floor with map screens
-  contactHero: "/images/page-heroes/contact-operations-center.jpg",
+  // Contact hero: real satellite operations center with operators at dashboard workstations
+  contactHero: "/images/page-heroes/ops-saocom.jpg",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections
