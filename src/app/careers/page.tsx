@@ -218,12 +218,12 @@ export default function CareersPage() {
                   <a
                     href={track.href}
                     aria-label={track.cta}
-                    className="group/cta mt-6 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(91,159,216,0.4)] bg-[rgba(47,116,189,0.18)] text-[var(--accent-light)] backdrop-blur-sm transition-colors hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white"
+                    className="group/cta mt-6 flex items-center justify-center text-[var(--accent-light)] transition-colors hover:text-white"
                   >
                     <ArrowDown
-                      size={18}
+                      size={26}
                       aria-hidden
-                      className="transition-transform group-hover/cta:translate-y-0.5"
+                      className="transition-transform group-hover/cta:translate-y-1"
                     />
                   </a>
                 </div>

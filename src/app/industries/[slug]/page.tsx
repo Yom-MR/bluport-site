@@ -199,25 +199,6 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               <p className="max-w-[42ch] text-base leading-8 text-slate-600">
                 Every sector breaks down differently. These are the specific points where a {industry.title.toLowerCase()} move slips — tight access windows, equipment that needs the right trailer and securement, and handoffs that fail when no one owns the timeline. Each one compounds into idle crews and lost days.
               </p>
-              <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[linear-gradient(150deg,var(--navy-900),var(--navy-950))] p-7 shadow-[0_18px_45px_rgba(15,23,42,0.18)]">
-                <div
-                  className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[radial-gradient(circle,rgba(91,159,216,0.18),transparent_70%)]"
-                  aria-hidden
-                />
-                <div className="relative flex items-center gap-2.5">
-                  <Gauge size={18} aria-hidden className="text-[var(--accent-light)]" />
-                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--steel-400)]">
-                    {industry.statLabel}
-                  </p>
-                </div>
-                <p className="relative mt-3 text-[clamp(2.2rem,4vw,3rem)] font-bold leading-none tracking-[-0.04em] text-white">
-                  {industry.statValue}
-                </p>
-                <p className="relative mt-3 text-sm leading-7 text-[var(--steel-300)]">
-                  This is the cost Bluport plans against — building each move around the friction
-                  that defines this sector instead of treating it as a generic haul.
-                </p>
-              </div>
             </Reveal>
 
             {/* Connected friction timeline — scales cleanly with 2-3 points */}
@@ -467,8 +448,8 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     <span className="relative inline-flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-[linear-gradient(160deg,#ffffff,rgba(47,116,189,0.1))] text-[#2f74bd] ring-1 ring-[rgba(47,116,189,0.28)] shadow-[0_12px_30px_rgba(47,116,189,0.16)] transition-transform duration-300 group-hover:-translate-y-1">
                       <Icon size={32} strokeWidth={1.75} aria-hidden />
                     </span>
-                    <span className="absolute -right-1 -top-1 inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[#2f7d52] text-white shadow-[0_6px_16px_rgba(47,125,82,0.4)]">
-                      <Check size={16} strokeWidth={3} aria-hidden />
+                    <span className="absolute -right-1 -top-1 inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[#22c55e] text-white shadow-[0_6px_16px_rgba(34,197,94,0.45)]">
+                      <Check size={16} strokeWidth={3.5} aria-hidden />
                     </span>
                   </span>
                   <p className="mt-6 text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">

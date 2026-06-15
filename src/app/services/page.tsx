@@ -103,10 +103,10 @@ export default function ServicesPage() {
         eyebrow="SERVICES"
         title="Specialized logistics for equipment-driven operations."
         description="Bluport supports the movement that keeps field teams productive: equipment transport, urgent repositioning, dedicated capacity, project logistics, staging, and operational planning."
-        image={siteImages.servicesHero}
-        imageAlt="Trailer loading and securement readiness in an industrial yard"
-        imagePosition="object-[center_62%]"
-        variant="dark"
+          image={siteImages.servicesHero}
+          imageAlt="Flatbed and gooseneck trailers loaded with secured heavy construction equipment in a logistics yard at dusk"
+          imagePosition="object-[center_55%]"
+          variant="dark"
       >
         <div className="flex flex-wrap gap-2">
           {serviceRows.map((service) => (
@@ -122,9 +122,9 @@ export default function ServicesPage() {
       </PageHero>
 
       <section className="relative overflow-hidden border-b border-slate-200 bg-[#f4f7fb] py-20 text-slate-950 md:py-24">
-        {/* faint, light dispatch-planning backdrop tying the section to service coordination */}
+        {/* faint, light fleet-yard backdrop tying the section to the service range */}
         <Image
-          src={siteImages.serviceLinesPlanningLight}
+          src={siteImages.serviceLinesFleetLight}
           alt=""
           aria-hidden
           fill
