@@ -101,7 +101,7 @@ export default function IndustriesPage() {
                         sizes="(min-width: 1280px) 28vw, (min-width: 768px) 44vw, 100vw"
                       />
                       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,11,22,0.05)_0%,rgba(5,11,22,0.25)_60%,rgba(5,11,22,0.7)_100%)]" />
-                      <span className="absolute left-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-[rgba(5,11,22,0.55)] text-[var(--accent-light)] backdrop-blur-md transition-colors group-hover:bg-[rgba(47,116,189,0.45)]">
+                      <span className="absolute left-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-[rgba(5,11,22,0.55)] text-[var(--accent-light)] backdrop-blur-md transition-colors group-hover:border-white/25 group-hover:bg-[rgba(5,11,22,0.85)]">
                         <Icon size={20} aria-hidden />
                       </span>
                       <span className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-[rgba(5,11,22,0.55)] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[#e7eef6] backdrop-blur-md">

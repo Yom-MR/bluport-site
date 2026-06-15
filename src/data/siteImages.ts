@@ -12,16 +12,16 @@ export const siteImages = {
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
-  // Services hero: real overhead/aerial view of a depot with trucks staged
-  servicesHero: "/images/page-heroes/services-depot-aerial.jpg",
+  // Services hero: real overhead aerial view of an active work site with heavy equipment
+  servicesHero: "/images/page-heroes/services-worksite-aerial.jpg",
   // Industries index hero: real aerial photo of a busy construction project
   industriesHero: "/images/page-heroes/industries-construction-aerial.jpg",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
-  // Contact hero: real dispatcher working at a desk with laptop and clipboard
-  contactHero: "/images/page-heroes/contact-dispatch-desk.jpg",
+  // Contact hero: real crew in hard hats and hi-vis coordinating on site
+  contactHero: "/images/page-heroes/contact-crew.jpg",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections

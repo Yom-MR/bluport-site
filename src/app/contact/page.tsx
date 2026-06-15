@@ -29,7 +29,7 @@ export default function ContactPage() {
         title="Talk to Bluport operations."
         description="Use the right channel for the request so Bluport can route it quickly and keep your move on schedule."
         image={siteImages.contactHero}
-        imageAlt="Dispatcher working at a desk with a laptop and clipboard coordinating shipments"
+        imageAlt="Crew in hard hats and hi-vis vests coordinating operations on site"
         imagePosition="object-[center_45%]"
         variant="dark"
       />
