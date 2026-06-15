@@ -7,6 +7,7 @@ import {
   ArrowRight,
   Building2,
   CalendarClock,
+  Check,
   ClipboardCheck,
   Clock,
   Cpu,
@@ -21,7 +22,6 @@ import {
   Shuffle,
   Siren,
   Timer,
-  TrendingUp,
   Truck,
   Users,
   Warehouse,
@@ -220,48 +220,47 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
               </div>
             </Reveal>
 
-            <div className="grid gap-4">
+            {/* Connected friction timeline — scales cleanly with 2-3 points */}
+            <ol className="relative">
               {industry.painPoints.map((point, index) => {
                 const Icon = stageIcons[index] ?? Gauge;
+                const isLast = index === industry.painPoints.length - 1;
                 return (
                   <Reveal
+                    as="li"
                     key={point.title}
                     delay={index * 90}
-                    className="group relative flex items-stretch overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all hover:-translate-y-0.5 hover:border-[rgba(194,65,12,0.4)] hover:shadow-[0_18px_45px_rgba(15,23,42,0.1)]"
+                    className="group relative flex gap-5 pb-6 last:pb-0 sm:gap-6"
                   >
-                    {/* icon + index rail anchors the left edge */}
-                    <div className="relative flex w-[88px] shrink-0 flex-col items-center justify-center gap-2.5 overflow-hidden border-r border-slate-100 bg-[linear-gradient(160deg,rgba(194,65,12,0.07),rgba(194,65,12,0.02))] px-3 md:w-[104px]">
+                    {/* connector rail to the next node */}
+                    {!isLast ? (
                       <span
-                        className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,#c2410c,rgba(194,65,12,0.25))]"
+                        className="absolute left-7 top-16 bottom-0 w-px -translate-x-1/2 bg-[linear-gradient(180deg,rgba(194,65,12,0.4),rgba(194,65,12,0.1))]"
                         aria-hidden
                       />
-                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#c2410c] ring-1 ring-[rgba(194,65,12,0.2)] shadow-sm transition-colors group-hover:bg-[#c2410c] group-hover:text-white">
-                        <Icon size={24} aria-hidden />
-                      </span>
-                      <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[rgba(194,65,12,0.55)]">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
+                    ) : null}
 
-                    {/* content fills the remaining width */}
-                    <div className="relative flex flex-1 flex-col justify-center px-6 py-6 md:px-7">
-                      <span
-                        className="pointer-events-none absolute -right-3 top-1/2 hidden -translate-y-1/2 font-mono text-[5.5rem] font-bold leading-none text-[rgba(194,65,12,0.05)] transition-colors duration-300 group-hover:text-[rgba(194,65,12,0.1)] lg:block"
-                        aria-hidden
-                      >
-                        {String(index + 1).padStart(2, "0")}
+                    {/* icon node with index badge */}
+                    <span className="relative z-10 inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[rgba(194,65,12,0.2)] bg-white text-[#c2410c] shadow-[0_8px_22px_rgba(194,65,12,0.14)] transition-colors group-hover:bg-[#c2410c] group-hover:text-white">
+                      <Icon size={24} aria-hidden />
+                      <span className="absolute -right-1.5 -top-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#c2410c] font-mono text-[0.6rem] font-bold text-white shadow-sm">
+                        {index + 1}
                       </span>
-                      <p className="relative text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
+                    </span>
+
+                    {/* content card */}
+                    <div className="flex-1 rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all group-hover:-translate-y-0.5 group-hover:border-[rgba(194,65,12,0.35)] group-hover:shadow-[0_18px_45px_rgba(15,23,42,0.1)] md:px-7 md:py-6">
+                      <p className="text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
                         {point.title}
                       </p>
-                      <p className="relative mt-2 max-w-[52ch] text-sm leading-7 text-slate-600">
+                      <p className="mt-2 text-sm leading-7 text-slate-600">
                         {point.description}
                       </p>
                     </div>
                   </Reveal>
                 );
               })}
-            </div>
+            </ol>
           </div>
         </Container>
       </section>
@@ -468,8 +467,8 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
                     <span className="relative inline-flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-[linear-gradient(160deg,#ffffff,rgba(47,116,189,0.1))] text-[#2f74bd] ring-1 ring-[rgba(47,116,189,0.28)] shadow-[0_12px_30px_rgba(47,116,189,0.16)] transition-transform duration-300 group-hover:-translate-y-1">
                       <Icon size={32} strokeWidth={1.75} aria-hidden />
                     </span>
-                    <span className="absolute -right-1 -top-1 inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[#2f74bd] text-white shadow-[0_6px_16px_rgba(47,116,189,0.4)]">
-                      <TrendingUp size={16} aria-hidden />
+                    <span className="absolute -right-1 -top-1 inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[#2f7d52] text-white shadow-[0_6px_16px_rgba(47,125,82,0.4)]">
+                      <Check size={16} strokeWidth={3} aria-hidden />
                     </span>
                   </span>
                   <p className="mt-6 text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">

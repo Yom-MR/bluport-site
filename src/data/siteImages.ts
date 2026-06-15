@@ -7,9 +7,10 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
+  serviceLinesPlanningLight: "/images/backgrounds/service-lines-planning-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
-  // Services hero: close-up securement/binder photo from Bluport loads
-  servicesHero: "/images/loads/equipment-securement-real.png",
+  // Services hero: cinematic equipment-transport fleet shot representing the full service range
+  servicesHero: "/images/page-heroes/services-fleet-hero.png",
   industriesHero: "/images/industries/hero-all-industries.png",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",

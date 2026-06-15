@@ -121,28 +121,27 @@ export default function ServicesPage() {
         </div>
       </PageHero>
 
-      <section className="relative overflow-hidden border-b border-white/10 bg-[linear-gradient(180deg,#070f1c_0%,#0b1626_100%)] py-20 text-white md:py-24">
-        {/* digital dispatch-operations backdrop tying the section to live coordination */}
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[#f4f7fb] py-20 text-slate-950 md:py-24">
+        {/* faint, light dispatch-planning backdrop tying the section to service coordination */}
         <Image
-          src={siteImages.digitalOperations}
+          src={siteImages.serviceLinesPlanningLight}
           alt=""
           aria-hidden
           fill
-          className="pointer-events-none object-cover opacity-[0.18] [mask-image:linear-gradient(180deg,transparent,black_20%,black_80%,transparent)]"
+          className="pointer-events-none object-cover opacity-[0.12] [mask-image:linear-gradient(180deg,transparent,black_22%,black_82%,transparent)]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 blueprint-grid opacity-40" aria-hidden />
         <div
-          className="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.16),transparent_70%)]"
+          className="absolute -right-40 top-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(47,116,189,0.08),transparent_70%)]"
           aria-hidden
         />
         <Container className="relative space-y-12">
           <Reveal className="max-w-[760px] space-y-5">
-            <p className="technical-label text-[var(--accent-light)]">SERVICE LINES</p>
-            <h2 className="text-[clamp(2.1rem,4.4vw,3.5rem)] font-semibold leading-[0.96] tracking-[-0.05em] text-balance text-white">
+            <p className="technical-label text-sky-700">SERVICE LINES</p>
+            <h2 className="text-[clamp(2.1rem,4.4vw,3.5rem)] font-semibold leading-[0.96] tracking-[-0.05em] text-balance text-slate-950">
               Built to support real field operations.
             </h2>
-            <p className="max-w-[58ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
+            <p className="max-w-[58ch] text-base leading-8 text-slate-600 md:text-lg">
               Bluport service lines are designed around timing, securement, customer communication,
               and the realities of live field work.
             </p>
