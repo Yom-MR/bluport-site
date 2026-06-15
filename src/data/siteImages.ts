@@ -7,8 +7,8 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
-  // Mission hero: real driver/crew member at work in front of a freight truck
-  transportCommandCenter: "/images/page-heroes/mission-driver.jpg",
+  // Mission hero: real flatbed trailer loaded with heavy equipment (bulldozer)
+  transportCommandCenter: "/images/page-heroes/mission-loaded-flatbed.jpg",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
