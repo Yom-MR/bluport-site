@@ -20,8 +20,8 @@ export const siteImages = {
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
-  // Contact hero: dispatcher/driver on the phone beside a semi truck at a terminal
-  contactHero: "/images/page-heroes/contact-hero-v2.png",
+  // Contact hero: route/network map detail on screen (dispatch/coordination)
+  contactHero: "/images/page-heroes/map-ui.jpg",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections
@@ -47,5 +47,5 @@ export const siteImages = {
   industryDetailIndustrial: "/images/industries/oil-gas-real.jpg",
   industryDetailDataCenter: "/images/industries/datacenter-construction-real.jpg",
   industryDetailAerospace: "/images/industries/aerospace-real.jpg",
-  industryDetailGovernment: "/images/industries/government-staging-real.jpg",
+  industryDetailGovernment: "/images/industries/gov-relief-texas.jpg",
 } as const;

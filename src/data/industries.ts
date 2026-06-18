@@ -355,7 +355,7 @@ export const INDUSTRY_ENTRIES: IndustryEntry[] = [
     intro:
       "When the mission is public and the clock is real, logistics can't be the weak link. Emergency response and government operations demand fast intake, clear priorities, and assets that reach the staging area when they're needed. Bluport brings the structured execution of a veteran-owned operator to urgent public missions — calm, communicative, and accountable under pressure.",
     image: siteImages.industryDetailGovernment,
-    alt: "Semi trucks hauling relief supplies checking into a FEMA emergency staging area",
+    alt: "Flatbed semi truck hauling mobile generators to an emergency response staging area",
     statLabel: "What we protect",
     statValue: "Mission timelines",
     cargoTypes: [
