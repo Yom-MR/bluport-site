@@ -7,8 +7,8 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
-  // Mission hero: blue-hour flatbed rig loaded with a tracked excavator, staged for transport
-  transportCommandCenter: "/images/page-heroes/mission-hero-v2.png",
+  // Mission hero: real fleet photo — Ford Super Duty with gooseneck flatbed hauling a container
+  transportCommandCenter: "/images/page-heroes/mission-fleet.jpg",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
