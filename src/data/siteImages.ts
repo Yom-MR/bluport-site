@@ -12,8 +12,8 @@ export const siteImages = {
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
-  // Services hero: aerial of a hotshot pickup + gooseneck flatbed hauling equipment on a highway
-  servicesHero: "/images/page-heroes/services-hero-v2.png",
+  // Services hero: real aerial of a logistics yard with trailers at loading docks
+  servicesHero: "/images/page-heroes/services-aerial-yard.jpg",
   // Industries index hero: real aerial photo of a busy construction project
   industriesHero: "/images/page-heroes/industries-construction-aerial.jpg",
   careersHero: "/images/page-heroes/careers-hero-v3.png",

@@ -104,7 +104,7 @@ export default function ServicesPage() {
         title="Specialized logistics for equipment-driven operations."
         description="Bluport supports the movement that keeps field teams productive: equipment transport, urgent repositioning, dedicated capacity, project logistics, staging, and operational planning."
           image={siteImages.servicesHero}
-          imageAlt="Aerial view of a hotshot pickup pulling a gooseneck flatbed loaded with equipment on a highway"
+          imageAlt="Aerial view of a logistics yard with semi-trailers staged at warehouse loading docks"
           imagePosition="object-[center_50%]"
           variant="dark"
       >
