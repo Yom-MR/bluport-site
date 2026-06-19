@@ -7,8 +7,8 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
-  // Mission hero: route/logistics planning desk — US map with planned routes, dispatch laptop, schedules
-  transportCommandCenter: "/images/page-heroes/mission-planning.png",
+  // Mission hero: real fleet photo — Super Duty hauling an oversize structure on a gooseneck trailer
+  transportCommandCenter: "/images/loads/f350-oversize-structure-move.jpg",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
@@ -20,8 +20,8 @@ export const siteImages = {
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
-  // Contact hero: real golden-hour fleet photo — Super Duty with gooseneck trailer hauling in the open
-  contactHero: "/images/loads/IMG_0201.jpg",
+  // Contact hero: route/logistics planning desk — US map with planned routes, dispatch laptop, schedules
+  contactHero: "/images/page-heroes/mission-planning.png",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections

@@ -83,8 +83,8 @@ export default function MissionPage() {
         title="We prevent downtime through disciplined execution."
         description="Bluport is built around a single operating principle: plan precisely, communicate clearly, and execute on time — so crews, fleets, utilities, and projects never sit waiting on a truck."
         image={siteImages.transportCommandCenter}
-        imageAlt="Logistics planning desk with a U.S. route map, planned highway routes, dispatch laptop, and shipment schedules"
-        imagePosition="object-[center_40%]"
+        imageAlt="Bluport Super Duty hauling an oversize structure on a gooseneck trailer down a rural road"
+        imagePosition="object-[center_45%]"
         variant="dark"
       />
 
