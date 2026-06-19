@@ -7,21 +7,21 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
-  // Mission hero: real fleet photo — Ford Super Duty with gooseneck flatbed hauling a container
-  transportCommandCenter: "/images/page-heroes/mission-fleet.jpg",
+  // Mission hero: route/logistics planning desk — US map with planned routes, dispatch laptop, schedules
+  transportCommandCenter: "/images/page-heroes/mission-planning.png",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
-  // Services hero: real aerial of a logistics yard with trailers at loading docks
-  servicesHero: "/images/page-heroes/services-aerial-yard.jpg",
+  // Services hero: real yard photo — pickup + gooseneck trailer hauling a container, container handler loading
+  servicesHero: "/images/loads/IMG_1406.JPEG",
   // Industries index hero: real aerial photo of a busy construction project
   industriesHero: "/images/page-heroes/industries-construction-aerial.jpg",
   careersHero: "/images/page-heroes/careers-hero-v3.png",
   careersTeam: "/images/page-heroes/careers-team-coordination-v3.png",
   careersTrackMilitary: "/images/careers/track-military-v3.png",
   careersTrackCivilian: "/images/careers/track-civilian-v3.png",
-  // Contact hero: route/network map detail on screen (dispatch/coordination)
-  contactHero: "/images/page-heroes/map-ui.jpg",
+  // Contact hero: real golden-hour fleet photo — Super Duty with gooseneck trailer hauling in the open
+  contactHero: "/images/loads/IMG_0201.jpg",
   fieldOperations: "/images/loads/IMG_0426.JPEG",
   equipmentTransport: "/images/loads/bluport-container-yard.jpg",
   // Dedicated equipment/securement photos for interior sections

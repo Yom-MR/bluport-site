@@ -29,8 +29,8 @@ export default function ContactPage() {
         title="Talk to Bluport operations."
         description="Use the right channel for the request so Bluport can route it quickly and keep your move on schedule."
         image={siteImages.contactHero}
-        imageAlt="Route and transit network map displayed on a dispatch screen"
-        imagePosition="object-[center_50%]"
+        imageAlt="Bluport Super Duty with a gooseneck trailer hauling a load in the open at golden hour"
+        imagePosition="object-[center_55%]"
         variant="dark"
       />
 
