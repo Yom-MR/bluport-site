@@ -4,6 +4,7 @@ import {
   Layers3,
   Lightbulb,
   PackageCheck,
+  RotateCw,
   Truck,
   Warehouse,
   Zap,
@@ -173,37 +174,40 @@ export default function ServicesPage() {
                         </span>
                       </div>
 
-                      <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-white">
+                      <h3 className="mt-5 text-lg font-semibold tracking-[-0.03em] text-white">
                         {service.title}
                       </h3>
-                      <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
+                      <p className="mt-2 text-sm leading-6 text-[var(--steel-300)]">
                         {service.summary}
                       </p>
 
-                      <span className="mt-auto inline-flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[var(--accent-light)]">
-                        Hover for details
+                      <span
+                        className="mt-auto inline-flex h-9 w-9 items-center justify-center self-start rounded-full border border-white/15 bg-white/[0.04] text-[var(--accent-light)] transition-colors group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white"
+                        aria-hidden
+                      >
+                        <RotateCw size={15} />
                       </span>
                     </div>
 
                     {/* Back — details + CTA */}
                     <div className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl border border-[rgba(91,159,216,0.4)] bg-[var(--navy-850)] p-6 text-white shadow-[0_28px_70px_rgba(15,23,42,0.3)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
                       <p className="technical-label text-[var(--accent-light)]">{service.title}</p>
-                      <dl className="mt-4 flex-1 space-y-3">
+                      <dl className="mt-3 flex-1 space-y-2.5 overflow-hidden">
                         {[
                           { k: "Solves", v: service.solves },
                           { k: "Best fit", v: service.bestFit },
                           { k: "Benefit", v: service.benefit },
                         ].map((row) => (
                           <div key={row.k} className="flex gap-3">
-                            <dt className="w-16 shrink-0 pt-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-[var(--accent-light)]">
+                            <dt className="w-16 shrink-0 pt-0.5 text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[var(--accent-light)]">
                               {row.k}
                             </dt>
-                            <dd className="text-[0.82rem] leading-6 text-[var(--steel-300)]">{row.v}</dd>
+                            <dd className="text-[0.8rem] leading-[1.45] text-[var(--steel-300)]">{row.v}</dd>
                           </div>
                         ))}
                       </dl>
 
-                      <div className="mt-5">
+                      <div className="mt-4">
                         <Button
                           href="/#request-capacity"
                           variant="primary"
