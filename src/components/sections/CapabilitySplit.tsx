@@ -95,9 +95,9 @@ export default function CapabilitySplit() {
               Texas terminals, built for the lanes the work actually runs on.
             </h3>
             <p className="mt-3 max-w-[48ch] text-sm leading-7 text-[var(--steel-300)]">
-              We dispatch from our Houston central command and our Dallas post, run primary lanes
+              We dispatch from our Houston headquarters and our Dallas terminal, run primary lanes
               throughout Texas, extend across the Gulf Coast, and reach nationwide when a move calls
-              for it — with more terminals coming as we grow.
+              for it.
             </p>
             <div className="mt-7 flex-1">
               <CoverageMap layout="panel" />

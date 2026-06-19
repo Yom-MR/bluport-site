@@ -41,10 +41,9 @@ const industryIcons: Record<string, typeof Truck> = {
 };
 
 const coverageNotes = [
-  "Two Texas terminals: Houston (central command) and Dallas (dispatch post)",
+  "Two Texas terminals: Houston (HQ) and Dallas",
   "Primary support for Houston, Dallas, Austin, San Antonio, and regional corridors",
   "Field-aware execution for project sites, yards, plants, and response locations",
-  "Adding terminals as Bluport grows to keep dispatch close to the work",
 ] as const;
 
 export default function IndustriesPage() {

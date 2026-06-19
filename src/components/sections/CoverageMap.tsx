@@ -16,21 +16,21 @@ const EXTENDED = new Set(["22", "28", "01", "12", "40", "05", "35", "48"]); // L
 
 type Terminal = {
   name: string;
-  role: string;
+  label: string;
   coordinates: [number, number];
   labelDx: number;
   central?: boolean;
 };
 
-// Bluport terminals (posts). More will be added as the network grows.
+// Bluport terminals across Texas.
 const TERMINALS: Terminal[] = [
-  { name: "Houston", role: "Central Command", coordinates: [-95.3698, 29.7604], labelDx: 12, central: true },
-  { name: "Dallas", role: "Dispatch Post", coordinates: [-96.797, 32.7767], labelDx: 12 },
+  { name: "Houston", label: "Houston (HQ)", coordinates: [-95.3698, 29.7604], labelDx: 12, central: true },
+  { name: "Dallas", label: "Dallas", coordinates: [-96.797, 32.7767], labelDx: 12 },
 ];
 
 const legend: Array<{ label: string; swatch: string; ring?: boolean }> = [
-  { label: "Houston — Central Command", swatch: "var(--accent-light)", ring: true },
-  { label: "Dallas — Dispatch Post", swatch: "var(--accent-light)" },
+  { label: "Houston (HQ)", swatch: "var(--accent-light)", ring: true },
+  { label: "Dallas", swatch: "var(--accent-light)" },
   { label: "Primary lanes — Texas", swatch: "var(--accent)" },
   { label: "Extended coverage — Gulf Coast", swatch: "rgba(47,116,189,0.45)" },
   { label: "National capability", swatch: "rgba(180,194,209,0.14)" },
@@ -123,7 +123,7 @@ export default function CoverageMap({ layout = "split" }: { layout?: "split" | "
                 fontWeight={600}
                 style={{ fontFamily: "var(--font-geist-sans), system-ui, sans-serif" }}
               >
-                {terminal.name}
+                {terminal.label}
               </text>
             </Marker>
           ))}
@@ -132,7 +132,7 @@ export default function CoverageMap({ layout = "split" }: { layout?: "split" | "
           className="absolute bottom-4 left-5 max-w-[90%] text-xs font-medium text-[var(--steel-300)]"
           aria-live="polite"
         >
-          {hovered ? hovered : "Houston (Central Command) & Dallas (Dispatch Post), TX"}
+          {hovered ? hovered : "Houston (HQ) & Dallas, TX"}
         </p>
       </div>
 

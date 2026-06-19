@@ -155,58 +155,64 @@ export default function ServicesPage() {
                   key={service.title}
                   id={service.anchor}
                   delay={(index % 3) * 90}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[var(--navy-900)] text-white shadow-[0_18px_45px_rgba(15,23,42,0.18)] transition-all duration-200 hover:-translate-y-1 hover:border-[rgba(91,159,216,0.5)] hover:shadow-[0_28px_70px_rgba(15,23,42,0.3)] scroll-mt-24"
+                  className="group [perspective:1600px] scroll-mt-24"
                 >
-                  <span
-                    className="absolute inset-x-0 top-0 z-10 h-[3px] bg-[linear-gradient(90deg,var(--accent),rgba(47,116,189,0.15))]"
-                    aria-hidden
-                  />
+                  <div className="relative h-[360px] w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
+                    {/* Front — summary */}
+                    <div className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[var(--navy-900)] p-6 text-white shadow-[0_18px_45px_rgba(15,23,42,0.18)] [backface-visibility:hidden]">
+                      <span
+                        className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,var(--accent),rgba(47,116,189,0.15))]"
+                        aria-hidden
+                      />
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)]">
+                          <Icon size={20} aria-hidden />
+                        </span>
+                        <span className="font-mono text-xs text-[var(--steel-400)]">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                      </div>
 
-                  {/* Description zone — lighter band */}
-                  <div className="bg-[var(--navy-850)] p-6">
-                    <div className="flex items-center justify-between gap-4">
-                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-white">
-                        <Icon size={20} aria-hidden />
-                      </span>
-                      <span className="font-mono text-xs text-[var(--steel-400)]">
-                        {String(index + 1).padStart(2, "0")}
+                      <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-white">
+                        {service.title}
+                      </h3>
+                      <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
+                        {service.summary}
+                      </p>
+
+                      <span className="mt-auto inline-flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[var(--accent-light)]">
+                        Hover for details
                       </span>
                     </div>
 
-                    <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-white">
-                      {service.title}
-                    </h3>
-                    <p className="mt-2.5 text-sm leading-7 text-[var(--steel-300)]">
-                      {service.summary}
-                    </p>
-                  </div>
+                    {/* Back — details + CTA */}
+                    <div className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl border border-[rgba(91,159,216,0.4)] bg-[var(--navy-850)] p-6 text-white shadow-[0_28px_70px_rgba(15,23,42,0.3)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                      <p className="technical-label text-[var(--accent-light)]">{service.title}</p>
+                      <dl className="mt-4 flex-1 space-y-3">
+                        {[
+                          { k: "Solves", v: service.solves },
+                          { k: "Best fit", v: service.bestFit },
+                          { k: "Benefit", v: service.benefit },
+                        ].map((row) => (
+                          <div key={row.k} className="flex gap-3">
+                            <dt className="w-16 shrink-0 pt-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-[var(--accent-light)]">
+                              {row.k}
+                            </dt>
+                            <dd className="text-[0.82rem] leading-6 text-[var(--steel-300)]">{row.v}</dd>
+                          </div>
+                        ))}
+                      </dl>
 
-                  {/* Detail + CTA zone — base navy */}
-                  <div className="flex flex-1 flex-col border-t border-white/10 p-6">
-                    <dl className="flex-1 space-y-3">
-                      {[
-                        { k: "Solves", v: service.solves },
-                        { k: "Best fit", v: service.bestFit },
-                        { k: "Benefit", v: service.benefit },
-                      ].map((row) => (
-                        <div key={row.k} className="flex gap-3">
-                          <dt className="w-16 shrink-0 pt-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-[var(--accent-light)]">
-                            {row.k}
-                          </dt>
-                          <dd className="text-[0.82rem] leading-6 text-[var(--steel-300)]">{row.v}</dd>
-                        </div>
-                      ))}
-                    </dl>
-
-                    <div className="mt-6">
-                      <Button
-                        href="/#request-capacity"
-                        variant="primary"
-                        operationType={service.operationType}
-                        className="w-full text-[11px] tracking-[0.12em]"
-                      >
-                        Request Quote
-                      </Button>
+                      <div className="mt-5">
+                        <Button
+                          href="/#request-capacity"
+                          variant="primary"
+                          operationType={service.operationType}
+                          className="w-full text-[11px] tracking-[0.12em]"
+                        >
+                          Request Quote
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </Reveal>
