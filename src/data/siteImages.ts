@@ -7,8 +7,8 @@ export const siteImages = {
   flagStarsField: "/images/backgrounds/flag-stars-field.png",
   skillsPlanning: "/images/backgrounds/military-skills-planning.png",
   digitalOperations: "/images/backgrounds/digital-operations.png",
-  // Mission hero: real fleet photo — Super Duty hauling an oversize structure on a gooseneck trailer
-  transportCommandCenter: "/images/loads/f350-oversize-structure-move.jpg",
+  // Mission hero: real fleet photo — flatbed loaded with a compact track loader at an equipment yard
+  transportCommandCenter: "/images/loads/IMG_2010.JPEG",
   // Service Lines section: faint, light fleet-yard texture
   serviceLinesFleetLight: "/images/backgrounds/service-lines-fleet-light.png",
   industriesFitTexture: "/images/backgrounds/industries-fit-texture.png",
