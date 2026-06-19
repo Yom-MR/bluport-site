@@ -56,25 +56,25 @@ export default function ContactPage() {
       </section>
 
       {/* Send a message */}
-      <section className="section-pad bg-white text-slate-950">
+      <section className="section-pad bg-[var(--navy-900)] text-white">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-16">
             <Reveal className="space-y-5 lg:sticky lg:top-28">
-              <p className="technical-label text-sky-700">DIRECT LINE</p>
-              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-slate-950">
+              <p className="technical-label text-[var(--accent-light)]">DIRECT LINE</p>
+              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-balance text-white">
                 Reach the desk that can actually move it.
               </h2>
-              <p className="max-w-[52ch] text-base leading-8 text-slate-600 md:text-lg">
+              <p className="max-w-[52ch] text-base leading-8 text-[var(--steel-300)] md:text-lg">
                 Pick a department and your note lands with the people who own that work — booking,
                 billing, compliance, or recruiting. No shared inbox, no forwarding chain, no waiting
                 on someone to pass it along.
               </p>
-              <p className="flex items-center gap-2 text-sm text-slate-600">
-                <Phone size={16} aria-hidden className="text-sky-600" />
+              <p className="flex items-center gap-2 text-sm text-[var(--steel-300)]">
+                <Phone size={16} aria-hidden className="text-[var(--accent-light)]" />
                 Prefer to call?{" "}
                 <a
                   href={`tel:${BLUPORT_PHONE_E164}`}
-                  className="font-semibold text-slate-900 transition-colors hover:text-sky-700"
+                  className="font-semibold text-white transition-colors hover:text-[var(--accent-light)]"
                 >
                   {BLUPORT_PHONE_DISPLAY}
                 </a>

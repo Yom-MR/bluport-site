@@ -35,9 +35,9 @@ const initialForm: FormState = {
   message: "",
 };
 
-const labelClass = "technical-label mb-2 block text-[0.64rem] text-[var(--steel-300)]";
+const labelClass = "technical-label mb-2 block text-[0.64rem] text-slate-500";
 const fieldClass =
-  "w-full rounded-xl border border-white/12 bg-[rgba(255,255,255,0.04)] px-3.5 py-2.5 text-sm text-white outline-none transition-colors placeholder:text-[var(--steel-500)] focus:border-[var(--accent-light)] focus:ring-2 focus:ring-[rgba(91,159,216,0.25)]";
+  "w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-[var(--accent)] focus:ring-2 focus:ring-[rgba(47,116,189,0.18)]";
 
 export default function ContactMessageBox() {
   const [formData, setFormData] = useState<FormState>(initialForm);
@@ -83,18 +83,18 @@ export default function ContactMessageBox() {
   if (isSubmitted) {
     return (
       <div
-        className="flex flex-col items-start rounded-[1.5rem] border border-white/10 bg-[var(--navy-900)] p-8 text-white shadow-[0_24px_60px_rgba(5,11,22,0.35)] md:p-10"
+        className="flex flex-col items-start rounded-[1.5rem] border border-slate-200 bg-white p-8 text-slate-900 shadow-[0_24px_60px_rgba(8,17,31,0.18)] md:p-10"
         role="status"
         aria-live="polite"
       >
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(91,159,216,0.16)] text-[var(--accent-light)]">
+        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(47,116,189,0.12)] text-[var(--accent)]">
           <Mail size={22} aria-hidden />
         </span>
-        <p className="technical-label mt-5 text-[var(--accent-light)]">MESSAGE SENT</p>
-        <h3 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white">
+        <p className="technical-label mt-5 text-[var(--accent)]">MESSAGE SENT</p>
+        <h3 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-slate-900">
           Your message is on its way to {activeChannel.email}.
         </h3>
-        <p className="mt-3 max-w-[52ch] text-sm leading-7 text-[var(--steel-300)]">
+        <p className="mt-3 max-w-[52ch] text-sm leading-7 text-slate-600">
           Bluport operations will review the details and follow up directly. Need to send another?
         </p>
         <button
@@ -103,7 +103,7 @@ export default function ContactMessageBox() {
             setFormData(initialForm);
             setIsSubmitted(false);
           }}
-          className="mt-6 inline-flex rounded-xl border border-white/20 bg-[rgba(255,255,255,0.04)] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:border-[var(--accent-light)]"
+          className="mt-6 inline-flex rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-slate-900 transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
         >
           Send another message
         </button>
@@ -115,7 +115,7 @@ export default function ContactMessageBox() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-[1.5rem] border border-white/10 bg-[var(--navy-900)] p-6 text-white shadow-[0_24px_60px_rgba(5,11,22,0.35)] md:p-8"
+      className="rounded-[1.5rem] border border-slate-200 bg-white p-6 text-slate-900 shadow-[0_24px_60px_rgba(8,17,31,0.18)] md:p-8"
     >
       <div className="grid gap-5">
         <div>
@@ -128,7 +128,7 @@ export default function ContactMessageBox() {
               name="department"
               value={formData.department}
               onChange={handleChange}
-              className={`${fieldClass} cursor-pointer appearance-none pr-10 [&>option]:text-slate-900`}
+              className={`${fieldClass} cursor-pointer appearance-none pr-10`}
             >
               {DEPARTMENTS.map((dept) => (
                 <option key={dept.key} value={dept.key}>
@@ -139,11 +139,11 @@ export default function ContactMessageBox() {
             <ChevronDown
               size={16}
               aria-hidden
-              className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[var(--steel-400)]"
+              className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400"
             />
           </div>
-          <p className="mt-2 flex items-center gap-1.5 text-xs text-[var(--steel-400)]">
-            <Mail size={13} aria-hidden className="text-[var(--accent-light)]" />
+          <p className="mt-2 flex items-center gap-1.5 text-xs text-slate-500">
+            <Mail size={13} aria-hidden className="text-[var(--accent)]" />
             Routes to {activeChannel.email} — {activeChannel.purpose}
           </p>
         </div>
@@ -252,8 +252,8 @@ export default function ContactMessageBox() {
         ) : null}
 
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="flex items-center gap-2 text-xs text-[var(--steel-400)]">
-            <ShieldCheck size={14} aria-hidden className="text-[var(--accent-light)]" />
+          <p className="flex items-center gap-2 text-xs text-slate-500">
+            <ShieldCheck size={14} aria-hidden className="text-[var(--accent)]" />
             Required fields are marked with *.
           </p>
           <button
