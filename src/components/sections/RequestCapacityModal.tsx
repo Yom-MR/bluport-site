@@ -7,6 +7,56 @@ const REQUEST_CAPACITY_SELECTOR = 'a[href*="request-capacity"], button[data-requ
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
+type ModalCopy = { eyebrow: string; title: string; description: string };
+
+const DEFAULT_MODAL_COPY: ModalCopy = {
+  eyebrow: "REQUEST CAPACITY",
+  title: "Tell us about the move.",
+  description:
+    "Share the asset, route, timing, and any site constraints. Bluport operations reviews every request and follows up directly.",
+};
+
+// Copy tailored to the specific service the request was launched from, so the
+// modal language matches the quote being requested.
+const MODAL_COPY_BY_SERVICE: Record<string, ModalCopy> = {
+  "Equipment Transport": {
+    eyebrow: "EQUIPMENT TRANSPORT REQUEST",
+    title: "Move a machine, attachment, or jobsite asset.",
+    description:
+      "Tell us the equipment, the pickup and drop sites, and your delivery window. We plan trailer fit and securement before the move starts.",
+  },
+  "Rapid Response": {
+    eyebrow: "RAPID RESPONSE REQUEST",
+    title: "Get an urgent move planned fast.",
+    description:
+      "Share what failed or shifted, where it needs to go, and how tight the window is. We mobilize the quickest workable plan under pressure.",
+  },
+  "Dedicated Capacity": {
+    eyebrow: "DEDICATED CAPACITY REQUEST",
+    title: "Reserve recurring truck and trailer support.",
+    description:
+      "Tell us the lanes, frequency, and equipment you need covered. We scope dedicated capacity you can plan around instead of chasing the spot market.",
+  },
+  "Project Logistics": {
+    eyebrow: "PROJECT LOGISTICS REQUEST",
+    title: "Coordinate a phased project move.",
+    description:
+      "Share the schedule, delivery windows, and sequencing dependencies. We plan movement around your project's hard dates and handoffs.",
+  },
+  "Storage / Staging": {
+    eyebrow: "STORAGE & STAGING REQUEST",
+    title: "Plan a staged or timed-release move.",
+    description:
+      "Tell us what needs staging, the site-readiness timing, and release windows. We keep equipment from arriving too early or too late.",
+  },
+  Consulting: {
+    eyebrow: "LOGISTICS CONSULTING REQUEST",
+    title: "Talk through your logistics operation.",
+    description:
+      "Share where movement workflows, lane setup, or dispatch standards create friction. We map practical next steps as your operation scales.",
+  },
+};
+
 export default function RequestCapacityModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [presetOperationType, setPresetOperationType] = useState("");
@@ -135,6 +185,8 @@ export default function RequestCapacityModal() {
     return null;
   }
 
+  const modalCopy = MODAL_COPY_BY_SERVICE[presetOperationType] ?? DEFAULT_MODAL_COPY;
+
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center px-3 py-5 md:px-6">
       <button
@@ -162,16 +214,15 @@ export default function RequestCapacityModal() {
           />
           <div className="relative flex items-start justify-between gap-6">
             <div>
-              <p className="technical-label text-[var(--accent-light)]">REQUEST CAPACITY</p>
+              <p className="technical-label text-[var(--accent-light)]">{modalCopy.eyebrow}</p>
               <h2
                 id="request-capacity-modal-title"
                 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white md:text-[1.7rem]"
               >
-                Tell us about the move.
+                {modalCopy.title}
               </h2>
               <p className="mt-2 max-w-[54ch] text-sm leading-7 text-[var(--steel-300)]">
-                Share the asset, route, timing, and any site constraints. Bluport operations reviews
-                every request and follows up directly.
+                {modalCopy.description}
               </p>
             </div>
             <button

@@ -91,7 +91,7 @@ export default function ContactPage() {
       {/* CTA */}
       <section className="section-pad bg-[var(--navy-900)] text-white">
         <Container>
-          <Reveal className="flex flex-col items-start gap-6 rounded-[2rem] border border-[rgba(180,194,209,0.16)] bg-[rgba(255,255,255,0.03)] p-8 md:flex-row md:items-center md:justify-between md:p-12">
+          <Reveal className="flex flex-col items-start gap-6 rounded-[2rem] border border-[rgba(180,194,209,0.18)] bg-[var(--navy-800)] p-8 shadow-[0_24px_60px_rgba(2,8,18,0.45)] md:flex-row md:items-center md:justify-between md:p-12">
             <div className="max-w-[620px] space-y-4">
               <p className="technical-label">REQUEST CAPACITY</p>
               <h2 className="text-[clamp(1.9rem,3.6vw,2.9rem)] font-semibold leading-[1] tracking-[-0.04em] text-balance">

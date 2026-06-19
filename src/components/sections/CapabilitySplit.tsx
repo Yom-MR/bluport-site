@@ -92,11 +92,12 @@ export default function CapabilitySplit() {
               <p className="technical-label">SERVICE COVERAGE</p>
             </div>
             <h3 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-white md:text-[1.7rem]">
-              Houston-based, built for the lanes the work actually runs on.
+              Texas terminals, built for the lanes the work actually runs on.
             </h3>
             <p className="mt-3 max-w-[48ch] text-sm leading-7 text-[var(--steel-300)]">
-              Primary lanes run throughout Texas, extended coverage spans the Gulf Coast, and
-              project freight reaches nationwide when a move calls for it.
+              We dispatch from our Houston central command and our Dallas post, run primary lanes
+              throughout Texas, extend across the Gulf Coast, and reach nationwide when a move calls
+              for it — with more terminals coming as we grow.
             </p>
             <div className="mt-7 flex-1">
               <CoverageMap layout="panel" />

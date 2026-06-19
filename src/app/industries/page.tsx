@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  ArrowRight,
   Building2,
   Cpu,
   Factory,
   MapPin,
+  Plus,
   Radio,
   ShieldCheck,
   Truck,
@@ -41,9 +41,10 @@ const industryIcons: Record<string, typeof Truck> = {
 };
 
 const coverageNotes = [
-  "Texas-first service area with Gulf Coast reach",
+  "Two Texas terminals: Houston (central command) and Dallas (dispatch post)",
   "Primary support for Houston, Dallas, Austin, San Antonio, and regional corridors",
   "Field-aware execution for project sites, yards, plants, and response locations",
+  "Adding terminals as Bluport grows to keep dispatch close to the work",
 ] as const;
 
 export default function IndustriesPage() {
@@ -121,14 +122,18 @@ export default function IndustriesPage() {
                       <p className="mt-3 flex-1 text-sm leading-7 text-[var(--steel-300)]">
                         {item.summary}
                       </p>
-                      <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-light)]">
-                        View sector
-                        <ArrowRight
-                          size={16}
-                          aria-hidden
-                          className="transition-transform group-hover:translate-x-1"
-                        />
-                      </span>
+                      <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
+                        <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[var(--steel-400)] transition-colors group-hover:text-[var(--accent-light)]">
+                          Sector brief
+                        </span>
+                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-[var(--accent-light)] transition-all duration-300 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white">
+                          <Plus
+                            size={16}
+                            aria-hidden
+                            className="transition-transform duration-300 group-hover:rotate-90"
+                          />
+                        </span>
+                      </div>
                     </div>
                   </Link>
                 </Reveal>

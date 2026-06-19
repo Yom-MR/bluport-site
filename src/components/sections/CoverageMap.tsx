@@ -14,10 +14,23 @@ const GEO_URL = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 const PRIMARY = new Set(["48"]); // Texas
 const EXTENDED = new Set(["22", "28", "01", "12", "40", "05", "35", "48"]); // LA, MS, AL, FL, OK, AR, NM (+TX)
 
-const HOUSTON: [number, number] = [-95.3698, 29.7604];
+type Terminal = {
+  name: string;
+  role: string;
+  coordinates: [number, number];
+  labelDx: number;
+  central?: boolean;
+};
+
+// Bluport terminals (posts). More will be added as the network grows.
+const TERMINALS: Terminal[] = [
+  { name: "Houston", role: "Central Command", coordinates: [-95.3698, 29.7604], labelDx: 12, central: true },
+  { name: "Dallas", role: "Dispatch Post", coordinates: [-96.797, 32.7767], labelDx: 12 },
+];
 
 const legend: Array<{ label: string; swatch: string; ring?: boolean }> = [
-  { label: "Houston HQ", swatch: "var(--accent-light)", ring: true },
+  { label: "Houston — Central Command", swatch: "var(--accent-light)", ring: true },
+  { label: "Dallas — Dispatch Post", swatch: "var(--accent-light)" },
   { label: "Primary lanes — Texas", swatch: "var(--accent)" },
   { label: "Extended coverage — Gulf Coast", swatch: "rgba(47,116,189,0.45)" },
   { label: "National capability", swatch: "rgba(180,194,209,0.14)" },
@@ -89,16 +102,37 @@ export default function CoverageMap({ layout = "split" }: { layout?: "split" | "
               })
             }
           </Geographies>
-          <Marker coordinates={HOUSTON}>
-            <circle r={9} fill="rgba(132,188,232,0.25)" />
-            <circle r={4.5} fill="var(--accent-light)" stroke="#fff" strokeWidth={1.2} />
-          </Marker>
+          {TERMINALS.map((terminal) => (
+            <Marker key={terminal.name} coordinates={terminal.coordinates}>
+              {terminal.central ? (
+                <circle r={9} fill="rgba(132,188,232,0.25)" />
+              ) : (
+                <circle r={7} fill="rgba(132,188,232,0.18)" />
+              )}
+              <circle
+                r={terminal.central ? 4.5 : 3.6}
+                fill="var(--accent-light)"
+                stroke="#fff"
+                strokeWidth={terminal.central ? 1.2 : 1}
+              />
+              <text
+                x={terminal.labelDx}
+                y={4}
+                fill="#dce6ee"
+                fontSize={13}
+                fontWeight={600}
+                style={{ fontFamily: "var(--font-geist-sans), system-ui, sans-serif" }}
+              >
+                {terminal.name}
+              </text>
+            </Marker>
+          ))}
         </ComposableMap>
         <p
-          className="absolute bottom-4 left-5 text-xs font-medium text-[var(--steel-300)]"
+          className="absolute bottom-4 left-5 max-w-[90%] text-xs font-medium text-[var(--steel-300)]"
           aria-live="polite"
         >
-          {hovered ? hovered : "Houston, TX — operating base"}
+          {hovered ? hovered : "Houston (Central Command) & Dallas (Dispatch Post), TX"}
         </p>
       </div>
 
