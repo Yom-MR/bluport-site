@@ -10,6 +10,7 @@ type PageHeroProps = {
   image?: string;
   imageAlt?: string;
   imagePosition?: string;
+  imageMirrored?: boolean;
   variant: "dark" | "light";
   children?: ReactNode;
 };
@@ -21,6 +22,7 @@ export default function PageHero({
   image,
   imageAlt,
   imagePosition,
+  imageMirrored,
   variant,
   children,
 }: PageHeroProps) {
@@ -42,7 +44,11 @@ export default function PageHero({
             alt={imageAlt ?? ""}
             fill
             priority
-            className={cn("object-cover", imagePosition ?? "object-center")}
+            className={cn(
+              "object-cover",
+              imagePosition ?? "object-center",
+              imageMirrored && "scale-x-[-1]",
+            )}
             sizes="100vw"
           />
           <div
